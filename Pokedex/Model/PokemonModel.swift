@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Pokemon: Decodable {
+struct PokemonModel: Decodable {
     let id: Int
     let name: String
     let abilities: [Ability]
@@ -29,7 +29,6 @@ struct Sprite: Decodable {
     enum CodingKeys: String, CodingKey {
         case frontDefault = "front_default"
     }
-    
 }
 
 struct PokemonType: Decodable {
