@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct Results: Decodable {
+    let name: String
+    let url: String
+}
+
 class PokemonAPIService {
 
     var count = 0
@@ -20,11 +25,6 @@ class PokemonAPIService {
     struct SinglePageModel: Decodable {
         let next: String
         let results: [Results]
-    }
-    
-    struct Results: Decodable {
-        let name: String
-        let url: String
     }
     
     func getPokemonList(withUrlString urlString: String, completion: @escaping ((Result<SinglePageModel, Error>) -> Void)) {

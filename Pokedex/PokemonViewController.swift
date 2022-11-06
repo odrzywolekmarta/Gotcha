@@ -12,6 +12,7 @@ class PokemonViewController: UIViewController {
     var pokeArray = ["pikachu", "snorlax", "charmander", "jigglypuff", "bulbasaur"]
     let viewModel: PokemonViewModelProtocol
     
+    
     init(viewModel: PokemonViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: String(describing: Self.self), bundle: nil)
@@ -25,12 +26,13 @@ class PokemonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
     }
 
 }
-//MARK: - Table view data source
+//MARK: - Table View Data Source
 
 extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -45,5 +47,17 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+//MARK: - View Model Delegate
+
+extension PokemonViewController: PokemonViewModelDelegate {
+    func onGetPageSuccess() {
+        tableView.reloadData()
+    }
+    
+    func onGetPageFailure(error: String) {
+        print(error)
+    }
 }
 
