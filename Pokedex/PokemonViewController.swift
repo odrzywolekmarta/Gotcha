@@ -29,6 +29,7 @@ class PokemonViewController: UIViewController {
         viewModel.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        viewModel.getNextPage()
     }
 
 }
@@ -37,12 +38,14 @@ class PokemonViewController: UIViewController {
 extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pokeArray.count
+        return viewModel.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath)
-        cell.textLabel?.text = pokeArray[indexPath.row]
+        var configuration = cell.defaultContentConfiguration()
+        configuration.text = viewModel.dataSource[indexPath.row].name
+        cell.contentConfiguration = configuration
         return cell
     }
     
