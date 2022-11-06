@@ -9,7 +9,6 @@ import Foundation
 
 class PokemonAPIService {
 
-    var url = "https://pokeapi.co/api/v2/pokemon/"
     var count = 0
     var pokemonArray: [Results] = []
     
@@ -28,8 +27,7 @@ class PokemonAPIService {
         let url: String
     }
     
-    func getPokemonList(completion: @escaping ((Result<SinglePageModel, Error>) -> Void)) {
-        let urlString = url
+    func getPokemonList(withUrlString urlString: String, completion: @escaping ((Result<SinglePageModel, Error>) -> Void)) {
         guard let url = URL(string: urlString) else {
             print("error: could not create url from: \(urlString)")
             completion(.failure(PokemonAPIServiceError.noUrl))
@@ -39,20 +37,14 @@ class PokemonAPIService {
         let urlSession = URLSession(configuration: .default)
         let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                print("error: \(error.localizedDescription)")
                 completion(.failure(error))
                 return
             } else if let data = data {
                 let decoder = JSONDecoder()
                 do {
                     let singlePage = try decoder.decode(SinglePageModel.self, from: data)
-                    print(singlePage)
-                    self.url = singlePage.next
-                    self.pokemonArray = singlePage.results
-                    print(self.pokemonArray)
                     completion(.success(singlePage))
                 } catch {
-                    print("error: \(error.localizedDescription)")
                     completion(.failure(error))
                 }
             } else {
