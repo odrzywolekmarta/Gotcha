@@ -13,8 +13,12 @@ class PokemonAPIService {
     var count = 0
     var pokemonArray: [Results] = []
     
-    struct Returned: Decodable {
-        let count: Int
+    enum PokemonAPIServiceError: LocalizedError {
+        case noUrl
+        case unknown
+    }
+    
+    struct SinglePageModel: Decodable {
         let next: String
         let results: [Results]
     }
@@ -24,10 +28,11 @@ class PokemonAPIService {
         let url: String
     }
     
-    func getPokemonList(completion: @escaping () ->()) {
+    func getPokemonList(completion: @escaping ((Result<SinglePageModel, Error>) -> Void)) {
         let urlString = url
         guard let url = URL(string: urlString) else {
             print("error: could not create url from: \(urlString)")
+            completion(.failure(PokemonAPIServiceError.noUrl))
             return
         }
         
@@ -35,18 +40,23 @@ class PokemonAPIService {
         let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("error: \(error.localizedDescription)")
+                completion(.failure(error))
+                return
             } else if let data = data {
                 let decoder = JSONDecoder()
                 do {
-                    let returned = try decoder.decode(Returned.self, from: data)
-                    print(returned)
-                    self.count = returned.count
-                    self.url = returned.next
-                    self.pokemonArray = returned.results
+                    let singlePage = try decoder.decode(SinglePageModel.self, from: data)
+                    print(singlePage)
+                    self.url = singlePage.next
+                    self.pokemonArray = singlePage.results
                     print(self.pokemonArray)
+                    completion(.success(singlePage))
                 } catch {
                     print("error: \(error.localizedDescription)")
+                    completion(.failure(error))
                 }
+            } else {
+                completion(.failure(PokemonAPIServiceError.unknown))
             }
         }
         dataTask.resume()
