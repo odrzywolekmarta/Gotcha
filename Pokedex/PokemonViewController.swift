@@ -9,9 +9,9 @@ import UIKit
 
 class PokemonViewController: UIViewController {
     
-    var pokeArray = ["pikachu", "snorlax", "charmander", "jigglypuff", "bulbasaur"]
     let viewModel: PokemonViewModelProtocol
     var tableView: UITableView
+    let paginationOffset = 4
     
     init(viewModel: PokemonViewModelProtocol) {
         self.viewModel = viewModel
@@ -63,6 +63,12 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard indexPath.row == viewModel.dataSource.count - paginationOffset else {
+            return
+        }
+        viewModel.getNextPage()
+    }
     
 }
 
