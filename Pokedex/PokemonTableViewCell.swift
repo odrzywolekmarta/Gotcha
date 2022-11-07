@@ -6,9 +6,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PokemonTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var pokemonImage: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var typeLabel1: UILabel!
+    @IBOutlet weak var typeLabel2: UILabel!
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +25,12 @@ class PokemonTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure(name: String, imageUrlString: String) {
+        pokemonImage.sd_cancelCurrentImageLoad()
+        nameLabel.text = name
+        pokemonImage.sd_setImage(with: URL(string: imageUrlString))
     }
     
 }
