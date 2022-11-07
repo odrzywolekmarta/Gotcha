@@ -9,11 +9,11 @@ import UIKit
 
 class PokemonViewController: UIViewController {
     
-    let viewModel: PokemonViewModelProtocol
+    let viewModel: PokemonListViewModelProtocol
     var tableView: UITableView
     let paginationOffset = 4
     
-    init(viewModel: PokemonViewModelProtocol) {
+    init(viewModel: PokemonListViewModelProtocol) {
         self.viewModel = viewModel
         self.tableView = UITableView(frame: .zero)
         super.init(nibName: nil, bundle: nil)
@@ -71,15 +71,14 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .cyan
+        let viewController = PokemonDetailsViewController()
         present(viewController, animated: true)
     }
 }
 
 //MARK: - View Model Delegate
 
-extension PokemonViewController: PokemonViewModelDelegate {
+extension PokemonViewController: PokemonListViewModelDelegate {
     func onGetPageSuccess() {
         DispatchQueue.main.async {
             self.tableView.reloadData()

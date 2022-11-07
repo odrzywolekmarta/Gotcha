@@ -7,20 +7,21 @@
 
 import Foundation
 
-protocol PokemonViewModelProtocol: AnyObject {
-    var delegate: PokemonViewModelDelegate? { get set }
+protocol PokemonListViewModelProtocol: AnyObject {
+    var delegate: PokemonListViewModelDelegate? { get set }
     var dataSource: [Results] { get }
     func getNextPage()
     func getPokemonImageUrl(forRow row: Int) -> String 
 }
 
-protocol PokemonViewModelDelegate: AnyObject {
+protocol PokemonListViewModelDelegate: AnyObject {
     func onGetPageSuccess()
     func onGetPageFailure(error: String)
 }
 
-class PokemonViewModel: PokemonViewModelProtocol {
-    weak var delegate: PokemonViewModelDelegate?
+class PokemonListViewModel: PokemonListViewModelProtocol {
+    
+    weak var delegate: PokemonListViewModelDelegate?
     var urlString: String = "https://pokeapi.co/api/v2/pokemon/"
     private let service = PokemonAPIService()
     var dataSource: [Results] = []
