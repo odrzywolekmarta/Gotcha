@@ -13,7 +13,7 @@ struct Results: Decodable {
 }
 
 class PokemonAPIService {
-
+    
     var count = 0
     var pokemonArray: [Results] = []
     
@@ -29,7 +29,6 @@ class PokemonAPIService {
     
     func getPokemonList(withUrlString urlString: String, completion: @escaping ((Result<SinglePageModel, Error>) -> Void)) {
         guard let url = URL(string: urlString) else {
-            print("error: could not create url from: \(urlString)")
             completion(.failure(PokemonAPIServiceError.noUrl))
             return
         }
@@ -53,9 +52,31 @@ class PokemonAPIService {
         }
         dataTask.resume()
     }
-
     
+    func getPokemonDetails(withUrlString urlString: String, completion: @escaping((Result<PokemonModel,Error>) -> Void)) {
+        guard let url = URL(string: urlString) else {
+            completion(.failure(PokemonAPIServiceError.noUrl))
+            return
+        }
         
-        
+        let urlSession = URLSession(configuration: .default)
+        let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            } else if let data = data {
+                let decoder = JSONDecoder()
+                do {
+                    let pokemonDetails = try decoder.decode(PokemonModel.self, from: data)
+                    completion(.success(pokemonDetails))
+                } catch {
+                    completion(.failure(error))
+                }
+            } else {
+                completion(.failure(PokemonAPIServiceError.unknown))
+            }
+        }
+        dataTask.resume()
+    }
     
 }

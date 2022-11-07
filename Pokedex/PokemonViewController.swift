@@ -70,6 +70,11 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
         viewModel.getNextPage()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .cyan
+        present(viewController, animated: true)
+    }
 }
 
 //MARK: - View Model Delegate
