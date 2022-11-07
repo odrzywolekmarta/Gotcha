@@ -29,7 +29,7 @@ class PokemonTableViewCell: UITableViewCell {
     
     func configure(name: String, imageUrlString: String) {
         pokemonImage.sd_cancelCurrentImageLoad()
-        nameLabel.text = name
+        nameLabel.text = name.uppercased()
         pokemonImage.sd_setImage(with: URL(string: imageUrlString))
     }
     
