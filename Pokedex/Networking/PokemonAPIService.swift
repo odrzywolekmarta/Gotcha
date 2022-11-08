@@ -32,7 +32,6 @@ class PokemonAPIService {
             completion(.failure(PokemonAPIServiceError.noUrl))
             return
         }
-        
         let urlSession = URLSession(configuration: .default)
         let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
             if let error = error {

@@ -12,9 +12,11 @@ class PokemonViewController: UIViewController {
     let viewModel: PokemonListViewModelProtocol
     var tableView: UITableView
     let paginationOffset = 4
+    let router: AppRouterProtocol
     
-    init(viewModel: PokemonListViewModelProtocol) {
+    init(viewModel: PokemonListViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
+        self.router = router
         self.tableView = UITableView(frame: .zero)
         super.init(nibName: nil, bundle: nil)
     }
@@ -71,8 +73,7 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let viewController = PokemonDetailsViewController()
-//        present(viewController, animated: true)
+        router.navigateToDetails(withUrlString: viewModel.dataSource[indexPath.row].url)
     }
 }
 

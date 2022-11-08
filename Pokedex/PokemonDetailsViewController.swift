@@ -39,7 +39,7 @@ class PokemonDetailsViewController: UIViewController {
         tableView.dataSource = self
         viewModel.delegate = self
         configureTableView()
-        viewModel.getPokemonDetails(withUrlString: "https://pokeapi.co/api/v2/pokemon/1/")
+        viewModel.getPokemonDetails()
     }
     
 }
@@ -50,23 +50,30 @@ class PokemonDetailsViewController: UIViewController {
 extension PokemonDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "AbilitiesTableViewCell") as? AbilitiesTableViewCell {
-//            return cell
-//        }
-//        return UITableViewCell()
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "PictureTableViewCell") as? PictureTableViewCell {
                 return cell
             }
-        } else if indexPath.row == 1 {
+        case 1:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "NameTableViewCell") as? NameTableViewCell {
+                return cell
+            }
+        case 2:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "TypesTableViewCell") as? TypesTableViewCell {
+                return cell
+            }
+        case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "AbilitiesTableViewCell") as? AbilitiesTableViewCell {
                 cell.configure(ability1: "dupa", ability2: "dup", ability3: "duppp")
                 return cell
             }
+        default:
+            return UITableViewCell()
         }
         return UITableViewCell()
     }
