@@ -5,6 +5,12 @@
 //  Created by Majka on 26/10/2022.
 //
 
+/*
+ dodac do modelu detailsy albo zrobic osobne modele
+ endpointy do detailsow description evolution ... + cellki
+ ui zdupcony
+ */
+
 import Foundation
 
 struct PokemonModel: Decodable {

@@ -96,7 +96,7 @@ extension PokemonDetailsViewController: UITableViewDelegate, UITableViewDataSour
         if viewModel.detailsModel == nil {
             return 0
         } else {
-            return 60
+//            return 200
             return UITableView.automaticDimension
         }
     }
@@ -105,7 +105,7 @@ extension PokemonDetailsViewController: UITableViewDelegate, UITableViewDataSour
         if viewModel.detailsModel == nil {
             return 0
         } else {
-            return 60
+//            return 200
             return UITableView.automaticDimension
         }
     }
@@ -117,7 +117,9 @@ extension PokemonDetailsViewController: UITableViewDelegate, UITableViewDataSour
 extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     func onDetailsModelFetchSuccess() {
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.tableView.reloadRows(at: [IndexPath(row: 1, section: 0),
+                                           IndexPath(row: 2, section: 0),
+                                           IndexPath(row: 3, section: 0)], with: .automatic)
         }
     }
     
