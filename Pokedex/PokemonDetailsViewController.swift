@@ -7,25 +7,21 @@
 
 import UIKit
 
-class PokemonDetailsViewController: UIViewController, PokemonListViewModelDelegate {
-    
-    func onGetPageSuccess() {
-        sleep(3)
-        DispatchQueue.main.async {
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
-        }
-    }
-    
-    func onGetPageFailure(error: String) {
-        DispatchQueue.main.async {
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
-        }
-    }
-    
+class PokemonDetailsViewController: UIViewController {
+  
     
     var tableView = UITableView()
-    let viewModel = PokemonDetailsViewModel()
+    let viewModel: PokemonDetailsViewModelProtocol
     
+    init(viewModel: PokemonDetailsViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+        
     func configureTableView() {
         view.addSubview(tableView)
         let cellName = String(describing: AbilitiesTableViewCell.self)
@@ -54,15 +50,27 @@ class PokemonDetailsViewController: UIViewController, PokemonListViewModelDelega
 extension PokemonDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "AbilitiesTableViewCell") as? AbilitiesTableViewCell {
-            return cell
+//        if let cell = tableView.dequeueReusableCell(withIdentifier: "AbilitiesTableViewCell") as? AbilitiesTableViewCell {
+//            return cell
+//        }
+//        return UITableViewCell()
+        if indexPath.row == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "PictureTableViewCell") as? PictureTableViewCell {
+                return cell
+            }
+        } else if indexPath.row == 1 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "AbilitiesTableViewCell") as? AbilitiesTableViewCell {
+                cell.configure(ability1: "dupa", ability2: "dup", ability3: "duppp")
+                return cell
+            }
         }
         return UITableViewCell()
     }
+    
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         if viewModel.detailsModel == nil {
@@ -82,4 +90,21 @@ extension PokemonDetailsViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
     
+}
+
+//MARK: - View Model Delegate
+
+extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
+    func onDetailsModelFetchSuccess() {
+        DispatchQueue.main.async {
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+        }
+    }
+    
+    func onDetailsModelFetchFailure(error: String) {
+        DispatchQueue.main.async {
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+        }
+        print(error)
+    }
 }

@@ -8,19 +8,19 @@
 import Foundation
 
 protocol PokemonDetailsViewModelProtocol: AnyObject {
-    var delegate: PokemonListViewModelDelegate? { get set }
+    var delegate: PokemonDetailsViewModelDelegate? { get set }
     var detailsModel: PokemonModel? { get }
     func getPokemonDetails(withUrlString urlString: String)
 }
 
 protocol PokemonDetailsViewModelDelegate: AnyObject {
     func onDetailsModelFetchSuccess()
-    func onDetailsModelFetchFailure()
+    func onDetailsModelFetchFailure(error: String)
 }
 
 class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
     
-    var delegate: PokemonListViewModelDelegate?
+    var delegate: PokemonDetailsViewModelDelegate?
     var detailsModel: PokemonModel?
     private let service = PokemonAPIService()
     
@@ -29,9 +29,9 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
             switch result {
             case .success(let model):
                 self?.detailsModel = model
-                self?.delegate?.onGetPageSuccess()
+                self?.delegate?.onDetailsModelFetchSuccess()
             case .failure(let error):
-                self?.delegate?.onGetPageFailure(error: error.localizedDescription)
+                self?.delegate?.onDetailsModelFetchFailure(error: error.localizedDescription)
             }
         }
     }
