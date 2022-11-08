@@ -73,8 +73,9 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        router.navigateToDetails(withUrlString: viewModel.dataSource[indexPath.row].url)
+        router.navigateToDetails(urlString: viewModel.dataSource[indexPath.row].url, imageUrl: viewModel.getPokemonImageUrl(forRow: indexPath.row))
     }
+    
 }
 
 //MARK: - View Model Delegate

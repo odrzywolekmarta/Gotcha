@@ -10,6 +10,7 @@ import Foundation
 protocol PokemonDetailsViewModelProtocol: AnyObject {
     var delegate: PokemonDetailsViewModelDelegate? { get set }
     var detailsModel: PokemonModel? { get }
+    var imageUrl: String { get }
     func getPokemonDetails()
 }
 
@@ -24,9 +25,11 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
     var detailsModel: PokemonModel?
     private let service = PokemonAPIService()
     private let urlString: String
+    let imageUrl: String
     
-    init(urlString: String) {
+    init(urlString: String, imageUrl: String) {
         self.urlString = urlString
+        self.imageUrl = imageUrl
     }
     
     func getPokemonDetails() {

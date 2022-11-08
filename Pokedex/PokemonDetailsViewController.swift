@@ -12,9 +12,11 @@ class PokemonDetailsViewController: UIViewController {
     
     var tableView = UITableView()
     let viewModel: PokemonDetailsViewModelProtocol
+    let router: AppRouterProtocol
     
-    init(viewModel: PokemonDetailsViewModelProtocol) {
+    init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -24,8 +26,16 @@ class PokemonDetailsViewController: UIViewController {
         
     func configureTableView() {
         view.addSubview(tableView)
-        let cellName = String(describing: AbilitiesTableViewCell.self)
-        tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
+        
+        let pictureCellName = String(describing: PictureTableViewCell.self)
+        tableView.register(UINib(nibName: pictureCellName, bundle: nil), forCellReuseIdentifier: pictureCellName)
+        let nameCellName = String(describing: NameTableViewCell.self)
+        tableView.register(UINib(nibName: nameCellName, bundle: nil), forCellReuseIdentifier: nameCellName)
+        let typesCellName = String(describing: TypesTableViewCell.self)
+        tableView.register(UINib(nibName: typesCellName, bundle: nil), forCellReuseIdentifier: typesCellName)
+        let abilitiesCellName = String(describing: AbilitiesTableViewCell.self)
+        tableView.register(UINib(nibName: abilitiesCellName, bundle: nil), forCellReuseIdentifier: abilitiesCellName)
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -57,19 +67,22 @@ extension PokemonDetailsViewController: UITableViewDelegate, UITableViewDataSour
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "PictureTableViewCell") as? PictureTableViewCell {
+                cell.configure(imageUrlString: viewModel.imageUrl)
                 return cell
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "NameTableViewCell") as? NameTableViewCell {
+                cell.configure(name: viewModel.detailsModel?.name ?? "")
                 return cell
             }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "TypesTableViewCell") as? TypesTableViewCell {
+                cell.configure(with: viewModel.detailsModel)
                 return cell
             }
         case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "AbilitiesTableViewCell") as? AbilitiesTableViewCell {
-                cell.configure(ability1: "dupa", ability2: "dup", ability3: "duppp")
+                cell.configure(with: viewModel.detailsModel)
                 return cell
             }
         default:
@@ -104,13 +117,13 @@ extension PokemonDetailsViewController: UITableViewDelegate, UITableViewDataSour
 extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     func onDetailsModelFetchSuccess() {
         DispatchQueue.main.async {
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+            self.tableView.reloadData()
         }
     }
     
     func onDetailsModelFetchFailure(error: String) {
         DispatchQueue.main.async {
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+            self.tableView.reloadData()
         }
         print(error)
     }

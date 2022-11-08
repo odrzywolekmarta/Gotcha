@@ -23,8 +23,18 @@ class TypesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(type1: String, type2: String) {
-        typeLabel1.text = type1
-        typeLabel2.text = type2
+    func configure(with model: PokemonModel?) {
+        guard let model = model else {
+            return
+        }
+        let count = model.types.count
+        
+        if count > 0 {
+            typeLabel1.text = model.types[0].type.name
+        }
+        if count > 1 {
+            typeLabel2.text = model.types[1].type.name
+        }
+        
     }
 }
