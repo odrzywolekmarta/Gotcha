@@ -23,4 +23,8 @@ class TypesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(type1: String, type2: String) {
+        typeLabel1.text = type1
+        typeLabel2.text = type2
+    }
 }

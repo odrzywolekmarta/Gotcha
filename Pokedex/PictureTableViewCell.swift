@@ -21,4 +21,9 @@ class PictureTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configure(imageUrlString: String) {
+        pokemonImage.sd_setImage(with: URL(string: imageUrlString))
+    }
+    
 }

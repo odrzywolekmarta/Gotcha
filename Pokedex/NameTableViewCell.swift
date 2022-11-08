@@ -22,4 +22,7 @@ class NameTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(name: String) {
+        nameLabel.text = name
+    }
 }

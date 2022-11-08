@@ -71,8 +71,8 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = PokemonDetailsViewController()
-        present(viewController, animated: true)
+//        let viewController = PokemonDetailsViewController()
+//        present(viewController, animated: true)
     }
 }
 
