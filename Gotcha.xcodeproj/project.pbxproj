@@ -20,8 +20,9 @@
 		2D61410F291ACD1200D2F68A /* TypesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D61410D291ACD1200D2F68A /* TypesTableViewCell.xib */; };
 		2D614112291ACD5F00D2F68A /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D614110291ACD5F00D2F68A /* NameTableViewCell.swift */; };
 		2D614113291ACD5F00D2F68A /* NameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D614111291ACD5F00D2F68A /* NameTableViewCell.xib */; };
-		2D614116291ACEB800D2F68A /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D614115291ACEB800D2F68A /* UIExtensions.swift */; };
+		2D614116291ACEB800D2F68A /* UIKit+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D614115291ACEB800D2F68A /* UIKit+extensions.swift */; };
 		2D614118291AE4FC00D2F68A /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D614117291AE4FC00D2F68A /* AppRouter.swift */; };
+		2D61411A291C399C00D2F68A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D614119291C399C00D2F68A /* Constants.swift */; };
 		2DD0B645290949B6008B9BB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B644290949B6008B9BB5 /* AppDelegate.swift */; };
 		2DD0B647290949B6008B9BB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */; };
 		2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0B64D290949B8008B9BB5 /* Assets.xcassets */; };
@@ -45,9 +46,10 @@
 		2D61410D291ACD1200D2F68A /* TypesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypesTableViewCell.xib; sourceTree = "<group>"; };
 		2D614110291ACD5F00D2F68A /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
 		2D614111291ACD5F00D2F68A /* NameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameTableViewCell.xib; sourceTree = "<group>"; };
-		2D614115291ACEB800D2F68A /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		2D614115291ACEB800D2F68A /* UIKit+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+extensions.swift"; sourceTree = "<group>"; };
 		2D614117291AE4FC00D2F68A /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
-		2DD0B641290949B6008B9BB5 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D614119291C399C00D2F68A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2DD0B641290949B6008B9BB5 /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD0B644290949B6008B9BB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2DD0B64D290949B8008B9BB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,7 +101,8 @@
 		2D614114291ACEA900D2F68A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2D614115291ACEB800D2F68A /* UIExtensions.swift */,
+				2D614115291ACEB800D2F68A /* UIKit+extensions.swift */,
+				2D614119291C399C00D2F68A /* Constants.swift */,
 				2D614117291AE4FC00D2F68A /* AppRouter.swift */,
 			);
 			path = Utilities;
@@ -116,7 +119,7 @@
 		2DD0B642290949B6008B9BB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2DD0B641290949B6008B9BB5 /* Pokedex.app */,
+				2DD0B641290949B6008B9BB5 /* Gotcha.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2DD0B640290949B6008B9BB5 /* Pokedex */ = {
+		2DD0B640290949B6008B9BB5 /* Gotcha */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2DD0B655290949B8008B9BB5 /* Build configuration list for PBXNativeTarget "Pokedex" */;
+			buildConfigurationList = 2DD0B655290949B8008B9BB5 /* Build configuration list for PBXNativeTarget "Gotcha" */;
 			buildPhases = (
 				2DD0B63D290949B6008B9BB5 /* Sources */,
 				2DD0B63E290949B6008B9BB5 /* Frameworks */,
@@ -180,12 +183,12 @@
 			);
 			dependencies = (
 			);
-			name = Pokedex;
+			name = Gotcha;
 			packageProductDependencies = (
 				2D6140FF2919918300D2F68A /* SDWebImage */,
 			);
 			productName = Pokedex;
-			productReference = 2DD0B641290949B6008B9BB5 /* Pokedex.app */;
+			productReference = 2DD0B641290949B6008B9BB5 /* Gotcha.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -203,7 +206,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2DD0B63C290949B6008B9BB5 /* Build configuration list for PBXProject "Pokedex" */;
+			buildConfigurationList = 2DD0B63C290949B6008B9BB5 /* Build configuration list for PBXProject "Gotcha" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -219,7 +222,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2DD0B640290949B6008B9BB5 /* Pokedex */,
+				2DD0B640290949B6008B9BB5 /* Gotcha */,
 			);
 		};
 /* End PBXProject section */
@@ -253,10 +256,11 @@
 				2D61410E291ACD1200D2F68A /* TypesTableViewCell.swift in Sources */,
 				2DD0B66B290F19D1008B9BB5 /* PokemonViewController.swift in Sources */,
 				2D6141052919AB3D00D2F68A /* AbilitiesTableViewCell.swift in Sources */,
+				2D61411A291C399C00D2F68A /* Constants.swift in Sources */,
 				2DD0B647290949B6008B9BB5 /* SceneDelegate.swift in Sources */,
 				2D614118291AE4FC00D2F68A /* AppRouter.swift in Sources */,
 				2DD0B65D290954DC008B9BB5 /* PokemonModel.swift in Sources */,
-				2D614116291ACEB800D2F68A /* UIExtensions.swift in Sources */,
+				2D614116291ACEB800D2F68A /* UIKit+extensions.swift in Sources */,
 				2DD0B662290967D2008B9BB5 /* PokemonAPIService.swift in Sources */,
 				2D6141022919A59300D2F68A /* PokemonDetailsViewModel.swift in Sources */,
 				2D614109291ABCAA00D2F68A /* PictureTableViewCell.swift in Sources */,
@@ -410,7 +414,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.Pokedex;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.Gotcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -436,7 +440,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.Pokedex;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.Gotcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -447,7 +451,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2DD0B63C290949B6008B9BB5 /* Build configuration list for PBXProject "Pokedex" */ = {
+		2DD0B63C290949B6008B9BB5 /* Build configuration list for PBXProject "Gotcha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2DD0B653290949B8008B9BB5 /* Debug */,
@@ -456,7 +460,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2DD0B655290949B8008B9BB5 /* Build configuration list for PBXNativeTarget "Pokedex" */ = {
+		2DD0B655290949B8008B9BB5 /* Build configuration list for PBXNativeTarget "Gotcha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2DD0B656290949B8008B9BB5 /* Debug */,

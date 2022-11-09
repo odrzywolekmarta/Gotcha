@@ -34,7 +34,8 @@ class PokemonViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
     }
 
     override func viewDidLoad() {

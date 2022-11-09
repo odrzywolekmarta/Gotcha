@@ -16,7 +16,9 @@ class PokemonTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        contentView.backgroundColor = UIColor(named: "CustomBeige")
+        containerView.layer.cornerRadius = 25
+        containerView.applyShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

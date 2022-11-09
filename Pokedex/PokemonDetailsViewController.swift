@@ -92,23 +92,23 @@ extension PokemonDetailsViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if viewModel.detailsModel == nil {
-            return 0
-        } else {
-//            return 200
-            return UITableView.automaticDimension
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if viewModel.detailsModel == nil {
-            return 0
-        } else {
-//            return 200
-            return UITableView.automaticDimension
-        }
-    }
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if viewModel.detailsModel == nil {
+//            return 0
+//        } else {
+////            return 200
+//            return UITableView.automaticDimension
+//        }
+//    }
+//    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if viewModel.detailsModel == nil {
+//            return 0
+//        } else {
+////            return 200
+//            return UITableView.automaticDimension
+//        }
+//    }
     
 }
 

@@ -21,15 +21,15 @@
                         <rect key="frame" x="12" y="8" width="296" height="51.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AO-T2-dqc">
-                                <rect key="frame" x="13" y="12" width="52" height="27.5"/>
+                                <rect key="frame" x="20" y="12" width="175" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n6i-wz-YaG">
-                                <rect key="frame" x="73" y="5" width="215" height="215"/>
+                                <rect key="frame" x="203" y="5" width="85" height="85"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="B9C-O1-JoV"/>
+                                    <constraint firstAttribute="height" constant="85" id="B9C-O1-JoV"/>
                                     <constraint firstAttribute="width" secondItem="n6i-wz-YaG" secondAttribute="height" id="EKY-Sd-3CF"/>
                                 </constraints>
                             </imageView>
@@ -40,7 +40,7 @@
                             <constraint firstAttribute="trailing" secondItem="n6i-wz-YaG" secondAttribute="trailing" constant="8" id="4Fz-Oa-G9f"/>
                             <constraint firstItem="n6i-wz-YaG" firstAttribute="top" secondItem="gxw-p7-b6s" secondAttribute="top" constant="5" id="5B8-xg-iRh"/>
                             <constraint firstItem="n6i-wz-YaG" firstAttribute="leading" secondItem="5AO-T2-dqc" secondAttribute="trailing" constant="8" symbolic="YES" id="Atx-SO-1N6"/>
-                            <constraint firstItem="5AO-T2-dqc" firstAttribute="leading" secondItem="gxw-p7-b6s" secondAttribute="leading" constant="13" id="H5v-Xy-EJq"/>
+                            <constraint firstItem="5AO-T2-dqc" firstAttribute="leading" secondItem="gxw-p7-b6s" secondAttribute="leading" constant="20" id="H5v-Xy-EJq"/>
                             <constraint firstItem="5AO-T2-dqc" firstAttribute="top" secondItem="gxw-p7-b6s" secondAttribute="top" constant="12" id="ddb-lP-8jr"/>
                             <constraint firstAttribute="bottom" secondItem="n6i-wz-YaG" secondAttribute="bottom" constant="5" id="hq6-0t-qHy"/>
                         </constraints>
