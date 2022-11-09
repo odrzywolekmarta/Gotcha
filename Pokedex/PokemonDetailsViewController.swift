@@ -8,6 +8,16 @@
 import UIKit
 
 class PokemonDetailsViewController: UIViewController {
+    
+    @IBOutlet weak var nameSectionContainerView: UIView!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageBackgroundView: UIView!
+    @IBOutlet weak var roundCornersCardView: UIView!
+    @IBOutlet weak var pokemonImageView: UIImageView!
+    @IBOutlet weak var sectionsView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
 
     let viewModel: PokemonDetailsViewModelProtocol
     let router: AppRouterProtocol

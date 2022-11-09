@@ -10,6 +10,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PokemonDetailsViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="uvZ-tF-Gk7" id="ZDs-vp-g5C"/>
+                <outlet property="imageBackgroundView" destination="D4N-XS-DG1" id="gHf-gn-OiA"/>
+                <outlet property="nameLabel" destination="hYm-Qk-N9Q" id="Vze-Do-Hsq"/>
+                <outlet property="nameSectionContainerView" destination="Fol-1c-1qh" id="M6p-Vc-IcA"/>
+                <outlet property="numberLabel" destination="8bW-n2-jO8" id="cS4-oZ-gUF"/>
+                <outlet property="pokemonImageView" destination="M8q-ra-HWf" id="emO-lw-Evc"/>
+                <outlet property="roundCornersCardView" destination="lIj-Sv-bBR" id="tcH-n2-i6s"/>
+                <outlet property="sectionsView" destination="65L-T6-NR0" id="s4B-Pd-70P"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +26,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fol-1c-1qh">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fol-1c-1qh" userLabel="name section">
                     <rect key="frame" x="0.0" y="44" width="414" height="102"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#2137" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bW-n2-jO8">
@@ -43,14 +51,14 @@
                         <constraint firstItem="hYm-Qk-N9Q" firstAttribute="top" secondItem="8bW-n2-jO8" secondAttribute="bottom" constant="20" id="xRU-M6-sdQ"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4N-XS-DG1">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4N-XS-DG1" userLabel="background">
                     <rect key="frame" x="0.0" y="146" width="414" height="250"/>
                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="UtM-7q-3Zw"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIj-Sv-bBR">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIj-Sv-bBR" userLabel="rounded">
                     <rect key="frame" x="0.0" y="396" width="414" height="50"/>
                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                     <constraints>
@@ -64,7 +72,7 @@
                         <constraint firstAttribute="width" secondItem="M8q-ra-HWf" secondAttribute="height" id="Lsw-f9-xcA"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65L-T6-NR0">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65L-T6-NR0" userLabel="buttons">
                     <rect key="frame" x="0.0" y="446" width="414" height="50"/>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
