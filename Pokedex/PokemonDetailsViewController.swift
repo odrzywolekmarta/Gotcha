@@ -17,10 +17,15 @@ class PokemonDetailsViewController: UIViewController {
     @IBOutlet weak var pokemonImageView: UIImageView!
     @IBOutlet weak var sectionsView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var aboutButton: UIButton!
+    @IBOutlet weak var statisticsButton: UIButton!
+    @IBOutlet weak var evolutionButton: UIButton!
+    @IBOutlet weak var bottomView: UIView!
     
 
     let viewModel: PokemonDetailsViewModelProtocol
     let router: AppRouterProtocol
+    let baseColor: UIColor = UIColor(named: Constants.Colors.customOrange)!
 
     init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -32,10 +37,25 @@ class PokemonDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func configureView() {
+        navigationController?.navigationBar.update(backroundColor: baseColor, titleColor: baseColor)
+        
+        view.backgroundColor = baseColor
+        nameSectionContainerView.backgroundColor = baseColor
+        imageBackgroundView.backgroundColor = baseColor
+        roundCornersCardView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
+        roundCornersCardView.makeRound(radius: 50)
+        sectionsView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
+        collectionView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
+        bottomView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.getPokemonDetails()
+        configureView()
     }
 }
 
