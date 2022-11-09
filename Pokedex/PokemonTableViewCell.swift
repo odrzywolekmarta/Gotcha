@@ -11,11 +11,9 @@ import SDWebImage
 class PokemonTableViewCell: UITableViewCell {
     
     @IBOutlet weak var pokemonImage: UIImageView!
-    
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var typeLabel1: UILabel!
-    @IBOutlet weak var typeLabel2: UILabel!
-        
+    @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
