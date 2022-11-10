@@ -16,9 +16,12 @@ import Foundation
 struct PokemonModel: Decodable {
     let id: Int
     let name: String
+    let height: Int
+    let weight: Int
     let abilities: [Ability]
     let sprites: Sprite
     let types: [PokemonType]
+    let stats: [Stats]
 }
 
 struct Ability: Decodable {
@@ -31,6 +34,16 @@ struct AbilityName: Decodable {
 
 struct Sprite: Decodable {
     let frontDefault: URL
+    let other: [OfficialArtwork]
+    
+    enum CodingKeys: String, CodingKey {
+        case frontDefault = "front_default"
+        case other = "other"
+    }
+}
+
+struct OfficialArtwork: Decodable {
+    let frontDefault: URL
     
     enum CodingKeys: String, CodingKey {
         case frontDefault = "front_default"
@@ -42,5 +55,19 @@ struct PokemonType: Decodable {
 }
 
 struct TypeName: Decodable {
+    let name: String
+}
+
+struct Stats: Decodable {
+    let baseStat: Int
+    let stat: [Stat]
+    
+    enum CodingKeys: String, CodingKey {
+        case baseStat = "base_stat"
+        case stat = "stat"
+    }
+}
+
+struct Stat: Decodable {
     let name: String
 }

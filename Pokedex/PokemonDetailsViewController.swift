@@ -26,6 +26,7 @@ class PokemonDetailsViewController: UIViewController {
     let viewModel: PokemonDetailsViewModelProtocol
     let router: AppRouterProtocol
     let baseColor: UIColor = UIColor(named: Constants.Colors.customOrange)!
+    private var parentNavigationBarColor: UIColor?
 
     init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -38,8 +39,8 @@ class PokemonDetailsViewController: UIViewController {
     }
 
     func configureView() {
+        parentNavigationBarColor = navigationController?.navigationBar.standardAppearance.backgroundColor
         navigationController?.navigationBar.update(backroundColor: baseColor, titleColor: baseColor)
-        
         view.backgroundColor = baseColor
         nameSectionContainerView.backgroundColor = baseColor
         imageBackgroundView.backgroundColor = baseColor
@@ -56,6 +57,11 @@ class PokemonDetailsViewController: UIViewController {
         viewModel.delegate = self
         viewModel.getPokemonDetails()
         configureView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.update(backroundColor: parentNavigationBarColor, titleColor: parentNavigationBarColor)
     }
 }
 

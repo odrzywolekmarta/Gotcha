@@ -59,7 +59,6 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonTableViewCell") as? PokemonTableViewCell {
-            
             cell.configure(name: viewModel.dataSource[indexPath.row].name,
                            imageUrlString: viewModel.getPokemonImageUrl(forRow: indexPath.row))
             return cell
