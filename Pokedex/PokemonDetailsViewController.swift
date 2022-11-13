@@ -21,13 +21,15 @@ class PokemonDetailsViewController: UIViewController {
     @IBOutlet weak var statisticsButton: UIButton!
     @IBOutlet weak var evolutionButton: UIButton!
     @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     
 
     let viewModel: PokemonDetailsViewModelProtocol
     let router: AppRouterProtocol
     let baseColor: UIColor = UIColor(named: Constants.Colors.customOrange)!
     private var parentNavigationBarColor: UIColor?
-
+    private let imageViewFullHeight: CGFloat = 220
+    
     init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
         self.router = router
@@ -49,7 +51,6 @@ class PokemonDetailsViewController: UIViewController {
         sectionsView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         collectionView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         bottomView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
-        
     }
     
     override func viewDidLoad() {
@@ -71,6 +72,23 @@ class PokemonDetailsViewController: UIViewController {
 extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     func onDetailsModelFetchSuccess() {
         DispatchQueue.main.async {
+            
+                self.nameLabel.text = self.viewModel.detailsModel?.name.uppercased()
+           
+
+                self.pokemonImageView.sd_setImage(with:
+                                                    self.viewModel.detailsModel?.sprites.other.officialArtwork.frontDefault) { _, _, _, _ in
+                    UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
+                        self.pokemonImageView.alpha = 1
+                        self.imageViewHeightConstraint.constant = self.imageViewFullHeight
+                        self.view.layoutIfNeeded()
+                    } completion: { _ in
+                        // do nothing
+                    }
+                }
+                if let id = self.viewModel.detailsModel?.id {
+                    self.numberLabel.text = String(id)
+            }
         }
     }
 

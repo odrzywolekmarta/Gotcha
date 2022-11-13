@@ -34,7 +34,8 @@ struct AbilityName: Decodable {
 
 struct Sprite: Decodable {
     let frontDefault: URL
-    let other: [OfficialArtwork]
+    let other: OfficialArtwork
+
     
     enum CodingKeys: String, CodingKey {
         case frontDefault = "front_default"
@@ -43,6 +44,14 @@ struct Sprite: Decodable {
 }
 
 struct OfficialArtwork: Decodable {
+    let officialArtwork: FrontDefault
+    
+    enum CodingKeys: String, CodingKey {
+        case officialArtwork = "official-artwork"
+    }
+}
+
+struct FrontDefault: Decodable {
     let frontDefault: URL
     
     enum CodingKeys: String, CodingKey {
@@ -60,7 +69,7 @@ struct TypeName: Decodable {
 
 struct Stats: Decodable {
     let baseStat: Int
-    let stat: [Stat]
+    let stat: Stat
     
     enum CodingKeys: String, CodingKey {
         case baseStat = "base_stat"
