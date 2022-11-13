@@ -16,7 +16,7 @@ class PokemonDetailsViewController: UIViewController {
     @IBOutlet weak var roundCornersCardView: UIView!
     @IBOutlet weak var pokemonImageView: UIImageView!
     @IBOutlet weak var sectionsView: UIView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var pageContainerView: UIView!
     @IBOutlet weak var aboutButton: UIButton!
     @IBOutlet weak var statisticsButton: UIButton!
     @IBOutlet weak var evolutionButton: UIButton!
@@ -29,6 +29,7 @@ class PokemonDetailsViewController: UIViewController {
     let baseColor: UIColor = UIColor(named: Constants.Colors.customOrange)!
     private var parentNavigationBarColor: UIColor?
     private let imageViewFullHeight: CGFloat = 220
+    var pageViewController = DetailsPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     
     init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -49,8 +50,15 @@ class PokemonDetailsViewController: UIViewController {
         roundCornersCardView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         roundCornersCardView.makeRound(radius: 50)
         sectionsView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
-        collectionView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
+        pageContainerView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         bottomView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
+        
+        addChild(pageViewController)
+        pageViewController.view.frame = pageContainerView.frame
+        view.addSubview(pageViewController.view)
+        pageViewController.didMove(toParent: self)
+        
+        _ = pageViewController.view
     }
     
     override func viewDidLoad() {
@@ -74,18 +82,24 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
         DispatchQueue.main.async {
             
                 self.nameLabel.text = self.viewModel.detailsModel?.name.uppercased()
-           
-
                 self.pokemonImageView.sd_setImage(with:
                                                     self.viewModel.detailsModel?.sprites.other.officialArtwork.frontDefault) { _, _, _, _ in
                     UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
                         self.pokemonImageView.alpha = 1
                         self.imageViewHeightConstraint.constant = self.imageViewFullHeight
                         self.view.layoutIfNeeded()
+                 
                     } completion: { _ in
-                        // do nothing
+//                        UIView.animate(withDuration: 0.1) {
+//                            let backgroundColor = self.pokemonImageView.image?.getAverageColour?.lighter(by: 300)
+//                            self.navigationController?.navigationBar.update(backroundColor: backgroundColor, titleColor: backgroundColor)
+//                            self.view.backgroundColor = backgroundColor
+//                            self.nameSectionContainerView.backgroundColor = backgroundColor
+//                            self.imageBackgroundView.backgroundColor = backgroundColor
+//                        }
                     }
                 }
+            
                 if let id = self.viewModel.detailsModel?.id {
                     self.numberLabel.text = String(id)
             }
