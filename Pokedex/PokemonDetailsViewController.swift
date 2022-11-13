@@ -29,7 +29,7 @@ class PokemonDetailsViewController: UIViewController {
     let baseColor: UIColor = UIColor(named: Constants.Colors.customOrange)!
     private var parentNavigationBarColor: UIColor?
     private let imageViewFullHeight: CGFloat = 220
-    var pageViewController = DetailsPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+    var pageViewController = DetailsPageViewController()
     
     init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -79,11 +79,16 @@ class PokemonDetailsViewController: UIViewController {
 
 extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     func onDetailsModelFetchSuccess() {
+        guard let detailsModel = viewModel.detailsModel else {
+            //shouldn't happen
+            return
+        }
+        pageViewController.set(model: detailsModel)
         DispatchQueue.main.async {
             
-                self.nameLabel.text = self.viewModel.detailsModel?.name.uppercased()
+                self.nameLabel.text = detailsModel.name.uppercased()
                 self.pokemonImageView.sd_setImage(with:
-                                                    self.viewModel.detailsModel?.sprites.other.officialArtwork.frontDefault) { _, _, _, _ in
+                                                    detailsModel.sprites.other.officialArtwork.frontDefault) { _, _, _, _ in
                     UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
                         self.pokemonImageView.alpha = 1
                         self.imageViewHeightConstraint.constant = self.imageViewFullHeight

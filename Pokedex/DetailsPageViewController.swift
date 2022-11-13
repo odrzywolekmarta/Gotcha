@@ -9,16 +9,29 @@ import UIKit
 
 class DetailsPageViewController: UIPageViewController {
     
-    private(set) lazy var orderedViewControllers: [UIViewController] = {
-        let controller1 = UIViewController()
-        controller1.view.backgroundColor = .cyan
-        let controller2 = UIViewController()
-        controller2.view.backgroundColor = .magenta
-        let controller3 = UIViewController()
-        controller3.view.backgroundColor = .red
-        
-        return [controller1, controller2, controller3]
-    }()
+    private let aboutController: AboutViewController
+    private let statsController: StatsViewController
+    private let evolutionController: EvolutionViewController
+    
+    init() {
+        aboutController = AboutViewController()
+        statsController = StatsViewController()
+        evolutionController = EvolutionViewController()
+        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private var orderedViewControllers: [UIViewController] {
+        return [aboutController, statsController, evolutionController]
+    }
+    
+    func set(model: PokemonModel) {
+        aboutController.viewModel.set(model: model)
+        statsController.viewModel.set(model: model)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +43,6 @@ class DetailsPageViewController: UIPageViewController {
         
         
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 //MARK: - Data Source Methods

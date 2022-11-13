@@ -21,7 +21,7 @@ protocol PokemonDetailsViewModelDelegate: AnyObject {
 
 class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
     
-    var delegate: PokemonDetailsViewModelDelegate?
+    weak var delegate: PokemonDetailsViewModelDelegate?
     var detailsModel: PokemonModel?
     private let service = PokemonAPIService()
     private let urlString: String
