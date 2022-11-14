@@ -56,6 +56,8 @@ class PokemonDetailsViewController: UIViewController {
         numberLabel.textDropShadow()
         nameLabel.textDropShadow()
         
+        
+        
         addChild(pageViewController)
         pageViewController.view.frame = pageContainerView.frame
         view.addSubview(pageViewController.view)
