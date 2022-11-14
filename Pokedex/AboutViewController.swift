@@ -14,7 +14,7 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        view.backgroundColor = .magenta
+        view.backgroundColor = UIColor(named: Constants.Colors.customBeige)
     }
 
 

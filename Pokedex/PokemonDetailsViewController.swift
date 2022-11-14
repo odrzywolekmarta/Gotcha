@@ -55,11 +55,11 @@ class PokemonDetailsViewController: UIViewController {
         bottomView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         numberLabel.textDropShadow()
         nameLabel.textDropShadow()
+        
         addChild(pageViewController)
         pageViewController.view.frame = pageContainerView.frame
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
-        
         _ = pageViewController.view
     }
     

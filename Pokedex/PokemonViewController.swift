@@ -46,7 +46,6 @@ class PokemonViewController: UIViewController {
         configureTableView()
         viewModel.getNextPage()
     }
-
 }
 
 //MARK: - Table View Data Source

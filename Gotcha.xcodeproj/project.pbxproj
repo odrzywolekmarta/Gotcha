@@ -26,6 +26,13 @@
 		2D61413C29216E2400D2F68A /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D61413B29216E2400D2F68A /* AboutViewModel.swift */; };
 		2D61413E292176A000D2F68A /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D61413D292176A000D2F68A /* StatsViewModel.swift */; };
 		2D6141402921777700D2F68A /* EvolutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D61413F2921777700D2F68A /* EvolutionViewModel.swift */; };
+		2D61414C2922771200D2F68A /* Orbitron-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6141462922771200D2F68A /* Orbitron-SemiBold.ttf */; };
+		2D61414D2922771200D2F68A /* Orbitron-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6141472922771200D2F68A /* Orbitron-ExtraBold.ttf */; };
+		2D61414E2922771200D2F68A /* Orbitron-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6141482922771200D2F68A /* Orbitron-Black.ttf */; };
+		2D61414F2922771200D2F68A /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6141492922771200D2F68A /* Orbitron-Bold.ttf */; };
+		2D6141502922771200D2F68A /* Orbitron-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D61414A2922771200D2F68A /* Orbitron-Medium.ttf */; };
+		2D6141512922771200D2F68A /* Orbitron-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D61414B2922771200D2F68A /* Orbitron-Regular.ttf */; };
+		2D6141532922772C00D2F68A /* Orbitron-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6141522922772C00D2F68A /* Orbitron-VariableFont_wght.ttf */; };
 		2DD0B645290949B6008B9BB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B644290949B6008B9BB5 /* AppDelegate.swift */; };
 		2DD0B647290949B6008B9BB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */; };
 		2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0B64D290949B8008B9BB5 /* Assets.xcassets */; };
@@ -55,6 +62,13 @@
 		2D61413B29216E2400D2F68A /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		2D61413D292176A000D2F68A /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		2D61413F2921777700D2F68A /* EvolutionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionViewModel.swift; sourceTree = "<group>"; };
+		2D6141462922771200D2F68A /* Orbitron-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-SemiBold.ttf"; sourceTree = "<group>"; };
+		2D6141472922771200D2F68A /* Orbitron-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-ExtraBold.ttf"; sourceTree = "<group>"; };
+		2D6141482922771200D2F68A /* Orbitron-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Black.ttf"; sourceTree = "<group>"; };
+		2D6141492922771200D2F68A /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Bold.ttf"; sourceTree = "<group>"; };
+		2D61414A2922771200D2F68A /* Orbitron-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Medium.ttf"; sourceTree = "<group>"; };
+		2D61414B2922771200D2F68A /* Orbitron-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Regular.ttf"; sourceTree = "<group>"; };
+		2D6141522922772C00D2F68A /* Orbitron-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		2DD0B641290949B6008B9BB5 /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD0B644290949B6008B9BB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +155,20 @@
 			name = Evolution;
 			sourceTree = "<group>";
 		};
+		2D6141442922764A00D2F68A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2D6141522922772C00D2F68A /* Orbitron-VariableFont_wght.ttf */,
+				2D6141482922771200D2F68A /* Orbitron-Black.ttf */,
+				2D6141492922771200D2F68A /* Orbitron-Bold.ttf */,
+				2D6141472922771200D2F68A /* Orbitron-ExtraBold.ttf */,
+				2D61414A2922771200D2F68A /* Orbitron-Medium.ttf */,
+				2D61414B2922771200D2F68A /* Orbitron-Regular.ttf */,
+				2D6141462922771200D2F68A /* Orbitron-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		2DD0B638290949B6008B9BB5 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +195,7 @@
 				2DD0B65E2909658D008B9BB5 /* Model */,
 				2DD0B66329096BB5008B9BB5 /* PokemonList */,
 				2D6140FD2918408200D2F68A /* PokemonDetails */,
+				2D6141442922764A00D2F68A /* Fonts */,
 				2DD0B64D290949B8008B9BB5 /* Assets.xcassets */,
 				2DD0B64F290949B8008B9BB5 /* LaunchScreen.storyboard */,
 				2DD0B652290949B8008B9BB5 /* Info.plist */,
@@ -268,10 +297,17 @@
 				2D61413A29216CA300D2F68A /* EvolutionViewController.xib in Resources */,
 				2DD0B651290949B8008B9BB5 /* LaunchScreen.storyboard in Resources */,
 				2D6140F829183C1700D2F68A /* PokemonTableViewCell.xib in Resources */,
+				2D61414E2922771200D2F68A /* Orbitron-Black.ttf in Resources */,
+				2D61414D2922771200D2F68A /* Orbitron-ExtraBold.ttf in Resources */,
 				2D61411E291C415E00D2F68A /* PokemonDetailsViewController.xib in Resources */,
+				2D61414C2922771200D2F68A /* Orbitron-SemiBold.ttf in Resources */,
+				2D6141512922771200D2F68A /* Orbitron-Regular.ttf in Resources */,
 				2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */,
+				2D6141502922771200D2F68A /* Orbitron-Medium.ttf in Resources */,
 				2D61413629216C8A00D2F68A /* StatsViewController.xib in Resources */,
 				2D61413229216C7B00D2F68A /* AboutViewController.xib in Resources */,
+				2D6141532922772C00D2F68A /* Orbitron-VariableFont_wght.ttf in Resources */,
+				2D61414F2922771200D2F68A /* Orbitron-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
