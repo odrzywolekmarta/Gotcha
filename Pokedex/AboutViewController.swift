@@ -32,6 +32,8 @@ class AboutViewController: UIViewController {
 
 extension AboutViewController: AboutViewModelDelegate {
     func onDetailsModelSet() {
-        //configure UI
+       
+            
+        }
     }
-}
+

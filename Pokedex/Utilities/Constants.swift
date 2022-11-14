@@ -14,5 +14,6 @@ struct Constants {
         static let customBeige = "CustomBeige"
         static let customBlue = "CustomBlue"
         static let customOrange = "CustomOrange"
+        static let customPeach = "CustomPeach"
     }
 }

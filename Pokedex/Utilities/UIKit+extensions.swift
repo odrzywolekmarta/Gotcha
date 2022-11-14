@@ -31,20 +31,26 @@ extension UIView {
 }
 
 extension UIImage {
-    var getAverageColour: UIColor? {
-            //A CIImage object is the image data you want to process.
-            guard let inputImage = CIImage(image: self) else { return nil }
-            // A CIVector object representing the rectangular region of inputImage .
-            let extentVector = CIVector(x: inputImage.extent.origin.x, y: inputImage.extent.origin.y, z: inputImage.extent.size.width, w: inputImage.extent.size.height)
+    func addShadow(blurSize: CGFloat = 6.0) -> UIImage {
+                        
+            let shadowColor = UIColor(white:0.0, alpha:0.8).cgColor
             
-            guard let filter = CIFilter(name: "CIAreaAverage", parameters: [kCIInputImageKey: inputImage, kCIInputExtentKey: extentVector]) else { return nil }
-            guard let outputImage = filter.outputImage else { return nil }
-
-            var bitmap = [UInt8](repeating: 0, count: 4)
-            let context = CIContext(options: [.workingColorSpace: kCFNull])
-            context.render(outputImage, toBitmap: &bitmap, rowBytes: 4, bounds: CGRect(x: 0, y: 0, width: 1, height: 1), format: .RGBA8, colorSpace: nil)
-
-            return UIColor(red: CGFloat(bitmap[0]) / 255, green: CGFloat(bitmap[1]) / 255, blue: CGFloat(bitmap[2]) / 255, alpha: CGFloat(bitmap[3]) / 255)
+            let context = CGContext(data: nil,
+                                    width: Int(self.size.width + blurSize),
+                                    height: Int(self.size.height + blurSize),
+                                    bitsPerComponent: self.cgImage!.bitsPerComponent,
+                                    bytesPerRow: 0,
+                                    space: CGColorSpaceCreateDeviceRGB(),
+                                    bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+            
+            context.setShadow(offset: CGSize(width: blurSize/2,height: -blurSize/2),
+                              blur: blurSize,
+                              color: shadowColor)
+            context.draw(self.cgImage!,
+                         in: CGRect(x: 0, y: blurSize, width: self.size.width, height: self.size.height),
+                         byTiling:false)
+            
+            return UIImage(cgImage: context.makeImage()!)
         }
 }
 
@@ -96,6 +102,15 @@ extension UINavigationBar {
                 titleTextAttributes = [NSAttributedString.Key.foregroundColor: titleColor]
             }
         }
+    }
+}
+
+extension UILabel {
+    func textDropShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 0.2
+        self.layer.shadowOffset = CGSize(width: 1, height: 2)
     }
 }
 
