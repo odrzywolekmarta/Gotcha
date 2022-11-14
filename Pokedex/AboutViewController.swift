@@ -11,7 +11,10 @@ class AboutViewController: UIViewController {
     
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
-    @IBOutlet weak var abilitiesLabel: UILabel!
+    @IBOutlet weak var abilityLabel1: UILabel!
+    @IBOutlet weak var abilityLabel2: UILabel!
+    @IBOutlet weak var typeLabel1: UILabel!
+    @IBOutlet weak var typeLabel2: UILabel!
     
     let viewModel: AboutViewModelProtocol = AboutViewModel()
     
@@ -47,9 +50,12 @@ extension AboutViewController: AboutViewModelDelegate {
                 let numOfAbilities = model.abilities.count
                 switch numOfAbilities {
                 case 1:
-                    self.
+                    self.abilityLabel1.text = model.abilities[0].ability.name
+                case 2:
+                    self.abilityLabel1.text = model.abilities[0].ability.name
+                    self.abilityLabel2.text = model.abilities[1].ability.name
                 default:
-                    <#code#>
+                    self.abilityLabel1.text = model.abilities[0].ability.name
                 }
                 
             }

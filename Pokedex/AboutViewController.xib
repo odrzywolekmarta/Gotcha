@@ -3,21 +3,27 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Orbitron-VariableFont_wght.ttf">
+        <array key="Orbitron-Bold.ttf">
             <string>Orbitron-Bold</string>
+        </array>
+        <array key="Orbitron-VariableFont_wght.ttf">
             <string>Orbitron-Regular</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
-                <outlet property="abilitiesLabel" destination="KIp-rF-d3M" id="cnD-0r-2EA"/>
+                <outlet property="abilityLabel1" destination="KIp-rF-d3M" id="cPD-uA-8jd"/>
+                <outlet property="abilityLabel2" destination="rhB-l8-1tm" id="zRy-B1-N6F"/>
                 <outlet property="heightLabel" destination="Rth-Fv-ICF" id="6sJ-sf-di3"/>
+                <outlet property="typeLabel1" destination="17M-Uo-c3B" id="wWo-Qn-wdR"/>
+                <outlet property="typeLabel2" destination="Fro-pK-Lr6" id="yKX-hr-ZfW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="weightLabel" destination="wnt-ne-KTC" id="gHw-yP-brf"/>
             </connections>
@@ -27,61 +33,88 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="qy8-wY-gsZ">
-                    <rect key="frame" x="30" y="378" width="309" height="140"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBe-ww-HMC">
+                    <rect key="frame" x="0.0" y="324" width="414" height="248"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="n20-P6-flS">
-                            <rect key="frame" x="0.0" y="0.0" width="176" height="140"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VKG-Oh-bTw">
+                            <rect key="frame" x="30" y="26" width="265.5" height="63"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNR-Rl-iHB">
-                                    <rect key="frame" x="0.0" y="0.0" width="176" height="18.5"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="zDq-Kt-eNo">
+                                    <rect key="frame" x="0.0" y="0.0" width="117.5" height="63"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNR-Rl-iHB">
+                                            <rect key="frame" x="0.0" y="0.0" width="117.5" height="18.5"/>
+                                            <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7f3-Rd-hbN">
+                                            <rect key="frame" x="0.0" y="44.5" width="117.5" height="18.5"/>
+                                            <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="ugs-dM-c8I">
+                                    <rect key="frame" x="167.5" y="0.0" width="98" height="63"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnt-ne-KTC">
+                                            <rect key="frame" x="0.0" y="0.0" width="98" height="18.5"/>
+                                            <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rth-Fv-ICF">
+                                            <rect key="frame" x="0.0" y="44.5" width="98" height="18.5"/>
+                                            <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="w54-QQ-0JV">
+                            <rect key="frame" x="30" y="199" width="354" height="18.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Types" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S2-PV-x6T">
+                                    <rect key="frame" x="0.0" y="0.0" width="99.5" height="18.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7f3-Rd-hbN">
-                                    <rect key="frame" x="0.0" y="40.5" width="176" height="18.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17M-Uo-c3B">
+                                    <rect key="frame" x="126.5" y="0.0" width="100" height="18.5"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-Bf-dP1">
-                                    <rect key="frame" x="0.0" y="81" width="176" height="18.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Types" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S2-PV-x6T">
-                                    <rect key="frame" x="0.0" y="121.5" width="176" height="18.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fro-pK-Lr6">
+                                    <rect key="frame" x="253.5" y="0.0" width="100.5" height="18.5"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="8WE-7F-8wU">
-                            <rect key="frame" x="211" y="0.0" width="98" height="140"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-Bf-dP1">
+                            <rect key="frame" x="30" y="115" width="176" height="18.5"/>
+                            <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-dG-4bC">
+                            <rect key="frame" x="246" y="115" width="98" height="58"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnt-ne-KTC">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIp-rF-d3M">
                                     <rect key="frame" x="0.0" y="0.0" width="98" height="18.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rth-Fv-ICF">
-                                    <rect key="frame" x="0.0" y="40.5" width="98" height="18.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIp-rF-d3M">
-                                    <rect key="frame" x="0.0" y="81" width="98" height="18.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhB-l8-1tm">
-                                    <rect key="frame" x="0.0" y="121.5" width="98" height="18.5"/>
+                                    <rect key="frame" x="0.0" y="39.5" width="98" height="18.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -89,26 +122,35 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17M-Uo-c3B">
-                    <rect key="frame" x="241" y="526" width="98" height="18.5"/>
-                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <color key="backgroundColor" name="CustomBeige"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="w54-QQ-0JV" secondAttribute="trailing" constant="30" id="7EO-cp-gWy"/>
+                        <constraint firstItem="w54-QQ-0JV" firstAttribute="leading" secondItem="GBe-ww-HMC" secondAttribute="leading" constant="30" id="7xo-uc-2dq"/>
+                        <constraint firstItem="WSO-Bf-dP1" firstAttribute="centerY" secondItem="GBe-ww-HMC" secondAttribute="centerY" id="F3w-6s-5uf"/>
+                        <constraint firstItem="WSO-Bf-dP1" firstAttribute="leading" secondItem="GBe-ww-HMC" secondAttribute="leading" constant="30" id="Nln-6G-iPH"/>
+                        <constraint firstAttribute="width" secondItem="GBe-ww-HMC" secondAttribute="height" multiplier="207:124" id="bSn-Z5-tq2"/>
+                        <constraint firstItem="2WO-dG-4bC" firstAttribute="leading" secondItem="WSO-Bf-dP1" secondAttribute="trailing" constant="40" id="hI5-bx-k4d"/>
+                        <constraint firstItem="VKG-Oh-bTw" firstAttribute="leading" secondItem="GBe-ww-HMC" secondAttribute="leading" constant="30" id="nok-3I-HQE"/>
+                        <constraint firstItem="2WO-dG-4bC" firstAttribute="top" secondItem="VKG-Oh-bTw" secondAttribute="bottom" constant="26" id="pg7-MB-bMB"/>
+                        <constraint firstItem="w54-QQ-0JV" firstAttribute="top" secondItem="2WO-dG-4bC" secondAttribute="bottom" constant="26" id="qZ9-2e-fsu"/>
+                        <constraint firstItem="WSO-Bf-dP1" firstAttribute="top" secondItem="VKG-Oh-bTw" secondAttribute="bottom" constant="26" id="ybc-cN-16r"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="17M-Uo-c3B" firstAttribute="top" secondItem="qy8-wY-gsZ" secondAttribute="bottom" constant="8" symbolic="YES" id="0Fb-Cp-GDt"/>
-                <constraint firstItem="qy8-wY-gsZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5cD-P3-Hr2"/>
-                <constraint firstItem="17M-Uo-c3B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="241" id="ofm-ZP-7nd"/>
-                <constraint firstItem="qy8-wY-gsZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="pKQ-zo-3aU"/>
+                <constraint firstItem="GBe-ww-HMC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ki2-c6-9PW"/>
+                <constraint firstItem="GBe-ww-HMC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="W0r-K2-J6P"/>
+                <constraint firstItem="GBe-ww-HMC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yCh-Xo-N6W"/>
             </constraints>
             <point key="canvasLocation" x="621.73913043478262" y="54.910714285714285"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="CustomBeige">
+            <color red="0.97600001096725464" green="0.94900000095367432" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
