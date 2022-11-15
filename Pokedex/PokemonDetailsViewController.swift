@@ -59,10 +59,13 @@ class PokemonDetailsViewController: UIViewController {
         
         
         addChild(pageViewController)
-        pageViewController.view.frame = pageContainerView.frame
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
-        _ = pageViewController.view
+        pageViewController.view.topAnchor.constraint(equalTo: pageContainerView.topAnchor).isActive = true
+        pageViewController.view.bottomAnchor.constraint(equalTo: pageContainerView.bottomAnchor).isActive = true
+        pageViewController.view.leadingAnchor.constraint(equalTo: pageContainerView.leadingAnchor).isActive = true
+        pageViewController.view.trailingAnchor.constraint(equalTo: pageContainerView.trailingAnchor).isActive = true
+        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
     }
     
     override func viewDidLoad() {
@@ -97,6 +100,7 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
                     self.pokemonImageView.alpha = 1
                     self.imageViewHeightConstraint.constant = self.imageViewFullHeight
                     self.view.layoutIfNeeded()
+                    self.pokemonImageView.applyShadow()
                 } completion: { _ in
                     
                 }

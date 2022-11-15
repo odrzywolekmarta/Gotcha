@@ -23,11 +23,12 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         view.backgroundColor = UIColor(named: Constants.Colors.customBeige)
-        typeLabel1.makeRound(radius: 12)
-        typeLabel2.makeRound(radius: 14)
+        typeLabel1.makeRound(radius: typeLabel1.frame.height / 2)
+        typeLabel2.makeRound(radius: typeLabel2.frame.height / 2)
     }
 }
 
+// TODO get rid of force unwraping
 func getColor(for type: String) -> UIColor {
     let pokemonType = type
     switch pokemonType {

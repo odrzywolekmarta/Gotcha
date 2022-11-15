@@ -14,7 +14,6 @@ class StatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        view.backgroundColor = .cyan
     }
 }
 
