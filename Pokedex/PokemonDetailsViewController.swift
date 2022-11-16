@@ -56,7 +56,9 @@ class PokemonDetailsViewController: UIViewController {
         numberLabel.textDropShadow()
         nameLabel.textDropShadow()
         
-        
+        aboutButton.titleLabel?.textDropShadow()
+        statisticsButton.titleLabel?.textDropShadow()
+        evolutionButton.titleLabel?.textDropShadow()
         
         addChild(pageViewController)
         view.addSubview(pageViewController.view)

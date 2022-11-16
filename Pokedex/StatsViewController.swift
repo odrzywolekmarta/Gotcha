@@ -29,8 +29,10 @@ class StatsViewController: UIViewController {
 extension StatsViewController: StatsViewModelDelegate {
     func onDetailsModelSet() {
         DispatchQueue.main.async {
-           
-        
-        }
+            if let model = self.viewModel.detailsModel {
+                let hpValue = Float(model.stats[0].baseStat / 255)
+                self.hpBar.setProgress(hpValue, animated: true)
+            }
+                }
     }
 }
