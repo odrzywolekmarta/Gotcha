@@ -59,10 +59,9 @@ class PokemonDetailsViewController: UIViewController {
         aboutButton.titleLabel?.textDropShadow()
         statisticsButton.titleLabel?.textDropShadow()
         evolutionButton.titleLabel?.textDropShadow()
-        
-        aboutButton.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 19)
-        statisticsButton.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 19)
-        evolutionButton.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 19)
+        aboutButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
+        statisticsButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
+        evolutionButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
         
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
@@ -85,7 +84,21 @@ class PokemonDetailsViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.update(backroundColor: parentNavigationBarColor, titleColor: parentNavigationBarColor)
     }
+    
+    @IBAction func aboutButtonPressed(_ sender: UIButton) {
+//        print(pageViewController.pres)
+    }
+    
+    @IBAction func statsButtonPressed(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func evolutionButtonPressed(_ sender: UIButton) {
+        
+    }
+    
 }
+
 
 
 //MARK: - View Model Delegate
@@ -103,6 +116,7 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
         DispatchQueue.main.async {
             
             self.nameLabel.text = detailsModel.name.uppercased()
+            self.view.layoutIfNeeded()
             self.pokemonImageView.sd_setImage(with:
                                                 detailsModel.sprites.other.officialArtwork.frontDefault) { _, _, _, _ in
                 UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
