@@ -10,7 +10,7 @@ import Foundation
 protocol AboutViewModelProtocol: AnyObject {
     var delegate: AboutViewModelDelegate? { get set }
     var detailsModel: PokemonModel? { get }
-    // TODO: create PokemonModelSettable protocol and implement on view models
+    // TODO: create PokemonModelSettable protowcol and implement on view models
     func set(model: PokemonModel)
 }
 

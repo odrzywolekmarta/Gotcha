@@ -90,7 +90,10 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
             //shouldn't happen
             return
         }
+        
         pageViewController.set(model: detailsModel)
+        pageViewController.getEvolution(id: detailsModel.id)
+        
         DispatchQueue.main.async {
             
             self.nameLabel.text = detailsModel.name.uppercased()
@@ -102,7 +105,7 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
                     self.view.layoutIfNeeded()
                     self.pokemonImageView.applyShadow()
                 } completion: { _ in
-                    
+                    //nothing
                 }
             }
                 if let id = self.viewModel.detailsModel?.id {

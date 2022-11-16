@@ -9,6 +9,13 @@ import UIKit
 
 class StatsViewController: UIViewController {
 
+    @IBOutlet weak var hpBar: UIProgressView!
+    @IBOutlet weak var attackBar: UIProgressView!
+    @IBOutlet weak var defenseBar: UIProgressView!
+    @IBOutlet weak var specialAttackBar: UIProgressView!
+    @IBOutlet weak var specialDefenseBar: UIProgressView!
+    @IBOutlet weak var speedBar: UIProgressView!
+    
     let viewModel: StatsViewModelProtocol = StatsViewModel()
     
     override func viewDidLoad() {
@@ -17,9 +24,13 @@ class StatsViewController: UIViewController {
     }
 }
 
+//MARK: - Stats View Model Delegate
+
 extension StatsViewController: StatsViewModelDelegate {
     func onDetailsModelSet() {
-        print("stats")
-        //configure UI
+        DispatchQueue.main.async {
+           
+        
+        }
     }
 }

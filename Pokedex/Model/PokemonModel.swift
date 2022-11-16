@@ -22,7 +22,6 @@ struct PokemonModel: Decodable {
     let sprites: Sprite
     let types: [PokemonType]
     let stats: [Stats]
-//    let moves: [Move]
 }
 
 struct Ability: Decodable {
@@ -82,10 +81,16 @@ struct Stat: Decodable {
     let name: String
 }
 
-//struct Move: Decodable {
-//    let move: MoveName
-//}
-//
-//struct MoveName: Decodable {
-//    let name: String
-//}
+struct EvolutionModel: Decodable {
+    let id: Int
+    let chain: [EvolvesTo]
+}
+
+struct EvolvesTo: Decodable {
+    let species: [Species]
+}
+
+struct Species: Decodable {
+    let name: String
+    let url: URL
+}

@@ -33,6 +33,10 @@ class DetailsPageViewController: UIPageViewController {
         statsController.viewModel.set(model: model)
     }
     
+    func getEvolution(id: Int) {
+        evolutionController.viewModel.getEvolution(id: id)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self

@@ -30,8 +30,7 @@ class AboutViewController: UIViewController {
 
 // TODO get rid of force unwraping
 func getColor(for type: String) -> UIColor {
-    let pokemonType = type
-    switch pokemonType {
+    switch type {
     case "normal":
         return UIColor(named: Constants.Colors.normalType)!
     case "fire":
@@ -73,7 +72,7 @@ func getColor(for type: String) -> UIColor {
     }
 }
 
-//MARK: - Table View Delegate Methods
+//MARK: - Table View Delegate 
 
 extension AboutViewController: AboutViewModelDelegate {
     func onDetailsModelSet() {
