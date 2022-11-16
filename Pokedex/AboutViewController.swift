@@ -23,8 +23,10 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         view.backgroundColor = UIColor(named: Constants.Colors.customBeige)
+        typeLabel1.applyShadow()
         typeLabel1.makeRound(radius: typeLabel1.frame.height / 2)
         typeLabel2.makeRound(radius: typeLabel2.frame.height / 2)
+        
     }
 }
 

@@ -60,6 +60,10 @@ class PokemonDetailsViewController: UIViewController {
         statisticsButton.titleLabel?.textDropShadow()
         evolutionButton.titleLabel?.textDropShadow()
         
+        aboutButton.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 19)
+        statisticsButton.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 19)
+        evolutionButton.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 19)
+        
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)

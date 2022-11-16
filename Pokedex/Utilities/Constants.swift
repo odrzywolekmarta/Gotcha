@@ -10,6 +10,7 @@ import Foundation
 struct Constants {
     
     static let customFont = "Orbitron-Regular"
+    static let customFontBold = "Orbitron-Bold"
     
     struct Colors {
         static let customRed = "CustomRed"

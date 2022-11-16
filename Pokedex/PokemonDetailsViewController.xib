@@ -86,24 +86,24 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65L-T6-NR0" userLabel="buttons">
                     <rect key="frame" x="0.0" y="371" width="414" height="50"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kw2-TI-T16">
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kw2-TI-T16">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQm-8j-NvH" userLabel="about">
-                                    <rect key="frame" x="0.0" y="0.0" width="138" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="123.5" height="50"/>
                                     <color key="tintColor" name="CustomRed"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="ABOUT"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" id="cMS-ER-eCO" userLabel="stats">
-                                    <rect key="frame" x="138" y="0.0" width="138" height="50"/>
+                                    <rect key="frame" x="123.5" y="0.0" width="113.5" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" name="CustomRed"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="STATS"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" id="f80-bG-7dP" userLabel="evolution">
-                                    <rect key="frame" x="276" y="0.0" width="138" height="50"/>
+                                    <rect key="frame" x="237" y="0.0" width="177" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" name="CustomRed"/>
                                     <state key="normal" title="Button"/>
