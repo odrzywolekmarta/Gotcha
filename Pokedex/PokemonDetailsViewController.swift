@@ -86,17 +86,16 @@ class PokemonDetailsViewController: UIViewController {
     }
     
     @IBAction func aboutButtonPressed(_ sender: UIButton) {
-//        print(pageViewController.pres)
+        pageViewController.slideToPage(index: 0, completion: nil)
     }
     
     @IBAction func statsButtonPressed(_ sender: UIButton) {
-        
+        pageViewController.slideToPage(index: 1, completion: nil)
     }
     
     @IBAction func evolutionButtonPressed(_ sender: UIButton) {
-        
+        pageViewController.slideToPage(index: 2, completion: nil)
     }
-    
 }
 
 
@@ -128,30 +127,30 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
                     //nothing
                 }
             }
-                if let id = self.viewModel.detailsModel?.id {
-                    let idString = String(id)
-                    let digitsInId = idString.count
-                    switch digitsInId {
-                    case 1:
-                        self.numberLabel.text = "#00\(idString)"
-                    case 2:
-                        self.numberLabel.text = "#0\(idString)"
-                    case 3:
-                        self.numberLabel.text = "#\(idString)"
-                    case 4:
-                        self.numberLabel.text = "#\(idString)"
-                    default:
-                        self.numberLabel.text = "#\(idString)"
+            if let id = self.viewModel.detailsModel?.id {
+                let idString = String(id)
+                let digitsInId = idString.count
+                switch digitsInId {
+                case 1:
+                    self.numberLabel.text = "#00\(idString)"
+                case 2:
+                    self.numberLabel.text = "#0\(idString)"
+                case 3:
+                    self.numberLabel.text = "#\(idString)"
+                case 4:
+                    self.numberLabel.text = "#\(idString)"
+                default:
+                    self.numberLabel.text = "#\(idString)"
                     
                 }
             }
         }
     }
-        
-        func onDetailsModelFetchFailure(error: String) {
-            DispatchQueue.main.async {
-            }
-            print(error)
-        }
-    }
     
+    func onDetailsModelFetchFailure(error: String) {
+        DispatchQueue.main.async {
+        }
+        print(error)
+    }
+}
+

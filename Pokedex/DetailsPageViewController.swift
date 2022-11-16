@@ -12,7 +12,8 @@ class DetailsPageViewController: UIPageViewController {
     private let aboutController: AboutViewController
     private let statsController: StatsViewController
     private let evolutionController: EvolutionViewController
-    
+    private var currentPageIndex: Int = 0
+
     init() {
         aboutController = AboutViewController()
         statsController = StatsViewController()
@@ -45,8 +46,32 @@ class DetailsPageViewController: UIPageViewController {
         if let firstVC = orderedViewControllers.first {
             setViewControllers([firstVC], direction: .forward, animated: false)
         }
-        
-        
+    }
+    
+    func slideToPage(index: Int, completion: (() -> Void)?) {
+        let count = orderedViewControllers.count
+        if index < count {
+            if index > currentPageIndex {
+                if let vc = viewControllerAtIndex(index: index) {
+                    setViewControllers([vc], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: { (complete) -> Void in
+                        self.currentPageIndex = index
+                        completion?()
+                    })
+                }
+            } else if index < currentPageIndex {
+                if let vc = viewControllerAtIndex(index: index) {
+                    setViewControllers([vc], direction: UIPageViewController.NavigationDirection.reverse, animated: true, completion: { (complete) -> Void in
+                        self.currentPageIndex = index
+                        completion?()
+                    })
+                }
+            }
+        }
+    }
+    
+    func viewControllerAtIndex(index: Int) -> UIViewController? {
+        let controllers = orderedViewControllers
+        return controllers[index]
     }
 }
 
