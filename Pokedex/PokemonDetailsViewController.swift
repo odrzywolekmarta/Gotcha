@@ -57,6 +57,7 @@ class PokemonDetailsViewController: UIViewController {
         nameLabel.textDropShadow()
         
         aboutButton.titleLabel?.textDropShadow()
+        setTintColor(for: aboutButton)
         statisticsButton.titleLabel?.textDropShadow()
         evolutionButton.titleLabel?.textDropShadow()
         aboutButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
@@ -87,14 +88,30 @@ class PokemonDetailsViewController: UIViewController {
     
     @IBAction func aboutButtonPressed(_ sender: UIButton) {
         pageViewController.slideToPage(index: 0, completion: nil)
+        setTintColor(for: aboutButton)
     }
     
     @IBAction func statsButtonPressed(_ sender: UIButton) {
         pageViewController.slideToPage(index: 1, completion: nil)
+        setTintColor(for: statisticsButton)
     }
     
     @IBAction func evolutionButtonPressed(_ sender: UIButton) {
         pageViewController.slideToPage(index: 2, completion: nil)
+        setTintColor(for: evolutionButton)
+    }
+    
+    var pageButtons: [UIButton] {
+        [aboutButton, statisticsButton, evolutionButton]
+    }
+    
+    func setTintColor(for button: UIButton) {
+        button.tintColor = UIColor(named: Constants.Colors.customRed)?.darker(by: 25)
+        for pageButton in pageButtons {
+            if pageButton !== button {
+                pageButton.tintColor = UIColor(named: Constants.Colors.customRed)
+            }
+        }
     }
 }
 

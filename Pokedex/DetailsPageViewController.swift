@@ -42,6 +42,7 @@ class DetailsPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
+        view.isUserInteractionEnabled = false
         
         if let firstVC = orderedViewControllers.first {
             setViewControllers([firstVC], direction: .forward, animated: false)
