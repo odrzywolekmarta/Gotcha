@@ -16,6 +16,7 @@ class DetailsPageViewController: UIPageViewController {
     init() {
         aboutController = AboutViewController()
         statsController = StatsViewController()
+        _ = statsController.view
         evolutionController = EvolutionViewController()
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
     }

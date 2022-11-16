@@ -20,8 +20,23 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hpBar.applyShadow()
+        attackBar.applyShadow()
+        defenseBar.applyShadow()
+        specialAttackBar.applyShadow()
+        specialDefenseBar.applyShadow()
+        speedBar.applyShadow()
+    }
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
         viewModel.delegate = self
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
 
 //MARK: - Stats View Model Delegate
@@ -30,9 +45,10 @@ extension StatsViewController: StatsViewModelDelegate {
     func onDetailsModelSet() {
         DispatchQueue.main.async {
             if let model = self.viewModel.detailsModel {
-                let hpValue = Float(model.stats[0].baseStat / 255)
-                print(hpValue)
-                self.hpBar.setProgress(hpValue, animated: true)
+                let hpValue = Double(model.stats[0].baseStat / 255)
+                self.hpBar.setProgress(0.8, animated: false)
+                print(model.stats)
+                print(model.stats[0].baseStat)
             }
                 }
     }
