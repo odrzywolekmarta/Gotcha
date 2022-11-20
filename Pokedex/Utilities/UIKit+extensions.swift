@@ -90,6 +90,12 @@ extension UINavigationBar {
             if let titleColor = titleColor {
                 appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: titleColor]
             }
+            if let backButtonFont = UIFont(name: Constants.customFontBold, size: 17) {
+                appearance.backButtonAppearance.normal.titleTextAttributes =
+                [NSAttributedString.Key.font: backButtonFont,
+                 NSAttributedString.Key.foregroundColor: UIColor.white]
+            }
+
             appearance.shadowColor = .clear
             standardAppearance = appearance
             scrollEdgeAppearance = appearance

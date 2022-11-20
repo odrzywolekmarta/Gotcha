@@ -30,6 +30,7 @@
                 <outlet property="specialfDefenseValueLabel" destination="jzh-fY-BIr" id="QO3-W3-tzl"/>
                 <outlet property="speedBar" destination="8SV-bV-hxF" id="jv2-Zx-yPb"/>
                 <outlet property="speedValueLabel" destination="hdE-wm-J73" id="wVb-nB-vVC"/>
+                <outlet property="totalValueLabel" destination="MY7-iK-Vmc" id="76u-X4-zed"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -62,11 +63,11 @@
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-0j-Jdk">
-                                    <rect key="frame" x="260" y="4" width="40" height="15.5"/>
+                                    <rect key="frame" x="260" y="3.5" width="40" height="16.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="gmZ-Mt-Dlz"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="12"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -86,8 +87,8 @@
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLS-1O-hKg">
-                                    <rect key="frame" x="293" y="3.5" width="40" height="15.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="12"/>
+                                    <rect key="frame" x="293" y="3" width="40" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -107,8 +108,8 @@
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teC-sF-KRq">
-                                    <rect key="frame" x="307.5" y="3.5" width="40" height="15.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="12"/>
+                                    <rect key="frame" x="307.5" y="3" width="40" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -130,8 +131,8 @@ attack</string>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="36" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mio-al-SNp">
-                                    <rect key="frame" x="302.5" y="14.5" width="40" height="15.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="12"/>
+                                    <rect key="frame" x="302.5" y="14" width="40" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -153,8 +154,8 @@ defense</string>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzh-fY-BIr">
-                                    <rect key="frame" x="307.5" y="14.5" width="40" height="15.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="12"/>
+                                    <rect key="frame" x="307.5" y="14" width="40" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -174,15 +175,15 @@ defense</string>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-wm-J73">
-                                    <rect key="frame" x="291" y="3.5" width="40" height="15.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="12"/>
+                                    <rect key="frame" x="291" y="3" width="40" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jVd-uV-Q8t">
-                            <rect key="frame" x="279" y="301" width="95" height="44"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jVd-uV-Q8t">
+                            <rect key="frame" x="284" y="301" width="90" height="44"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daF-RY-3Rc">
                                     <rect key="frame" x="0.0" y="12.5" width="37.5" height="19"/>
@@ -191,8 +192,8 @@ defense</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY7-iK-Vmc">
-                                    <rect key="frame" x="57.5" y="12.5" width="37.5" height="19"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
+                                    <rect key="frame" x="56.5" y="13.5" width="33.5" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>

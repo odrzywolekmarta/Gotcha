@@ -22,12 +22,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         let navigationController = UINavigationController()
+        
         let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: navigationController))
+
         navigationController.setViewControllers([controller], animated: false)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         navigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
-        
+        navigationController.navigationBar.tintColor = .white
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
