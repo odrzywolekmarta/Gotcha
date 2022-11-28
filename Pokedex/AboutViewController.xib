@@ -150,9 +150,8 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="GBe-ww-HMC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ki2-c6-9PW"/>
-                <constraint firstItem="GBe-ww-HMC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="W0r-K2-J6P"/>
+                <constraint firstItem="GBe-ww-HMC" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="TRq-90-fmp"/>
                 <constraint firstItem="GBe-ww-HMC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yCh-Xo-N6W"/>
-                <constraint firstItem="GBe-ww-HMC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ydg-9G-RTf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="621.73913043478262" y="-117.52232142857142"/>
