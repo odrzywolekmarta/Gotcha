@@ -16,6 +16,7 @@ struct PokemonModel: Decodable {
     let sprites: Sprite
     let types: [PokemonType]
     let stats: [Stats]
+    let species: Species
 }
 
 struct Ability: Decodable {
@@ -94,3 +95,4 @@ struct Species: Decodable {
     let name: String
     let url: URL
 }
+
