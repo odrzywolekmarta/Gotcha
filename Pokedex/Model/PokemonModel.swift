@@ -81,6 +81,7 @@ struct EvolutionModel: Decodable {
 }
 
 struct EvolvesTo: Decodable {
+    let evolvesTo: [EvolvesTo]
     let species: [Species]
 }
 
@@ -88,3 +89,4 @@ struct Species: Decodable {
     let name: String
     let url: URL
 }
+

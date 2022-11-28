@@ -23,7 +23,6 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         view.backgroundColor = UIColor(named: Constants.Colors.customBeige)
-        typeLabel1.applyShadow()
         typeLabel1.makeRound(radius: typeLabel1.frame.height / 2)
         typeLabel2.makeRound(radius: typeLabel2.frame.height / 2)
         
@@ -123,7 +122,6 @@ extension AboutViewController: AboutViewModelDelegate {
                     self.typeLabel1.text = model.types[0].type.name
                     let typeColor1 = getColor(for: model.types[0].type.name)
                     self.typeLabel1.backgroundColor = typeColor1
-//                    self.typeLabel2.text = "label"
                     self.typeLabel2.textColor = .clear
                     self.typeLabel2.backgroundColor = .clear
                 case 2:

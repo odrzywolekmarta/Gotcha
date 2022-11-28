@@ -72,7 +72,7 @@ class PokemonDetailsViewController: UIViewController {
         pageViewController.view.leadingAnchor.constraint(equalTo: pageContainerView.leadingAnchor).isActive = true
         pageViewController.view.trailingAnchor.constraint(equalTo: pageContainerView.trailingAnchor).isActive = true
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-    }
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
