@@ -77,16 +77,20 @@ struct Stat: Decodable {
 
 struct EvolutionModel: Decodable {
     let id: Int
-    let chain: [EvolvesTo]
+    let chain: EvolutionChain
 }
 
-struct EvolvesTo: Decodable {
-    let evolvesTo: [EvolvesTo]
-    let species: [Species]
+struct EvolutionChain: Decodable {
+    let evolvesTo: [EvolutionChain]
+    let species: Species
+    
+    enum CodingKeys: String, CodingKey {
+        case evolvesTo = "evolves_to"
+        case species = "species"
+    }
 }
 
 struct Species: Decodable {
     let name: String
     let url: URL
 }
-
