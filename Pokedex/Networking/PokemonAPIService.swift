@@ -78,11 +78,29 @@ class PokemonAPIService {
         dataTask.resume()
     }
     
-    func getEvolution(withId id: Int, completion: @escaping((Result<EvolutionModel, Error>) -> Void)) {
-        guard let url = URL(string: "https://pokeapi.co/api/v2/evolution-chain/\(id)") else {
-            completion(.failure(PokemonAPIServiceError.noUrl))
-            return
+    func getSpecies(withUrl url: URL, completion: @escaping((Result<SpeciesModel, Error>)) -> Void) {
+    
+        let urlSession = URLSession(configuration: .default)
+        let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            } else if let data = data {
+                let decoder = JSONDecoder()
+                do {
+                    let species = try decoder.decode(SpeciesModel.self, from: data)
+                    completion(.success(species))
+                } catch {
+                    completion(.failure(error))
+                }
+            } else {
+                completion(.failure(PokemonAPIServiceError.unknown))
+            }
         }
+        dataTask.resume()
+    }
+    
+    func getEvolution(withUrl url: URL, completion: @escaping((Result<EvolutionModel, Error>) -> Void)) {
         
         let urlSession = URLSession(configuration: .default)
         let dataTask = urlSession.dataTask(with: url) { (data, response, error) in

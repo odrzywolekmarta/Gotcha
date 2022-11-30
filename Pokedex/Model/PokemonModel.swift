@@ -96,3 +96,15 @@ struct Species: Decodable {
     let url: URL
 }
 
+struct SpeciesModel: Decodable {
+    let evolutionChain: Chain
+    
+    enum CodingKeys: String, CodingKey {
+        case evolutionChain = "evolution_chain"
+    }
+}
+
+struct Chain: Decodable {
+    let url: URL
+}
+

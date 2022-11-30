@@ -10,7 +10,7 @@ import Foundation
 protocol EvolutionViewModelProtocol: AnyObject {
     var delegate: EvolutionViewModelDelegate? { get set }
     var evolutionModel: EvolutionModel? { get }
-    func getEvolution(id: Int)
+    func getEvolution(withSpeciesUrl url: URL)
 }
 
 protocol EvolutionViewModelDelegate: AnyObject {
@@ -23,12 +23,20 @@ class EvolutionViewModel: EvolutionViewModelProtocol {
     weak var delegate: EvolutionViewModelDelegate?
     private let service = PokemonAPIService()
     
-    func getEvolution(id: Int) {
-        service.getEvolution(withId: id) { [weak self] result in
-            switch result {
-            case .success(let model):
-                self?.evolutionModel = model
-                self?.delegate?.onEvolutionModelFetchSuccess()
+    func getEvolution(withSpeciesUrl url: URL) {
+        service.getSpecies(withUrl: url) { [weak self] speciesResult in
+            switch speciesResult {
+            case .success(let speciesModel):
+                self?.service.getEvolution(withUrl: speciesModel.evolutionChain.url) { evolutionResult in
+                    switch evolutionResult {
+                    case .success(let evolutionModel):
+                        self?.evolutionModel = evolutionModel
+                        self?.delegate?.onEvolutionModelFetchSuccess()
+                    case .failure(let error):
+                        self?.delegate?.onEvolutionModelFetchFailure(error: error.localizedDescription)
+                    }
+                }
+                
             case .failure(let error):
                 self?.delegate?.onEvolutionModelFetchFailure(error: error.localizedDescription)
             }

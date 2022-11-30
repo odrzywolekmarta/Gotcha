@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D4E203E293629B000273DD7 /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 2D4E203D293629B000273DD7 /* Source */; };
 		2D6140F729183C1700D2F68A /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6140F529183C1700D2F68A /* PokemonTableViewCell.swift */; };
 		2D6140F829183C1700D2F68A /* PokemonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6140F629183C1700D2F68A /* PokemonTableViewCell.xib */; };
 		2D6141002919918300D2F68A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D6140FF2919918300D2F68A /* SDWebImage */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D4E203D293629B000273DD7 /* Source */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Source; sourceTree = SOURCE_ROOT; };
 		2D6140F529183C1700D2F68A /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
 		2D6140F629183C1700D2F68A /* PokemonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonTableViewCell.xib; sourceTree = "<group>"; };
 		2D6141012919A59300D2F68A /* PokemonDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				2DD0B66329096BB5008B9BB5 /* PokemonList */,
 				2D6140FD2918408200D2F68A /* PokemonDetails */,
 				2D6141442922764A00D2F68A /* Fonts */,
+				2D4E203D293629B000273DD7 /* Source */,
 				2DD0B64D290949B8008B9BB5 /* Assets.xcassets */,
 				2DD0B64F290949B8008B9BB5 /* LaunchScreen.storyboard */,
 				2DD0B652290949B8008B9BB5 /* Info.plist */,
@@ -284,6 +287,7 @@
 				2D6140F829183C1700D2F68A /* PokemonTableViewCell.xib in Resources */,
 				2D61411E291C415E00D2F68A /* PokemonDetailsViewController.xib in Resources */,
 				2D6141512922771200D2F68A /* Orbitron-Regular.ttf in Resources */,
+				2D4E203E293629B000273DD7 /* Source in Resources */,
 				2D6141552923C51600D2F68A /* Orbitron-Bold.ttf in Resources */,
 				2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */,
 				2D61413629216C8A00D2F68A /* StatsViewController.xib in Resources */,
