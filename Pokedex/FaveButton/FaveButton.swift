@@ -124,6 +124,7 @@ extension FaveButton{
             #endif
         }
         
+        faveIconImage = UIImage(named: "BarIcon")
         guard let faveIconImage = faveIconImage else{
             fatalError("please provide an image for normal state.")
         }

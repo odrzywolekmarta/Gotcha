@@ -31,6 +31,7 @@ class EvolutionViewModel: EvolutionViewModelProtocol {
                     switch evolutionResult {
                     case .success(let evolutionModel):
                         self?.evolutionModel = evolutionModel
+                        print(evolutionModel)
                         self?.delegate?.onEvolutionModelFetchSuccess()
                     case .failure(let error):
                         self?.delegate?.onEvolutionModelFetchFailure(error: error.localizedDescription)

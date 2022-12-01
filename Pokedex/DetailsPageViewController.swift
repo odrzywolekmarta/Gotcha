@@ -35,11 +35,9 @@ class DetailsPageViewController: UIPageViewController {
     func set(model: PokemonModel) {
         aboutController.viewModel.set(model: model)
         statsController.viewModel.set(model: model)
+        evolutionController.viewModel.getEvolution(withSpeciesUrl: model.species.url)
     }
     
-    func getEvolution(id: Int) {
-        evolutionController.viewModel.getEvolution(id: id)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

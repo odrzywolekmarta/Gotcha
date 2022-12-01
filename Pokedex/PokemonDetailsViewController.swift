@@ -22,7 +22,7 @@ class PokemonDetailsViewController: UIViewController {
     @IBOutlet weak var evolutionButton: UIButton!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var favButton: FaveButton!
     
     let viewModel: PokemonDetailsViewModelProtocol
     let router: AppRouterProtocol
@@ -77,8 +77,19 @@ class PokemonDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
+        favButton.delegate = self
         viewModel.getPokemonDetails()
         configureView()
+        
+        
+        
+        
+        let faveButton = FaveButton(
+            frame: CGRect(x: 200, y: 200, width: 44, height: 44),
+            faveIconNormal: UIImage()
+        )
+        faveButton.delegate = self
+        view.addSubview(faveButton)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -127,7 +138,6 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
         }
         
         pageViewController.set(model: detailsModel)
-        pageViewController.getEvolution(id: detailsModel.id)
         
         DispatchQueue.main.async {
             
@@ -171,3 +181,11 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     }
 }
 
+//MARK: - Fave Button Delegate
+extension PokemonDetailsViewController: FaveButtonDelegate {
+    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
+        
+    }
+    
+    
+}
