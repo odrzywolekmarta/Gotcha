@@ -3,10 +3,15 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Orbitron-Regular.ttf">
+            <string>Orbitron-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EvolutionViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
@@ -15,16 +20,91 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="364"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sYK-5c-6oP">
+                    <rect key="frame" x="30" y="104" width="354" height="200"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2fp-fF-0gm">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="85"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kAJ-NU-CXc">
+                                    <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="kAJ-NU-CXc" secondAttribute="height" multiplier="1:1" id="b2R-dZ-5OI"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 lvl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fg-h0-6Fe">
+                                    <rect key="frame" x="125.5" y="0.0" width="42.5" height="85"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zo0-Xe-Kxy">
+                                    <rect key="frame" x="209" y="2.5" width="19.5" height="80"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QrI-rW-jTa">
+                                    <rect key="frame" x="269" y="0.0" width="85" height="85"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="QrI-rW-jTa" secondAttribute="height" multiplier="1:1" id="RZn-zk-Kwg"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="QrI-rW-jTa" firstAttribute="width" secondItem="QrI-rW-jTa" secondAttribute="height" multiplier="1:1" id="Ni9-uI-gyR"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D4c-b7-y4J">
+                            <rect key="frame" x="0.0" y="115" width="354" height="85"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dEo-cd-Whd">
+                                    <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="dEo-cd-Whd" secondAttribute="height" multiplier="1:1" id="ZTX-lM-b4O"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 lvl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmX-QZ-hZL">
+                                    <rect key="frame" x="125.5" y="0.0" width="42.5" height="85"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWa-AO-m7n">
+                                    <rect key="frame" x="209" y="2.5" width="19.5" height="80"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r43-AO-uJb">
+                                    <rect key="frame" x="269" y="0.0" width="85" height="85"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="r43-AO-uJb" secondAttribute="height" multiplier="1:1" id="M4w-T7-LTl"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="r43-AO-uJb" firstAttribute="width" secondItem="r43-AO-uJb" secondAttribute="height" multiplier="1:1" id="1ya-Ji-ZIi"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="133" y="97"/>
+            <color key="backgroundColor" name="CustomBeige"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sYK-5c-6oP" secondAttribute="bottom" constant="60" id="0oQ-Ks-vJc"/>
+                <constraint firstItem="sYK-5c-6oP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9gN-BC-68X"/>
+                <constraint firstItem="sYK-5c-6oP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="Cdb-oM-fhr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sYK-5c-6oP" secondAttribute="trailing" constant="30" id="bjg-dc-F0d"/>
+                <constraint firstItem="sYK-5c-6oP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="fG7-N7-THh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="-81.696428571428569"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="placeholderPokeImage" width="475" height="475"/>
+        <namedColor name="CustomBeige">
+            <color red="0.97600001096725464" green="0.94900000095367432" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
