@@ -8,7 +8,11 @@
 import UIKit
 
 class EvolutionViewController: UIViewController {
-
+    
+    @IBOutlet weak var basePokemonImage: UIImageView!
+    @IBOutlet weak var firstEvolutionImage: UIImageView!
+    @IBOutlet weak var secondEvolutionImage: UIImageView!
+    
     let viewModel: EvolutionViewModelProtocol = EvolutionViewModel()
     
     override func viewDidLoad() {
@@ -23,6 +27,7 @@ class EvolutionViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 //MARK: - Evolution View Model Delegate
@@ -30,8 +35,13 @@ class EvolutionViewController: UIViewController {
 extension EvolutionViewController: EvolutionViewModelDelegate {
     func onEvolutionModelFetchSuccess() {
         DispatchQueue.main.async {
-            if let model = self.viewModel.evolutionModel {
-                print(model)
+            if let speciesModel = self.viewModel.speciesModel, let evolutionModel = self.viewModel.evolutionModel {
+                
+                let imageBaseUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+                
+                // base pokemon image
+                
+//                self.basePokemonImage.sd_setImage(with: viewModel.getPokemonImageUrl(forSpeciesId: viewModel.getPokemonImageUrl(forSpeciesId: firstPokUrl.get)))
             }
         }
     }

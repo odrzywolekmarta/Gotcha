@@ -10,7 +10,9 @@ import Foundation
 protocol EvolutionViewModelProtocol: AnyObject {
     var delegate: EvolutionViewModelDelegate? { get set }
     var evolutionModel: EvolutionModel? { get }
+    var speciesModel: SpeciesModel? { get }
     func getEvolution(withSpeciesUrl url: URL)
+    func getPokemonImageUrl(forSpeciesId id: Int) -> String
 }
 
 protocol EvolutionViewModelDelegate: AnyObject {
@@ -19,6 +21,8 @@ protocol EvolutionViewModelDelegate: AnyObject {
 }
 
 class EvolutionViewModel: EvolutionViewModelProtocol {
+    
+    var speciesModel: SpeciesModel?
     var evolutionModel: EvolutionModel?
     weak var delegate: EvolutionViewModelDelegate?
     private let service = PokemonAPIService()
@@ -42,6 +46,10 @@ class EvolutionViewModel: EvolutionViewModelProtocol {
                 self?.delegate?.onEvolutionModelFetchFailure(error: error.localizedDescription)
             }
         }
+    }
+    
+    func getPokemonImageUrl(forSpeciesId id: Int) -> String {
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(id).png"
     }
     
 }

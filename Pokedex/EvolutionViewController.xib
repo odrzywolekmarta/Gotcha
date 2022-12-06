@@ -15,6 +15,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EvolutionViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
+                <outlet property="basePokemonImage" destination="kAJ-NU-CXc" id="wLz-7p-pwn"/>
+                <outlet property="firstEvolutionImage" destination="QrI-rW-jTa" id="OhU-q8-w8Z"/>
+                <outlet property="secondEvolutionImage" destination="r43-AO-uJb" id="GV7-Od-iUM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
