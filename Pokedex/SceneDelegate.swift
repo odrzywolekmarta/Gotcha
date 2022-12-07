@@ -21,12 +21,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
+        let tabBarController = UITabBarController()
         let navigationController = UINavigationController()
+        
+        navigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))
+        let mockController = UIViewController()
+        mockController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))
+        tabBarController.viewControllers = [navigationController, mockController]
         
         let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: navigationController))
 
         navigationController.setViewControllers([controller], animated: false)
-        window?.rootViewController = navigationController
+        window?.rootViewController = tabBarController
+//        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         navigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
         navigationController.navigationBar.tintColor = .white

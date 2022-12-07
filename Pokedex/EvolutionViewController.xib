@@ -27,28 +27,31 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sYK-5c-6oP">
                     <rect key="frame" x="30" y="104" width="354" height="200"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2fp-fF-0gm">
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2fp-fF-0gm">
                             <rect key="frame" x="0.0" y="0.0" width="354" height="85"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kAJ-NU-CXc">
-                                    <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="85"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="kAJ-NU-CXc" secondAttribute="height" multiplier="1:1" id="b2R-dZ-5OI"/>
+                                        <constraint firstAttribute="width" constant="85" id="k8b-e7-Y2d"/>
                                     </constraints>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zo0-Xe-Kxy">
-                                    <rect key="frame" x="167.5" y="2.5" width="19.5" height="80"/>
+                                    <rect key="frame" x="121.5" y="35" width="111" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="19.5" id="eV6-GE-FmW"/>
+                                    </constraints>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QrI-rW-jTa">
-                                    <rect key="frame" x="269" y="0.0" width="85" height="85"/>
+                                    <rect key="frame" x="242.5" y="0.0" width="111.5" height="85"/>
                                     <constraints>
+                                        <constraint firstAttribute="width" constant="85" id="AXE-4X-EHx"/>
                                         <constraint firstAttribute="width" secondItem="QrI-rW-jTa" secondAttribute="height" multiplier="1:1" id="RZn-zk-Kwg"/>
+                                        <constraint firstAttribute="height" constant="85" id="dAA-I4-vJG"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="QrI-rW-jTa" firstAttribute="width" secondItem="QrI-rW-jTa" secondAttribute="height" multiplier="1:1" id="Ni9-uI-gyR"/>
-                            </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D4c-b7-y4J">
                             <rect key="frame" x="0.0" y="115" width="354" height="85"/>
@@ -69,9 +72,6 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="r43-AO-uJb" firstAttribute="width" secondItem="r43-AO-uJb" secondAttribute="height" multiplier="1:1" id="1ya-Ji-ZIi"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                 </stackView>
