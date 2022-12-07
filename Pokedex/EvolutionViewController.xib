@@ -25,51 +25,33 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sYK-5c-6oP">
-                    <rect key="frame" x="30" y="104" width="354" height="200"/>
+                    <rect key="frame" x="30" y="74" width="354" height="260"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2fp-fF-0gm">
-                            <rect key="frame" x="0.0" y="0.0" width="354" height="85"/>
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="115"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kAJ-NU-CXc">
-                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="85"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="kAJ-NU-CXc" secondAttribute="height" multiplier="1:1" id="b2R-dZ-5OI"/>
-                                        <constraint firstAttribute="width" constant="85" id="k8b-e7-Y2d"/>
-                                    </constraints>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kAJ-NU-CXc">
+                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="115"/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zo0-Xe-Kxy">
-                                    <rect key="frame" x="121.5" y="35" width="111" height="15"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="19.5" id="eV6-GE-FmW"/>
-                                    </constraints>
+                                    <rect key="frame" x="121.5" y="50" width="111" height="15"/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QrI-rW-jTa">
-                                    <rect key="frame" x="242.5" y="0.0" width="111.5" height="85"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="85" id="AXE-4X-EHx"/>
-                                        <constraint firstAttribute="width" secondItem="QrI-rW-jTa" secondAttribute="height" multiplier="1:1" id="RZn-zk-Kwg"/>
-                                        <constraint firstAttribute="height" constant="85" id="dAA-I4-vJG"/>
-                                    </constraints>
+                                    <rect key="frame" x="242.5" y="0.0" width="111.5" height="115"/>
                                 </imageView>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D4c-b7-y4J">
-                            <rect key="frame" x="0.0" y="115" width="354" height="85"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D4c-b7-y4J">
+                            <rect key="frame" x="0.0" y="145" width="354" height="115"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dEo-cd-Whd">
-                                    <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="dEo-cd-Whd" secondAttribute="height" multiplier="1:1" id="ZTX-lM-b4O"/>
-                                    </constraints>
+                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="115"/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWa-AO-m7n">
-                                    <rect key="frame" x="167.5" y="2.5" width="19.5" height="80"/>
+                                    <rect key="frame" x="121.5" y="50" width="111" height="15"/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r43-AO-uJb">
-                                    <rect key="frame" x="269" y="0.0" width="85" height="85"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="r43-AO-uJb" secondAttribute="height" multiplier="1:1" id="M4w-T7-LTl"/>
-                                    </constraints>
+                                    <rect key="frame" x="242.5" y="0.0" width="111.5" height="115"/>
                                 </imageView>
                             </subviews>
                         </stackView>
@@ -79,11 +61,10 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="CustomBeige"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sYK-5c-6oP" secondAttribute="bottom" constant="60" id="0oQ-Ks-vJc"/>
-                <constraint firstItem="sYK-5c-6oP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9gN-BC-68X"/>
-                <constraint firstItem="sYK-5c-6oP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="Cdb-oM-fhr"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sYK-5c-6oP" secondAttribute="trailing" constant="30" id="bjg-dc-F0d"/>
-                <constraint firstItem="sYK-5c-6oP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="fG7-N7-THh"/>
+                <constraint firstItem="sYK-5c-6oP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="I07-Lc-apO"/>
+                <constraint firstAttribute="bottom" secondItem="sYK-5c-6oP" secondAttribute="bottom" constant="30" id="odn-ZJ-KG8"/>
+                <constraint firstAttribute="trailing" secondItem="sYK-5c-6oP" secondAttribute="trailing" constant="30" id="pXg-JQ-Gip"/>
+                <constraint firstItem="sYK-5c-6oP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="z9K-2W-lL0"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="131.8840579710145" y="-81.696428571428569"/>
