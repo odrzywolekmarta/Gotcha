@@ -35,14 +35,7 @@ class EvolutionViewController: UIViewController {
 extension EvolutionViewController: EvolutionViewModelDelegate {
     func onEvolutionModelFetchSuccess() {
         DispatchQueue.main.async {
-            if let speciesModel = self.viewModel.speciesModel, let evolutionModel = self.viewModel.evolutionModel {
-                
-                let imageBaseUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
-                
-                // base pokemon image
-                
-//                self.basePokemonImage.sd_setImage(with: viewModel.getPokemonImageUrl(forSpeciesId: viewModel.getPokemonImageUrl(forSpeciesId: firstPokUrl.get)))
-            }
+            self.viewModel.simplifiedEvolutionSetModel
         }
     }
 

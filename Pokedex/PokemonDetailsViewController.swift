@@ -80,16 +80,6 @@ class PokemonDetailsViewController: UIViewController {
         favButton.delegate = self
         viewModel.getPokemonDetails()
         configureView()
-        
-        
-        
-        
-        let faveButton = FaveButton(
-            frame: CGRect(x: 200, y: 200, width: 44, height: 44),
-            faveIconNormal: UIImage()
-        )
-        faveButton.delegate = self
-        view.addSubview(faveButton)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -9,8 +9,7 @@ import Foundation
 
 protocol EvolutionViewModelProtocol: AnyObject {
     var delegate: EvolutionViewModelDelegate? { get set }
-    var evolutionModel: EvolutionModel? { get }
-    var speciesModel: SpeciesModel? { get }
+    var simplifiedEvolutionSetModel: SimplifiedEvolutionSetModel? { get }
     func getEvolution(withSpeciesUrl url: URL)
     func getPokemonImageUrl(forSpeciesId id: Int) -> String
 }
@@ -20,10 +19,28 @@ protocol EvolutionViewModelDelegate: AnyObject {
     func onEvolutionModelFetchFailure(error: String)
 }
 
+struct SimplifiedEvolutionSetModel {
+    
+    let evolutionsIdsArray: [String]
+    
+    init(with model: EvolutionModel) {
+        let firstEvolution = model.chain
+        let secondEvolution = firstEvolution.evolvesTo.first
+        let thirdEvolution = secondEvolution?.evolvesTo.first
+        
+        let firstId = firstEvolution.species.url.pathComponents.last
+        let secondId = secondEvolution?.species.url.pathComponents.last
+        let thirdId = thirdEvolution?.species.url.pathComponents.last
+                
+        self.evolutionsIdsArray = [firstId, secondId, thirdId].compactMap { $0 }
+    }
+}
+
 class EvolutionViewModel: EvolutionViewModelProtocol {
     
-    var speciesModel: SpeciesModel?
     var evolutionModel: EvolutionModel?
+    var simplifiedEvolutionSetModel: SimplifiedEvolutionSetModel?
+    
     weak var delegate: EvolutionViewModelDelegate?
     private let service = PokemonAPIService()
     
@@ -34,8 +51,7 @@ class EvolutionViewModel: EvolutionViewModelProtocol {
                 self?.service.getEvolution(withUrl: speciesModel.evolutionChain.url) { evolutionResult in
                     switch evolutionResult {
                     case .success(let evolutionModel):
-                        self?.evolutionModel = evolutionModel
-                        print(evolutionModel)
+                        self?.simplifiedEvolutionSetModel = SimplifiedEvolutionSetModel(with: evolutionModel)
                         self?.delegate?.onEvolutionModelFetchSuccess()
                     case .failure(let error):
                         self?.delegate?.onEvolutionModelFetchFailure(error: error.localizedDescription)
