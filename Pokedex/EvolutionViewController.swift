@@ -25,6 +25,7 @@ class EvolutionViewController: UIViewController {
         secondEvolutionStackView.isHidden = true
         basePokemonImage.applyShadow()
         
+        
 //        firstEvolutionImage.applyShadow()
 //        secondBasePokemonImage.applyShadow()
 //        secondEvolutionImage.applyShadow()
