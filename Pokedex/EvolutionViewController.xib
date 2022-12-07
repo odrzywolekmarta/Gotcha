@@ -7,18 +7,13 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Orbitron-Regular.ttf">
-            <string>Orbitron-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EvolutionViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
                 <outlet property="basePokemonImage" destination="kAJ-NU-CXc" id="wLz-7p-pwn"/>
                 <outlet property="firstEvolutionImage" destination="QrI-rW-jTa" id="OhU-q8-w8Z"/>
-                <outlet property="firstEvolutionStackView" destination="2fp-fF-0gm" id="hjf-WW-Cy4"/>
-                <outlet property="secondBasePokemonImage" destination="dEo-cd-Whd" id="Vs3-pZ-Yrq"/>
+                <outlet property="firstEvolutionStackView" destination="2fp-fF-0gm" id="Rc9-sM-SB6"/>
+                <outlet property="secondBasePokemonImage" destination="dEo-cd-Whd" id="SJJ-Lk-fX7"/>
                 <outlet property="secondEvolutionImage" destination="r43-AO-uJb" id="GV7-Od-iUM"/>
                 <outlet property="secondEvolutionStackView" destination="D4c-b7-y4J" id="uPL-b6-sq4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -41,14 +36,8 @@
                                         <constraint firstAttribute="width" secondItem="kAJ-NU-CXc" secondAttribute="height" multiplier="1:1" id="b2R-dZ-5OI"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 lvl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fg-h0-6Fe">
-                                    <rect key="frame" x="125.5" y="0.0" width="42.5" height="85"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="13"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zo0-Xe-Kxy">
-                                    <rect key="frame" x="209" y="2.5" width="19.5" height="80"/>
+                                    <rect key="frame" x="167.5" y="2.5" width="19.5" height="80"/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QrI-rW-jTa">
                                     <rect key="frame" x="269" y="0.0" width="85" height="85"/>
@@ -70,14 +59,8 @@
                                         <constraint firstAttribute="width" secondItem="dEo-cd-Whd" secondAttribute="height" multiplier="1:1" id="ZTX-lM-b4O"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 lvl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmX-QZ-hZL">
-                                    <rect key="frame" x="125.5" y="0.0" width="42.5" height="85"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="13"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWa-AO-m7n">
-                                    <rect key="frame" x="209" y="2.5" width="19.5" height="80"/>
+                                    <rect key="frame" x="167.5" y="2.5" width="19.5" height="80"/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r43-AO-uJb">
                                     <rect key="frame" x="269" y="0.0" width="85" height="85"/>

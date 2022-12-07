@@ -23,6 +23,10 @@ class EvolutionViewController: UIViewController {
         super.viewDidLoad()
         firstEvolutionStackView.isHidden = true
         secondEvolutionStackView.isHidden = true
+        self.basePokemonImage.applyShadow()
+        self.firstEvolutionImage.applyShadow()
+        self.secondBasePokemonImage.applyShadow()
+        self.secondEvolutionImage.applyShadow()
     }
     
     init() {
@@ -47,7 +51,6 @@ extension EvolutionViewController: EvolutionViewModelDelegate {
                 self.firstEvolutionStackView.isHidden = false
                 let firstUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[0])
                 self.basePokemonImage.sd_setImage(with: firstUrl)
-                
             case 2:
                 self.firstEvolutionStackView.isHidden = false
                 let firstUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[0])
@@ -62,7 +65,6 @@ extension EvolutionViewController: EvolutionViewModelDelegate {
                 let firstUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[0])
                 let secondUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[1])
                 let thirdUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[2])
-                
                 self.basePokemonImage.sd_setImage(with: firstUrl)
                 self.firstEvolutionImage.sd_setImage(with: secondUrl)
                 self.secondBasePokemonImage.sd_setImage(with: secondUrl)
@@ -70,6 +72,7 @@ extension EvolutionViewController: EvolutionViewModelDelegate {
             default:
                 self.secondEvolutionStackView.isHidden = true
                 self.firstEvolutionStackView.isHidden = true
+                
             }
         }
     }
