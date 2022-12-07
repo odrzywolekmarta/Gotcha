@@ -17,7 +17,10 @@
             <connections>
                 <outlet property="basePokemonImage" destination="kAJ-NU-CXc" id="wLz-7p-pwn"/>
                 <outlet property="firstEvolutionImage" destination="QrI-rW-jTa" id="OhU-q8-w8Z"/>
+                <outlet property="firstEvolutionStackView" destination="2fp-fF-0gm" id="hjf-WW-Cy4"/>
+                <outlet property="secondBasePokemonImage" destination="dEo-cd-Whd" id="Vs3-pZ-Yrq"/>
                 <outlet property="secondEvolutionImage" destination="r43-AO-uJb" id="GV7-Od-iUM"/>
+                <outlet property="secondEvolutionStackView" destination="D4c-b7-y4J" id="uPL-b6-sq4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

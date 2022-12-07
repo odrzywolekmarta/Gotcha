@@ -11,7 +11,7 @@ protocol EvolutionViewModelProtocol: AnyObject {
     var delegate: EvolutionViewModelDelegate? { get set }
     var simplifiedEvolutionSetModel: SimplifiedEvolutionSetModel? { get }
     func getEvolution(withSpeciesUrl url: URL)
-    func getPokemonImageUrl(forSpeciesId id: Int) -> String
+    func getPokemonImageUrl(forSpeciesId id: String?) -> URL?
 }
 
 protocol EvolutionViewModelDelegate: AnyObject {
@@ -64,8 +64,11 @@ class EvolutionViewModel: EvolutionViewModelProtocol {
         }
     }
     
-    func getPokemonImageUrl(forSpeciesId id: Int) -> String {
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(id).png"
+    func getPokemonImageUrl(forSpeciesId id: String?) -> URL? {
+        guard let id = id else {
+            return nil
+        }
+        return URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(id).png")
     }
     
 }
