@@ -25,9 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         
         navigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))
-        let mockController = UIViewController()
-        mockController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))
-        tabBarController.viewControllers = [navigationController, mockController]
+        let favouritesViewController = FavouritesViewController()
+        favouritesViewController.tabBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))
+        tabBarController.viewControllers = [navigationController, favouritesViewController]
         
         let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: navigationController))
 
