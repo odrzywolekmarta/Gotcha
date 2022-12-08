@@ -8,12 +8,18 @@
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Orbitron-Regular.ttf">
+            <string>Orbitron-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EvolutionViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
                 <outlet property="basePokemonImage" destination="kAJ-NU-CXc" id="wLz-7p-pwn"/>
                 <outlet property="firstEvolutionImage" destination="QrI-rW-jTa" id="OhU-q8-w8Z"/>
                 <outlet property="firstEvolutionStackView" destination="2fp-fF-0gm" id="Rc9-sM-SB6"/>
+                <outlet property="noEvolutionLabel" destination="fj6-Bb-dwC" id="YQC-XR-fvB"/>
                 <outlet property="secondBasePokemonImage" destination="dEo-cd-Whd" id="SJJ-Lk-fX7"/>
                 <outlet property="secondEvolutionImage" destination="r43-AO-uJb" id="GV7-Od-iUM"/>
                 <outlet property="secondEvolutionStackView" destination="D4c-b7-y4J" id="uPL-b6-sq4"/>
@@ -25,6 +31,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="364"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is no evolution chain for this  Pokémon " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fj6-Bb-dwC">
+                    <rect key="frame" x="92" y="144.5" width="230" height="75.5"/>
+                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="20"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sYK-5c-6oP">
                     <rect key="frame" x="30" y="74" width="354" height="260"/>
                     <subviews>
@@ -63,8 +75,10 @@
             <color key="backgroundColor" name="CustomBeige"/>
             <constraints>
                 <constraint firstItem="sYK-5c-6oP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="I07-Lc-apO"/>
+                <constraint firstItem="fj6-Bb-dwC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="WLO-ID-XnV"/>
                 <constraint firstAttribute="bottom" secondItem="sYK-5c-6oP" secondAttribute="bottom" constant="30" id="odn-ZJ-KG8"/>
                 <constraint firstAttribute="trailing" secondItem="sYK-5c-6oP" secondAttribute="trailing" constant="30" id="pXg-JQ-Gip"/>
+                <constraint firstItem="fj6-Bb-dwC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vcc-6d-SMY"/>
                 <constraint firstItem="sYK-5c-6oP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="z9K-2W-lL0"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

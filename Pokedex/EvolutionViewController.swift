@@ -11,11 +11,11 @@ class EvolutionViewController: UIViewController {
     
     @IBOutlet weak var basePokemonImage: UIImageView!
     @IBOutlet weak var firstEvolutionImage: UIImageView!
-    
     @IBOutlet weak var secondBasePokemonImage: UIImageView!
     @IBOutlet weak var secondEvolutionImage: UIImageView!
     @IBOutlet weak var firstEvolutionStackView: UIStackView!
     @IBOutlet weak var secondEvolutionStackView: UIStackView!
+    @IBOutlet weak var noEvolutionLabel: UILabel!
     
     let viewModel: EvolutionViewModelProtocol = EvolutionViewModel()
     
@@ -23,8 +23,8 @@ class EvolutionViewController: UIViewController {
         super.viewDidLoad()
         firstEvolutionStackView.isHidden = true
         secondEvolutionStackView.isHidden = true
-        basePokemonImage.applyShadow()
-        
+        noEvolutionLabel.isHidden = true
+        noEvolutionLabel.applyShadow()
         
 //        firstEvolutionImage.applyShadow()
 //        secondBasePokemonImage.applyShadow()
@@ -50,9 +50,7 @@ extension EvolutionViewController: EvolutionViewModelDelegate {
             let chainCount = self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray.count
             switch chainCount {
             case 1:
-                self.firstEvolutionStackView.isHidden = false
-                let firstUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[0])
-                self.basePokemonImage.sd_setImage(with: firstUrl)
+                self.noEvolutionLabel.isHidden = false
             case 2:
                 self.firstEvolutionStackView.isHidden = false
                 let firstUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[0])
@@ -74,7 +72,6 @@ extension EvolutionViewController: EvolutionViewModelDelegate {
             default:
                 self.secondEvolutionStackView.isHidden = true
                 self.firstEvolutionStackView.isHidden = true
-                
             }
         }
     }
