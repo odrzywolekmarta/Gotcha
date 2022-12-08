@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -39,14 +40,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="385"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eMb-aH-JLx">
-                    <rect key="frame" x="20" y="20" width="374" height="345"/>
+                <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eMb-aH-JLx">
+                    <rect key="frame" x="20" y="0.0" width="374" height="365"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f95-Uj-2r7">
-                            <rect key="frame" x="74" y="0.0" width="300" height="23.5"/>
+                            <rect key="frame" x="74" y="0.0" width="300" height="45.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hp" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83A-ZQ-CJa">
-                                    <rect key="frame" x="0.0" y="2" width="20" height="20"/>
+                                    <rect key="frame" x="0.0" y="12.5" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="mrk-fT-sNy"/>
                                     </constraints>
@@ -55,7 +56,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="4wv-89-dAN">
-                                    <rect key="frame" x="40" y="9.5" width="200" height="5"/>
+                                    <rect key="frame" x="40" y="20" width="200" height="5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="200" id="O3X-3N-P9T"/>
                                         <constraint firstAttribute="height" constant="5" id="yhC-5Q-UMU"/>
@@ -63,7 +64,7 @@
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-0j-Jdk">
-                                    <rect key="frame" x="260" y="3.5" width="40" height="16.5"/>
+                                    <rect key="frame" x="260" y="14.5" width="40" height="16.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="gmZ-Mt-Dlz"/>
                                     </constraints>
@@ -74,20 +75,20 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Diz-fP-qM6">
-                            <rect key="frame" x="41" y="43.5" width="333" height="22.5"/>
+                            <rect key="frame" x="41" y="53.5" width="333" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="attack" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH7-rM-tyM">
-                                    <rect key="frame" x="0.0" y="2" width="53" height="19"/>
+                                    <rect key="frame" x="0.0" y="13" width="53" height="19"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zLv-4x-H4g">
-                                    <rect key="frame" x="73" y="9" width="200" height="5"/>
+                                    <rect key="frame" x="73" y="20" width="200" height="5"/>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLS-1O-hKg">
-                                    <rect key="frame" x="293" y="3" width="40" height="16.5"/>
+                                    <rect key="frame" x="293" y="14" width="40" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -95,20 +96,20 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zjQ-mu-seM">
-                            <rect key="frame" x="26.5" y="86" width="347.5" height="22.5"/>
+                            <rect key="frame" x="26.5" y="106.5" width="347.5" height="45.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="defense" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgX-tt-5oc">
-                                    <rect key="frame" x="0.0" y="2" width="67.5" height="19"/>
+                                    <rect key="frame" x="0.0" y="13" width="67.5" height="19"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jhz-nb-Thn">
-                                    <rect key="frame" x="87.5" y="9" width="200" height="5"/>
+                                    <rect key="frame" x="87.5" y="20" width="200" height="5"/>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teC-sF-KRq">
-                                    <rect key="frame" x="307.5" y="3" width="40" height="16.5"/>
+                                    <rect key="frame" x="307.5" y="14.5" width="40" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -116,7 +117,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Pr-Xc-TuS">
-                            <rect key="frame" x="31.5" y="128.5" width="342.5" height="45"/>
+                            <rect key="frame" x="31.5" y="160" width="342.5" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-eW-cwZ">
                                     <rect key="frame" x="0.0" y="3.5" width="62.5" height="38"/>
@@ -131,7 +132,7 @@ attack</string>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="36" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mio-al-SNp">
-                                    <rect key="frame" x="302.5" y="14" width="40" height="16.5"/>
+                                    <rect key="frame" x="302.5" y="14.5" width="40" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -139,10 +140,10 @@ attack</string>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kNm-Tn-gpa">
-                            <rect key="frame" x="26.5" y="193.5" width="347.5" height="45"/>
+                            <rect key="frame" x="26.5" y="213" width="347.5" height="45.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYF-gV-It3">
-                                    <rect key="frame" x="0.0" y="3.5" width="67.5" height="38"/>
+                                    <rect key="frame" x="0.0" y="4" width="67.5" height="38"/>
                                     <string key="text">special 
 defense</string>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
@@ -150,11 +151,11 @@ defense</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Yei-Yp-GzF">
-                                    <rect key="frame" x="87.5" y="20" width="200" height="5"/>
+                                    <rect key="frame" x="87.5" y="20.5" width="200" height="5"/>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzh-fY-BIr">
-                                    <rect key="frame" x="307.5" y="14" width="40" height="16.5"/>
+                                    <rect key="frame" x="307.5" y="14.5" width="40" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -162,20 +163,20 @@ defense</string>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="n6Q-dd-UXI">
-                            <rect key="frame" x="43" y="258.5" width="331" height="22.5"/>
+                            <rect key="frame" x="43" y="266.5" width="331" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="speed" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQq-zc-DGe">
-                                    <rect key="frame" x="0.0" y="1.5" width="51" height="19"/>
+                                    <rect key="frame" x="0.0" y="13" width="51" height="19"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8SV-bV-hxF">
-                                    <rect key="frame" x="71" y="8.5" width="200" height="5"/>
+                                    <rect key="frame" x="71" y="20" width="200" height="5"/>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-wm-J73">
-                                    <rect key="frame" x="291" y="3" width="40" height="16.5"/>
+                                    <rect key="frame" x="291" y="14.5" width="40" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -183,16 +184,16 @@ defense</string>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jVd-uV-Q8t">
-                            <rect key="frame" x="284" y="301" width="90" height="44"/>
+                            <rect key="frame" x="284" y="319.5" width="90" height="45.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daF-RY-3Rc">
-                                    <rect key="frame" x="0.0" y="12.5" width="37.5" height="19"/>
+                                    <rect key="frame" x="0.0" y="13.5" width="37.5" height="19"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY7-iK-Vmc">
-                                    <rect key="frame" x="56.5" y="13.5" width="33.5" height="16.5"/>
+                                    <rect key="frame" x="56.5" y="14.5" width="33.5" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -224,7 +225,7 @@ defense</string>
             <constraints>
                 <constraint firstItem="eMb-aH-JLx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4oN-0a-Fge"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eMb-aH-JLx" secondAttribute="bottom" constant="20" id="R8h-j4-beU"/>
-                <constraint firstItem="eMb-aH-JLx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="a7a-Jc-cZi"/>
+                <constraint firstItem="eMb-aH-JLx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="a7a-Jc-cZi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eMb-aH-JLx" secondAttribute="trailing" constant="20" id="h00-h2-ASU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

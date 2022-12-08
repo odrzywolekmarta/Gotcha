@@ -22,7 +22,6 @@ class PokemonDetailsViewController: UIViewController {
     @IBOutlet weak var evolutionButton: UIButton!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var favButton: FaveButton!
     
     let viewModel: PokemonDetailsViewModelProtocol
     let router: AppRouterProtocol
@@ -77,7 +76,7 @@ class PokemonDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        favButton.delegate = self
+//        favButton.delegate = self
         viewModel.getPokemonDetails()
         configureView()
     }
@@ -85,6 +84,11 @@ class PokemonDetailsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.update(backroundColor: parentNavigationBarColor, titleColor: parentNavigationBarColor)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.update(backroundColor: baseColor, titleColor: .black)
     }
     
     @IBAction func aboutButtonPressed(_ sender: UIButton) {
@@ -171,11 +175,11 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     }
 }
 
-//MARK: - Fave Button Delegate
-extension PokemonDetailsViewController: FaveButtonDelegate {
-    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
-        
-    }
-    
-    
-}
+////MARK: - Fave Button Delegate
+//extension PokemonDetailsViewController: FaveButtonDelegate {
+//    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
+//
+//    }
+//
+//
+//}

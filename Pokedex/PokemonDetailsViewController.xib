@@ -19,7 +19,6 @@
                 <outlet property="aboutButton" destination="WQm-8j-NvH" id="U1c-mJ-1L7"/>
                 <outlet property="bottomView" destination="RlO-h7-e1Y" id="g9I-7G-0kB"/>
                 <outlet property="evolutionButton" destination="f80-bG-7dP" id="whA-n2-uWh"/>
-                <outlet property="favButton" destination="zjg-k1-zeC" id="mb6-S4-BAD"/>
                 <outlet property="imageBackgroundView" destination="D4N-XS-DG1" id="gHf-gn-OiA"/>
                 <outlet property="imageViewHeightConstraint" destination="QK6-GL-aVC" id="m5Y-vc-loE"/>
                 <outlet property="nameLabel" destination="hYm-Qk-N9Q" id="Vze-Do-Hsq"/>
@@ -53,12 +52,6 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjg-k1-zeC" customClass="FaveButton" customModule="Gotcha" customModuleProvider="target">
-                            <rect key="frame" x="339" y="20" width="67" height="43"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system" title=""/>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGrayColor"/>
                     <constraints>
@@ -176,7 +169,6 @@
         </view>
     </objects>
     <resources>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <namedColor name="CustomBeige">
             <color red="0.97600001096725464" green="0.94900000095367432" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
