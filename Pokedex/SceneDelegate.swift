@@ -21,10 +21,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         let navigationController = UINavigationController()
         
-        navigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))
+        navigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "tortoise"), selectedImage: UIImage(systemName: "tortoise.fill"))
         let favouritesViewController = FavouritesViewController()
         favouritesViewController.tabBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))
-        tabBarController.viewControllers = [navigationController, favouritesViewController]
+        let searchViewController = SearchViewController()
+        searchViewController.tabBarItem = UITabBarItem(title: "SEARCH", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
+        tabBarController.viewControllers = [navigationController, searchViewController, favouritesViewController]
         
         let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: navigationController))
 
