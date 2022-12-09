@@ -34,11 +34,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="381"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBe-ww-HMC">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="381"/>
+                <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GBe-ww-HMC">
+                    <rect key="frame" x="0.0" y="15" width="414" height="366"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="w54-QQ-0JV">
-                            <rect key="frame" x="30" y="309" width="354" height="21.5"/>
+                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="w54-QQ-0JV">
+                            <rect key="frame" x="30" y="291.5" width="354" height="21.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Types" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S2-PV-x6T">
                                     <rect key="frame" x="0.0" y="0.0" width="95.5" height="21.5"/>
@@ -62,8 +62,8 @@
                                 </label>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-dG-4bC">
-                            <rect key="frame" x="144.5" y="144" width="53" height="134.5"/>
+                        <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-dG-4bC">
+                            <rect key="frame" x="144.5" y="136.5" width="53" height="124.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIp-rF-d3M">
                                     <rect key="frame" x="0.0" y="0.0" width="53" height="21.5"/>
@@ -72,13 +72,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhB-l8-1tm">
-                                    <rect key="frame" x="0.0" y="56.5" width="53" height="21.5"/>
+                                    <rect key="frame" x="0.0" y="51.5" width="53" height="21.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtl-vf-u88">
-                                    <rect key="frame" x="0.0" y="113" width="53" height="21.5"/>
+                                    <rect key="frame" x="0.0" y="103" width="53" height="21.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -86,16 +86,16 @@
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-Bf-dP1">
-                            <rect key="frame" x="30" y="144" width="74.5" height="21.5"/>
+                            <rect key="frame" x="30" y="136.5" width="74.5" height="21.5"/>
                             <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VKG-Oh-bTw">
-                            <rect key="frame" x="30" y="36" width="168" height="78"/>
+                        <stackView opaque="NO" contentMode="scaleAspectFit" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VKG-Oh-bTw">
+                            <rect key="frame" x="30" y="33.5" width="168" height="73"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="zDq-Kt-eNo">
-                                    <rect key="frame" x="0.0" y="0.0" width="65" height="78"/>
+                                <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zDq-Kt-eNo">
+                                    <rect key="frame" x="0.0" y="0.0" width="65" height="73"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNR-Rl-iHB">
                                             <rect key="frame" x="0.0" y="0.0" width="65" height="21.5"/>
@@ -104,15 +104,15 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7f3-Rd-hbN">
-                                            <rect key="frame" x="0.0" y="56.5" width="65" height="21.5"/>
+                                            <rect key="frame" x="0.0" y="51.5" width="65" height="21.5"/>
                                             <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="ugs-dM-c8I">
-                                    <rect key="frame" x="115" y="0.0" width="53" height="78"/>
+                                <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ugs-dM-c8I">
+                                    <rect key="frame" x="115" y="0.0" width="53" height="73"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnt-ne-KTC">
                                             <rect key="frame" x="0.0" y="0.0" width="53" height="21.5"/>
@@ -121,7 +121,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rth-Fv-ICF">
-                                            <rect key="frame" x="0.0" y="56.5" width="53" height="21.5"/>
+                                            <rect key="frame" x="0.0" y="51.5" width="53" height="21.5"/>
                                             <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -137,7 +137,6 @@
                         <constraint firstItem="w54-QQ-0JV" firstAttribute="leading" secondItem="GBe-ww-HMC" secondAttribute="leading" constant="30" id="7xo-uc-2dq"/>
                         <constraint firstItem="WSO-Bf-dP1" firstAttribute="centerY" secondItem="GBe-ww-HMC" secondAttribute="centerY" constant="-35.75" id="F3w-6s-5uf"/>
                         <constraint firstItem="WSO-Bf-dP1" firstAttribute="leading" secondItem="GBe-ww-HMC" secondAttribute="leading" constant="30" id="Nln-6G-iPH"/>
-                        <constraint firstAttribute="width" secondItem="GBe-ww-HMC" secondAttribute="height" multiplier="207:124" constant="-222.02419354838707" id="bSn-Z5-tq2"/>
                         <constraint firstItem="2WO-dG-4bC" firstAttribute="leading" secondItem="WSO-Bf-dP1" secondAttribute="trailing" constant="40" id="hI5-bx-k4d"/>
                         <constraint firstItem="VKG-Oh-bTw" firstAttribute="leading" secondItem="GBe-ww-HMC" secondAttribute="leading" constant="30" id="nok-3I-HQE"/>
                         <constraint firstItem="2WO-dG-4bC" firstAttribute="top" secondItem="VKG-Oh-bTw" secondAttribute="bottom" constant="30" id="pg7-MB-bMB"/>
@@ -151,6 +150,7 @@
             <constraints>
                 <constraint firstItem="GBe-ww-HMC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ki2-c6-9PW"/>
                 <constraint firstItem="GBe-ww-HMC" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="TRq-90-fmp"/>
+                <constraint firstItem="GBe-ww-HMC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="qVe-VG-RaV"/>
                 <constraint firstItem="GBe-ww-HMC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yCh-Xo-N6W"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

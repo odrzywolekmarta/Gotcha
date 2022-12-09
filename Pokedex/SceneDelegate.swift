@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         let navigationController = UINavigationController()
         
-        navigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "tortoise"), selectedImage: UIImage(systemName: "tortoise.fill"))
+        navigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "list.bullet"), selectedImage: UIImage(systemName: "list.bullet"))
         let favouritesViewController = FavouritesViewController()
         favouritesViewController.tabBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))
         let searchViewController = SearchViewController()
