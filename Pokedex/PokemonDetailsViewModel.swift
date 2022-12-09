@@ -43,4 +43,5 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
             }
         }
     }
+    
 }
