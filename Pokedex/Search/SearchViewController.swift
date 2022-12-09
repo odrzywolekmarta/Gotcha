@@ -9,10 +9,13 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var pokemonImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        pokemonImage.sd_setImage(with: URL(string: "https://78.media.tumblr.com/c15b061360fa577cfa6fa1868bc45962/tumblr_o2d65b8VYl1so9b4uo1_500.gif"))
+        pokemonImage.applyShadow()
     }
 
 
