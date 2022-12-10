@@ -175,7 +175,7 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     }
 }
 
-////MARK: - Fave Button Delegate
+//MARK: - Fave Button Delegate
 //extension PokemonDetailsViewController: FaveButtonDelegate {
 //    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
 //

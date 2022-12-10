@@ -10,6 +10,7 @@ import UIKit
 
 protocol AppRouterProtocol {
     func navigateToDetails(urlString: String, imageUrl: String)
+    func navigateToDetails(withModel model: PokemonModel)
 }
 
 class AppRouter: AppRouterProtocol {
@@ -22,6 +23,11 @@ class AppRouter: AppRouterProtocol {
     
     func navigateToDetails(urlString: String, imageUrl: String) {
         let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(urlString: urlString, imageUrl: imageUrl), router: self)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    func navigateToDetails(withModel model: PokemonModel) {
+        let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(detailsModel: model), router: self)
         navigationController.pushViewController(controller, animated: true)
     }
     

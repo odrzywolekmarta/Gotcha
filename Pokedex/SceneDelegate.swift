@@ -19,22 +19,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         let tabBarController = UITabBarController()
-        let navigationController = UINavigationController()
+        let allNavigationController = UINavigationController()
+        let searchNavigationController = UINavigationController()
         
-        navigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "list.bullet"), selectedImage: UIImage(systemName: "list.bullet"))
+        allNavigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "list.bullet"), selectedImage: UIImage(systemName: "list.bullet"))
+        
         let favouritesViewController = FavouritesViewController()
         favouritesViewController.tabBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))
-        let searchViewController = SearchViewController(router: AppRouter(navigationController: navigationController))
-        searchViewController.tabBarItem = UITabBarItem(title: "SEARCH", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
-        tabBarController.viewControllers = [navigationController, searchViewController, favouritesViewController]
         
-        let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: navigationController))
+        let searchViewController = SearchViewController(router: AppRouter(navigationController: searchNavigationController))
+        searchViewController.tabBarItem = UITabBarItem(title: "SEARCH", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
+        
+        tabBarController.viewControllers = [allNavigationController, searchViewController, favouritesViewController]
+        
+        let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: allNavigationController))
 
-        navigationController.setViewControllers([controller], animated: false)
+        allNavigationController.setViewControllers([controller], animated: false)
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
-        navigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)        
-        navigationController.navigationBar.tintColor = .white
+        allNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)        
+        allNavigationController.navigationBar.tintColor = .white
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -8,12 +8,14 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var randomLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     
+    var basePokemonUrl = "https://pokeapi.co/api/v2/pokemon/"
+    let viewModel: SearchViewModelProtocol = SearchViewModel()
     let router: AppRouterProtocol
     
     init(router: AppRouterProtocol) {
@@ -36,7 +38,6 @@ class SearchViewController: UIViewController {
     
     @IBAction func searchPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
-        print(searchTextField.text!)
     }
     
 }
@@ -47,7 +48,6 @@ extension SearchViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
-        print(searchTextField.text!)
         return true
     }
     
@@ -60,7 +60,28 @@ extension SearchViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        searchTextField.text = ""
+        if let pokemonData = searchTextField.text {
+            let pokemonUrl = basePokemonUrl + pokemonData
+            viewModel.getPokemonDetails(withUrlString: pokemonUrl)
+            searchTextField.text = ""
+        } else {
+            searchTextField.text = ""
+        }
+    }
+    
+}
+
+//MARK: - Search View Model Delegate
+
+extension SearchViewController: SearchViewModelDelegate {
+    func onDetailsModelFetchSuccess() {
+        if let model = viewModel.detailsModel {
+            router.navigateToDetails(withModel: model)
+        }
+    }
+    
+    func onDetailsModelFetchFailure(error: Error) {
+        
     }
     
 }

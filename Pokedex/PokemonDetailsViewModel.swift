@@ -10,7 +10,7 @@ import Foundation
 protocol PokemonDetailsViewModelProtocol: AnyObject {
     var delegate: PokemonDetailsViewModelDelegate? { get set }
     var detailsModel: PokemonModel? { get }
-    var imageUrl: String { get }
+    var imageUrl: String? { get }
     func getPokemonDetails()
 }
 
@@ -24,16 +24,21 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
     weak var delegate: PokemonDetailsViewModelDelegate?
     var detailsModel: PokemonModel?
     private let service = PokemonAPIService()
-    private let urlString: String
-    let imageUrl: String
+    private var urlString: String?
+    var imageUrl: String?
     
     init(urlString: String, imageUrl: String) {
         self.urlString = urlString
         self.imageUrl = imageUrl
     }
     
+    init(detailsModel: PokemonModel) {
+        self.detailsModel = detailsModel
+    }
+    
     func getPokemonDetails() {
-        service.getPokemonDetails(withUrlString: urlString) { [weak self] result in
+        if let url = urlString {
+        service.getPokemonDetails(withUrlString: url) { [weak self] result in
             switch result {
             case .success(let model):
                 self?.detailsModel = model
@@ -42,6 +47,7 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
                 self?.delegate?.onDetailsModelFetchFailure(error: error.localizedDescription)
             }
         }
+    }
     }
     
 }
