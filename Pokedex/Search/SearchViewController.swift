@@ -30,6 +30,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.delegate = self
         searchTextField.delegate = self
         
         pokemonImage.sd_setImage(with: URL(string: "https://78.media.tumblr.com/c15b061360fa577cfa6fa1868bc45962/tumblr_o2d65b8VYl1so9b4uo1_500.gif"))
@@ -75,8 +76,10 @@ extension SearchViewController: UITextFieldDelegate {
 
 extension SearchViewController: SearchViewModelDelegate {
     func onDetailsModelFetchSuccess() {
-        if let model = viewModel.detailsModel {
-            router.navigateToDetails(withModel: model)
+        DispatchQueue.main.async {
+            if let model = self.viewModel.detailsModel {
+                self.router.navigateToDetails(withModel: model)
+            }
         }
     }
     
