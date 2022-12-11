@@ -44,7 +44,9 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func randomPressed(_ sender: UIButton) {
-        
+        let randomIdString = String(Int.random(in: 1...905))
+        let randomPokemonUrl = basePokemonUrl + randomIdString
+        viewModel.getPokemonDetails(withUrlString: randomPokemonUrl)
     }
     
     
