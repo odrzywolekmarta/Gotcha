@@ -87,13 +87,20 @@ extension UINavigationBar {
             if let backroundColor = backroundColor {
                 appearance.backgroundColor = backroundColor
             }
+            
             if let titleColor = titleColor {
                 appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: titleColor]
             }
+            
             if let backButtonFont = UIFont(name: Constants.customFontBold, size: 17) {
                 appearance.backButtonAppearance.normal.titleTextAttributes =
                 [NSAttributedString.Key.font: backButtonFont,
                  NSAttributedString.Key.foregroundColor: UIColor.white]
+            }
+            
+            if let titleFont = UIFont(name: Constants.customFontBold, size: 20) {
+                appearance.titleTextAttributes = [NSAttributedString.Key.font: titleFont,
+                                                  NSAttributedString.Key.foregroundColor: UIColor.white]
             }
 
             appearance.shadowColor = .clear

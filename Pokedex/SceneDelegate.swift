@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         let allNavigationController = UINavigationController()
         let searchNavigationController = UINavigationController()
-        
+
         allNavigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "list.bullet"), selectedImage: UIImage(systemName: "list.bullet"))
         
         let favouritesViewController = FavouritesViewController()
@@ -29,7 +29,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let searchViewController = SearchViewController(router: AppRouter(navigationController: searchNavigationController))
         searchNavigationController.viewControllers = [searchViewController]
-        
         searchViewController.tabBarItem = UITabBarItem(title: "SEARCH", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
         
         tabBarController.viewControllers = [allNavigationController, searchNavigationController, favouritesViewController]
@@ -38,9 +37,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         allNavigationController.setViewControllers([controller], animated: false)
         window?.rootViewController = tabBarController
+        
         window?.makeKeyAndVisible()
-        allNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)        
-        allNavigationController.navigationBar.tintColor = .white
+        allNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
+        searchNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customBeige), titleColor: .black)
+        allNavigationController.navigationBar.topItem?.title = "GOTCHA"
+//        allNavigationController.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
