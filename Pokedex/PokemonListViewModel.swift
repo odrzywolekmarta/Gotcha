@@ -11,7 +11,7 @@ protocol PokemonListViewModelProtocol: AnyObject {
     var delegate: PokemonListViewModelDelegate? { get set }
     var dataSource: [Results] { get }
     func getNextPage()
-    func getPokemonImageUrl(forRow row: Int) -> String 
+    func getPokemonImageUrl(forRow row: Int) -> String
 }
 
 protocol PokemonListViewModelDelegate: AnyObject {
@@ -41,7 +41,14 @@ class PokemonListViewModel: PokemonListViewModelProtocol {
     }
     
     func getPokemonImageUrl(forRow row: Int) -> String {
-        "\(baseImageUrlString)\(row + 1).png"
+        let imageUrl: String
+        
+        if row <= 904 {
+            imageUrl = "\(baseImageUrlString)\(row + 1).png"
+        } else {
+            imageUrl = "\(baseImageUrlString)\(row + 9096).png"
+        }
+        return imageUrl
     }
     
 }

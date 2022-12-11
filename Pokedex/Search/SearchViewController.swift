@@ -11,8 +11,8 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var pokemonImage: UIImageView!
-    @IBOutlet weak var randomLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var randomButton: UIButton!
     
     var basePokemonUrl = "https://pokeapi.co/api/v2/pokemon/"
     let viewModel: SearchViewModelProtocol = SearchViewModel()
@@ -35,10 +35,16 @@ class SearchViewController: UIViewController {
         
         pokemonImage.sd_setImage(with: URL(string: "https://78.media.tumblr.com/c15b061360fa577cfa6fa1868bc45962/tumblr_o2d65b8VYl1so9b4uo1_500.gif"))
         pokemonImage.applyShadow()
+        randomButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 15)
+        searchTextField.applyShadow()
     }
     
     @IBAction func searchPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
+    }
+    
+    @IBAction func randomPressed(_ sender: UIButton) {
+        
     }
     
     
