@@ -71,7 +71,7 @@ class PokemonDetailsViewController: UIViewController {
         pageViewController.view.leadingAnchor.constraint(equalTo: pageContainerView.leadingAnchor).isActive = true
         pageViewController.view.trailingAnchor.constraint(equalTo: pageContainerView.trailingAnchor).isActive = true
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        
+
         if viewModel.detailsModel != nil {
             onDetailsModelFetchSuccess()
         }
@@ -160,10 +160,6 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
                     self.numberLabel.text = "#00\(idString)"
                 case 2:
                     self.numberLabel.text = "#0\(idString)"
-                case 3:
-                    self.numberLabel.text = "#\(idString)"
-                case 4:
-                    self.numberLabel.text = "#\(idString)"
                 default:
                     self.numberLabel.text = "#\(idString)"
                     
@@ -172,10 +168,10 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
         }
     }
     
-    func onDetailsModelFetchFailure(error: String) {
+    func onDetailsModelFetchFailure(error: Error) {
         DispatchQueue.main.async {
+            self.presentAlert(with: error)
         }
-        print(error)
     }
 }
 

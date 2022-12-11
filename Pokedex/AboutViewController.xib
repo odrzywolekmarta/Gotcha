@@ -37,24 +37,24 @@
                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GBe-ww-HMC">
                     <rect key="frame" x="0.0" y="15" width="414" height="366"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="w54-QQ-0JV">
+                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="w54-QQ-0JV">
                             <rect key="frame" x="30" y="291.5" width="354" height="21.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Types" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S2-PV-x6T">
-                                    <rect key="frame" x="0.0" y="0.0" width="95.5" height="21.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="97" height="21.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17M-Uo-c3B">
-                                    <rect key="frame" x="122.5" y="0.0" width="85.5" height="21.5"/>
+                                    <rect key="frame" x="122" y="0.0" width="87.5" height="21.5"/>
                                     <color key="backgroundColor" red="0.72332504200000003" green="0.384760983" blue="0.94586343930000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fro-pK-Lr6">
-                                    <rect key="frame" x="235" y="0.0" width="119" height="21.5"/>
+                                    <rect key="frame" x="234.5" y="0.0" width="119.5" height="21.5"/>
                                     <color key="backgroundColor" red="0.54630173260000003" green="0.74350238459999995" blue="0.67811427059999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,22 +63,22 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-dG-4bC">
-                            <rect key="frame" x="144.5" y="136.5" width="53" height="124.5"/>
+                            <rect key="frame" x="144.5" y="136.5" width="87.5" height="124.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIp-rF-d3M">
-                                    <rect key="frame" x="0.0" y="0.0" width="53" height="21.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIp-rF-d3M">
+                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="21.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhB-l8-1tm">
-                                    <rect key="frame" x="0.0" y="51.5" width="53" height="21.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhB-l8-1tm">
+                                    <rect key="frame" x="0.0" y="51.5" width="87.5" height="21.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtl-vf-u88">
-                                    <rect key="frame" x="0.0" y="103" width="53" height="21.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtl-vf-u88">
+                                    <rect key="frame" x="0.0" y="103" width="87.5" height="21.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -92,7 +92,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleAspectFit" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VKG-Oh-bTw">
-                            <rect key="frame" x="30" y="33.5" width="168" height="73"/>
+                            <rect key="frame" x="30" y="33.5" width="202.5" height="73"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zDq-Kt-eNo">
                                     <rect key="frame" x="0.0" y="0.0" width="65" height="73"/>
@@ -112,16 +112,16 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ugs-dM-c8I">
-                                    <rect key="frame" x="115" y="0.0" width="53" height="73"/>
+                                    <rect key="frame" x="115" y="0.0" width="87.5" height="73"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnt-ne-KTC">
-                                            <rect key="frame" x="0.0" y="0.0" width="53" height="21.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnt-ne-KTC">
+                                            <rect key="frame" x="0.0" y="0.0" width="87.5" height="21.5"/>
                                             <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rth-Fv-ICF">
-                                            <rect key="frame" x="0.0" y="51.5" width="53" height="21.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rth-Fv-ICF">
+                                            <rect key="frame" x="0.0" y="51.5" width="87.5" height="21.5"/>
                                             <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

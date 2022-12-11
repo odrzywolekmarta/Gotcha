@@ -42,7 +42,6 @@ class PokemonListViewModel: PokemonListViewModelProtocol {
     
     func getPokemonImageUrl(forRow row: Int) -> String {
         let imageUrl: String
-        
         if row <= 904 {
             imageUrl = "\(baseImageUrlString)\(row + 1).png"
         } else {

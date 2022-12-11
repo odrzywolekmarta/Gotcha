@@ -16,7 +16,7 @@ protocol PokemonDetailsViewModelProtocol: AnyObject {
 
 protocol PokemonDetailsViewModelDelegate: AnyObject {
     func onDetailsModelFetchSuccess()
-    func onDetailsModelFetchFailure(error: String)
+    func onDetailsModelFetchFailure(error: Error)
 }
 
 class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
@@ -44,7 +44,7 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
                 self?.detailsModel = model
                 self?.delegate?.onDetailsModelFetchSuccess()
             case .failure(let error):
-                self?.delegate?.onDetailsModelFetchFailure(error: error.localizedDescription)
+                self?.delegate?.onDetailsModelFetchFailure(error: error)
             }
         }
     }

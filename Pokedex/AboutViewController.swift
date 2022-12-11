@@ -25,6 +25,8 @@ class AboutViewController: UIViewController {
         view.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         typeLabel1.makeRound(radius: typeLabel1.frame.height / 2)
         typeLabel2.makeRound(radius: typeLabel2.frame.height / 2)
+        typeLabel1.isHidden = true
+        typeLabel2.isHidden = true
         
     }
 }
@@ -119,12 +121,13 @@ extension AboutViewController: AboutViewModelDelegate {
                 let numOfTypes = model.types.count
                 switch numOfTypes {
                 case 1:
+                    self.typeLabel1.isHidden = false
                     self.typeLabel1.text = model.types[0].type.name
                     let typeColor1 = getColor(for: model.types[0].type.name)
                     self.typeLabel1.backgroundColor = typeColor1
-                    self.typeLabel2.textColor = .clear
-                    self.typeLabel2.backgroundColor = .clear
                 case 2:
+                    self.typeLabel1.isHidden = false
+                    self.typeLabel2.isHidden = false
                     self.typeLabel1.text = model.types[0].type.name
                     self.typeLabel2.text = model.types[1].type.name
                     let typeColor1 = getColor(for: model.types[0].type.name)

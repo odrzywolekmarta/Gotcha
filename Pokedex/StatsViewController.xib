@@ -55,7 +55,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="4wv-89-dAN">
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4wv-89-dAN">
                                     <rect key="frame" x="40" y="20" width="200" height="5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="200" id="O3X-3N-P9T"/>
@@ -63,7 +63,7 @@
                                     </constraints>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-0j-Jdk">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-0j-Jdk">
                                     <rect key="frame" x="260" y="14.5" width="40" height="16.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="gmZ-Mt-Dlz"/>
@@ -83,11 +83,11 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zLv-4x-H4g">
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zLv-4x-H4g">
                                     <rect key="frame" x="73" y="20" width="200" height="5"/>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLS-1O-hKg">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLS-1O-hKg">
                                     <rect key="frame" x="293" y="14" width="40" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
@@ -104,11 +104,11 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jhz-nb-Thn">
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jhz-nb-Thn">
                                     <rect key="frame" x="87.5" y="20" width="200" height="5"/>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teC-sF-KRq">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teC-sF-KRq">
                                     <rect key="frame" x="307.5" y="14.5" width="40" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
@@ -127,11 +127,11 @@ attack</string>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yA5-W2-h2c">
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yA5-W2-h2c">
                                     <rect key="frame" x="82.5" y="20" width="200" height="5"/>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="36" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mio-al-SNp">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mio-al-SNp">
                                     <rect key="frame" x="302.5" y="14.5" width="40" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
@@ -150,11 +150,11 @@ defense</string>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Yei-Yp-GzF">
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yei-Yp-GzF">
                                     <rect key="frame" x="87.5" y="20.5" width="200" height="5"/>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzh-fY-BIr">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzh-fY-BIr">
                                     <rect key="frame" x="307.5" y="14.5" width="40" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
@@ -171,11 +171,11 @@ defense</string>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8SV-bV-hxF">
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8SV-bV-hxF">
                                     <rect key="frame" x="71" y="20" width="200" height="5"/>
                                     <color key="progressTintColor" name="CustomBlue"/>
                                 </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-wm-J73">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-wm-J73">
                                     <rect key="frame" x="291" y="14.5" width="40" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
                                     <nil key="textColor"/>
