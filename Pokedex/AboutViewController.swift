@@ -122,6 +122,9 @@ extension AboutViewController: AboutViewModelDelegate {
                 switch numOfTypes {
                 case 1:
                     self.typeLabel1.isHidden = false
+                    self.typeLabel2.isHidden = false
+                    self.typeLabel2.backgroundColor = .clear
+                    self.typeLabel2.textColor = .clear
                     self.typeLabel1.text = model.types[0].type.name
                     let typeColor1 = getColor(for: model.types[0].type.name)
                     self.typeLabel1.backgroundColor = typeColor1
