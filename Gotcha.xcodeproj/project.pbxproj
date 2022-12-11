@@ -19,6 +19,7 @@
 		2D4E205C2942094200273DD7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E205A2942094200273DD7 /* SearchViewController.swift */; };
 		2D4E205D2942094200273DD7 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D4E205B2942094200273DD7 /* SearchViewController.xib */; };
 		2D4E20622943A36E00273DD7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E20612943A36E00273DD7 /* SearchViewModel.swift */; };
+		2D4E20642945F7AA00273DD7 /* UIViewController+AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E20632945F7AA00273DD7 /* UIViewController+AlertPresentable.swift */; };
 		2D6140F729183C1700D2F68A /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6140F529183C1700D2F68A /* PokemonTableViewCell.swift */; };
 		2D6140F829183C1700D2F68A /* PokemonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6140F629183C1700D2F68A /* PokemonTableViewCell.xib */; };
 		2D6141002919918300D2F68A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D6140FF2919918300D2F68A /* SDWebImage */; };
@@ -63,6 +64,7 @@
 		2D4E205A2942094200273DD7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2D4E205B2942094200273DD7 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		2D4E20612943A36E00273DD7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		2D4E20632945F7AA00273DD7 /* UIViewController+AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertPresentable.swift"; sourceTree = "<group>"; };
 		2D6140F529183C1700D2F68A /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
 		2D6140F629183C1700D2F68A /* PokemonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonTableViewCell.xib; sourceTree = "<group>"; };
 		2D6141012919A59300D2F68A /* PokemonDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				2D614115291ACEB800D2F68A /* UIKit+extensions.swift */,
+				2D4E20632945F7AA00273DD7 /* UIViewController+AlertPresentable.swift */,
 				2D614119291C399C00D2F68A /* Constants.swift */,
 				2D614117291AE4FC00D2F68A /* AppRouter.swift */,
 			);
@@ -393,6 +396,7 @@
 				2D4E20622943A36E00273DD7 /* SearchViewModel.swift in Sources */,
 				2D4E20532937C3C200273DD7 /* Constraints+.swift in Sources */,
 				2D61413529216C8A00D2F68A /* StatsViewController.swift in Sources */,
+				2D4E20642945F7AA00273DD7 /* UIViewController+AlertPresentable.swift in Sources */,
 				2D61411D291C415E00D2F68A /* PokemonDetailsViewController.swift in Sources */,
 				2D4E204C2937C3C200273DD7 /* Spark.swift in Sources */,
 				2D4E204E2937C3C200273DD7 /* FaveButton.swift in Sources */,

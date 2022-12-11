@@ -41,6 +41,7 @@ class SearchViewController: UIViewController {
         searchTextField.endEditing(true)
     }
     
+    
 }
 
 //MARK: - Text Field Delegate
@@ -84,7 +85,9 @@ extension SearchViewController: SearchViewModelDelegate {
     }
     
     func onDetailsModelFetchFailure(error: Error) {
-        
+        DispatchQueue.main.async {
+            self.presentAlert(with: error)
+        }
     }
     
 }

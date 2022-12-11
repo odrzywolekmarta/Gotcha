@@ -8,9 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Orbitron-Bold.ttf">
-            <string>Orbitron-Bold</string>
-        </array>
         <array key="Orbitron-Regular.ttf">
             <string>Orbitron-Regular</string>
         </array>
@@ -19,7 +16,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
                 <outlet property="pokemonImage" destination="ZxA-0X-SYx" id="lBj-jG-4nQ"/>
-                <outlet property="randomLabel" destination="I1U-d4-VHZ" id="gOZ-mq-Xpt"/>
                 <outlet property="searchButton" destination="Nvp-Pa-OoZ" id="A2b-ws-1Sa"/>
                 <outlet property="searchTextField" destination="GCw-Yx-zrV" id="2P8-4I-7PY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -59,12 +55,11 @@
                         <constraint firstAttribute="height" constant="69" id="uXo-qD-eiG"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for random Pokémon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1U-d4-VHZ">
-                    <rect key="frame" x="79" y="473" width="256" height="20.5"/>
-                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="16"/>
-                    <color key="textColor" name="CustomBlue"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jtw-Qf-YjG">
+                    <rect key="frame" x="103.5" y="473" width="207.5" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Search for random Pokémon"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="CustomBeige"/>
@@ -73,11 +68,11 @@
                 <constraint firstItem="Nvp-Pa-OoZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="CeH-YR-r71"/>
                 <constraint firstItem="cR6-Ri-qfC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="G8x-AE-K8R"/>
                 <constraint firstItem="cR6-Ri-qfC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GCa-r6-fW9"/>
+                <constraint firstItem="Jtw-Qf-YjG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Gk7-jJ-YUK"/>
                 <constraint firstItem="GCw-Yx-zrV" firstAttribute="bottom" secondItem="cR6-Ri-qfC" secondAttribute="bottom" id="HHG-k1-Gdr"/>
-                <constraint firstItem="I1U-d4-VHZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gcS-GB-YVE"/>
                 <constraint firstItem="GCw-Yx-zrV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hEh-i3-12e"/>
                 <constraint firstItem="cR6-Ri-qfC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="i5N-eZ-24b"/>
-                <constraint firstItem="I1U-d4-VHZ" firstAttribute="top" secondItem="cR6-Ri-qfC" secondAttribute="bottom" constant="8" symbolic="YES" id="mgr-QX-eJu"/>
+                <constraint firstItem="Jtw-Qf-YjG" firstAttribute="top" secondItem="cR6-Ri-qfC" secondAttribute="bottom" constant="8" symbolic="YES" id="nOL-au-iBq"/>
                 <constraint firstItem="Nvp-Pa-OoZ" firstAttribute="leading" secondItem="GCw-Yx-zrV" secondAttribute="trailing" id="oJl-aw-kkY"/>
                 <constraint firstItem="GCw-Yx-zrV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="otw-5m-Tei"/>
                 <constraint firstItem="GCw-Yx-zrV" firstAttribute="top" secondItem="ZxA-0X-SYx" secondAttribute="bottom" constant="8" symbolic="YES" id="wQC-A2-kYe"/>
@@ -90,9 +85,6 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="CustomBeige">
             <color red="0.97600001096725464" green="0.94900000095367432" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="CustomBlue">
-            <color red="0.22699999809265137" green="0.68999999761581421" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
