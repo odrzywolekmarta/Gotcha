@@ -28,11 +28,12 @@ class PokemonDetailsViewController: UIViewController {
     let baseColor: UIColor = UIColor(named: Constants.Colors.customOrange)!
     private var parentNavigationBarColor: UIColor?
     private let imageViewFullHeight: CGFloat = 220
-    var pageViewController = DetailsPageViewController()
+    var pageViewController: DetailsPageViewController
     
     init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
         self.router = router
+        self.pageViewController = DetailsPageViewController(appRouter: router)
         super.init(nibName: nil, bundle: nil)
     }
     

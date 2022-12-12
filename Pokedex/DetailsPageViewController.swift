@@ -13,12 +13,13 @@ class DetailsPageViewController: UIPageViewController {
     private let statsController: StatsViewController
     private let evolutionController: EvolutionViewController
     private var currentPageIndex: Int = 0
+    
 
-    init() {
+    init(appRouter: AppRouterProtocol) {
         aboutController = AboutViewController()
         statsController = StatsViewController()
         _ = statsController.view
-        evolutionController = EvolutionViewController()
+        evolutionController = EvolutionViewController(router: appRouter)
         _ = evolutionController.view
 
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)

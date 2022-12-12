@@ -18,6 +18,9 @@ class EvolutionViewController: UIViewController {
     @IBOutlet weak var noEvolutionLabel: UILabel!
     
     let viewModel: EvolutionViewModelProtocol = EvolutionViewModel()
+    let router: AppRouterProtocol
+    var firstEvolutionId: String = ""
+    var secondEvolutionId: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +28,12 @@ class EvolutionViewController: UIViewController {
         secondEvolutionStackView.isHidden = true
         noEvolutionLabel.isHidden = true
         noEvolutionLabel.applyShadow()
-        
-//        firstEvolutionImage.applyShadow()
-//        secondBasePokemonImage.applyShadow()
-//        secondEvolutionImage.applyShadow()
     }
     
-    init() {
+   
+    
+    init(router: AppRouterProtocol) {
+        self.router = router
         super.init(nibName: nil, bundle: nil)
         viewModel.delegate = self
     }
@@ -47,31 +49,35 @@ class EvolutionViewController: UIViewController {
 extension EvolutionViewController: EvolutionViewModelDelegate {
     func onEvolutionModelFetchSuccess() {
         DispatchQueue.main.async {
-            let chainCount = self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray.count
-            switch chainCount {
-            case 1:
-                self.noEvolutionLabel.isHidden = false
-            case 2:
-                self.firstEvolutionStackView.isHidden = false
-                let firstUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[0])
-                let secondUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[1])
-                self.basePokemonImage.sd_setImage(with: firstUrl)
-                self.firstEvolutionImage.sd_setImage(with: secondUrl)
-                self.secondBasePokemonImage.sd_setImage(with: secondUrl)
-                self.secondEvolutionStackView.isHidden = true
-            case 3:
-                self.firstEvolutionStackView.isHidden = false
-                self.secondEvolutionStackView.isHidden = false
-                let firstUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[0])
-                let secondUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[1])
-                let thirdUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[2])
-                self.basePokemonImage.sd_setImage(with: firstUrl)
-                self.firstEvolutionImage.sd_setImage(with: secondUrl)
-                self.secondBasePokemonImage.sd_setImage(with: secondUrl)
-                self.secondEvolutionImage.sd_setImage(with: thirdUrl)
-            default:
-                self.secondEvolutionStackView.isHidden = true
-                self.firstEvolutionStackView.isHidden = true
+            if let evolutionArray = self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray {
+                let chainCount = self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray.count
+                switch chainCount {
+                case 1:
+                    self.noEvolutionLabel.isHidden = false
+                case 2:
+                    self.firstEvolutionStackView.isHidden = false
+                    let firstUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[0])
+                    let secondUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[1])
+                    self.basePokemonImage.sd_setImage(with: firstUrl)
+                    self.firstEvolutionImage.sd_setImage(with: secondUrl)
+                    self.secondBasePokemonImage.sd_setImage(with: secondUrl)
+                    self.secondEvolutionStackView.isHidden = true
+                    self.firstEvolutionId = evolutionArray[1]
+                case 3:
+                    self.firstEvolutionStackView.isHidden = false
+                    self.secondEvolutionStackView.isHidden = false
+                    let firstUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[0])
+                    let secondUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[1])
+                    let thirdUrl = self.viewModel.getPokemonImageUrl(forSpeciesId: self.viewModel.simplifiedEvolutionSetModel?.evolutionsIdsArray[2])
+                    self.basePokemonImage.sd_setImage(with: firstUrl)
+                    self.firstEvolutionImage.sd_setImage(with: secondUrl)
+                    self.secondBasePokemonImage.sd_setImage(with: secondUrl)
+                    self.secondEvolutionImage.sd_setImage(with: thirdUrl)
+                    self.secondEvolutionId = evolutionArray[2]
+                default:
+                    self.secondEvolutionStackView.isHidden = true
+                    self.firstEvolutionStackView.isHidden = true
+                }
             }
         }
     }

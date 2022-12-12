@@ -36,6 +36,10 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
         self.detailsModel = detailsModel
     }
     
+    init(urlString: String) {
+        self.urlString = urlString
+    }
+    
     func getPokemonDetails() {
         if let url = urlString {
         service.getPokemonDetails(withUrlString: url) { [weak self] result in

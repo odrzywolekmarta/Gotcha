@@ -21,6 +21,11 @@ class AppRouter: AppRouterProtocol {
         self.navigationController = navigationController
     }
     
+    func navigateToDetails(urlString: String) {
+        let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(urlString: urlString), router: self)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
     func navigateToDetails(urlString: String, imageUrl: String) {
         let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(urlString: urlString, imageUrl: imageUrl), router: self)
         navigationController.pushViewController(controller, animated: true)
@@ -30,5 +35,5 @@ class AppRouter: AppRouterProtocol {
         let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(detailsModel: model), router: self)
         navigationController.pushViewController(controller, animated: true)
     }
-    
+
 }

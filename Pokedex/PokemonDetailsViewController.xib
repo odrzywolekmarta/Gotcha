@@ -169,7 +169,7 @@
         </view>
     </objects>
     <resources>
-        <image name="UnknownPokemon" width="900" height="776"/>
+        <image name="UnknownPokemon" width="777" height="776"/>
         <namedColor name="CustomBeige">
             <color red="0.97600001096725464" green="0.94900000095367432" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
