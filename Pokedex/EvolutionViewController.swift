@@ -16,6 +16,10 @@ class EvolutionViewController: UIViewController {
     @IBOutlet weak var firstEvolutionStackView: UIStackView!
     @IBOutlet weak var secondEvolutionStackView: UIStackView!
     @IBOutlet weak var noEvolutionLabel: UILabel!
+    @IBOutlet weak var firstView: UIView!
+    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var thirdView: UIView!
+    @IBOutlet weak var fourthView: UIView!
     
     let viewModel: EvolutionViewModelProtocol = EvolutionViewModel()
     let router: AppRouterProtocol
@@ -28,6 +32,14 @@ class EvolutionViewController: UIViewController {
         secondEvolutionStackView.isHidden = true
         noEvolutionLabel.isHidden = true
         noEvolutionLabel.applyShadow()
+        firstView.makeRound()
+        firstView.applyShadow()
+        secondView.makeRound()
+        secondView.applyShadow()
+        thirdView.makeRound()
+        thirdView.applyShadow()
+        fourthView.makeRound()
+        fourthView.applyShadow()
     }
     
    
@@ -42,7 +54,11 @@ class EvolutionViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @IBAction func evolutionButtonPressed(_ sender: Any) {
+        
+    }
 }
+
 
 //MARK: - Evolution View Model Delegate
 
