@@ -11,6 +11,7 @@ import UIKit
 protocol AppRouterProtocol {
     func navigateToDetails(urlString: String, imageUrl: String)
     func navigateToDetails(withModel model: PokemonModel)
+    func navigateToDetails(urlString: String)
 }
 
 class AppRouter: AppRouterProtocol {

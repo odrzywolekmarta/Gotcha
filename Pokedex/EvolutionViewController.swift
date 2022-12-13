@@ -20,9 +20,14 @@ class EvolutionViewController: UIViewController {
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var thirdView: UIView!
     @IBOutlet weak var fourthView: UIView!
+    @IBOutlet weak var firstButton: UIButton!
+    @IBOutlet weak var secondButton: UIButton!
+    @IBOutlet weak var thirdButton: UIButton!
+    @IBOutlet weak var fourthButton: UIButton!
     
     let viewModel: EvolutionViewModelProtocol = EvolutionViewModel()
     let router: AppRouterProtocol
+    var baseEvolutionId: String = ""
     var firstEvolutionId: String = ""
     var secondEvolutionId: String = ""
     
@@ -53,13 +58,20 @@ class EvolutionViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    @IBAction func evolutionButtonPressed(_ sender: Any) {
-        
+ 
+    @IBAction func goToDetails(_ sender: UIButton) {
+        let baseUrl = "https://pokeapi.co/api/v2/pokemon/"
+        if sender == firstButton {
+            router.navigateToDetails(urlString: "\(baseUrl)\(baseEvolutionId)")
+        } else if sender == secondButton || sender == thirdButton {
+            router.navigateToDetails(urlString: "\(baseUrl)\(firstEvolutionId)")
+        } else if sender == fourthButton {
+            router.navigateToDetails(urlString: "\(baseUrl)\(secondEvolutionId)")
+        }
     }
+    
+
 }
-
-
 //MARK: - Evolution View Model Delegate
 
 extension EvolutionViewController: EvolutionViewModelDelegate {
@@ -78,6 +90,7 @@ extension EvolutionViewController: EvolutionViewModelDelegate {
                     self.firstEvolutionImage.sd_setImage(with: secondUrl)
                     self.secondBasePokemonImage.sd_setImage(with: secondUrl)
                     self.secondEvolutionStackView.isHidden = true
+                    self.baseEvolutionId = evolutionArray[0]
                     self.firstEvolutionId = evolutionArray[1]
                 case 3:
                     self.firstEvolutionStackView.isHidden = false
@@ -89,6 +102,8 @@ extension EvolutionViewController: EvolutionViewModelDelegate {
                     self.firstEvolutionImage.sd_setImage(with: secondUrl)
                     self.secondBasePokemonImage.sd_setImage(with: secondUrl)
                     self.secondEvolutionImage.sd_setImage(with: thirdUrl)
+                    self.baseEvolutionId = evolutionArray[0]
+                    self.firstEvolutionId = evolutionArray[1]
                     self.secondEvolutionId = evolutionArray[2]
                 default:
                     self.secondEvolutionStackView.isHidden = true

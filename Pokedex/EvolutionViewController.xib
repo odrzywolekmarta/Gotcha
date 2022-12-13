@@ -17,15 +17,19 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EvolutionViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
                 <outlet property="basePokemonImage" destination="aDo-L4-bKH" id="K1t-Id-Nqm"/>
+                <outlet property="firstButton" destination="N2T-FE-FkH" id="Q90-KE-PfR"/>
                 <outlet property="firstEvolutionImage" destination="nE6-Qr-5TY" id="3hY-Hc-rtc"/>
                 <outlet property="firstEvolutionStackView" destination="OwI-P0-FJv" id="MLy-WY-mfD"/>
                 <outlet property="firstView" destination="cKn-n9-PW4" id="3Wr-UT-0oy"/>
+                <outlet property="fourthButton" destination="sfK-UB-29r" id="V6d-TA-m3U"/>
                 <outlet property="fourthView" destination="PZo-cV-FSW" id="kLr-tA-0R1"/>
                 <outlet property="noEvolutionLabel" destination="fj6-Bb-dwC" id="YQC-XR-fvB"/>
                 <outlet property="secondBasePokemonImage" destination="hBm-Cy-B5R" id="cLa-dF-LIr"/>
+                <outlet property="secondButton" destination="WAV-ZL-RbQ" id="LPs-pf-lE7"/>
                 <outlet property="secondEvolutionImage" destination="a3A-NP-SrZ" id="wBd-mV-lNP"/>
                 <outlet property="secondEvolutionStackView" destination="Twe-d6-vxF" id="FVG-SK-dh5"/>
                 <outlet property="secondView" destination="Rxk-IF-R4k" id="bXu-cf-zIg"/>
+                <outlet property="thirdButton" destination="AvM-QR-Ubq" id="UT5-sI-SHw"/>
                 <outlet property="thirdView" destination="lfd-zI-PIn" id="beX-Au-0Sl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -53,10 +57,13 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" translatesAutoresizingMaskIntoConstraints="NO" id="aDo-L4-bKH">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2T-FE-FkH">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2T-FE-FkH">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain"/>
+                                            <connections>
+                                                <action selector="goToDetails:" destination="-1" eventType="touchUpInside" id="0qu-VE-4M3"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" name="CustomBeige"/>
@@ -84,10 +91,13 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" translatesAutoresizingMaskIntoConstraints="NO" id="nE6-Qr-5TY">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAV-ZL-RbQ">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAV-ZL-RbQ">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain"/>
+                                            <connections>
+                                                <action selector="goToDetails:" destination="-1" eventType="touchUpInside" id="H6J-8T-j40"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" name="CustomBeige"/>
@@ -120,10 +130,13 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" translatesAutoresizingMaskIntoConstraints="NO" id="hBm-Cy-B5R">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvM-QR-Ubq">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvM-QR-Ubq">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain"/>
+                                            <connections>
+                                                <action selector="goToDetails:" destination="-1" eventType="touchUpInside" id="4xZ-VH-KJK"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" name="CustomBeige"/>
@@ -151,10 +164,13 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" translatesAutoresizingMaskIntoConstraints="NO" id="a3A-NP-SrZ">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-UB-29r">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-UB-29r">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain"/>
+                                            <connections>
+                                                <action selector="goToDetails:" destination="-1" eventType="touchUpInside" id="4Lh-Z7-1gC"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" name="CustomBeige"/>
