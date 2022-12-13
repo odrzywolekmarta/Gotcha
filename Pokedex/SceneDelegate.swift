@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         let allNavigationController = UINavigationController()
         let searchNavigationController = UINavigationController()
-
+        
         allNavigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "list.bullet"), selectedImage: UIImage(systemName: "list.bullet"))
         
         let favouritesViewController = FavouritesViewController()
@@ -34,15 +34,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.viewControllers = [allNavigationController, searchNavigationController, favouritesViewController]
         
         let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: allNavigationController))
-
+        
         allNavigationController.setViewControllers([controller], animated: false)
         window?.rootViewController = tabBarController
         
         window?.makeKeyAndVisible()
         allNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
         searchNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customBeige), titleColor: .black)
-        allNavigationController.navigationBar.topItem?.title = "GOTCHA"
-
+        
+        let allNavigationBar = allNavigationController.navigationBar
+        let titleFrame = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
+        let titleLabel = UILabel(frame: titleFrame)
+        titleLabel.text = "GOTCHA"
+        titleLabel.applyShadow()
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont(name: Constants.customFontBold, size: 23)
+        allNavigationBar.addSubview(titleLabel)
         
     }
     
