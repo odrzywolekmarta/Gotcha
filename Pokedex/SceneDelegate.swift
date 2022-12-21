@@ -21,17 +21,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         let allNavigationController = UINavigationController()
         let searchNavigationController = UINavigationController()
+        let favouritesNavigationController = UINavigationController()
         
         allNavigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "list.bullet"), selectedImage: UIImage(systemName: "list.bullet"))
         
         let favouritesViewController = FavouritesViewController()
-        favouritesViewController.tabBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))
+        favouritesNavigationController.viewControllers = [favouritesViewController]
+        favouritesViewController.tabBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))       
         
         let searchViewController = SearchViewController(router: AppRouter(navigationController: searchNavigationController))
         searchNavigationController.viewControllers = [searchViewController]
         searchViewController.tabBarItem = UITabBarItem(title: "SEARCH", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
         
-        tabBarController.viewControllers = [allNavigationController, searchNavigationController, favouritesViewController]
+        tabBarController.viewControllers = [allNavigationController, searchNavigationController, favouritesNavigationController]
         
         let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: allNavigationController))
         
@@ -39,8 +41,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = tabBarController
         
         window?.makeKeyAndVisible()
+        
         allNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
         searchNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customBeige), titleColor: .black)
+        favouritesNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
         
         let allNavigationBar = allNavigationController.navigationBar
         let titleFrame = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
