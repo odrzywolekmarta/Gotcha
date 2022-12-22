@@ -52,13 +52,20 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zer-l0-5TD">
+                            <rect key="frame" x="358.5" y="17" width="45.5" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGrayColor"/>
                     <constraints>
                         <constraint firstItem="hYm-Qk-N9Q" firstAttribute="leading" secondItem="Fol-1c-1qh" secondAttribute="leading" constant="20" symbolic="YES" id="2dF-NM-7aQ"/>
                         <constraint firstItem="8bW-n2-jO8" firstAttribute="top" secondItem="Fol-1c-1qh" secondAttribute="top" constant="20" id="9Ro-ac-T2q"/>
                         <constraint firstItem="8bW-n2-jO8" firstAttribute="leading" secondItem="Fol-1c-1qh" secondAttribute="leading" constant="20" symbolic="YES" id="EjF-bl-3hw"/>
+                        <constraint firstItem="zer-l0-5TD" firstAttribute="top" secondItem="Fol-1c-1qh" secondAttribute="top" constant="17" id="dmP-rx-FJ9"/>
                         <constraint firstAttribute="bottom" secondItem="hYm-Qk-N9Q" secondAttribute="bottom" constant="20" id="pB5-eI-USo"/>
+                        <constraint firstAttribute="trailing" secondItem="zer-l0-5TD" secondAttribute="trailing" constant="10" id="udc-cg-SpX"/>
                         <constraint firstItem="hYm-Qk-N9Q" firstAttribute="top" secondItem="8bW-n2-jO8" secondAttribute="bottom" constant="20" id="xRU-M6-sdQ"/>
                     </constraints>
                 </view>
@@ -170,6 +177,7 @@
     </objects>
     <resources>
         <image name="UnknownPokemon" width="777" height="776"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <namedColor name="CustomBeige">
             <color red="0.97600001096725464" green="0.94900000095367432" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
