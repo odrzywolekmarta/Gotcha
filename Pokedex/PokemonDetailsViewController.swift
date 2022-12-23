@@ -29,6 +29,9 @@ class PokemonDetailsViewController: UIViewController {
     private var parentNavigationBarColor: UIColor?
     private let imageViewFullHeight: CGFloat = 220
     var pageViewController: DetailsPageViewController
+    var displayedPokemon: PokemonModel?
+    let defaults = UserDefaults.standard
+    var favouritesArray: [PokemonModel] = []
     
     init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -123,6 +126,14 @@ class PokemonDetailsViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func faveButtonPressed(_ sender: UIButton) {
+//        if let pokemon = displayedPokemon {
+//        self.favouritesArray.append(displayedPokemon)
+//        defaults.set(self.favouritesArray, forKey: "Favourites")
+//        }
+    }
+    
 }
 
 
@@ -166,6 +177,7 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
                     
                 }
             }
+            self.displayedPokemon = detailsModel
         }
     }
     
@@ -176,11 +188,3 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     }
 }
 
-//MARK: - Fave Button Delegate
-//extension PokemonDetailsViewController: FaveButtonDelegate {
-//    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
-//
-//    }
-//
-//
-//}
