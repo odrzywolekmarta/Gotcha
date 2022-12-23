@@ -69,11 +69,18 @@ extension SearchViewController: UITextFieldDelegate {
         }
     }
     
+    func toggleUIEnabled(enabled: Bool) {
+        searchTextField.isUserInteractionEnabled = enabled
+        searchButton.isUserInteractionEnabled = enabled
+        randomButton.isUserInteractionEnabled = enabled
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let pokemonData = searchTextField.text {
             let pokemonUrl = basePokemonUrl + pokemonData
             viewModel.getPokemonDetails(withUrlString: pokemonUrl)
             searchTextField.text = ""
+            toggleUIEnabled(enabled: false)
         } else {
             searchTextField.text = ""
         }
@@ -86,6 +93,7 @@ extension SearchViewController: UITextFieldDelegate {
 extension SearchViewController: SearchViewModelDelegate {
     func onDetailsModelFetchSuccess() {
         DispatchQueue.main.async {
+            self.toggleUIEnabled(enabled: true)
             if let model = self.viewModel.detailsModel {
                 self.router.navigateToDetails(withModel: model)
             }
@@ -94,6 +102,7 @@ extension SearchViewController: SearchViewModelDelegate {
     
     func onDetailsModelFetchFailure(error: Error) {
         DispatchQueue.main.async {
+            self.toggleUIEnabled(enabled: true)
             self.presentAlert(with: error)
         }
     }
