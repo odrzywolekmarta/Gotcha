@@ -43,7 +43,13 @@ class DetailsPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
-        view.isUserInteractionEnabled = false
+        
+        // disable scrolling but not user interaction
+        for subview in view.subviews {
+            if let scroll = subview as? UIScrollView {
+                scroll.isScrollEnabled = false
+            }
+        }
         
         if let firstVC = orderedViewControllers.first {
             setViewControllers([firstVC], direction: .forward, animated: false)
