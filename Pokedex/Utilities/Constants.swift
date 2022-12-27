@@ -18,6 +18,7 @@ struct Constants {
         static let customBlue = "CustomBlue"
         static let customOrange = "CustomOrange"
         static let customPeach = "CustomPeach"
+        
         static let normalType = "NormalType"
         static let fireType = "FireType"
         static let waterType = "WaterType"

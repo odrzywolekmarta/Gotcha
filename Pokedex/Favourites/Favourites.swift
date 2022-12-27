@@ -8,39 +8,49 @@
 import Foundation
 
 class Favorites: ObservableObject {
-    // the actual resorts the user has favorited
-    private var resorts: Set<String>
-
-    // the key we're using to read/write in UserDefaults
+    var favouritesList: Set<PersistedModel>
+//    var favIds: [Int]?
+    let defaults = UserDefaults.standard
     private let saveKey = "Favorites"
 
     init() {
-        // load our saved data
-
-        // still here? Use an empty array
-        resorts = []
+        let decoder = PropertyListDecoder()
+        if let data = defaults.data(forKey: saveKey) {
+            let favourites = try? decoder.decode(Set<PersistedModel>.self, from: data)
+            self.favouritesList = favourites ?? []
+            return
+        } else {
+            self.favouritesList = []
+        }
     }
 
-    // returns true if our set contains this resort
-    func contains(_ resort: Resort) -> Bool {
-        resorts.contains(resort.id)
+//    func getIds() -> [Int]? {
+//        for fave in favouritesList {
+//            favIds?.append(fave.id)
+//        }
+//        return favIds
+//    }
+    
+    func contains(_ resort: PersistedModel) -> Bool {
+        favouritesList.contains(resort)
     }
 
-    // adds the resort to our set, updates all views, and saves the change
-    func add(_ resort: Resort) {
+    func add(_ resort: PersistedModel) {
         objectWillChange.send()
-        resorts.insert(resort.id)
+        favouritesList.insert(resort)
         save()
     }
 
-    // removes the resort from our set, updates all views, and saves the change
-    func remove(_ resort: Resort) {
+    func remove(_ resort: PersistedModel) {
         objectWillChange.send()
-        resorts.remove(resort.id)
+        favouritesList.remove(resort)
         save()
     }
 
     func save() {
-        // write out our data
+        let encoder = PropertyListEncoder()
+        if let encoded = try? encoder.encode(favouritesList) {
+            defaults.setValue(encoded, forKey: saveKey)
+        }
     }
 }

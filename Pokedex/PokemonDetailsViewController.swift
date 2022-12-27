@@ -22,6 +22,7 @@ class PokemonDetailsViewController: UIViewController {
     @IBOutlet weak var evolutionButton: UIButton!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var favouritesButton: UIButton!
     
     let viewModel: PokemonDetailsViewModelProtocol
     let router: AppRouterProtocol
@@ -29,9 +30,9 @@ class PokemonDetailsViewController: UIViewController {
     private var parentNavigationBarColor: UIColor?
     private let imageViewFullHeight: CGFloat = 220
     var pageViewController: DetailsPageViewController
-    var displayedPokemon: PokemonModel?
-    let defaults = UserDefaults.standard
-    var favouritesArray: [PokemonModel] = []
+    var isFavourite: Bool = false
+    var favourites = Favorites()
+    var persistedPokemon = PersistedModel(id: 1, name: "")
     
     init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -75,18 +76,30 @@ class PokemonDetailsViewController: UIViewController {
         pageViewController.view.leadingAnchor.constraint(equalTo: pageContainerView.leadingAnchor).isActive = true
         pageViewController.view.trailingAnchor.constraint(equalTo: pageContainerView.trailingAnchor).isActive = true
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-
+        
         if viewModel.detailsModel != nil {
             onDetailsModelFetchSuccess()
+        }
+    }
+    
+    func setFavouritesButton(button: UIButton) {
+//        guard let pokemon = persistedPokemon else {
+//            return
+//        }
+        if favourites.contains(persistedPokemon) {
+            favouritesButton.imageView?.image = UIImage(systemName: "heart.filled")
+        } else {
+            favouritesButton.imageView?.image = UIImage(systemName: "heart")
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-//        favButton.delegate = self
+//                favButton.delegate = self
         viewModel.getPokemonDetails()
         configureView()
+        setFavouritesButton(button: favouritesButton)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -126,16 +139,23 @@ class PokemonDetailsViewController: UIViewController {
             }
         }
     }
-    
+  
     @IBAction func faveButtonPressed(_ sender: UIButton) {
-//        if let pokemon = displayedPokemon {
-//        self.favouritesArray.append(displayedPokemon)
-//        defaults.set(self.favouritesArray, forKey: "Favourites")
+//        guard let pokemon = persistedPokemon else {
+//            return
 //        }
-    }
+            if isFavourite == true {
+                isFavourite = false
+                favouritesButton.imageView?.image = UIImage(systemName: "heart.")
+                favourites.remove(persistedPokemon)
+            } else {
+                isFavourite = true
+                favouritesButton.imageView?.image = UIImage(systemName: "heart.filled")
+                favourites.add(persistedPokemon)
+            }
+        }
     
 }
-
 
 
 //MARK: - View Model Delegate
@@ -149,7 +169,7 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
         
         pageViewController.set(model: detailsModel)
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [self] in
             
             self.nameLabel.text = detailsModel.name.uppercased()
             self.view.layoutIfNeeded()
@@ -164,6 +184,10 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
                     //nothing
                 }
             }
+            
+            self.persistedPokemon.id = detailsModel.id
+            self.persistedPokemon.name = detailsModel.name
+            
             if let id = self.viewModel.detailsModel?.id {
                 let idString = String(id)
                 let digitsInId = idString.count
@@ -174,10 +198,8 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
                     self.numberLabel.text = "#0\(idString)"
                 default:
                     self.numberLabel.text = "#\(idString)"
-                    
                 }
             }
-            self.displayedPokemon = detailsModel
         }
     }
     

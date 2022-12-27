@@ -175,7 +175,7 @@ extension FaveButton{
 extension FaveButton{
     fileprivate func dotColors(at index: Int) -> DotColors{
         if case let delegate as FaveButtonDelegate = delegate , nil != delegate.faveButtonDotColors(self){
-            let colors     = delegate.faveButtonDotColors(self)!
+            let colors = delegate.faveButtonDotColors(self)!
             let colorIndex = 0..<colors.count ~= index ? index : index % colors.count
             
             return colors[colorIndex]

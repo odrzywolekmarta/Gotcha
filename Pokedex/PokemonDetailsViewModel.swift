@@ -10,6 +10,7 @@ import Foundation
 protocol PokemonDetailsViewModelProtocol: AnyObject {
     var delegate: PokemonDetailsViewModelDelegate? { get set }
     var detailsModel: PokemonModel? { get }
+    var persistedModel: PersistedModel? { get set }
     var imageUrl: String? { get }
     func getPokemonDetails()
 }
@@ -23,6 +24,7 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
     
     weak var delegate: PokemonDetailsViewModelDelegate?
     var detailsModel: PokemonModel?
+    var persistedModel: PersistedModel?
     private let service = PokemonAPIService()
     private var urlString: String?
     var imageUrl: String?

@@ -108,3 +108,7 @@ struct Chain: Decodable {
     let url: URL
 }
 
+struct PersistedModel: Codable, Hashable {
+    var id: Int
+    var name: String
+}
