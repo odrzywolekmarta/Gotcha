@@ -39,6 +39,11 @@ class SearchViewController: UIViewController {
         searchTextField.applyShadow()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customBeige))
+    }
+    
     @IBAction func searchPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
     }

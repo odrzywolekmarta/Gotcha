@@ -46,6 +46,11 @@ class PokemonViewController: UIViewController {
         configureTableView()
         viewModel.getNextPage()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed))
+    }
 }
 
 //MARK: - Table View Data Source

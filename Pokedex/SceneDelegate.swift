@@ -7,11 +7,16 @@
 
 import UIKit
 
+extension UINavigationController {
+    func configureBar() {
+        
+    }
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
-    
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         
@@ -25,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         allNavigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "list.bullet"), selectedImage: UIImage(systemName: "list.bullet"))
         
-        let favouritesViewController = FavouritesViewController()
+        let favouritesViewController = FavouritesViewController(router: AppRouter(navigationController: favouritesNavigationController))
         favouritesNavigationController.viewControllers = [favouritesViewController]
         favouritesViewController.tabBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))       
         
@@ -46,7 +51,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         searchNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customBeige), titleColor: .black)
         favouritesNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
         
-        let allNavigationBar = allNavigationController.navigationBar
+        // TODO: make bar title configuration reusable
+        let allNavigationBar
+        = allNavigationController.navigationBar
         let titleFrame = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
         let titleLabel = UILabel(frame: titleFrame)
         titleLabel.text = "GOTCHA"
@@ -55,6 +62,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         titleLabel.textColor = .white
         titleLabel.font = UIFont(name: Constants.customFontBold, size: 23)
         allNavigationBar.addSubview(titleLabel)
+        
+        
+        let favNavigationBar = favouritesNavigationController.navigationBar
+        let titleFramee = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
+        let titleLabell = UILabel(frame: titleFramee)
+        titleLabell.text = "GOTCHA"
+        titleLabell.applyShadow()
+        titleLabell.textAlignment = .center
+        titleLabell.textColor = .white
+        titleLabell.font = UIFont(name: Constants.customFontBold, size: 23)
+        favNavigationBar.addSubview(titleLabell)
         
     }
     

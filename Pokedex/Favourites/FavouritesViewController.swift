@@ -11,9 +11,12 @@ class FavouritesViewController: UIViewController {
     
     var tableView: UITableView
     var favourites = Favourites()
-    let baseUrlString = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+    let baseUrlString = "https://pokeapi.co/api/v2/pokemon/"
+    let baseImageUrlString = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+    let router: AppRouterProtocol
     
-    init() {
+    init(router: AppRouterProtocol) {
+        self.router = router
         self.tableView = UITableView(frame: .zero)
         super.init(nibName: nil, bundle: nil)
     }
@@ -34,6 +37,11 @@ class FavouritesViewController: UIViewController {
         super.viewDidAppear(animated)
         favourites.fetch()
         tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed))
     }
     
     func configureTableView() {
@@ -62,12 +70,17 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonTableViewCell") as? PokemonTableViewCell {
             
             let idString = String(favourites.favouritesArray[indexPath.row].id)
-            let urlString = "\(baseUrlString)\(idString).png"
+            let urlString = "\(baseImageUrlString)\(idString).png"
             cell.configure(name: favourites.favouritesArray[indexPath.row].name, imageUrlString: urlString)
             return cell
         }
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let idString = String(favourites.favouritesArray[indexPath.row].id)
+        let url = "\(baseUrlString)\(idString)"
+        router.navigateToDetails(urlString: url)
+    }
     
 }

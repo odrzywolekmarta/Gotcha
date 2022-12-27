@@ -100,12 +100,12 @@ class PokemonDetailsViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.navigationBar.update(backroundColor: parentNavigationBarColor, titleColor: parentNavigationBarColor)
+        navigationController?.navigationBar.update(backroundColor: parentNavigationBarColor)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.update(backroundColor: baseColor, titleColor: .black)
+        navigationController?.navigationBar.update(backroundColor: baseColor)
     }
     
     @IBAction func aboutButtonPressed(_ sender: UIButton) {
