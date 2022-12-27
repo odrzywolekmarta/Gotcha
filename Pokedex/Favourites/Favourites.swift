@@ -7,42 +7,47 @@
 
 import Foundation
 
-class Favorites: ObservableObject {
-    var favouritesList: Set<PersistedModel>
-//    var favIds: [Int]?
-    let defaults = UserDefaults.standard
+class Favourites {
+    private var favouritesList: Set<PersistedModel> = []
+    var favouritesArray: [PersistedModel] = []
+    private let defaults = UserDefaults.standard
     private let saveKey = "Favorites"
 
     init() {
+        fetch()
+    }
+
+    func fetch() {
         let decoder = PropertyListDecoder()
         if let data = defaults.data(forKey: saveKey) {
             let favourites = try? decoder.decode(Set<PersistedModel>.self, from: data)
             self.favouritesList = favourites ?? []
+            self.favouritesArray = Array(favouritesList)
+            sort()
             return
         } else {
             self.favouritesList = []
         }
     }
-
-//    func getIds() -> [Int]? {
-//        for fave in favouritesList {
-//            favIds?.append(fave.id)
-//        }
-//        return favIds
-//    }
+    
+    private func sort() {
+        favouritesArray.sort {
+            $0.id < $1.id
+        }
+    }
     
     func contains(_ resort: PersistedModel) -> Bool {
         favouritesList.contains(resort)
     }
 
     func add(_ resort: PersistedModel) {
-        objectWillChange.send()
+//        objectWillChange.send()
         favouritesList.insert(resort)
         save()
     }
 
     func remove(_ resort: PersistedModel) {
-        objectWillChange.send()
+//        objectWillChange.send()
         favouritesList.remove(resort)
         save()
     }

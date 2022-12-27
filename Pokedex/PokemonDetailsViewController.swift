@@ -31,7 +31,7 @@ class PokemonDetailsViewController: UIViewController {
     private let imageViewFullHeight: CGFloat = 220
     var pageViewController: DetailsPageViewController
     var isFavourite: Bool = false
-    var favourites = Favorites()
+    var favourites = Favourites()
     var persistedPokemon = PersistedModel(id: 1, name: "")
     
     init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
@@ -67,6 +67,7 @@ class PokemonDetailsViewController: UIViewController {
         aboutButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
         statisticsButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
         evolutionButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
+        favouritesButton.isHidden = true
         
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
@@ -82,24 +83,19 @@ class PokemonDetailsViewController: UIViewController {
         }
     }
     
-    func setFavouritesButton(button: UIButton) {
-//        guard let pokemon = persistedPokemon else {
-//            return
-//        }
+    func setFavouritesButton() {
         if favourites.contains(persistedPokemon) {
-            favouritesButton.imageView?.image = UIImage(systemName: "heart.filled")
+            favouritesButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {
-            favouritesButton.imageView?.image = UIImage(systemName: "heart")
+            favouritesButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-//                favButton.delegate = self
         viewModel.getPokemonDetails()
         configureView()
-        setFavouritesButton(button: favouritesButton)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -139,22 +135,18 @@ class PokemonDetailsViewController: UIViewController {
             }
         }
     }
-  
-    @IBAction func faveButtonPressed(_ sender: UIButton) {
-//        guard let pokemon = persistedPokemon else {
-//            return
-//        }
-            if isFavourite == true {
-                isFavourite = false
-                favouritesButton.imageView?.image = UIImage(systemName: "heart.")
-                favourites.remove(persistedPokemon)
-            } else {
-                isFavourite = true
-                favouritesButton.imageView?.image = UIImage(systemName: "heart.filled")
-                favourites.add(persistedPokemon)
-            }
-        }
     
+    @IBAction func faveButtonPressed(_ sender: UIButton) {
+        if isFavourite {
+            isFavourite = false
+            favouritesButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            favourites.remove(persistedPokemon)
+        } else {
+            isFavourite = true
+            favouritesButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            favourites.add(persistedPokemon)
+        }
+    }
 }
 
 
@@ -200,6 +192,8 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
                     self.numberLabel.text = "#\(idString)"
                 }
             }
+            favouritesButton.isHidden = false
+            setFavouritesButton()
         }
     }
     

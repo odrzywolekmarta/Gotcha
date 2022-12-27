@@ -10,7 +10,7 @@ import UIKit
 class FavouritesViewController: UIViewController {
     
     var tableView: UITableView
-    var favourites = Favorites()
+    var favourites = Favourites()
     let baseUrlString = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
     
     init() {
@@ -25,7 +25,15 @@ class FavouritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         configureTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        favourites.fetch()
+        tableView.reloadData()
     }
     
     func configureTableView() {
@@ -47,15 +55,15 @@ class FavouritesViewController: UIViewController {
 
 extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        favourites.favouritesList.count
+        favourites.favouritesArray.count
     }
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonTableViewCell") as? PokemonTableViewCell {
-            let favArray = Array(favourites.favouritesList)
-            let idString = String(favArray[indexPath.row].id)
+            
+            let idString = String(favourites.favouritesArray[indexPath.row].id)
             let urlString = "\(baseUrlString)\(idString).png"
-            cell.configure(name: favArray[indexPath.row].name, imageUrlString: urlString)
+            cell.configure(name: favourites.favouritesArray[indexPath.row].name, imageUrlString: urlString)
             return cell
         }
         return UITableViewCell()
