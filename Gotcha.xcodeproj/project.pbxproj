@@ -7,14 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D4E204C2937C3C200273DD7 /* Spark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E20432937C3C200273DD7 /* Spark.swift */; };
-		2D4E204D2937C3C200273DD7 /* FaveIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E20442937C3C200273DD7 /* FaveIcon.swift */; };
-		2D4E204E2937C3C200273DD7 /* FaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E20452937C3C200273DD7 /* FaveButton.swift */; };
-		2D4E204F2937C3C200273DD7 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E20462937C3C200273DD7 /* Ring.swift */; };
-		2D4E20502937C3C200273DD7 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E20482937C3C200273DD7 /* Geometry.swift */; };
-		2D4E20512937C3C200273DD7 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E20492937C3C200273DD7 /* Easing.swift */; };
-		2D4E20522937C3C200273DD7 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E204A2937C3C200273DD7 /* Init.swift */; };
-		2D4E20532937C3C200273DD7 /* Constraints+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E204B2937C3C200273DD7 /* Constraints+.swift */; };
+		2D3AA4A0295B72C9000EC287 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3AA49F295B72C9000EC287 /* Favourites.swift */; };
 		2D4E2055294131D800273DD7 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E2054294131D800273DD7 /* FavouritesViewController.swift */; };
 		2D4E205C2942094200273DD7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E205A2942094200273DD7 /* SearchViewController.swift */; };
 		2D4E205D2942094200273DD7 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D4E205B2942094200273DD7 /* SearchViewController.xib */; };
@@ -52,14 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D4E20432937C3C200273DD7 /* Spark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spark.swift; sourceTree = "<group>"; };
-		2D4E20442937C3C200273DD7 /* FaveIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaveIcon.swift; sourceTree = "<group>"; };
-		2D4E20452937C3C200273DD7 /* FaveButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaveButton.swift; sourceTree = "<group>"; };
-		2D4E20462937C3C200273DD7 /* Ring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
-		2D4E20482937C3C200273DD7 /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
-		2D4E20492937C3C200273DD7 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
-		2D4E204A2937C3C200273DD7 /* Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Init.swift; sourceTree = "<group>"; };
-		2D4E204B2937C3C200273DD7 /* Constraints+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraints+.swift"; sourceTree = "<group>"; };
+		2D3AA49F295B72C9000EC287 /* Favourites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
 		2D4E2054294131D800273DD7 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		2D4E205A2942094200273DD7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2D4E205B2942094200273DD7 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
@@ -109,32 +95,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D4E20422937C3C200273DD7 /* FaveButton */ = {
-			isa = PBXGroup;
-			children = (
-				2D4E20432937C3C200273DD7 /* Spark.swift */,
-				2D4E20442937C3C200273DD7 /* FaveIcon.swift */,
-				2D4E20452937C3C200273DD7 /* FaveButton.swift */,
-				2D4E20462937C3C200273DD7 /* Ring.swift */,
-				2D4E20472937C3C200273DD7 /* Helpers */,
-			);
-			path = FaveButton;
-			sourceTree = "<group>";
-		};
-		2D4E20472937C3C200273DD7 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				2D4E20482937C3C200273DD7 /* Geometry.swift */,
-				2D4E20492937C3C200273DD7 /* Easing.swift */,
-				2D4E204A2937C3C200273DD7 /* Init.swift */,
-				2D4E204B2937C3C200273DD7 /* Constraints+.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		2D4E2056294131EA00273DD7 /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
+				2D3AA49F295B72C9000EC287 /* Favourites.swift */,
 				2D4E2054294131D800273DD7 /* FavouritesViewController.swift */,
 			);
 			path = Favourites;
@@ -241,7 +205,6 @@
 		2DD0B643290949B6008B9BB5 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				2D4E20422937C3C200273DD7 /* FaveButton */,
 				2DD0B644290949B6008B9BB5 /* AppDelegate.swift */,
 				2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */,
 				2D614114291ACEA900D2F68A /* Utilities */,
@@ -384,22 +347,15 @@
 				2D614116291ACEB800D2F68A /* UIKit+extensions.swift in Sources */,
 				2D4E2055294131D800273DD7 /* FavouritesViewController.swift in Sources */,
 				2D61413129216C7B00D2F68A /* AboutViewController.swift in Sources */,
-				2D4E20522937C3C200273DD7 /* Init.swift in Sources */,
-				2D4E20502937C3C200273DD7 /* Geometry.swift in Sources */,
-				2D4E204F2937C3C200273DD7 /* Ring.swift in Sources */,
-				2D4E20512937C3C200273DD7 /* Easing.swift in Sources */,
 				2D6141402921777700D2F68A /* EvolutionViewModel.swift in Sources */,
+				2D3AA4A0295B72C9000EC287 /* Favourites.swift in Sources */,
 				2DD0B662290967D2008B9BB5 /* PokemonAPIService.swift in Sources */,
 				2D61413929216CA300D2F68A /* EvolutionViewController.swift in Sources */,
-				2D4E204D2937C3C200273DD7 /* FaveIcon.swift in Sources */,
 				2D6141022919A59300D2F68A /* PokemonDetailsViewModel.swift in Sources */,
 				2D4E20622943A36E00273DD7 /* SearchViewModel.swift in Sources */,
-				2D4E20532937C3C200273DD7 /* Constraints+.swift in Sources */,
 				2D61413529216C8A00D2F68A /* StatsViewController.swift in Sources */,
 				2D4E20642945F7AA00273DD7 /* UIViewController+AlertPresentable.swift in Sources */,
 				2D61411D291C415E00D2F68A /* PokemonDetailsViewController.swift in Sources */,
-				2D4E204C2937C3C200273DD7 /* Spark.swift in Sources */,
-				2D4E204E2937C3C200273DD7 /* FaveButton.swift in Sources */,
 				2D4E205C2942094200273DD7 /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
