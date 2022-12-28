@@ -43,6 +43,7 @@ class PokemonViewController: UIViewController {
         viewModel.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        tabBarController?.delegate = self
         configureTableView()
         viewModel.getNextPage()
     }
@@ -94,6 +95,20 @@ extension PokemonViewController: PokemonListViewModelDelegate {
     
     func onGetPageFailure(error: String) {
         print(error)
+    }
+}
+
+//MARK: - Tab Bar Controller Delegate
+
+extension PokemonViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let tabBarIndex = tabBarController.selectedIndex
+
+           print(tabBarIndex)
+
+           if tabBarIndex == 0 {
+               tableView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+           }
     }
 }
 

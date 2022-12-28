@@ -30,6 +30,7 @@ class FavouritesViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tabBarController?.delegate = self
         configureTableView()
     }
     
@@ -103,6 +104,15 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
             let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
             return configuration
     }
-    
-    
+}
+
+//MARK: - Tab Bar Controller Delegate
+extension FavouritesViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let tabBarIndex = tabBarController.selectedIndex
+
+        if tabBarIndex == 2 {
+               tableView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+           }
+    }
 }

@@ -7,12 +7,6 @@
 
 import UIKit
 
-extension UINavigationController {
-    func configureBar() {
-        
-    }
-}
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
@@ -39,9 +33,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         searchViewController.tabBarItem = UITabBarItem(title: "SEARCH", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
         
         tabBarController.viewControllers = [allNavigationController, searchNavigationController, favouritesNavigationController]
+        tabBarController.tabBar.tintColor = UIColor(named: Constants.Colors.customRed)
         
         let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: allNavigationController))
-        
         allNavigationController.setViewControllers([controller], animated: false)
         window?.rootViewController = tabBarController
         
