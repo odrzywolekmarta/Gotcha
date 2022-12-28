@@ -31,6 +31,27 @@ extension UIView {
 }
 
 extension UIImage {
+    static func withColor(_ color: UIColor) -> UIImage {
+            let onePx = pixelsToPoints(1)
+            let rect = CGRect(x: 0, y: 0, width: onePx, height: onePx)
+
+            UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+            let context = UIGraphicsGetCurrentContext()
+
+            context!.setShouldAntialias(false)
+            context!.setFillColor(color.cgColor)
+            context!.fill(rect)
+
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+
+            return image!
+        }
+
+        static func pixelsToPoints(_ pixels: CGFloat) -> CGFloat {
+            return pixels / UIScreen.main.scale
+        }
+    
     func addShadow(blurSize: CGFloat = 6.0) -> UIImage {
                         
             let shadowColor = UIColor(white:0.0, alpha:0.8).cgColor
@@ -109,6 +130,10 @@ extension UINavigationBar {
                 appearance.titleTextAttributes = [NSAttributedString.Key.font: titleFont,
                                                   NSAttributedString.Key.foregroundColor: UIColor.white]
             }
+            
+            let blankImage = UIImage.withColor(UIColor.white.withAlphaComponent(0))
+            appearance.setBackIndicatorImage(blankImage, transitionMaskImage: blankImage)
+    
             
             appearance.shadowColor = .clear
             standardAppearance = appearance
