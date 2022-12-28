@@ -98,6 +98,8 @@ extension UINavigationBar {
                  NSAttributedString.Key.foregroundColor: UIColor.white]
             }
             
+            
+            
             if let titleFont = UIFont(name: Constants.customFontBold, size: 20) {
                 appearance.titleTextAttributes = [NSAttributedString.Key.font: titleFont,
                                                   NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -115,6 +117,7 @@ extension UINavigationBar {
                 titleTextAttributes = [NSAttributedString.Key.foregroundColor: titleColor]
             }
         }
+        
     }
 }
 

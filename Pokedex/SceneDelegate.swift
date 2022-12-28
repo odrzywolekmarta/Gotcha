@@ -61,8 +61,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         titleLabel.textAlignment = .center
         titleLabel.textColor = .white
         titleLabel.font = UIFont(name: Constants.customFontBold, size: 23)
-        allNavigationBar.addSubview(titleLabel)
-        
+        allNavigationBar.addSubview(titleLabel)        
         
         let favNavigationBar = favouritesNavigationController.navigationBar
         let titleFramee = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)

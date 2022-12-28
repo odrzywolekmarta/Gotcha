@@ -51,6 +51,11 @@ class Favourites {
         favouritesList.remove(resort)
         save()
     }
+    
+    @objc func clear() {
+        favouritesList.removeAll()
+        save()
+    }
 
     func save() {
         let encoder = PropertyListEncoder()

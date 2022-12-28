@@ -55,6 +55,13 @@ class FavouritesViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clear))
+    }
+    
+    @objc func clear() {
+        favourites.favouritesArray.removeAll()
+        favourites.save()
+        tableView.reloadData()
     }
 
 }
