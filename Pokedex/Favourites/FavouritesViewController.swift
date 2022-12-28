@@ -90,13 +90,18 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
         router.navigateToDetails(urlString: url)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            favourites.remove(favourites.favouritesArray[indexPath.row])
-            favourites.fetch()
-            tableView.reloadData()
-        }
-        
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+            -> UISwipeActionsConfiguration? {
+            let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+                self.favourites.remove(self.favourites.favouritesArray[indexPath.row])
+                self.favourites.fetch()
+                tableView.reloadData()
+                completionHandler(true)
+            }
+            deleteAction.image = UIImage(systemName: "trash")
+                deleteAction.backgroundColor = UIColor(named: Constants.Colors.customRed)
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+            return configuration
     }
     
     

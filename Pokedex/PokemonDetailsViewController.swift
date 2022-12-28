@@ -77,7 +77,7 @@ class PokemonDetailsViewController: UIViewController {
         pageViewController.view.leadingAnchor.constraint(equalTo: pageContainerView.leadingAnchor).isActive = true
         pageViewController.view.trailingAnchor.constraint(equalTo: pageContainerView.trailingAnchor).isActive = true
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        
+                
         if viewModel.detailsModel != nil {
             onDetailsModelFetchSuccess()
         }
@@ -104,8 +104,8 @@ class PokemonDetailsViewController: UIViewController {
     }
     
     @IBAction func aboutButtonPressed(_ sender: UIButton) {
-        pageViewController.slideToPage(index: 0, completion: nil)
-        setTintColor(for: aboutButton)
+            self.pageViewController.slideToPage(index: 0, completion: nil)
+            self.setTintColor(for: self.aboutButton)
     }
     
     @IBAction func statsButtonPressed(_ sender: UIButton) {
