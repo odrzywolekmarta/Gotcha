@@ -59,9 +59,9 @@ class FavouritesViewController: UIViewController {
     }
     
     @objc func clear() {
-        favourites.favouritesArray.removeAll()
-        favourites.save()
+        favourites.clear()
         tableView.reloadData()
+        print(favourites.favouritesArray)
     }
 
 }
@@ -89,5 +89,15 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
         let url = "\(baseUrlString)\(idString)"
         router.navigateToDetails(urlString: url)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            favourites.remove(favourites.favouritesArray[indexPath.row])
+            favourites.fetch()
+            tableView.reloadData()
+        }
+        
+    }
+    
     
 }

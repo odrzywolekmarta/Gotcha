@@ -84,6 +84,7 @@ extension UINavigationBar {
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
+            
             if let backroundColor = backroundColor {
                 appearance.backgroundColor = backroundColor
             }
@@ -98,16 +99,21 @@ extension UINavigationBar {
                  NSAttributedString.Key.foregroundColor: UIColor.white]
             }
             
-            
+            if let clearButtonFont = UIFont(name: Constants.customFontBold, size: 17) {
+                appearance.buttonAppearance.normal.titleTextAttributes =
+                [NSAttributedString.Key.font: clearButtonFont,
+                 NSAttributedString.Key.foregroundColor: UIColor.white]
+            }
             
             if let titleFont = UIFont(name: Constants.customFontBold, size: 20) {
                 appearance.titleTextAttributes = [NSAttributedString.Key.font: titleFont,
                                                   NSAttributedString.Key.foregroundColor: UIColor.white]
             }
-
+            
             appearance.shadowColor = .clear
             standardAppearance = appearance
             scrollEdgeAppearance = appearance
+            
         } else {
             barStyle = .blackTranslucent
             if let backroundColor = backroundColor {

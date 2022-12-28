@@ -52,9 +52,10 @@ class Favourites {
         save()
     }
     
-    @objc func clear() {
+    func clear() {
         favouritesList.removeAll()
         save()
+        fetch()
     }
 
     func save() {

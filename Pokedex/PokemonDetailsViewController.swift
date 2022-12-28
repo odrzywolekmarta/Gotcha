@@ -83,14 +83,6 @@ class PokemonDetailsViewController: UIViewController {
         }
     }
     
-    func setFavouritesButton() {
-        if favourites.contains(persistedPokemon) {
-            favouritesButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        } else {
-            favouritesButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
@@ -106,6 +98,9 @@ class PokemonDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.update(backroundColor: baseColor)
+        favourites.fetch()
+        setFavouritesButton()
+        
     }
     
     @IBAction func aboutButtonPressed(_ sender: UIButton) {
@@ -133,6 +128,14 @@ class PokemonDetailsViewController: UIViewController {
             if pageButton !== button {
                 pageButton.tintColor = UIColor(named: Constants.Colors.customRed)
             }
+        }
+    }
+    
+    func setFavouritesButton() {
+        if favourites.contains(persistedPokemon) {
+            favouritesButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {
+            favouritesButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
     
