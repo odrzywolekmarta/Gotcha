@@ -104,10 +104,9 @@ extension PokemonViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         let tabBarIndex = tabBarController.selectedIndex
 
-           print(tabBarIndex)
-
            if tabBarIndex == 0 {
-               tableView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+               let indexPath = IndexPath(row: 0, section: 0)
+               tableView.scrollToRow(at: indexPath, at: .top, animated: true)
            }
     }
 }

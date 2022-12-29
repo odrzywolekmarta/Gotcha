@@ -62,7 +62,6 @@ class FavouritesViewController: UIViewController {
     @objc func clear() {
         favourites.clear()
         tableView.reloadData()
-        print(favourites.favouritesArray)
     }
 
 }
@@ -112,7 +111,8 @@ extension FavouritesViewController: UITabBarControllerDelegate {
         let tabBarIndex = tabBarController.selectedIndex
 
         if tabBarIndex == 2 {
-               tableView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+            let indexPath = IndexPath(row: 0, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
            }
     }
 }

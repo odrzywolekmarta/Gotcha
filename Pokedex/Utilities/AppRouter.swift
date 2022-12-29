@@ -36,5 +36,5 @@ class AppRouter: AppRouterProtocol {
         let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(detailsModel: model), router: self)
         navigationController.pushViewController(controller, animated: true)
     }
-
+    
 }
