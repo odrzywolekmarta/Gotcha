@@ -27,50 +27,51 @@ class AboutViewController: UIViewController {
         typeLabel2.makeRound(radius: typeLabel2.frame.height / 2)
         typeLabel1.isHidden = true
         typeLabel2.isHidden = true
+        
     }
-}
-
-// TODO get rid of force unwraping
-func getColor(for type: String) -> UIColor {
-    switch type {
-    case "normal":
-        return UIColor(named: Constants.Colors.normalType)!
-    case "fire":
-        return UIColor(named: Constants.Colors.fireType)!
-    case "water":
-        return UIColor(named: Constants.Colors.waterType)!
-    case "grass":
-        return UIColor(named: Constants.Colors.grassType)!
-    case "electric":
-        return UIColor(named: Constants.Colors.electricType)!
-    case "ice":
-        return UIColor(named: Constants.Colors.iceType)!
-    case "fighting":
-        return UIColor(named: Constants.Colors.fightingType)!
-    case "poison":
-        return UIColor(named: Constants.Colors.poisonType)!
-    case "ground":
-        return UIColor(named: Constants.Colors.groundType)!
-    case "flying":
-        return UIColor(named: Constants.Colors.flyingType)!
-    case "psychic":
-        return UIColor(named: Constants.Colors.psychicType)!
-    case "bug":
-        return UIColor(named: Constants.Colors.bugType)!
-    case "rock":
-        return UIColor(named: Constants.Colors.rockType)!
-    case "ghost":
-        return UIColor(named: Constants.Colors.ghostType)!
-    case "dark":
-        return UIColor(named: Constants.Colors.darkType)!
-    case "dragon":
-        return UIColor(named: Constants.Colors.dragonType)!
-    case "steel":
-        return UIColor(named: Constants.Colors.steelType)!
-    case "fairy":
-        return UIColor(named: Constants.Colors.fairyType)!
-    default:
-        return UIColor(named: Constants.Colors.normalType)!
+    
+    // TODO: get rid of force unwraping
+    func getColor(for type: String) -> UIColor {
+        switch type {
+        case "normal":
+            return UIColor(named: Constants.Colors.normalType)!
+        case "fire":
+            return UIColor(named: Constants.Colors.fireType)!
+        case "water":
+            return UIColor(named: Constants.Colors.waterType)!
+        case "grass":
+            return UIColor(named: Constants.Colors.grassType)!
+        case "electric":
+            return UIColor(named: Constants.Colors.electricType)!
+        case "ice":
+            return UIColor(named: Constants.Colors.iceType)!
+        case "fighting":
+            return UIColor(named: Constants.Colors.fightingType)!
+        case "poison":
+            return UIColor(named: Constants.Colors.poisonType)!
+        case "ground":
+            return UIColor(named: Constants.Colors.groundType)!
+        case "flying":
+            return UIColor(named: Constants.Colors.flyingType)!
+        case "psychic":
+            return UIColor(named: Constants.Colors.psychicType)!
+        case "bug":
+            return UIColor(named: Constants.Colors.bugType)!
+        case "rock":
+            return UIColor(named: Constants.Colors.rockType)!
+        case "ghost":
+            return UIColor(named: Constants.Colors.ghostType)!
+        case "dark":
+            return UIColor(named: Constants.Colors.darkType)!
+        case "dragon":
+            return UIColor(named: Constants.Colors.dragonType)!
+        case "steel":
+            return UIColor(named: Constants.Colors.steelType)!
+        case "fairy":
+            return UIColor(named: Constants.Colors.fairyType)!
+        default:
+            return UIColor(named: Constants.Colors.normalType)!
+        }
     }
 }
 
@@ -125,15 +126,15 @@ extension AboutViewController: AboutViewModelDelegate {
                     self.typeLabel2.backgroundColor = .clear
                     self.typeLabel2.textColor = .clear
                     self.typeLabel1.text = model.types[0].type.name
-                    let typeColor1 = getColor(for: model.types[0].type.name)
+                    let typeColor1 = self.getColor(for: model.types[0].type.name)
                     self.typeLabel1.backgroundColor = typeColor1
                 case 2:
                     self.typeLabel1.isHidden = false
                     self.typeLabel2.isHidden = false
                     self.typeLabel1.text = model.types[0].type.name
                     self.typeLabel2.text = model.types[1].type.name
-                    let typeColor1 = getColor(for: model.types[0].type.name)
-                    let typeColor2 = getColor(for: model.types[1].type.name)
+                    let typeColor1 = self.getColor(for: model.types[0].type.name)
+                    let typeColor2 = self.getColor(for: model.types[1].type.name)
                     self.typeLabel1.backgroundColor = typeColor1
                     self.typeLabel2.backgroundColor = typeColor2
                 default:

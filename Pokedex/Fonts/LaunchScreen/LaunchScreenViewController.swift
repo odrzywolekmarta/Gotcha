@@ -46,7 +46,7 @@ class LaunchScreenViewController: UIViewController {
     
     func preparePlayer() {
         guard let path = Bundle.main.path(forResource: "LaunchVideo", ofType:"mp4") else {
-            debugPrint("splash.m4v not found")
+            debugPrint("video not found")
             return
         }
         playerController.view.backgroundColor = UIColor(named: Constants.Colors.customRed)
