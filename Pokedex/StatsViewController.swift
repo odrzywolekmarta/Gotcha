@@ -24,6 +24,7 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var totalValueLabel: UILabel!
     
     let viewModel: StatsViewModelProtocol = StatsViewModel()
+    var hpValue: Float?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,7 @@ extension StatsViewController: StatsViewModelDelegate {
         DispatchQueue.main.async {
             if let model = self.viewModel.detailsModel {
                 let hpValue = Float(model.stats[0].baseStat)
+                self.hpValue = hpValue
                 self.hpBar.setProgress(hpValue / 255, animated: false)
                 self.hpValueLabel.text = String(Int(hpValue))
                 let attackValue = Float(model.stats[1].baseStat)

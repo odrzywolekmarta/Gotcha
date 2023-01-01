@@ -18,56 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let tabBarController = UITabBarController()
-        let allNavigationController = UINavigationController()
-        let searchNavigationController = UINavigationController()
-        let favouritesNavigationController = UINavigationController()
         
-        allNavigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "list.bullet"), selectedImage: UIImage(systemName: "list.bullet"))
-        
-        let favouritesViewController = FavouritesViewController(router: AppRouter(navigationController: favouritesNavigationController))
-        favouritesNavigationController.viewControllers = [favouritesViewController]
-        favouritesViewController.tabBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))       
-        
-        let searchViewController = SearchViewController(router: AppRouter(navigationController: searchNavigationController))
-        searchNavigationController.viewControllers = [searchViewController]
-        searchViewController.tabBarItem = UITabBarItem(title: "SEARCH", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
-        
-        tabBarController.viewControllers = [allNavigationController, searchNavigationController, favouritesNavigationController]
-        tabBarController.tabBar.tintColor = UIColor(named: Constants.Colors.customRed)
-        
-        let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: allNavigationController))
-        allNavigationController.setViewControllers([controller], animated: false)
-        window?.rootViewController = tabBarController
-        
+        let launchScreen = LaunchScreenViewController()
+        launchScreen.delegate = self
+        launchScreen.view.backgroundColor = .cyan
+        window?.rootViewController = launchScreen
         window?.makeKeyAndVisible()
-        
-        allNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
-        searchNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customBeige), titleColor: .black)
-        favouritesNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
-        
-        // TODO: make bar title configuration reusable
-        let allNavigationBar
-        = allNavigationController.navigationBar
-        let titleFrame = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
-        let titleLabel = UILabel(frame: titleFrame)
-        titleLabel.text = "GOTCHA"
-        titleLabel.applyShadow()
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = .white
-        titleLabel.font = UIFont(name: Constants.customFontBold, size: 23)
-        allNavigationBar.addSubview(titleLabel)        
-        
-        let favNavigationBar = favouritesNavigationController.navigationBar
-        let titleFramee = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
-        let titleLabell = UILabel(frame: titleFramee)
-        titleLabell.text = "GOTCHA"
-        titleLabell.applyShadow()
-        titleLabell.textAlignment = .center
-        titleLabell.textColor = .white
-        titleLabell.font = UIFont(name: Constants.customFontBold, size: 23)
-        favNavigationBar.addSubview(titleLabell)
-        
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -99,3 +55,56 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
+extension SceneDelegate: LaunchScreenViewControllerDelegate {
+    func onAnimationFinished() {
+        let tabBarController = UITabBarController()
+        let allNavigationController = UINavigationController()
+        let searchNavigationController = UINavigationController()
+        let favouritesNavigationController = UINavigationController()
+        
+        allNavigationController.tabBarItem = UITabBarItem(title: "ALL", image: UIImage(systemName: "list.bullet"), selectedImage: UIImage(systemName: "list.bullet"))
+        
+        let favouritesViewController = FavouritesViewController(router: AppRouter(navigationController: favouritesNavigationController))
+        favouritesNavigationController.viewControllers = [favouritesViewController]
+        favouritesViewController.tabBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(systemName: "heart"), selectedImage: UIImage(systemName: "heart.fill"))
+        
+        let searchViewController = SearchViewController(router: AppRouter(navigationController: searchNavigationController))
+        searchNavigationController.viewControllers = [searchViewController]
+        searchViewController.tabBarItem = UITabBarItem(title: "SEARCH", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
+        
+        tabBarController.viewControllers = [allNavigationController, searchNavigationController, favouritesNavigationController]
+        tabBarController.tabBar.tintColor = UIColor(named: Constants.Colors.customRed)
+        
+        let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: allNavigationController))
+        allNavigationController.setViewControllers([controller], animated: false)
+        window?.rootViewController = tabBarController
+        
+        window?.makeKeyAndVisible()
+                
+        allNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
+        searchNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customBeige), titleColor: .black)
+        favouritesNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
+        
+        // TODO: make bar title configuration reusable
+        let allNavigationBar
+        = allNavigationController.navigationBar
+        let titleFrame = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
+        let titleLabel = UILabel(frame: titleFrame)
+        titleLabel.text = "GOTCHA"
+        titleLabel.applyShadow()
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont(name: Constants.customFontBold, size: 23)
+        allNavigationBar.addSubview(titleLabel)
+        
+        let favNavigationBar = favouritesNavigationController.navigationBar
+        let titleFramee = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
+        let titleLabell = UILabel(frame: titleFramee)
+        titleLabell.text = "GOTCHA"
+        titleLabell.applyShadow()
+        titleLabell.textAlignment = .center
+        titleLabell.textColor = .white
+        titleLabell.font = UIFont(name: Constants.customFontBold, size: 23)
+        favNavigationBar.addSubview(titleLabell)
+    }
+}
