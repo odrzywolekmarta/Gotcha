@@ -103,14 +103,6 @@ extension PokemonViewController: PokemonListViewModelDelegate {
 //MARK: - Tab Bar Controller Delegate
 
 extension PokemonViewController: UITabBarControllerDelegate {
-    //    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-    //        let tabBarIndex = tabBarController.selectedIndex
-    //
-    //        if tabBarIndex == 0 {
-    //               let indexPath = IndexPath(row: 0, section: 0)
-    //               tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-    //           }
-    //    }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if self.previousController == viewController || self.previousController == nil {

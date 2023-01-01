@@ -108,15 +108,7 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - Tab Bar Controller Delegate
 extension FavouritesViewController: UITabBarControllerDelegate {
-    //    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-    //        let tabBarIndex = tabBarController.selectedIndex
-    //
-    //        if tabBarIndex == 2, tableView.numberOfRows(inSection: 0) > 0, viewController == self, tabBarController.selectedViewController == viewController {
-    //            let indexPath = IndexPath(row: 0, section: 0)
-    //            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-    //           }
-    //    }
-    
+
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if self.previousController == viewController || self.previousController == nil {
             let nav = viewController as! UINavigationController
