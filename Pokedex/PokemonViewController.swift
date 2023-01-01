@@ -13,6 +13,7 @@ class PokemonViewController: UIViewController {
     var tableView: UITableView
     let paginationOffset = 4
     let router: AppRouterProtocol
+    var previousController: UIViewController?
     
     init(viewModel: PokemonListViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -37,13 +38,12 @@ class PokemonViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        tabBarController?.delegate = self
         configureTableView()
         viewModel.getNextPage()
     }
@@ -51,7 +51,9 @@ class PokemonViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed))
+        tabBarController?.delegate = self
     }
+    
 }
 
 //MARK: - Table View Data Source
@@ -101,13 +103,26 @@ extension PokemonViewController: PokemonListViewModelDelegate {
 //MARK: - Tab Bar Controller Delegate
 
 extension PokemonViewController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        let tabBarIndex = tabBarController.selectedIndex
-
-           if tabBarIndex == 0 {
-               let indexPath = IndexPath(row: 0, section: 0)
-               tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-           }
+    //    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    //        let tabBarIndex = tabBarController.selectedIndex
+    //
+    //        if tabBarIndex == 0 {
+    //               let indexPath = IndexPath(row: 0, section: 0)
+    //               tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    //           }
+    //    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if self.previousController == viewController || self.previousController == nil {
+            let nav = viewController as! UINavigationController
+            if nav.viewControllers.count < 2 {
+                let indexPath = IndexPath(row: 0, section: 0)
+                tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            }
+        }
+        self.previousController = viewController;
+        return true
     }
+    
 }
 

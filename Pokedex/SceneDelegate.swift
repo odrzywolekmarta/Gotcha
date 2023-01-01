@@ -21,7 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let launchScreen = LaunchScreenViewController()
         launchScreen.delegate = self
-        launchScreen.view.backgroundColor = .cyan
         window?.rootViewController = launchScreen
         window?.makeKeyAndVisible()
     }

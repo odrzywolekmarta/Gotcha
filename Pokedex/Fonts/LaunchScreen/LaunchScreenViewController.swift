@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 protocol LaunchScreenViewControllerDelegate: AnyObject {
     func onAnimationFinished()
@@ -13,8 +15,12 @@ protocol LaunchScreenViewControllerDelegate: AnyObject {
 
 class LaunchScreenViewController: UIViewController {
 
-    weak var delegate: LaunchScreenViewControllerDelegate?
+    @IBOutlet weak var containerView: UIView!
     
+    weak var delegate: LaunchScreenViewControllerDelegate?
+    let playerController = AVPlayerViewController()
+    var player: AVPlayer?
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,8 +31,8 @@ class LaunchScreenViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        sleep(4)
-        delegate?.onAnimationFinished()
+        sleep(1)
+        playVideo()
     }
     
     required init?(coder: NSCoder) {
@@ -35,19 +41,35 @@ class LaunchScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        preparePlayer()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func preparePlayer() {
+        guard let path = Bundle.main.path(forResource: "LaunchVideo", ofType:"mp4") else {
+            debugPrint("splash.m4v not found")
+            return
+        }
+        playerController.view.backgroundColor = UIColor(named: Constants.Colors.customRed)
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
+        self.player = player
+        addChild(playerController)
+        containerView.addSubview(playerController.view)
+        playerController.view.frame = containerView.bounds
+        playerController.entersFullScreenWhenPlaybackBegins = false
+        playerController.showsPlaybackControls = false
+        playerController.player = player
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerController.player?.currentItem)
     }
-    */
+    
+    private func playVideo() {
+        
+        player?.play()
+      
+    }
+    @objc func playerDidFinishPlaying(note: NSNotification) {
+        NotificationCenter.default.removeObserver(self)
+        delegate?.onAnimationFinished()
+        
+    }
 
 }

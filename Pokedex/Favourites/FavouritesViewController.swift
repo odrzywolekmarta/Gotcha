@@ -14,6 +14,7 @@ class FavouritesViewController: UIViewController {
     let baseUrlString = "https://pokeapi.co/api/v2/pokemon/"
     let baseImageUrlString = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
     let router: AppRouterProtocol
+    var previousController: UIViewController?
     
     init(router: AppRouterProtocol) {
         self.router = router
@@ -25,12 +26,11 @@ class FavouritesViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tabBarController?.delegate = self
         configureTableView()
     }
     
@@ -43,6 +43,7 @@ class FavouritesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed))
+        tabBarController?.delegate = self
     }
     
     func configureTableView() {
@@ -63,7 +64,7 @@ class FavouritesViewController: UIViewController {
         favourites.clear()
         tableView.reloadData()
     }
-
+    
 }
 
 //MARK: - Table View Methods
@@ -72,7 +73,7 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         favourites.favouritesArray.count
     }
-   
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonTableViewCell") as? PokemonTableViewCell {
             
@@ -91,28 +92,41 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
-            -> UISwipeActionsConfiguration? {
-            let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
-                self.favourites.remove(self.favourites.favouritesArray[indexPath.row])
-                self.favourites.fetch()
-                tableView.reloadData()
-                completionHandler(true)
-            }
-            deleteAction.image = UIImage(systemName: "trash")
-                deleteAction.backgroundColor = UIColor(named: Constants.Colors.customRed)
-            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
-            return configuration
+    -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+            self.favourites.remove(self.favourites.favouritesArray[indexPath.row])
+            self.favourites.fetch()
+            tableView.reloadData()
+            completionHandler(true)
+        }
+        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.backgroundColor = UIColor(named: Constants.Colors.customRed)
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
     }
 }
 
 //MARK: - Tab Bar Controller Delegate
 extension FavouritesViewController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        let tabBarIndex = tabBarController.selectedIndex
-
-        if tabBarIndex == 2 {
-            let indexPath = IndexPath(row: 0, section: 0)
-            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-           }
+    //    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    //        let tabBarIndex = tabBarController.selectedIndex
+    //
+    //        if tabBarIndex == 2, tableView.numberOfRows(inSection: 0) > 0, viewController == self, tabBarController.selectedViewController == viewController {
+    //            let indexPath = IndexPath(row: 0, section: 0)
+    //            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    //           }
+    //    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if self.previousController == viewController || self.previousController == nil {
+            let nav = viewController as! UINavigationController
+            if nav.viewControllers.count < 2, tableView.numberOfRows(inSection: 0) > 0 {
+                let indexPath = IndexPath(row: 0, section: 0)
+                tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            }
+        }
+        self.previousController = viewController;
+        return true
     }
+    
 }
