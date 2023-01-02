@@ -206,8 +206,16 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     
     func onDetailsModelFetchFailure(error: Error) {
         DispatchQueue.main.async {
-            self.presentAlert(with: error)
+            self.pokemonImageView.image = UIImage(named: "unknown")
+            UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
+                self.pokemonImageView.alpha = 1
+                self.imageViewHeightConstraint.constant = self.imageViewFullHeight
+                self.view.layoutIfNeeded()
+                self.pokemonImageView.applyShadow()
+            }
         }
+        presentAlert(with: error)
     }
+    
 }
 
