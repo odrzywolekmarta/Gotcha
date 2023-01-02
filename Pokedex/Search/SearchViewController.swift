@@ -42,6 +42,7 @@ class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customBeige))
+        randomButton.isUserInteractionEnabled = true
     }
     
     @IBAction func searchPressed(_ sender: UIButton) {
@@ -52,6 +53,7 @@ class SearchViewController: UIViewController {
         let randomIdString = String(Int.random(in: 1...905))
         let randomPokemonUrl = basePokemonUrl + randomIdString
         viewModel.getPokemonDetails(withUrlString: randomPokemonUrl)
+        randomButton.isUserInteractionEnabled = false
     }
     
     

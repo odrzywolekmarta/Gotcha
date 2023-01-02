@@ -21,7 +21,7 @@ extension UIViewController {
         alertController.setValue(titleString, forKey: "attributedTitle")
         alertController.setValue(messageString, forKey: "attributedMessage")
 
-            self.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
 
     func presentAlert(description: String) {
@@ -32,7 +32,6 @@ extension UIViewController {
         let messageString = NSAttributedString(string: description, attributes: messageAttributes)
 
         alertController.setValue(messageString, forKey: "attributedMessage")
-
-            self.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

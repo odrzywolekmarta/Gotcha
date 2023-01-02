@@ -72,6 +72,7 @@ class PokemonDetailsViewController: UIViewController {
         evolutionButton.startAnimatingPressActions()
         favouritesButton.isHidden = true
         favouritesButton.startAnimatingPressActions()
+        favouritesButton.imageView?.applyShadow()
         
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
