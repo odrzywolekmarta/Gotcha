@@ -178,7 +178,9 @@ extension AboutViewController: AboutViewModelDelegate {
     }
     
     func onAbilityDetailsFailure(error: Error) {
-        
+        DispatchQueue.main.async {
+            self.presentAlert(with: error)
+        }
     }
     
 }
