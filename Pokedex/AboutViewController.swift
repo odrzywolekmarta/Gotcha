@@ -171,8 +171,12 @@ extension AboutViewController: AboutViewModelDelegate {
     
     func onAbilityDetailsSuccess() {
         DispatchQueue.main.async {
-            if let description = self.viewModel.abilityModel?.effectEntries[1].shortEffect {
-                self.presentAlert(description: description)
+            if let model = self.viewModel.abilityModel {
+                if model.effectEntries[0].language.name == "de" {
+                    self.presentAlert(description: model.effectEntries[1].shortEffect)
+                } else {
+                    self.presentAlert(description: model.effectEntries[0].shortEffect)
+                }
             }
         }
     }
