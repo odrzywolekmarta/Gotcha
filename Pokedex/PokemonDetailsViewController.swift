@@ -67,7 +67,11 @@ class PokemonDetailsViewController: UIViewController {
         aboutButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
         statisticsButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
         evolutionButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
+        aboutButton.startAnimatingPressActions()
+        statisticsButton.startAnimatingPressActions()
+        evolutionButton.startAnimatingPressActions()
         favouritesButton.isHidden = true
+        favouritesButton.startAnimatingPressActions()
         
         addChild(pageViewController)
         view.addSubview(pageViewController.view)

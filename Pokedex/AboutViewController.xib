@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,24 +39,24 @@
                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GBe-ww-HMC">
                     <rect key="frame" x="0.0" y="15" width="414" height="366"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="w54-QQ-0JV">
+                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="w54-QQ-0JV">
                             <rect key="frame" x="30" y="291.5" width="354" height="21.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Types" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S2-PV-x6T">
-                                    <rect key="frame" x="0.0" y="0.0" width="97" height="21.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="112.5" height="21.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17M-Uo-c3B">
-                                    <rect key="frame" x="122" y="0.0" width="87.5" height="21.5"/>
+                                    <rect key="frame" x="120.5" y="0.0" width="113" height="21.5"/>
                                     <color key="backgroundColor" red="0.72332504200000003" green="0.384760983" blue="0.94586343930000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fro-pK-Lr6">
-                                    <rect key="frame" x="234.5" y="0.0" width="119.5" height="21.5"/>
+                                    <rect key="frame" x="241.5" y="0.0" width="112.5" height="21.5"/>
                                     <color key="backgroundColor" red="0.54630173260000003" green="0.74350238459999995" blue="0.67811427059999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
