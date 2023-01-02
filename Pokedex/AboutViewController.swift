@@ -11,23 +11,37 @@ class AboutViewController: UIViewController {
     
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
-    @IBOutlet weak var abilityLabel1: UILabel!
-    @IBOutlet weak var abilityLabel2: UILabel!
-    @IBOutlet weak var abilityLabel3: UILabel!
     @IBOutlet weak var typeLabel1: UILabel!
     @IBOutlet weak var typeLabel2: UILabel!
+    @IBOutlet weak var abilityButton1: UIButton!
+    @IBOutlet weak var abilityButton2: UIButton!
+    @IBOutlet weak var abilityButton3: UIButton!
+    
     
     let viewModel: AboutViewModelProtocol = AboutViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
+        configure()
+    }
+    
+    func configure() {
         view.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         typeLabel1.makeRound(radius: typeLabel1.frame.height / 2)
         typeLabel2.makeRound(radius: typeLabel2.frame.height / 2)
         typeLabel1.isHidden = true
         typeLabel2.isHidden = true
         
+        abilityButton1.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 17)
+        abilityButton2.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 17)
+        abilityButton3.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 17)
+        abilityButton1.applyShadow()
+        abilityButton2.applyShadow()
+        abilityButton3.applyShadow()
+        abilityButton1.startAnimatingPressActions()
+        abilityButton2.startAnimatingPressActions()
+        abilityButton3.startAnimatingPressActions()
     }
     
     // TODO: get rid of force unwraping
@@ -73,11 +87,19 @@ class AboutViewController: UIViewController {
             return UIColor(named: Constants.Colors.normalType)!
         }
     }
+    
+    @IBAction func abilityButtonTapped(_ sender: UIButton) {
+        if let ability = sender.titleLabel?.text {
+            viewModel.getAbilityDetails(for: ability)
+        }
+    }
+    
 }
 
 //MARK: - Table View Delegate 
 
 extension AboutViewController: AboutViewModelDelegate {
+    
     func onDetailsModelSet() {
         DispatchQueue.main.async {
             if let model = self.viewModel.detailsModel {
@@ -101,21 +123,21 @@ extension AboutViewController: AboutViewModelDelegate {
                 let numOfAbilities = model.abilities.count
                 switch numOfAbilities {
                 case 1:
-                    self.abilityLabel1.text = model.abilities[0].ability.name
-                    self.abilityLabel2.isHidden = true
-                    self.abilityLabel3.isHidden = true
+                    self.abilityButton1.setTitle(model.abilities[0].ability.name, for: .normal)
+                    self.abilityButton2.isHidden = true
+                    self.abilityButton3.isHidden = true
                 case 2:
-                    self.abilityLabel1.text = model.abilities[0].ability.name
-                    self.abilityLabel2.text = model.abilities[1].ability.name
-                    self.abilityLabel3.isHidden = true
+                    self.abilityButton1.setTitle(model.abilities[0].ability.name, for: .normal)
+                    self.abilityButton2.setTitle(model.abilities[1].ability.name, for: .normal)
+                    self.abilityButton3.isHidden = true
                 case 3:
-                    self.abilityLabel1.text = model.abilities[0].ability.name
-                    self.abilityLabel2.text = model.abilities[1].ability.name
-                    self.abilityLabel3.text = model.abilities[2].ability.name
+                    self.abilityButton1.setTitle(model.abilities[0].ability.name, for: .normal)
+                    self.abilityButton2.setTitle(model.abilities[1].ability.name, for: .normal)
+                    self.abilityButton3.setTitle(model.abilities[2].ability.name, for: .normal)
                 default:
-                    self.abilityLabel1.isHidden = true
-                    self.abilityLabel2.isHidden = true
-                    self.abilityLabel3.isHidden = true
+                    self.abilityButton1.isHidden = true
+                    self.abilityButton2.isHidden = true
+                    self.abilityButton3.isHidden = true
                 }
                 
                 let numOfTypes = model.types.count
@@ -146,5 +168,18 @@ extension AboutViewController: AboutViewModelDelegate {
             }
         }
     }
+    
+    func onAbilityDetailsSuccess() {
+        DispatchQueue.main.async {
+            if let description = self.viewModel.abilityModel?.effectEntries[1].shortEffect {
+                self.presentAlert(description: description)
+            }
+        }
+    }
+    
+    func onAbilityDetailsFailure(error: Error) {
+        
+    }
+    
 }
 

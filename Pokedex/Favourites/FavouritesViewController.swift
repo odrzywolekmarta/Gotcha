@@ -58,6 +58,7 @@ class FavouritesViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clear))
+        
     }
     
     @objc func clear() {

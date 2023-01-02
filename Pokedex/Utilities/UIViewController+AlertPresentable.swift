@@ -24,4 +24,15 @@ extension UIViewController {
             self.present(alertController, animated: true, completion: nil)
     }
 
+    func presentAlert(description: String) {
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+     
+        let messageAttributes = [NSAttributedString.Key.font: UIFont(name: Constants.customFont, size: 18)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        let messageString = NSAttributedString(string: description, attributes: messageAttributes)
+
+        alertController.setValue(messageString, forKey: "attributedMessage")
+
+            self.present(alertController, animated: true, completion: nil)
+    }
 }

@@ -33,6 +33,10 @@ class EvolutionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
+    }
+    
+    func configureView() {
         firstEvolutionStackView.isHidden = true
         secondEvolutionStackView.isHidden = true
         noEvolutionLabel.isHidden = true
@@ -46,8 +50,6 @@ class EvolutionViewController: UIViewController {
         fourthView.makeRound()
         fourthView.applyShadow()
     }
-    
-   
     
     init(router: AppRouterProtocol) {
         self.router = router

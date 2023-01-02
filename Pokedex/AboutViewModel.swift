@@ -10,21 +10,41 @@ import Foundation
 protocol AboutViewModelProtocol: AnyObject {
     var delegate: AboutViewModelDelegate? { get set }
     var detailsModel: PokemonModel? { get }
+    var abilityModel: AbilityModel? { get }
+
     // TODO: create PokemonModelSettable protowcol and implement on view models
     func set(model: PokemonModel)
+    func getAbilityDetails(for ability: String)
 }
 
 protocol AboutViewModelDelegate: AnyObject {
     func onDetailsModelSet()
+    func onAbilityDetailsSuccess()
+    func onAbilityDetailsFailure(error: Error)
 }
 
 class AboutViewModel: AboutViewModelProtocol {
     
     weak var delegate: AboutViewModelDelegate?
     var detailsModel: PokemonModel?
+    var abilityModel: AbilityModel?
+    private let service = PokemonAPIService()
   
     func set(model: PokemonModel) {
         detailsModel = model
         delegate?.onDetailsModelSet()
     }
+    
+    func getAbilityDetails(for ability: String) {
+        service.getAbilityDetails(for: ability) { [weak self] abilityResult in
+            switch abilityResult {
+            case .success(let abilityModel):
+                self?.abilityModel = abilityModel
+                self?.delegate?.onAbilityDetailsSuccess()
+            case .failure(let error):
+                self?.delegate?.onAbilityDetailsFailure(error: error)
+            }
+        }
+    }
+   
 }

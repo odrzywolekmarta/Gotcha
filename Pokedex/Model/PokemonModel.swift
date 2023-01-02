@@ -108,6 +108,22 @@ struct Chain: Decodable {
     let url: URL
 }
 
+struct AbilityModel: Decodable {
+    let effectEntries: [EffectEntries]
+    
+    enum CodingKeys: String, CodingKey {
+        case effectEntries = "effect_entries"
+    }
+}
+
+struct EffectEntries: Decodable {
+    let shortEffect: String
+    
+    enum CodingKeys: String, CodingKey {
+        case shortEffect = "short_effect"
+    }
+}
+
 struct PersistedModel: Codable, Hashable {
     var id: Int
     var name: String

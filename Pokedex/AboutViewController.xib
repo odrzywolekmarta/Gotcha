@@ -21,9 +21,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
-                <outlet property="abilityLabel1" destination="KIp-rF-d3M" id="cPD-uA-8jd"/>
-                <outlet property="abilityLabel2" destination="rhB-l8-1tm" id="zRy-B1-N6F"/>
-                <outlet property="abilityLabel3" destination="wtl-vf-u88" id="ubb-cq-noz"/>
+                <outlet property="abilityButton1" destination="gbH-8y-fvr" id="wyN-R7-fj4"/>
+                <outlet property="abilityButton2" destination="GS4-ny-E4t" id="jUj-Cc-dnb"/>
+                <outlet property="abilityButton3" destination="VEb-fo-NE4" id="1j2-Iw-Psp"/>
                 <outlet property="heightLabel" destination="Rth-Fv-ICF" id="6sJ-sf-di3"/>
                 <outlet property="typeLabel1" destination="17M-Uo-c3B" id="wWo-Qn-wdR"/>
                 <outlet property="typeLabel2" destination="Fro-pK-Lr6" id="yKX-hr-ZfW"/>
@@ -40,7 +40,7 @@
                     <rect key="frame" x="0.0" y="15" width="414" height="366"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="w54-QQ-0JV">
-                            <rect key="frame" x="30" y="291.5" width="354" height="21.5"/>
+                            <rect key="frame" x="30" y="279" width="354" height="21.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Types" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S2-PV-x6T">
                                     <rect key="frame" x="0.0" y="0.0" width="112.5" height="21.5"/>
@@ -64,37 +64,52 @@
                                 </label>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-dG-4bC">
-                            <rect key="frame" x="144.5" y="136.5" width="87.5" height="124.5"/>
+                        <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-dG-4bC">
+                            <rect key="frame" x="144.5" y="130.5" width="73" height="118"/>
                             <subviews>
-                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIp-rF-d3M">
-                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="21.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhB-l8-1tm">
-                                    <rect key="frame" x="0.0" y="51.5" width="87.5" height="21.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtl-vf-u88">
-                                    <rect key="frame" x="0.0" y="103" width="87.5" height="21.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbH-8y-fvr">
+                                    <rect key="frame" x="0.0" y="0.0" width="73" height="34"/>
+                                    <color key="tintColor" name="CustomBlue"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="unknown">
+                                        <color key="titleColor" name="CustomBlue"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="abilityButtonTapped:" destination="-1" eventType="touchUpInside" id="aNP-RY-VGD"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GS4-ny-E4t">
+                                    <rect key="frame" x="0.0" y="42" width="73" height="34"/>
+                                    <color key="tintColor" name="CustomBlue"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="unknown">
+                                        <color key="titleColor" name="CustomBlue"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="abilityButtonTapped:" destination="-1" eventType="touchUpInside" id="KFa-fF-NWj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEb-fo-NE4">
+                                    <rect key="frame" x="0.0" y="84" width="73" height="34"/>
+                                    <color key="tintColor" name="CustomBlue"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="unknown">
+                                        <color key="titleColor" name="CustomBlue"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="abilityButtonTapped:" destination="-1" eventType="touchUpInside" id="c39-DA-GsZ"/>
+                                    </connections>
+                                </button>
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-Bf-dP1">
-                            <rect key="frame" x="30" y="136.5" width="74.5" height="21.5"/>
+                            <rect key="frame" x="30" y="130.5" width="74.5" height="34"/>
                             <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleAspectFit" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VKG-Oh-bTw">
-                            <rect key="frame" x="30" y="33.5" width="202.5" height="73"/>
+                            <rect key="frame" x="30" y="27.5" width="202.5" height="73"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zDq-Kt-eNo">
                                     <rect key="frame" x="0.0" y="0.0" width="65" height="73"/>
@@ -135,6 +150,7 @@
                     </subviews>
                     <color key="backgroundColor" name="CustomBeige"/>
                     <constraints>
+                        <constraint firstItem="gbH-8y-fvr" firstAttribute="centerY" secondItem="WSO-Bf-dP1" secondAttribute="centerY" id="3TI-Lx-pi4"/>
                         <constraint firstAttribute="trailing" secondItem="w54-QQ-0JV" secondAttribute="trailing" constant="30" id="7EO-cp-gWy"/>
                         <constraint firstItem="w54-QQ-0JV" firstAttribute="leading" secondItem="GBe-ww-HMC" secondAttribute="leading" constant="30" id="7xo-uc-2dq"/>
                         <constraint firstItem="WSO-Bf-dP1" firstAttribute="centerY" secondItem="GBe-ww-HMC" secondAttribute="centerY" constant="-35.75" id="F3w-6s-5uf"/>
@@ -162,6 +178,9 @@
     <resources>
         <namedColor name="CustomBeige">
             <color red="0.97600001096725464" green="0.94900000095367432" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomBlue">
+            <color red="0.22699999809265137" green="0.68999999761581421" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

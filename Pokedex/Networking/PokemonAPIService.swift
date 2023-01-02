@@ -122,4 +122,27 @@ class PokemonAPIService {
         dataTask.resume()
     }
     
+    func getAbilityDetails(for ability: String, completion: @escaping((Result<AbilityModel, Error>) -> Void)) {
+        let urlString = "https://pokeapi.co/api/v2/ability/\(ability)"
+        if let url = URL(string: urlString) {
+            let urlSession = URLSession(configuration: .default)
+            let dataTask = urlSession.dataTask(with: url) { (data, response, error ) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                } else if let data = data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let ability = try decoder.decode(AbilityModel.self, from: data)
+                        completion(.success(ability))
+                    } catch {
+                        completion(.failure(error))
+                    }
+                } else {
+                    completion(.failure(PokemonAPIServiceError.unknown))
+                }
+            }
+            dataTask.resume()
+        }
+    }
 }

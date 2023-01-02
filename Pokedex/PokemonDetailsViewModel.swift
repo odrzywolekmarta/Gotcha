@@ -44,16 +44,16 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
     
     func getPokemonDetails() {
         if let url = urlString {
-        service.getPokemonDetails(withUrlString: url) { [weak self] result in
-            switch result {
-            case .success(let model):
-                self?.detailsModel = model
-                self?.delegate?.onDetailsModelFetchSuccess()
-            case .failure(let error):
-                self?.delegate?.onDetailsModelFetchFailure(error: error)
+            service.getPokemonDetails(withUrlString: url) { [weak self] result in
+                switch result {
+                case .success(let model):
+                    self?.detailsModel = model
+                    self?.delegate?.onDetailsModelFetchSuccess()
+                case .failure(let error):
+                    self?.delegate?.onDetailsModelFetchFailure(error: error)
+                } 
             }
         }
-    }
     }
     
 }
