@@ -32,7 +32,6 @@ class AboutViewController: UIViewController {
         typeLabel2.makeRound(radius: typeLabel2.frame.height / 2)
         typeLabel1.isHidden = true
         typeLabel2.isHidden = true
-        
         abilityButton1.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 17)
         abilityButton2.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 17)
         abilityButton3.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 17)
