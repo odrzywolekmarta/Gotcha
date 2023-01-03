@@ -30,9 +30,9 @@ class PokemonDetailsViewController: UIViewController {
     private var parentNavigationBarColor: UIColor?
     private let imageViewFullHeight: CGFloat = 220
     var pageViewController: DetailsPageViewController
-    var isFavourite: Bool = false
+    private var isFavourite: Bool = false
     var favourites = Favourites()
-    var persistedPokemon = PersistedModel(id: 1, name: "")
+    private var persistedPokemon = PersistedModel(id: 1, name: "")
     
     init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel

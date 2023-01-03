@@ -24,7 +24,7 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var totalValueLabel: UILabel!
     
     let viewModel: StatsViewModelProtocol = StatsViewModel()
-    var hpValue: Float?
+    private var hpValue: Float?
     
     override func viewDidLoad() {
         super.viewDidLoad()
