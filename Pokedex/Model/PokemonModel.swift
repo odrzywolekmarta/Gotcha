@@ -110,9 +110,11 @@ struct Chain: Decodable {
 
 struct AbilityModel: Decodable {
     let effectEntries: [EffectEntries]
+    let name: String
     
     enum CodingKeys: String, CodingKey {
         case effectEntries = "effect_entries"
+        case name = "name"
     }
 }
 

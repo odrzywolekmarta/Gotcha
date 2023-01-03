@@ -150,6 +150,7 @@ extension AboutViewController: AboutViewModelDelegate {
                     self.typeLabel1.text = model.types[0].type.name
                     let typeColor1 = self.getColor(for: model.types[0].type.name)
                     self.typeLabel1.backgroundColor = typeColor1
+
                 case 2:
                     self.typeLabel1.isHidden = false
                     self.typeLabel2.isHidden = false
@@ -173,9 +174,9 @@ extension AboutViewController: AboutViewModelDelegate {
         DispatchQueue.main.async {
             if let model = self.viewModel.abilityModel {
                 if model.effectEntries[0].language.name == "de" {
-                    self.presentAlert(description: model.effectEntries[1].shortEffect)
+                    self.presentAlert(title: model.name, description: model.effectEntries[1].shortEffect)
                 } else {
-                    self.presentAlert(description: model.effectEntries[0].shortEffect)
+                    self.presentAlert(title: model.name, description: model.effectEntries[0].shortEffect)
                 }
             }
         }
