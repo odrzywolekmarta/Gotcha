@@ -518,13 +518,19 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="ogc-I7-yeT" firstAttribute="height" secondItem="Cil-yb-TbB" secondAttribute="height" id="1Hu-Pi-0Xg"/>
+                                <constraint firstItem="xVO-L5-wRa" firstAttribute="centerX" secondItem="Cil-yb-TbB" secondAttribute="centerX" id="1wh-2o-oyk"/>
                                 <constraint firstItem="dVZ-FH-qPr" firstAttribute="height" secondItem="Cil-yb-TbB" secondAttribute="height" id="2AU-sR-hen"/>
+                                <constraint firstItem="ogc-I7-yeT" firstAttribute="centerX" secondItem="jjE-xH-CJY" secondAttribute="centerX" id="FWh-Kc-vy1"/>
+                                <constraint firstItem="kTX-Ym-Es7" firstAttribute="centerX" secondItem="XI7-1z-0jh" secondAttribute="centerX" id="H2e-JB-yXb"/>
                                 <constraint firstItem="xVO-L5-wRa" firstAttribute="height" secondItem="Cil-yb-TbB" secondAttribute="height" id="IAH-M9-iGj"/>
+                                <constraint firstItem="dVZ-FH-qPr" firstAttribute="centerX" secondItem="jjE-xH-CJY" secondAttribute="centerX" id="Jxo-zk-YoJ"/>
                                 <constraint firstItem="Ivb-NV-Est" firstAttribute="height" secondItem="Cil-yb-TbB" secondAttribute="height" id="O39-Js-QIm"/>
                                 <constraint firstAttribute="width" constant="270" id="RPk-xk-s7F"/>
                                 <constraint firstItem="kTX-Ym-Es7" firstAttribute="height" secondItem="Cil-yb-TbB" secondAttribute="height" id="SFs-La-MIA"/>
                                 <constraint firstItem="Svt-ye-jzF" firstAttribute="height" secondItem="Cil-yb-TbB" secondAttribute="height" id="auD-RN-AS9"/>
                                 <constraint firstAttribute="width" secondItem="HIE-eI-Dhu" secondAttribute="height" multiplier="1:1" id="fm1-mX-yLs"/>
+                                <constraint firstItem="Ivb-NV-Est" firstAttribute="centerX" secondItem="XI7-1z-0jh" secondAttribute="centerX" id="nxH-vd-kOX"/>
+                                <constraint firstItem="Svt-ye-jzF" firstAttribute="centerX" secondItem="Cil-yb-TbB" secondAttribute="centerX" id="yvw-1Q-8pQ"/>
                             </constraints>
                         </stackView>
                     </subviews>
