@@ -28,9 +28,6 @@ class EvolutionViewController: UIViewController {
     @IBOutlet var eeveeViewsCollection: [UIView]!
     @IBOutlet var eeveeButtonsCollection: [UIButton]!
     
-    
-    
-    
     let viewModel: EvolutionViewModelProtocol = EvolutionViewModel()
     let router: AppRouterProtocol
     private var baseEvolutionId: String = ""
@@ -41,7 +38,7 @@ class EvolutionViewController: UIViewController {
         super.viewDidLoad()
         configureView()
     }
-    
+
     func configureView() {
         firstEvolutionStackView.isHidden = true
         secondEvolutionStackView.isHidden = true

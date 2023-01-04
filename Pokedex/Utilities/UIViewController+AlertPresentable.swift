@@ -36,5 +36,5 @@ extension UIViewController {
         alertController.setValue(titleString, forKey: "attributedTitle")
         alertController.setValue(messageString, forKey: "attributedMessage")
         self.present(alertController, animated: true, completion: nil)
-    }
+    } 
 }

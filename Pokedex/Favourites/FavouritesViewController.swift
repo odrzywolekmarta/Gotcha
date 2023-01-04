@@ -11,10 +11,10 @@ class FavouritesViewController: UIViewController {
     
     var tableView: UITableView
     var favourites = Favourites()
-    let baseUrlString = "https://pokeapi.co/api/v2/pokemon/"
-    let baseImageUrlString = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+    private let baseUrlString = "https://pokeapi.co/api/v2/pokemon/"
+    private let baseImageUrlString = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
     let router: AppRouterProtocol
-    var previousController: UIViewController?
+    private var previousController: UIViewController?
     
     init(router: AppRouterProtocol) {
         self.router = router
