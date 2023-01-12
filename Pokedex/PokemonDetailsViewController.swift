@@ -138,7 +138,6 @@ class PokemonDetailsViewController: UIViewController {
     
     func setFavouritesButton() {
         if favourites.contains(persistedPokemon) {
-            // TODO: extract to constants
             favouritesButton.setImage(Constants.heartFillImage, for: .normal)
         } else {
             favouritesButton.setImage(Constants.heartImage, for: .normal)

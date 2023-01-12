@@ -12,7 +12,6 @@ protocol AboutViewModelProtocol: AnyObject {
     var detailsModel: PokemonModel? { get }
     var abilityModel: AbilityModel? { get }
 
-    // TODO: create PokemonModelSettable protowcol and implement on view models
     func set(model: PokemonModel)
     func getAbilityDetails(for ability: String)
 }
@@ -46,5 +45,4 @@ class AboutViewModel: AboutViewModelProtocol {
             }
         }
     }
-   
 }

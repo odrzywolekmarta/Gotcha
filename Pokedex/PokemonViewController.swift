@@ -96,6 +96,8 @@ extension PokemonViewController: PokemonListViewModelDelegate {
     }
     
     func onGetPageFailure(error: String) {
+        // TODO: handle error. Perhaps make an option to retry?
+        
         print(error)
     }
 }
@@ -106,10 +108,11 @@ extension PokemonViewController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if self.previousController == viewController || self.previousController == nil {
-            let nav = viewController as! UINavigationController
-            if nav.viewControllers.count < 2 {
-                let indexPath = IndexPath(row: 0, section: 0)
-                tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            if let nav = viewController as? UINavigationController {
+                if nav.viewControllers.count < 2 {
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                }
             }
         }
         self.previousController = viewController;
