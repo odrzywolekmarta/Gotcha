@@ -42,10 +42,11 @@ extension UIImage {
             context!.setFillColor(color.cgColor)
             context!.fill(rect)
 
-            let image = UIGraphicsGetImageFromCurrentImageContext()
+        if let image = UIGraphicsGetImageFromCurrentImageContext() {
             UIGraphicsEndImageContext()
-
-            return image!
+            return image
+        }
+        return UIImage()
         }
 
         static func pixelsToPoints(_ pixels: CGFloat) -> CGFloat {
@@ -53,26 +54,36 @@ extension UIImage {
         }
     
     func addShadow(blurSize: CGFloat = 6.0) -> UIImage {
-                        
-            let shadowColor = UIColor(white:0.0, alpha:0.8).cgColor
-            
-            let context = CGContext(data: nil,
-                                    width: Int(self.size.width + blurSize),
-                                    height: Int(self.size.height + blurSize),
-                                    bitsPerComponent: self.cgImage!.bitsPerComponent,
-                                    bytesPerRow: 0,
-                                    space: CGColorSpaceCreateDeviceRGB(),
-                                    bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
-            
-            context.setShadow(offset: CGSize(width: blurSize/2,height: -blurSize/2),
-                              blur: blurSize,
-                              color: shadowColor)
-            context.draw(self.cgImage!,
-                         in: CGRect(x: 0, y: blurSize, width: self.size.width, height: self.size.height),
-                         byTiling:false)
-            
-            return UIImage(cgImage: context.makeImage()!)
+        
+        let shadowColor = UIColor(white:0.0, alpha:0.8).cgColor
+        
+        guard let image = self.cgImage else {
+            return UIImage()
         }
+        
+        guard let context = CGContext(data: nil,
+                                width: Int(self.size.width + blurSize),
+                                height: Int(self.size.height + blurSize),
+                                bitsPerComponent: image.bitsPerComponent,
+                                bytesPerRow: 0,
+                                space: CGColorSpaceCreateDeviceRGB(),
+                                      bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else {
+            return UIImage()
+        }
+        
+        context.setShadow(offset: CGSize(width: blurSize/2,height: -blurSize/2),
+                          blur: blurSize,
+                          color: shadowColor)
+        context.draw(image,
+                     in: CGRect(x: 0, y: blurSize, width: self.size.width, height: self.size.height),
+                     byTiling:false)
+        
+        guard let finalImage = context.makeImage() else {
+            return UIImage()
+        }
+        
+        return UIImage(cgImage: finalImage)
+    }
 }
 
 extension UIColor {
@@ -148,6 +159,20 @@ extension UINavigationBar {
             }
         }
         
+    }
+    
+    func addTitleLabel(_ navBar: UINavigationBar) {
+        
+        let titleFrame = CGRect(x: 0, y: 0, width: navBar.frame.width, height: navBar.frame.height)
+        let titleLabel = UILabel(frame: titleFrame)
+        
+        titleLabel.text = Constants.gotcha.uppercased()
+        titleLabel.applyShadow()
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont(name: Constants.customFontBold, size: Constants.barTitleFontSize)
+        
+        navBar.addSubview(titleLabel)
     }
 }
 

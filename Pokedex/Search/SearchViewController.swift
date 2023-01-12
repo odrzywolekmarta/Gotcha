@@ -29,14 +29,18 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         viewModel.delegate = self
         searchTextField.delegate = self
-        
+        configure()
+    }
+    
+    func configure() {
         pokemonImage.sd_setImage(with: URL(string: Constants.pokemonGifUrl))
         pokemonImage.applyShadow()
         randomButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 15)
         searchTextField.applyShadow()
+        randomButton.startAnimatingPressActions()
+        searchButton.startAnimatingPressActions()
     }
     
     override func viewWillAppear(_ animated: Bool) {

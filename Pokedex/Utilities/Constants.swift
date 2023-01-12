@@ -34,7 +34,7 @@ struct Constants {
     // TITLES
     static let tabNameAll = "all"
     static let tabNameFavourites = "favourites"
-    static let tabNameSearch = "seatch"
+    static let tabNameSearch = "search"
     static let gotcha = "gotcha"
     
     // COLORS

@@ -109,8 +109,8 @@ class PokemonDetailsViewController: UIViewController {
     }
     
     @IBAction func aboutButtonPressed(_ sender: UIButton) {
-            self.pageViewController.slideToPage(index: 0, completion: nil)
-            self.setTintColor(for: self.aboutButton)
+        self.pageViewController.slideToPage(index: 0, completion: nil)
+        self.setTintColor(for: self.aboutButton)
     }
     
     @IBAction func statsButtonPressed(_ sender: UIButton) {
