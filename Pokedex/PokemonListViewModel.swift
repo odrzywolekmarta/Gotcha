@@ -23,9 +23,13 @@ class PokemonListViewModel: PokemonListViewModelProtocol {
     
     weak var delegate: PokemonListViewModelDelegate?
     var urlString: String = "https://pokeapi.co/api/v2/pokemon/"
-    private let service = PokemonAPIService()
+    private let service: PokemonAPIServiceProtocol
     var dataSource: [Results] = []
     private let baseImageUrlString: String = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+    
+    init(service: PokemonAPIServiceProtocol) {
+        self.service = service
+    }
     
     func getNextPage() {
         service.getPokemonList(withUrlString: urlString) { [weak self] result in
@@ -49,5 +53,4 @@ class PokemonListViewModel: PokemonListViewModelProtocol {
         }
         return imageUrl
     }
-    
 }

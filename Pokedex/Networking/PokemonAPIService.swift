@@ -12,7 +12,20 @@ struct Results: Decodable {
     let url: String
 }
 
-class PokemonAPIService {
+protocol PokemonAPIServiceProtocol {
+    func getPokemonList(withUrlString urlString: String, completion: @escaping ((Result<SinglePageModel, Error>) -> Void))
+    func getPokemonDetails(withUrlString urlString: String, completion: @escaping((Result<PokemonModel,Error>) -> Void))
+    func getSpecies(withUrl url: URL, completion: @escaping((Result<SpeciesModel, Error>)) -> Void)
+    func getEvolution(withUrl url: URL, completion: @escaping((Result<EvolutionModel, Error>) -> Void))
+    func getAbilityDetails(for ability: String, completion: @escaping((Result<AbilityModel, Error>) -> Void))
+}
+
+struct SinglePageModel: Decodable {
+    let next: String
+    let results: [Results]
+}
+
+class PokemonAPIService: PokemonAPIServiceProtocol {
     
     var count = 0
     var pokemonArray: [Results] = []
@@ -20,11 +33,6 @@ class PokemonAPIService {
     enum PokemonAPIServiceError: LocalizedError {
         case noUrl
         case unknown
-    }
-    
-    struct SinglePageModel: Decodable {
-        let next: String
-        let results: [Results]
     }
     
     func getPokemonList(withUrlString urlString: String, completion: @escaping ((Result<SinglePageModel, Error>) -> Void)) {

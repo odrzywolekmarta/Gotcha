@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D268FF02970A8C900B936C9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D268FEF2970A8C900B936C9 /* SDWebImage */; };
+		2D268FF22970B88500B936C9 /* PokemonListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D268FF12970B88500B936C9 /* PokemonListViewModelTests.swift */; };
+		2D268FF52970B8B200B936C9 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D268FF42970B8B200B936C9 /* Mocks.swift */; };
 		2D3AA4A0295B72C9000EC287 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3AA49F295B72C9000EC287 /* Favourites.swift */; };
 		2D4E2055294131D800273DD7 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E2054294131D800273DD7 /* FavouritesViewController.swift */; };
 		2D4E205C2942094200273DD7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E205A2942094200273DD7 /* SearchViewController.swift */; };
@@ -47,7 +50,19 @@
 		2DDB8FE32970A35600EB2FA3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2DDB8FE22970A35600EB2FA3 /* README.md */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2DDB8FEC2970A44700EB2FA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DD0B639290949B6008B9BB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DD0B640290949B6008B9BB5;
+			remoteInfo = Gotcha;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2D268FF12970B88500B936C9 /* PokemonListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModelTests.swift; sourceTree = "<group>"; };
+		2D268FF42970B8B200B936C9 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		2D3AA49F295B72C9000EC287 /* Favourites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
 		2D4E2054294131D800273DD7 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		2D4E205A2942094200273DD7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +102,7 @@
 		2DD0B66429096C0A008B9BB5 /* PokemonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModel.swift; sourceTree = "<group>"; };
 		2DD0B66A290F19D1008B9BB5 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
 		2DDB8FE22970A35600EB2FA3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		2DDB8FE82970A44700EB2FA3 /* GotchaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GotchaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +114,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2DDB8FE52970A44700EB2FA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D268FF02970A8C900B936C9 /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D268FEE2970A8C900B936C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D268FF32970B8A600B936C9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2D268FF42970B8B200B936C9 /* Mocks.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		2D4E2056294131EA00273DD7 /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,7 +246,9 @@
 			isa = PBXGroup;
 			children = (
 				2DD0B643290949B6008B9BB5 /* Pokedex */,
+				2DDB8FE92970A44700EB2FA3 /* GotchaTests */,
 				2DD0B642290949B6008B9BB5 /* Products */,
+				2D268FEE2970A8C900B936C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				2DD0B641290949B6008B9BB5 /* Gotcha.app */,
+				2DDB8FE82970A44700EB2FA3 /* GotchaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,6 +309,15 @@
 			name = PokemonList;
 			sourceTree = "<group>";
 		};
+		2DDB8FE92970A44700EB2FA3 /* GotchaTests */ = {
+			isa = PBXGroup;
+			children = (
+				2D268FF32970B8A600B936C9 /* Mocks */,
+				2D268FF12970B88500B936C9 /* PokemonListViewModelTests.swift */,
+			);
+			path = GotchaTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -290,6 +341,27 @@
 			productReference = 2DD0B641290949B6008B9BB5 /* Gotcha.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2DDB8FE72970A44700EB2FA3 /* GotchaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DDB8FEE2970A44700EB2FA3 /* Build configuration list for PBXNativeTarget "GotchaTests" */;
+			buildPhases = (
+				2DDB8FE42970A44700EB2FA3 /* Sources */,
+				2DDB8FE52970A44700EB2FA3 /* Frameworks */,
+				2DDB8FE62970A44700EB2FA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2DDB8FED2970A44700EB2FA3 /* PBXTargetDependency */,
+			);
+			name = GotchaTests;
+			packageProductDependencies = (
+				2D268FEF2970A8C900B936C9 /* SDWebImage */,
+			);
+			productName = GotchaTests;
+			productReference = 2DDB8FE82970A44700EB2FA3 /* GotchaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -297,11 +369,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					2DD0B640290949B6008B9BB5 = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					2DDB8FE72970A44700EB2FA3 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 2DD0B640290949B6008B9BB5;
 					};
 				};
 			};
@@ -322,6 +398,7 @@
 			projectRoot = "";
 			targets = (
 				2DD0B640290949B6008B9BB5 /* Gotcha */,
+				2DDB8FE72970A44700EB2FA3 /* GotchaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -343,6 +420,13 @@
 				2D4E205D2942094200273DD7 /* SearchViewController.xib in Resources */,
 				2D61413229216C7B00D2F68A /* AboutViewController.xib in Resources */,
 				2D6946792961DECD0059E5F0 /* LaunchScreenViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DDB8FE62970A44700EB2FA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +465,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2DDB8FE42970A44700EB2FA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D268FF22970B88500B936C9 /* PokemonListViewModelTests.swift in Sources */,
+				2D268FF52970B8B200B936C9 /* Mocks.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2DDB8FED2970A44700EB2FA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DD0B640290949B6008B9BB5 /* Gotcha */;
+			targetProxy = 2DDB8FEC2970A44700EB2FA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2DD0B653290949B8008B9BB5 /* Debug */ = {
@@ -554,6 +655,46 @@
 			};
 			name = Release;
 		};
+		2DDB8FEF2970A44700EB2FA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H8VP26HBU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = odrzywolek.marta.GotchaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gotcha.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Gotcha";
+			};
+			name = Debug;
+		};
+		2DDB8FF02970A44700EB2FA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H8VP26HBU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = odrzywolek.marta.GotchaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gotcha.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Gotcha";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -575,6 +716,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2DDB8FEE2970A44700EB2FA3 /* Build configuration list for PBXNativeTarget "GotchaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DDB8FEF2970A44700EB2FA3 /* Debug */,
+				2DDB8FF02970A44700EB2FA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -589,6 +739,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2D268FEF2970A8C900B936C9 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D6140FE2919918300D2F68A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		2D6140FF2919918300D2F68A /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2D6140FE2919918300D2F68A /* XCRemoteSwiftPackageReference "SDWebImage" */;
