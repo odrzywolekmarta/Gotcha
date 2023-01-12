@@ -8,12 +8,12 @@
 import UIKit
 
 class StatsViewController: UIViewController {
-
+    
     @IBOutlet weak var hpBar: UIProgressView!
     @IBOutlet weak var attackBar: UIProgressView!
     @IBOutlet weak var defenseBar: UIProgressView!
     @IBOutlet weak var specialAttackBar: UIProgressView!
-    @IBOutlet weak var specialDefenseBar: UIProgressView!    
+    @IBOutlet weak var specialDefenseBar: UIProgressView!
     @IBOutlet weak var speedBar: UIProgressView!
     @IBOutlet weak var hpValueLabel: UILabel!
     @IBOutlet weak var attackValueLabel: UILabel!
@@ -53,28 +53,36 @@ extension StatsViewController: StatsViewModelDelegate {
     func onDetailsModelSet() {
         DispatchQueue.main.async {
             if let model = self.viewModel.detailsModel {
+                
                 let hpValue = Float(model.stats[0].baseStat)
+                let maxHp: Float = 255
+                let maxAttack: Float = 190
+                let maxDefense: Float = 250
+                let maxSpecialAttack: Float = 194
+                let maxSpecialDefense: Float = 250
+                let maxSpeed: Float = 200
+                
                 self.hpValue = hpValue
-                self.hpBar.setProgress(hpValue / 255, animated: false)
+                self.hpBar.setProgress(hpValue / maxHp, animated: false)
                 self.hpValueLabel.text = String(Int(hpValue))
                 let attackValue = Float(model.stats[1].baseStat)
-                self.attackBar.setProgress(attackValue / 190, animated: false)
+                self.attackBar.setProgress(attackValue / maxAttack, animated: false)
                 self.attackValueLabel.text = String(Int(attackValue))
                 let defenseValue = Float(model.stats[2].baseStat)
-                self.defenseBar.setProgress(defenseValue / 250, animated: false)
+                self.defenseBar.setProgress(defenseValue / maxDefense, animated: false)
                 self.defenseValueLabel.text = String(Int(defenseValue))
                 let specialAttackValue = Float(model.stats[3].baseStat)
-                self.specialAttackBar.setProgress(specialAttackValue / 194, animated: false)
+                self.specialAttackBar.setProgress(specialAttackValue / maxSpecialAttack, animated: false)
                 self.specialAttackValueLabel.text = String(Int(specialAttackValue))
                 let specialDefenseValue = Float(model.stats[4].baseStat)
-                self.specialDefenseBar.setProgress(specialDefenseValue / 250, animated: false)
+                self.specialDefenseBar.setProgress(specialDefenseValue / maxSpecialDefense, animated: false)
                 self.specialfDefenseValueLabel.text = String(Int(specialDefenseValue))
                 let speedValue = Float(model.stats[5].baseStat)
-                self.speedBar.setProgress(speedValue / 200, animated: false)
+                self.speedBar.setProgress(speedValue / maxSpeed, animated: false)
                 self.speedValueLabel.text = String(Int(speedValue))
                 let total = hpValue + attackValue + defenseValue + specialAttackValue + specialDefenseValue + speedValue
                 self.totalValueLabel.text = String(Int(total))
             }
-                }
+        }
     }
 }

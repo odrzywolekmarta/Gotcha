@@ -10,7 +10,6 @@ import Foundation
 protocol StatsViewModelProtocol: AnyObject {
     var delegate: StatsViewModelDelegate? { get set }
     var detailsModel: PokemonModel? { get }
-    // TODO: create PokemonModelSettable protocol and implement on view models
     func set(model: PokemonModel)
 }
 

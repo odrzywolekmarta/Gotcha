@@ -16,14 +16,9 @@ class PokemonTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.backgroundColor = UIColor(named: "CustomBeige")
-        containerView.layer.cornerRadius = 25
+        contentView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
+        containerView.layer.cornerRadius = Constants.cellRadius
         containerView.applyShadow()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     func configure(name: String, imageUrlString: String) {

@@ -68,7 +68,7 @@ class EvolutionViewModel: EvolutionViewModelProtocol {
         guard let id = id else {
             return nil
         }
-        return URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png")
+        return URL(string: "\(Constants.pokemonDetailsImage)\(id).png")
     }
     
 }

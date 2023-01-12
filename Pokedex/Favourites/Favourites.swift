@@ -36,19 +36,17 @@ class Favourites {
         }
     }
     
-    func contains(_ resort: PersistedModel) -> Bool {
-        favouritesList.contains(resort)
+    func contains(_ pokemon: PersistedModel) -> Bool {
+        favouritesList.contains(pokemon)
     }
 
-    func add(_ resort: PersistedModel) {
-//        objectWillChange.send()
-        favouritesList.insert(resort)
+    func add(_ pokemon: PersistedModel) {
+        favouritesList.insert(pokemon)
         save()
     }
 
-    func remove(_ resort: PersistedModel) {
-//        objectWillChange.send()
-        favouritesList.remove(resort)
+    func remove(_ pokemon: PersistedModel) {
+        favouritesList.remove(pokemon)
         save()
     }
     

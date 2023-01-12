@@ -73,18 +73,17 @@ class EvolutionViewController: UIViewController {
     }
  
     @IBAction func goToDetails(_ sender: UIButton) {
-        let baseUrl = "https://pokeapi.co/api/v2/pokemon/"
         if eeveeView.isHidden {
             if sender == firstButton {
-                router.navigateToDetails(urlString: "\(baseUrl)\(baseEvolutionId)")
+                router.navigateToDetails(urlString: "\(Constants.basePokemonUrl)\(baseEvolutionId)")
             } else if sender == secondButton || sender == thirdButton {
-                router.navigateToDetails(urlString: "\(baseUrl)\(firstEvolutionId)")
+                router.navigateToDetails(urlString: "\(Constants.basePokemonUrl)\(firstEvolutionId)")
             } else if sender == fourthButton {
-                router.navigateToDetails(urlString: "\(baseUrl)\(secondEvolutionId)")
+                router.navigateToDetails(urlString: "\(Constants.basePokemonUrl)\(secondEvolutionId)")
             }
         } else  {
             if let id = sender.titleLabel?.text {
-                router.navigateToDetails(urlString: "\(baseUrl)\(id)")
+                router.navigateToDetails(urlString: "\(Constants.basePokemonUrl)\(id)")
                 
             }
         }

@@ -57,7 +57,6 @@ class PokemonAPIService {
             completion(.failure(PokemonAPIServiceError.noUrl))
             return
         }
-        
         let urlSession = URLSession(configuration: .default)
         let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -79,7 +78,6 @@ class PokemonAPIService {
     }
     
     func getSpecies(withUrl url: URL, completion: @escaping((Result<SpeciesModel, Error>)) -> Void) {
-    
         let urlSession = URLSession(configuration: .default)
         let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -123,7 +121,8 @@ class PokemonAPIService {
     }
     
     func getAbilityDetails(for ability: String, completion: @escaping((Result<AbilityModel, Error>) -> Void)) {
-        let urlString = "https://pokeapi.co/api/v2/ability/\(ability)"
+        let urlString = "\(Constants.baseAbilityUrl)\(ability)"
+        
         if let url = URL(string: urlString) {
             let urlSession = URLSession(configuration: .default)
             let dataTask = urlSession.dataTask(with: url) { (data, response, error ) in

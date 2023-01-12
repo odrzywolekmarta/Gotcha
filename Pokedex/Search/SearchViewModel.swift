@@ -23,10 +23,6 @@ class SearchViewModel: SearchViewModelProtocol {
     var detailsModel: PokemonModel?
     private let service = PokemonAPIService()
     
-//    init(detailsModel: PokemonModel) {
-//        self.detailsModel = detailsModel
-//    }
-    
     func getPokemonDetails(withUrlString urlString: String) {
         service.getPokemonDetails(withUrlString: urlString) { [weak self] result in
             switch result {
@@ -38,6 +34,4 @@ class SearchViewModel: SearchViewModelProtocol {
             }
         }
     }
-    
-   
 }

@@ -32,12 +32,12 @@ class AboutViewController: UIViewController {
         typeLabel2.makeRound(radius: typeLabel2.frame.height / 2)
         typeLabel1.isHidden = true
         typeLabel2.isHidden = true
-        abilityButton1.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 17)
-        abilityButton2.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 17)
-        abilityButton3.titleLabel?.font = UIFont(name: Constants.customFontBold, size: 17)
-        abilityButton1.setTitleColor(UIColor(named: Constants.Colors.customRed)?.darker(by: 20), for: .normal)
-        abilityButton2.setTitleColor(UIColor(named: Constants.Colors.customRed)?.darker(by: 20), for: .normal)
-        abilityButton3.setTitleColor(UIColor(named: Constants.Colors.customRed)?.darker(by: 20), for: .normal)
+        abilityButton1.titleLabel?.font = Constants.abilityButtonFont
+        abilityButton2.titleLabel?.font = Constants.abilityButtonFont
+        abilityButton3.titleLabel?.font = Constants.abilityButtonFont
+        abilityButton1.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
+        abilityButton2.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
+        abilityButton3.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
         abilityButton1.applyShadow()
         abilityButton2.applyShadow()
         abilityButton3.applyShadow()
@@ -46,48 +46,11 @@ class AboutViewController: UIViewController {
         abilityButton3.startAnimatingPressActions()
     }
     
-    // TODO: get rid of force unwraping
     func getColor(for type: String) -> UIColor {
-        switch type {
-        case "normal":
-            return UIColor(named: Constants.Colors.normalType)!
-        case "fire":
-            return UIColor(named: Constants.Colors.fireType)!
-        case "water":
-            return UIColor(named: Constants.Colors.waterType)!
-        case "grass":
-            return UIColor(named: Constants.Colors.grassType)!
-        case "electric":
-            return UIColor(named: Constants.Colors.electricType)!
-        case "ice":
-            return UIColor(named: Constants.Colors.iceType)!
-        case "fighting":
-            return UIColor(named: Constants.Colors.fightingType)!
-        case "poison":
-            return UIColor(named: Constants.Colors.poisonType)!
-        case "ground":
-            return UIColor(named: Constants.Colors.groundType)!
-        case "flying":
-            return UIColor(named: Constants.Colors.flyingType)!
-        case "psychic":
-            return UIColor(named: Constants.Colors.psychicType)!
-        case "bug":
-            return UIColor(named: Constants.Colors.bugType)!
-        case "rock":
-            return UIColor(named: Constants.Colors.rockType)!
-        case "ghost":
-            return UIColor(named: Constants.Colors.ghostType)!
-        case "dark":
-            return UIColor(named: Constants.Colors.darkType)!
-        case "dragon":
-            return UIColor(named: Constants.Colors.dragonType)!
-        case "steel":
-            return UIColor(named: Constants.Colors.steelType)!
-        case "fairy":
-            return UIColor(named: Constants.Colors.fairyType)!
-        default:
-            return UIColor(named: Constants.Colors.normalType)!
+        guard let enumCase = PokemonAPIType(rawValue: type) else {
+            return .cyan
         }
+        return UIColor(named: enumCase.colorName)!
     }
     
     @IBAction func abilityButtonTapped(_ sender: UIButton) {

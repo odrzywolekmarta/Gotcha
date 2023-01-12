@@ -26,7 +26,7 @@ class PokemonDetailsViewController: UIViewController {
     
     let viewModel: PokemonDetailsViewModelProtocol
     let router: AppRouterProtocol
-    let baseColor: UIColor = UIColor(named: Constants.Colors.customOrange)!
+    let baseColor: UIColor = UIColor(named: Constants.Colors.customOrange) ?? UIColor.white
     private var parentNavigationBarColor: UIColor?
     private let imageViewFullHeight: CGFloat = 220
     var pageViewController: DetailsPageViewController
@@ -52,7 +52,7 @@ class PokemonDetailsViewController: UIViewController {
         nameSectionContainerView.backgroundColor = baseColor
         imageBackgroundView.backgroundColor = baseColor
         roundCornersCardView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
-        roundCornersCardView.makeRound(radius: 50)
+        roundCornersCardView.makeRound(radius: Constants.cardViewRadius)
         roundCornersCardView.applyShadow()
         sectionsView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         pageContainerView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
@@ -128,7 +128,7 @@ class PokemonDetailsViewController: UIViewController {
     }
     
     func setTintColor(for button: UIButton) {
-        button.tintColor = UIColor(named: Constants.Colors.customRed)?.darker(by: 25)
+        button.tintColor = Constants.abilityButtonFontColor
         for pageButton in pageButtons {
             if pageButton !== button {
                 pageButton.tintColor = UIColor(named: Constants.Colors.customRed)
@@ -138,20 +138,21 @@ class PokemonDetailsViewController: UIViewController {
     
     func setFavouritesButton() {
         if favourites.contains(persistedPokemon) {
-            favouritesButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            // TODO: extract to constants
+            favouritesButton.setImage(Constants.heartFillImage, for: .normal)
         } else {
-            favouritesButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            favouritesButton.setImage(Constants.heartImage, for: .normal)
         }
     }
     
     @IBAction func faveButtonPressed(_ sender: UIButton) {
         if isFavourite {
             isFavourite = false
-            favouritesButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            favouritesButton.setImage(Constants.heartImage, for: .normal)
             favourites.remove(persistedPokemon)
         } else {
             isFavourite = true
-            favouritesButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            favouritesButton.setImage(Constants.heartFillImage, for: .normal)
             favourites.add(persistedPokemon)
         }
     }
@@ -207,7 +208,7 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     
     func onDetailsModelFetchFailure(error: Error) {
         DispatchQueue.main.async {
-            self.pokemonImageView.image = UIImage(named: "unknown")
+            self.pokemonImageView.image = Constants.unknownPokemonImage
             UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
                 self.pokemonImageView.alpha = 1
                 self.imageViewHeightConstraint.constant = self.imageViewFullHeight
