@@ -44,6 +44,7 @@
 		2DD0B662290967D2008B9BB5 /* PokemonAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B661290967D2008B9BB5 /* PokemonAPIService.swift */; };
 		2DD0B66529096C0B008B9BB5 /* PokemonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B66429096C0A008B9BB5 /* PokemonListViewModel.swift */; };
 		2DD0B66B290F19D1008B9BB5 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B66A290F19D1008B9BB5 /* PokemonViewController.swift */; };
+		2DDB8FE32970A35600EB2FA3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2DDB8FE22970A35600EB2FA3 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		2DD0B661290967D2008B9BB5 /* PokemonAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPIService.swift; sourceTree = "<group>"; };
 		2DD0B66429096C0A008B9BB5 /* PokemonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModel.swift; sourceTree = "<group>"; };
 		2DD0B66A290F19D1008B9BB5 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
+		2DDB8FE22970A35600EB2FA3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 		2DD0B643290949B6008B9BB5 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				2DDB8FE22970A35600EB2FA3 /* README.md */,
 				2DD0B644290949B6008B9BB5 /* AppDelegate.swift */,
 				2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */,
 				2D614114291ACEA900D2F68A /* Utilities */,
@@ -334,6 +337,7 @@
 				2D61411E291C415E00D2F68A /* PokemonDetailsViewController.xib in Resources */,
 				2D6141512922771200D2F68A /* Orbitron-Regular.ttf in Resources */,
 				2D6141552923C51600D2F68A /* Orbitron-Bold.ttf in Resources */,
+				2DDB8FE32970A35600EB2FA3 /* README.md in Resources */,
 				2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */,
 				2D61413629216C8A00D2F68A /* StatsViewController.xib in Resources */,
 				2D4E205D2942094200273DD7 /* SearchViewController.xib in Resources */,
