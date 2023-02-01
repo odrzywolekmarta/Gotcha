@@ -45,7 +45,7 @@ extension SceneDelegate: LaunchScreenViewControllerDelegate {
         tabBarController.viewControllers = [allNavigationController, searchNavigationController, favouritesNavigationController]
         tabBarController.tabBar.tintColor = UIColor(named: Constants.Colors.customRed)
         
-        let controller = PokemonViewController(viewModel: PokemonListViewModel(), router: AppRouter(navigationController: allNavigationController))
+        let controller = PokemonViewController(viewModel: PokemonListViewModel(service: PokemonAPIService()), router: AppRouter(navigationController: allNavigationController))
         allNavigationController.setViewControllers([controller], animated: false)
         window?.rootViewController = tabBarController
         
@@ -56,10 +56,26 @@ extension SceneDelegate: LaunchScreenViewControllerDelegate {
         favouritesNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
         
         // TODO: make bar title configuration reusable
+        let allNavigationBar
+        = allNavigationController.navigationBar
+        let titleFrame = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
+        let titleLabel = UILabel(frame: titleFrame)
+        titleLabel.text = Constants.gotcha.uppercased()
+        titleLabel.applyShadow()
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont(name: Constants.customFontBold, size: 23)
+        allNavigationBar.addSubview(titleLabel)
+
         
-        let allNavigationBar = allNavigationController.navigationBar
-        allNavigationBar.addTitleLabel(allNavigationBar)
         let favNavigationBar = favouritesNavigationController.navigationBar
-        favNavigationBar.addTitleLabel(favNavigationBar)
+        let titleFramee = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
+        let titleLabell = UILabel(frame: titleFramee)
+        titleLabell.text = Constants.gotcha.uppercased()
+        titleLabell.applyShadow()
+        titleLabell.textAlignment = .center
+        titleLabell.textColor = .white
+        titleLabell.font = UIFont(name: Constants.customFontBold, size: 23)
+        favNavigationBar.addSubview(titleLabell)
     }
 }
