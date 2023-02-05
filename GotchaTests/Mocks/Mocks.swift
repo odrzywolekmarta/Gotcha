@@ -75,3 +75,18 @@ class MockPokemonDetailsViewModelDelegate: PokemonDetailsViewModelDelegate {
         lastErrorString = error.localizedDescription
     }
 }
+
+class MockSearchViewModelDelegate: SearchViewModelDelegate {
+    var onDetailsModelFetchSuccessCalled = false
+    
+    func onDetailsModelFetchSuccess() {
+        onDetailsModelFetchSuccessCalled = true
+    }
+    
+    var onDetailsModelFetchFailureCalled = false
+    var lastErrorString = ""
+    func onDetailsModelFetchFailure(error: Error) {
+        onDetailsModelFetchFailureCalled = true
+        lastErrorString = error.localizedDescription
+    }
+}

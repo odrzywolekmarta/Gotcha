@@ -21,7 +21,11 @@ protocol SearchViewModelDelegate: AnyObject {
 class SearchViewModel: SearchViewModelProtocol {
     var delegate: SearchViewModelDelegate?
     var detailsModel: PokemonModel?
-    private let service = PokemonAPIService()
+    private let service: PokemonAPIServiceProtocol
+    
+    init(service: PokemonAPIServiceProtocol) {
+        self.service = service
+    }
     
     func getPokemonDetails(withUrlString urlString: String) {
         service.getPokemonDetails(withUrlString: urlString) { [weak self] result in

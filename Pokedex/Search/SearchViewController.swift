@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var randomButton: UIButton!
     
    
-    let viewModel: SearchViewModelProtocol = SearchViewModel()
+    let viewModel: SearchViewModelProtocol = SearchViewModel(service: PokemonAPIService())
     let router: AppRouterProtocol
     
     init(router: AppRouterProtocol) {
