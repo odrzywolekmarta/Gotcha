@@ -25,21 +25,24 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
     weak var delegate: PokemonDetailsViewModelDelegate?
     var detailsModel: PokemonModel?
     var persistedModel: PersistedModel?
-    private let service = PokemonAPIService()
+    private let service: PokemonAPIServiceProtocol
     private var urlString: String?
     var imageUrl: String?
     
-    init(urlString: String, imageUrl: String) {
+    init(urlString: String, imageUrl: String, service: PokemonAPIServiceProtocol) {
         self.urlString = urlString
         self.imageUrl = imageUrl
+        self.service = service
     }
-    
-    init(detailsModel: PokemonModel) {
+        
+    init(detailsModel: PokemonModel, service: PokemonAPIServiceProtocol) {
         self.detailsModel = detailsModel
+        self.service = service
     }
     
-    init(urlString: String) {
+    init(urlString: String, service: PokemonAPIServiceProtocol) {
         self.urlString = urlString
+        self.service = service
     }
     
     func getPokemonDetails() {

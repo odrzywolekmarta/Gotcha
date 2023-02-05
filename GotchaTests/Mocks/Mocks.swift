@@ -24,9 +24,10 @@ class MockPokemonApiService: PokemonAPIServiceProtocol {
         completion(mockPokemonListResult)
     }
     
+    var mockPokemonDetailsResult: Result<Gotcha.PokemonModel, Error>!
     func getPokemonDetails(withUrlString urlString: String,
                            completion: @escaping ((Result<Gotcha.PokemonModel, Error>) -> Void)) {
-        
+        completion(mockPokemonDetailsResult)
     }
     
     func getSpecies(withUrl url: URL,
@@ -56,5 +57,21 @@ class MockPokemonListViewModelDelegate: PokemonListViewModelDelegate {
     func onGetPageFailure(error: String) {
         getPageFailureCalled = true
         lastErrorString = error
+    }
+}
+
+class MockPokemonDetailsViewModelDelegate: PokemonDetailsViewModelDelegate {
+    var onDetailsModelFetchSuccessCalled = false
+    
+    func onDetailsModelFetchSuccess() {
+        onDetailsModelFetchSuccessCalled = true
+    }
+    
+    var onDetailsModelFetchFailureCalled = false
+    var lastErrorString = ""
+    
+    func onDetailsModelFetchFailure(error: Error) {
+        onDetailsModelFetchFailureCalled = true
+        lastErrorString = error.localizedDescription
     }
 }

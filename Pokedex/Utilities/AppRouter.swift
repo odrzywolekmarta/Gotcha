@@ -23,17 +23,23 @@ class AppRouter: AppRouterProtocol {
     }
     
     func navigateToDetails(urlString: String) {
-        let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(urlString: urlString), router: self)
+        let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(urlString: urlString,
+                                                                                         service: PokemonAPIService()),
+                                                      router: self)
         navigationController.pushViewController(controller, animated: true)
     }
     
     func navigateToDetails(urlString: String, imageUrl: String) {
-        let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(urlString: urlString, imageUrl: imageUrl), router: self)
+        let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(urlString: urlString, imageUrl: imageUrl,
+                                                                                         service: PokemonAPIService()),
+                                                      router: self)
         navigationController.pushViewController(controller, animated: true)
     }
     
     func navigateToDetails(withModel model: PokemonModel) {
-        let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(detailsModel: model), router: self)
+        let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(detailsModel: model,
+                                                                                         service: PokemonAPIService()),
+                                                      router: self)
         navigationController.pushViewController(controller, animated: true)
     }
 }
