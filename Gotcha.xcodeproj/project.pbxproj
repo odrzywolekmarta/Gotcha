@@ -14,6 +14,8 @@
 		2D26909B2990173900B936C9 /* PokemonExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D26909A2990173900B936C9 /* PokemonExample.json */; };
 		2D26909D299017AB00B936C9 /* StaticJSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D26909C299017AB00B936C9 /* StaticJSONReader.swift */; };
 		2D26909F2990515300B936C9 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D26909E2990515300B936C9 /* SearchViewModelTests.swift */; };
+		2D2690A12990642400B936C9 /* AboutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2690A02990642400B936C9 /* AboutViewModelTests.swift */; };
+		2D2690A329907D8C00B936C9 /* AbilityExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D2690A229907D8C00B936C9 /* AbilityExample.json */; };
 		2D3AA4A0295B72C9000EC287 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3AA49F295B72C9000EC287 /* Favourites.swift */; };
 		2D4E2055294131D800273DD7 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E2054294131D800273DD7 /* FavouritesViewController.swift */; };
 		2D4E205C2942094200273DD7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E205A2942094200273DD7 /* SearchViewController.swift */; };
@@ -71,6 +73,8 @@
 		2D26909A2990173900B936C9 /* PokemonExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokemonExample.json; sourceTree = "<group>"; };
 		2D26909C299017AB00B936C9 /* StaticJSONReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticJSONReader.swift; sourceTree = "<group>"; };
 		2D26909E2990515300B936C9 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
+		2D2690A02990642400B936C9 /* AboutViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModelTests.swift; sourceTree = "<group>"; };
+		2D2690A229907D8C00B936C9 /* AbilityExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AbilityExample.json; sourceTree = "<group>"; };
 		2D3AA49F295B72C9000EC287 /* Favourites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
 		2D4E2054294131D800273DD7 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		2D4E205A2942094200273DD7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -152,8 +156,9 @@
 		2D2690992990170F00B936C9 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				2D26909A2990173900B936C9 /* PokemonExample.json */,
 				2D26909C299017AB00B936C9 /* StaticJSONReader.swift */,
+				2D26909A2990173900B936C9 /* PokemonExample.json */,
+				2D2690A229907D8C00B936C9 /* AbilityExample.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				2D268FF12970B88500B936C9 /* PokemonListViewModelTests.swift */,
 				2D269097299011F500B936C9 /* PokemonDetailsViewModelTests.swift */,
 				2D26909E2990515300B936C9 /* SearchViewModelTests.swift */,
+				2D2690A02990642400B936C9 /* AboutViewModelTests.swift */,
 			);
 			path = GotchaTests;
 			sourceTree = "<group>";
@@ -448,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D26909B2990173900B936C9 /* PokemonExample.json in Resources */,
+				2D2690A329907D8C00B936C9 /* AbilityExample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2690A12990642400B936C9 /* AboutViewModelTests.swift in Sources */,
 				2D269098299011F500B936C9 /* PokemonDetailsViewModelTests.swift in Sources */,
 				2D268FF22970B88500B936C9 /* PokemonListViewModelTests.swift in Sources */,
 				2D26909D299017AB00B936C9 /* StaticJSONReader.swift in Sources */,

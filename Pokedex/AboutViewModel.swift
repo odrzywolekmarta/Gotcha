@@ -27,7 +27,11 @@ class AboutViewModel: AboutViewModelProtocol {
     weak var delegate: AboutViewModelDelegate?
     var detailsModel: PokemonModel?
     var abilityModel: AbilityModel?
-    private let service = PokemonAPIService()
+    private let service: PokemonAPIServiceProtocol
+    
+    init(service: PokemonAPIServiceProtocol) {
+        self.service = service
+    }
   
     func set(model: PokemonModel) {
         detailsModel = model

@@ -40,9 +40,10 @@ class MockPokemonApiService: PokemonAPIServiceProtocol {
         
     }
     
+    var mockAbilityDetailsResult: Result<Gotcha.AbilityModel, Error>!
     func getAbilityDetails(for ability: String,
                            completion: @escaping ((Result<Gotcha.AbilityModel, Error>) -> Void)) {
-        
+        completion(mockAbilityDetailsResult)
     }
 }
 
@@ -87,6 +88,28 @@ class MockSearchViewModelDelegate: SearchViewModelDelegate {
     var lastErrorString = ""
     func onDetailsModelFetchFailure(error: Error) {
         onDetailsModelFetchFailureCalled = true
+        lastErrorString = error.localizedDescription
+    }
+}
+
+class MockAboutViewModelDelegate: AboutViewModelDelegate {
+    var onDetailsModelSetCalled = false
+    
+    func onDetailsModelSet() {
+        onDetailsModelSetCalled = true
+    }
+    
+    var onAbilityDetailsSuccessCalled = false
+    
+    func onAbilityDetailsSuccess() {
+        onAbilityDetailsSuccessCalled = true
+    }
+    
+    var onAbilityDetailsFailureCalled = false
+    var lastErrorString = ""
+    
+    func onAbilityDetailsFailure(error: Error) {
+        onAbilityDetailsFailureCalled = true
         lastErrorString = error.localizedDescription
     }
 }

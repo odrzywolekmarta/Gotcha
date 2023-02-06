@@ -17,8 +17,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var abilityButton2: UIButton!
     @IBOutlet weak var abilityButton3: UIButton!
     
-    
-    let viewModel: AboutViewModelProtocol = AboutViewModel()
+    let viewModel: AboutViewModelProtocol = AboutViewModel(service: PokemonAPIService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
