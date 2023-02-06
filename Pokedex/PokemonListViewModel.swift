@@ -22,10 +22,10 @@ protocol PokemonListViewModelDelegate: AnyObject {
 class PokemonListViewModel: PokemonListViewModelProtocol {
     
     weak var delegate: PokemonListViewModelDelegate?
-    var urlString: String = "https://pokeapi.co/api/v2/pokemon/"
+    var urlString = Constants.basePokemonUrl
     private let service: PokemonAPIServiceProtocol
     var dataSource: [Results] = []
-    private let baseImageUrlString: String = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+    private let baseImageUrlString = Constants.baseImageUrl
     
     init(service: PokemonAPIServiceProtocol) {
         self.service = service
@@ -46,10 +46,10 @@ class PokemonListViewModel: PokemonListViewModelProtocol {
     
     func getPokemonImageUrl(forRow row: Int) -> String {
         let imageUrl: String
-        if row <= 904 {
+        if row <= Constants.firstBatchOfPokemon {
             imageUrl = "\(baseImageUrlString)\(row + 1).png"
         } else {
-            imageUrl = "\(baseImageUrlString)\(row + 9096).png"
+            imageUrl = "\(baseImageUrlString)\(row + Constants.numberOfEmptyIds).png"
         }
         return imageUrl
     }

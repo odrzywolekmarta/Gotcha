@@ -26,7 +26,6 @@ struct SinglePageModel: Decodable {
 }
 
 class PokemonAPIService: PokemonAPIServiceProtocol {
-    
     var count = 0
     var pokemonArray: [Results] = []
     
