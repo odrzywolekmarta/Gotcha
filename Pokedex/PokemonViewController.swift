@@ -65,7 +65,7 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonTableViewCell") as? PokemonTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.pokemonCell) as? PokemonTableViewCell {
             cell.configure(name: viewModel.dataSource[indexPath.row].name,
                            imageUrlString: viewModel.getPokemonImageUrl(forRow: indexPath.row))
             return cell
@@ -81,7 +81,6 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: move router to view model
         router.navigateToDetails(urlString: viewModel.dataSource[indexPath.row].url, imageUrl: viewModel.getPokemonImageUrl(forRow: indexPath.row))
     }
     
@@ -97,8 +96,6 @@ extension PokemonViewController: PokemonListViewModelDelegate {
     }
     
     func onGetPageFailure(error: String) {
-        // TODO: handle error. Perhaps make an option to retry?
-        
         print(error)
     }
 }

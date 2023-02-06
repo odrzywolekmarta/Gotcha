@@ -170,7 +170,6 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
         pageViewController.set(model: detailsModel)
         
         DispatchQueue.main.async { [self] in
-            
             self.nameLabel.text = detailsModel.name.uppercased()
             self.view.layoutIfNeeded()
             self.pokemonImageView.sd_setImage(with:

@@ -31,10 +31,10 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         searchTextField.delegate = self
-        configure()
+        configureView()
     }
     
-    func configure() {
+    func configureView() {
         pokemonImage.sd_setImage(with: URL(string: Constants.pokemonGifUrl))
         pokemonImage.applyShadow()
         randomButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 15)

@@ -35,11 +35,14 @@ struct Constants {
     static let listBulletImage = UIImage(systemName: "list.bullet")
     static let magnifyingGlassImage = UIImage(systemName: "magnifyingglass")
     
-    // TITLES
+    // TITLES/NAMES
     static let tabNameAll = "all"
     static let tabNameFavourites = "favourites"
     static let tabNameSearch = "search"
     static let gotcha = "gotcha"
+    static let pokemonCell = "PokemonTableViewCell"
+    static let launchVideo = "LaunchVideo"
+    static let videoType = "mp4"
     
     // COLORS
     static let abilityButtonFontColor = UIColor(named: Constants.Colors.customRed)?.darker(by: 20)

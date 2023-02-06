@@ -28,6 +28,10 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       configureView()
+    }
+    
+    func configureView() {
         hpBar.applyShadow()
         attackBar.applyShadow()
         defenseBar.applyShadow()

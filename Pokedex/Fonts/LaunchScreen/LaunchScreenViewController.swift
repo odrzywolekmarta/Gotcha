@@ -45,7 +45,7 @@ class LaunchScreenViewController: UIViewController {
     }
     
     func preparePlayer() {
-        guard let path = Bundle.main.path(forResource: "LaunchVideo", ofType:"mp4") else {
+        guard let path = Bundle.main.path(forResource: Constants.launchVideo, ofType: Constants.videoType) else {
             debugPrint("video not found")
             return
         }
@@ -62,14 +62,12 @@ class LaunchScreenViewController: UIViewController {
     }
     
     private func playVideo() {
-        
         player?.play()
-      
     }
+    
     @objc func playerDidFinishPlaying(note: NSNotification) {
         NotificationCenter.default.removeObserver(self)
         delegate?.onAnimationFinished()
-        
     }
 
 }
