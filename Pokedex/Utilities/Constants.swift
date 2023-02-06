@@ -43,6 +43,7 @@ struct Constants {
     static let pokemonCell = "PokemonTableViewCell"
     static let launchVideo = "LaunchVideo"
     static let videoType = "mp4"
+    static let germanLanguage = "de"
     
     // COLORS
     static let abilityButtonFontColor = UIColor(named: Constants.Colors.customRed)?.darker(by: 20)

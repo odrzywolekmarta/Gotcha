@@ -137,7 +137,7 @@ extension AboutViewController: AboutViewModelDelegate {
     func onAbilityDetailsSuccess() {
         DispatchQueue.main.async {
             if let model = self.viewModel.abilityModel {
-                if model.effectEntries[0].language.name == "de" {
+                if model.effectEntries[0].language.name == Constants.germanLanguage {
                     self.presentAlert(title: model.name, description: model.effectEntries[1].shortEffect)
                 } else {
                     self.presentAlert(title: model.name, description: model.effectEntries[0].shortEffect)
