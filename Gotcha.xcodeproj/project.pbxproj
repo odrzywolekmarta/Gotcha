@@ -46,6 +46,12 @@
 		2D6946782961DECD0059E5F0 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6946762961DECD0059E5F0 /* LaunchScreenViewController.swift */; };
 		2D6946792961DECD0059E5F0 /* LaunchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6946772961DECD0059E5F0 /* LaunchScreenViewController.xib */; };
 		2D69467D2961EF2C0059E5F0 /* LaunchVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D69467C2961EF2C0059E5F0 /* LaunchVideo.mp4 */; };
+		2D92AAA729CF2E4C000D570F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D92AAA629CF2E4C000D570F /* WidgetKit.framework */; };
+		2D92AAA929CF2E4C000D570F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D92AAA829CF2E4C000D570F /* SwiftUI.framework */; };
+		2D92AAAC29CF2E4C000D570F /* GotchaWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */; };
+		2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */; };
+		2D92AAB029CF2E4D000D570F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D92AAAF29CF2E4D000D570F /* Assets.xcassets */; };
+		2D92AAB429CF2E4D000D570F /* GotchaWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2DD0B645290949B6008B9BB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B644290949B6008B9BB5 /* AppDelegate.swift */; };
 		2DD0B647290949B6008B9BB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */; };
 		2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0B64D290949B8008B9BB5 /* Assets.xcassets */; };
@@ -57,6 +63,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2D92AAB229CF2E4D000D570F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DD0B639290949B6008B9BB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D92AAA429CF2E4C000D570F;
+			remoteInfo = GotchaWidgetExtension;
+		};
 		2DDB8FEC2970A44700EB2FA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2DD0B639290949B6008B9BB5 /* Project object */;
@@ -65,6 +78,20 @@
 			remoteInfo = Gotcha;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2D92AAB829CF2E4D000D570F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2D92AAB429CF2E4D000D570F /* GotchaWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2D268FF12970B88500B936C9 /* PokemonListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModelTests.swift; sourceTree = "<group>"; };
@@ -104,6 +131,13 @@
 		2D6946762961DECD0059E5F0 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		2D6946772961DECD0059E5F0 /* LaunchScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreenViewController.xib; sourceTree = "<group>"; };
 		2D69467C2961EF2C0059E5F0 /* LaunchVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LaunchVideo.mp4; sourceTree = "<group>"; };
+		2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GotchaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D92AAA629CF2E4C000D570F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		2D92AAA829CF2E4C000D570F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaWidgetBundle.swift; sourceTree = "<group>"; };
+		2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaWidget.swift; sourceTree = "<group>"; };
+		2D92AAAF29CF2E4D000D570F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2D92AAB129CF2E4D000D570F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DD0B641290949B6008B9BB5 /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD0B644290949B6008B9BB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +152,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2D92AAA229CF2E4C000D570F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D92AAA929CF2E4C000D570F /* SwiftUI.framework in Frameworks */,
+				2D92AAA729CF2E4C000D570F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2DD0B63E290949B6008B9BB5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,6 +183,8 @@
 		2D268FEE2970A8C900B936C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D92AAA629CF2E4C000D570F /* WidgetKit.framework */,
+				2D92AAA829CF2E4C000D570F /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -265,11 +310,23 @@
 			path = Fonts/LaunchScreen;
 			sourceTree = "<group>";
 		};
+		2D92AAAA29CF2E4C000D570F /* GotchaWidget */ = {
+			isa = PBXGroup;
+			children = (
+				2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */,
+				2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */,
+				2D92AAAF29CF2E4D000D570F /* Assets.xcassets */,
+				2D92AAB129CF2E4D000D570F /* Info.plist */,
+			);
+			path = GotchaWidget;
+			sourceTree = "<group>";
+		};
 		2DD0B638290949B6008B9BB5 = {
 			isa = PBXGroup;
 			children = (
 				2DD0B643290949B6008B9BB5 /* Pokedex */,
 				2DDB8FE92970A44700EB2FA3 /* GotchaTests */,
+				2D92AAAA29CF2E4C000D570F /* GotchaWidget */,
 				2DD0B642290949B6008B9BB5 /* Products */,
 				2D268FEE2970A8C900B936C9 /* Frameworks */,
 			);
@@ -280,6 +337,7 @@
 			children = (
 				2DD0B641290949B6008B9BB5 /* Gotcha.app */,
 				2DDB8FE82970A44700EB2FA3 /* GotchaTests.xctest */,
+				2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -347,6 +405,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2D92AAA429CF2E4C000D570F /* GotchaWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D92AAB529CF2E4D000D570F /* Build configuration list for PBXNativeTarget "GotchaWidgetExtension" */;
+			buildPhases = (
+				2D92AAA129CF2E4C000D570F /* Sources */,
+				2D92AAA229CF2E4C000D570F /* Frameworks */,
+				2D92AAA329CF2E4C000D570F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GotchaWidgetExtension;
+			productName = GotchaWidgetExtension;
+			productReference = 2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2DD0B640290949B6008B9BB5 /* Gotcha */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DD0B655290949B8008B9BB5 /* Build configuration list for PBXNativeTarget "Gotcha" */;
@@ -354,10 +429,12 @@
 				2DD0B63D290949B6008B9BB5 /* Sources */,
 				2DD0B63E290949B6008B9BB5 /* Frameworks */,
 				2DD0B63F290949B6008B9BB5 /* Resources */,
+				2D92AAB829CF2E4D000D570F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2D92AAB329CF2E4D000D570F /* PBXTargetDependency */,
 			);
 			name = Gotcha;
 			packageProductDependencies = (
@@ -398,6 +475,9 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					2D92AAA429CF2E4C000D570F = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					2DD0B640290949B6008B9BB5 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -425,11 +505,20 @@
 			targets = (
 				2DD0B640290949B6008B9BB5 /* Gotcha */,
 				2DDB8FE72970A44700EB2FA3 /* GotchaTests */,
+				2D92AAA429CF2E4C000D570F /* GotchaWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2D92AAA329CF2E4C000D570F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D92AAB029CF2E4D000D570F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2DD0B63F290949B6008B9BB5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,6 +550,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2D92AAA129CF2E4C000D570F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D92AAAC29CF2E4C000D570F /* GotchaWidgetBundle.swift in Sources */,
+				2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2DD0B63D290949B6008B9BB5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,6 +607,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2D92AAB329CF2E4D000D570F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D92AAA429CF2E4C000D570F /* GotchaWidgetExtension */;
+			targetProxy = 2D92AAB229CF2E4D000D570F /* PBXContainerItemProxy */;
+		};
 		2DDB8FED2970A44700EB2FA3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2DD0B640290949B6008B9BB5 /* Gotcha */;
@@ -517,6 +620,64 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2D92AAB629CF2E4D000D570F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H8VP26HBU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GotchaWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GotchaWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = odrzywolekmarta.Gotcha.GotchaWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2D92AAB729CF2E4D000D570F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H8VP26HBU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GotchaWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GotchaWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = odrzywolekmarta.Gotcha.GotchaWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		2DD0B653290949B8008B9BB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -634,6 +795,7 @@
 		2DD0B656290949B8008B9BB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -646,12 +808,13 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.Gotcha;
+				PRODUCT_BUNDLE_IDENTIFIER = odrzywolekmarta.Gotcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -662,6 +825,7 @@
 		2DD0B657290949B8008B9BB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -674,12 +838,13 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.Gotcha;
+				PRODUCT_BUNDLE_IDENTIFIER = odrzywolekmarta.Gotcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -730,6 +895,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2D92AAB529CF2E4D000D570F /* Build configuration list for PBXNativeTarget "GotchaWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D92AAB629CF2E4D000D570F /* Debug */,
+				2D92AAB729CF2E4D000D570F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2DD0B63C290949B6008B9BB5 /* Build configuration list for PBXProject "Gotcha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
