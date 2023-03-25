@@ -21,11 +21,11 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
+        for dayOffset in 0 ..< 7 {
+            let entryDate = Calendar.current.date(byAdding: .day, value: dayOffset, to: currentDate)!
+            let startOfDate = Calendar.current.startOfDay(for: entryDate)
+            let entry = SimpleEntry(date: startOfDate)
             entries.append(entry)
         }
 
@@ -44,14 +44,17 @@ struct GotchaWidgetEntryView : View {
     var body: some View {
         ZStack {
             ContainerRelativeShape()
-                .fill(.gray)
+                .fill(.gray.gradient)
             VStack {
-                Text("Who's that Pokemon?")
-                    .font(.headline)
+                Text("WHO'S THAT")
+                    .font(.system(size: 12))
                     .fontWeight(.black)
                 Image("Image")
                     .resizable()
                     .scaledToFit()
+                Text("POKEMON?")
+                    .font(.system(size: 12))
+                    .fontWeight(.black)
             } // vstack
             .padding()
         }
