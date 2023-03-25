@@ -52,7 +52,9 @@
 		2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */; };
 		2D92AAB029CF2E4D000D570F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D92AAAF29CF2E4D000D570F /* Assets.xcassets */; };
 		2D92AAB429CF2E4D000D570F /* GotchaWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2D92AABA29CF6BCE000D570F /* RandomIdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAB929CF6BCE000D570F /* RandomIdGenerator.swift */; };
+		2D92AACA29CF7CDF000D570F /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAC929CF7CDF000D570F /* BackgroundView.swift */; };
+		2D92AACC29CF7DDB000D570F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAB929CF6BCE000D570F /* Utilities.swift */; };
+		2D92AACE29CF850E000D570F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D92AACD29CF850E000D570F /* SDWebImage */; };
 		2DD0B645290949B6008B9BB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B644290949B6008B9BB5 /* AppDelegate.swift */; };
 		2DD0B647290949B6008B9BB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */; };
 		2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0B64D290949B8008B9BB5 /* Assets.xcassets */; };
@@ -139,7 +141,8 @@
 		2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaWidget.swift; sourceTree = "<group>"; };
 		2D92AAAF29CF2E4D000D570F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D92AAB129CF2E4D000D570F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D92AAB929CF6BCE000D570F /* RandomIdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomIdGenerator.swift; sourceTree = "<group>"; };
+		2D92AAB929CF6BCE000D570F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		2D92AAC929CF7CDF000D570F /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BackgroundView.swift; path = Views/BackgroundView.swift; sourceTree = "<group>"; };
 		2DD0B641290949B6008B9BB5 /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD0B644290949B6008B9BB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D92AACE29CF850E000D570F /* SDWebImage in Frameworks */,
 				2D92AAA929CF2E4C000D570F /* SwiftUI.framework in Frameworks */,
 				2D92AAA729CF2E4C000D570F /* WidgetKit.framework in Frameworks */,
 			);
@@ -298,8 +302,9 @@
 				2D6141542923C51600D2F68A /* Orbitron-Bold.ttf */,
 				2D61414B2922771200D2F68A /* Orbitron-Regular.ttf */,
 			);
-			path = Fonts;
-			sourceTree = "<group>";
+			name = Fonts;
+			path = Pokedex/Fonts;
+			sourceTree = SOURCE_ROOT;
 		};
 		2D6946752961DEA50059E5F0 /* LaunchScreen */ = {
 			isa = PBXGroup;
@@ -315,9 +320,10 @@
 		2D92AAAA29CF2E4C000D570F /* GotchaWidget */ = {
 			isa = PBXGroup;
 			children = (
+				2D92AAB929CF6BCE000D570F /* Utilities.swift */,
 				2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */,
 				2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */,
-				2D92AAB929CF6BCE000D570F /* RandomIdGenerator.swift */,
+				2D92AAC929CF7CDF000D570F /* BackgroundView.swift */,
 				2D92AAAF29CF2E4D000D570F /* Assets.xcassets */,
 				2D92AAB129CF2E4D000D570F /* Info.plist */,
 			);
@@ -421,6 +427,9 @@
 			dependencies = (
 			);
 			name = GotchaWidgetExtension;
+			packageProductDependencies = (
+				2D92AACD29CF850E000D570F /* SDWebImage */,
+			);
 			productName = GotchaWidgetExtension;
 			productReference = 2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -557,8 +566,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D92AACA29CF7CDF000D570F /* BackgroundView.swift in Sources */,
 				2D92AAAC29CF2E4C000D570F /* GotchaWidgetBundle.swift in Sources */,
 				2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */,
+				2D92AACC29CF7DDB000D570F /* Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,7 +596,6 @@
 				2DD0B662290967D2008B9BB5 /* PokemonAPIService.swift in Sources */,
 				2D61413929216CA300D2F68A /* EvolutionViewController.swift in Sources */,
 				2D6946782961DECD0059E5F0 /* LaunchScreenViewController.swift in Sources */,
-				2D92AABA29CF6BCE000D570F /* RandomIdGenerator.swift in Sources */,
 				2D6141022919A59300D2F68A /* PokemonDetailsViewModel.swift in Sources */,
 				2D4E20622943A36E00273DD7 /* SearchViewModel.swift in Sources */,
 				2D61413529216C8A00D2F68A /* StatsViewController.swift in Sources */,
@@ -807,7 +817,6 @@
 				DEVELOPMENT_TEAM = 2H8VP26HBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pokedex/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -837,7 +846,6 @@
 				DEVELOPMENT_TEAM = 2H8VP26HBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pokedex/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -955,6 +963,11 @@
 			productName = SDWebImage;
 		};
 		2D6140FF2919918300D2F68A /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D6140FE2919918300D2F68A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		2D92AACD29CF850E000D570F /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2D6140FE2919918300D2F68A /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;

@@ -12,15 +12,15 @@ struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date())
     }
-
+    
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let entry = SimpleEntry(date: Date())
         completion(entry)
     }
-
+    
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-
+        
         let currentDate = Date()
         for dayOffset in 0 ..< 7 {
             let entryDate = Calendar.current.date(byAdding: .day, value: dayOffset, to: currentDate)!
@@ -28,7 +28,7 @@ struct Provider: TimelineProvider {
             let entry = SimpleEntry(date: startOfDate)
             entries.append(entry)
         }
-
+        
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -40,31 +40,30 @@ struct SimpleEntry: TimelineEntry {
 
 struct GotchaWidgetEntryView : View {
     var entry: Provider.Entry
-
+    
     var body: some View {
         ZStack {
-            ContainerRelativeShape()
-                .fill(.gray.gradient)
+           BackgroundView()
             VStack {
                 Text("WHO'S THAT")
                     .font(.system(size: 12))
                     .fontWeight(.black)
-                Image("Image")
-                    .resizable()
-                    .scaledToFit()
+                    Image("Image")
+                        .resizable()
+                        .scaledToFit()
                 Text("POKEMON?")
                     .font(.system(size: 12))
                     .fontWeight(.black)
             } // vstack
             .padding()
-        }
+        } // zstack
     }
-
+    
 }
 
 struct GotchaWidget: Widget {
     let kind: String = "GotchaWidget"
-
+    
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             GotchaWidgetEntryView(entry: entry)
