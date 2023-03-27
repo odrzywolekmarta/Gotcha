@@ -5,8 +5,7 @@
 //  Created by Majka on 25/03/2023.
 //
 import WidgetKit
-import Foundation
-import SDWebImage
+import SwiftUI
 
 let baseUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
 
@@ -14,12 +13,12 @@ func getRandomId() -> Int {
     Int.random(in: 1...905)
 }
 
-func getImageUrl() {
+public func getImageUrl() -> URL {
     let idString = String(getRandomId())
-    let url = "\(baseUrl)\(idString).png"
+    let urlString  = "\(baseUrl)\(idString).png"
+    if let url = URL(string: urlString) {
+        return url
+    }
+    return URL(fileURLWithPath: "")
 }
 
-func getShadowImage(image: UIImage) {
-    let shadowImage = image.withRenderingMode(.alwaysTemplate)
-    shadowImage.withTintColor(.black)
-}

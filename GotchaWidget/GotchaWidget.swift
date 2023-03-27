@@ -10,11 +10,11 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+        SimpleEntry(date: Date(), url: getImageUrl())
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+        let entry = SimpleEntry(date: Date(), url: getImageUrl())
         completion(entry)
     }
     
@@ -25,7 +25,7 @@ struct Provider: TimelineProvider {
         for dayOffset in 0 ..< 7 {
             let entryDate = Calendar.current.date(byAdding: .day, value: dayOffset, to: currentDate)!
             let startOfDate = Calendar.current.startOfDay(for: entryDate)
-            let entry = SimpleEntry(date: startOfDate)
+            let entry = SimpleEntry(date: startOfDate, url: getImageUrl())
             entries.append(entry)
         }
         
@@ -36,6 +36,7 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
+    let url: URL?
 }
 
 struct GotchaWidgetEntryView : View {
@@ -48,14 +49,16 @@ struct GotchaWidgetEntryView : View {
                 Text("WHO'S THAT")
                     .font(.system(size: 12))
                     .fontWeight(.black)
-                    Image("Image")
-                        .resizable()
-                        .scaledToFit()
+                    .scaledToFit()
+                
+                // image
+                PokeImage(url: entry.url)
+                            
                 Text("POKEMON?")
                     .font(.system(size: 12))
                     .fontWeight(.black)
             } // vstack
-            .padding()
+            .padding(8)
         } // zstack
     }
     
@@ -75,7 +78,7 @@ struct GotchaWidget: Widget {
 
 struct GotchaWidget_Previews: PreviewProvider {
     static var previews: some View {
-        GotchaWidgetEntryView(entry: SimpleEntry(date: Date()))
+        GotchaWidgetEntryView(entry: SimpleEntry(date: Date(), url: getImageUrl()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

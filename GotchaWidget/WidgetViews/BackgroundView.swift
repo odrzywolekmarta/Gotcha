@@ -12,6 +12,8 @@ struct BackgroundView: View {
     var body: some View {
         ZStack {
             Image("light2")
+                .resizable()
+                .scaledToFit()
         }
         .background(RadialGradient(colors:  [Color("CustomBlue"), Color("CustomRed")], center: .center, startRadius: 25, endRadius: 65))
     }
