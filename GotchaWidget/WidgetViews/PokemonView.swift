@@ -7,24 +7,24 @@
 
 import SwiftUI
 import WidgetKit
-import URLImage
 
 struct PokemonView: View {
     @State var url: URL?
     
     var body: some View {
         VStack {
-            Text("WHO'S THAT")
-                .font(.custom("Orbitron-Bold", size: 15))
-            
+            StrokeText(text: "WHO'S THAT", width: 1.4, color: Color("CustomOrange"))
+                .font(.custom("Orbitron-Bold", size: 19))
+                .foregroundColor(.black)
+//            Text("WHO'S THAT")
+//                .font(.custom("Orbitron-Bold", size: 15))
+//                .foregroundColor(.black)
+
             PokeImage(url: url)
-            
+
             StrokeText(text: "POKÉMON?", width: 1.4, color: Color("CustomOrange"))
                 .font(.custom("Orbitron-Bold", size: 19))
-//                .shadow(color: Color("CustomOrange"), radius: 5)
-//            Text("POKÉMON?")
-//                .font(Font.custom("Orbitron-Bold", size: 19))
-//                .foregroundColor(.black)
+                .foregroundColor(.black)
                 
         } // vstack
         .padding()

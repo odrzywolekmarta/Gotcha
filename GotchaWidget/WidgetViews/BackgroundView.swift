@@ -16,7 +16,7 @@ struct BackgroundView: View {
                 .resizable()
                 .scaledToFill()
                 .foregroundColor(.white)
-                .opacity(0.3)
+                .opacity(0.2)
 //            Image("light2")
 //                .resizable()
 //                .scaledToFill()
