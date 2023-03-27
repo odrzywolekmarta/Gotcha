@@ -7,7 +7,7 @@
 import WidgetKit
 import SwiftUI
 
-let baseUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+let baseUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
 
 func getRandomId() -> Int {
     Int.random(in: 1...905)

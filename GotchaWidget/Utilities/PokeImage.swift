@@ -15,8 +15,10 @@ struct PokeImage: View {
         Group {
             if let url = url, let imageData = try? Data(contentsOf: url), let uiImage = UIImage(data: imageData) {
                 Image(uiImage: uiImage)
+                    .renderingMode(.template)
                     .resizable()
                     .scaledToFit()
+                    .foregroundColor(.black)
             } else {
                 Image("Image")
             }

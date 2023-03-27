@@ -10,29 +10,31 @@ import WidgetKit
 import URLImage
 
 struct PokemonView: View {
+    @State var url: URL?
+    
     var body: some View {
         VStack {
             Text("WHO'S THAT")
-                .font(.system(size: 12))
-                .fontWeight(.black)
-                .scaledToFit()
+                .font(.custom("Orbitron-Bold", size: 15))
             
-            // image
+            PokeImage(url: url)
             
-         
-
-            
-            Text("POKEMON?")
-                .font(.system(size: 12))
-                .fontWeight(.black)
+            StrokeText(text: "POKÉMON?", width: 1.4, color: Color("CustomOrange"))
+                .font(.custom("Orbitron-Bold", size: 19))
+//                .shadow(color: Color("CustomOrange"), radius: 5)
+//            Text("POKÉMON?")
+//                .font(Font.custom("Orbitron-Bold", size: 19))
+//                .foregroundColor(.black)
+                
         } // vstack
-        
+        .padding()
     }
 }
 
 struct PokemonView_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonView()
+        let url: URL? = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png")
+        PokemonView(url: url)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

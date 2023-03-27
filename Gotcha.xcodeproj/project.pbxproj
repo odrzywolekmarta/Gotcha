@@ -48,15 +48,17 @@
 		2D69467D2961EF2C0059E5F0 /* LaunchVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D69467C2961EF2C0059E5F0 /* LaunchVideo.mp4 */; };
 		2D71F82429CF914E00227CA9 /* PokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F82329CF914E00227CA9 /* PokemonView.swift */; };
 		2D71F82829CF99B600227CA9 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D71F82729CF99B600227CA9 /* URLImage */; };
-		2D71F82A29CF99C700227CA9 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D71F82929CF99C700227CA9 /* URLImage */; };
 		2D71F82D29D21FC700227CA9 /* PokeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F82C29D21FC700227CA9 /* PokeImage.swift */; };
+		2D71F82E29D223B000227CA9 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6141542923C51600D2F68A /* Orbitron-Bold.ttf */; };
+		2D71F82F29D223B300227CA9 /* Orbitron-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D61414B2922771200D2F68A /* Orbitron-Regular.ttf */; };
+		2D71F83129D22E7F00227CA9 /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F83029D22E7F00227CA9 /* StrokeText.swift */; };
 		2D92AAA929CF2E4C000D570F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D92AAA829CF2E4C000D570F /* SwiftUI.framework */; };
 		2D92AAAC29CF2E4C000D570F /* GotchaWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */; };
 		2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */; };
 		2D92AAB029CF2E4D000D570F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D92AAAF29CF2E4D000D570F /* Assets.xcassets */; };
 		2D92AAB429CF2E4D000D570F /* GotchaWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2D92AACA29CF7CDF000D570F /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAC929CF7CDF000D570F /* BackgroundView.swift */; };
-		2D92AACC29CF7DDB000D570F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAB929CF6BCE000D570F /* Utilities.swift */; };
+		2D92AACC29CF7DDB000D570F /* ImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAB929CF6BCE000D570F /* ImageUrl.swift */; };
 		2D92AACE29CF850E000D570F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D92AACD29CF850E000D570F /* SDWebImage */; };
 		2DD0B645290949B6008B9BB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B644290949B6008B9BB5 /* AppDelegate.swift */; };
 		2DD0B647290949B6008B9BB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */; };
@@ -139,6 +141,7 @@
 		2D69467C2961EF2C0059E5F0 /* LaunchVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LaunchVideo.mp4; sourceTree = "<group>"; };
 		2D71F82329CF914E00227CA9 /* PokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonView.swift; sourceTree = "<group>"; };
 		2D71F82C29D21FC700227CA9 /* PokeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImage.swift; sourceTree = "<group>"; };
+		2D71F83029D22E7F00227CA9 /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
 		2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GotchaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D92AAA629CF2E4C000D570F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		2D92AAA829CF2E4C000D570F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -146,7 +149,7 @@
 		2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotchaWidget.swift; sourceTree = "<group>"; };
 		2D92AAAF29CF2E4D000D570F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D92AAB129CF2E4D000D570F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D92AAB929CF6BCE000D570F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		2D92AAB929CF6BCE000D570F /* ImageUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUrl.swift; sourceTree = "<group>"; };
 		2D92AAC929CF7CDF000D570F /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		2DD0B641290949B6008B9BB5 /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD0B644290949B6008B9BB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,7 +170,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D92AACE29CF850E000D570F /* SDWebImage in Frameworks */,
-				2D71F82A29CF99C700227CA9 /* URLImage in Frameworks */,
 				2D92AAA929CF2E4C000D570F /* SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,8 +337,9 @@
 		2D71F82B29D21FB400227CA9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2D92AAB929CF6BCE000D570F /* Utilities.swift */,
+				2D92AAB929CF6BCE000D570F /* ImageUrl.swift */,
 				2D71F82C29D21FC700227CA9 /* PokeImage.swift */,
+				2D71F83029D22E7F00227CA9 /* StrokeText.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -344,8 +347,8 @@
 		2D92AAAA29CF2E4C000D570F /* GotchaWidget */ = {
 			isa = PBXGroup;
 			children = (
-				2D71F82529CF91CD00227CA9 /* WidgetViews */,
 				2D71F82B29D21FB400227CA9 /* Utilities */,
+				2D71F82529CF91CD00227CA9 /* WidgetViews */,
 				2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */,
 				2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */,
 				2D92AAAF29CF2E4D000D570F /* Assets.xcassets */,
@@ -453,7 +456,6 @@
 			name = GotchaWidgetExtension;
 			packageProductDependencies = (
 				2D92AACD29CF850E000D570F /* SDWebImage */,
-				2D71F82929CF99C700227CA9 /* URLImage */,
 			);
 			productName = GotchaWidgetExtension;
 			productReference = 2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */;
@@ -554,6 +556,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D71F82F29D223B300227CA9 /* Orbitron-Regular.ttf in Resources */,
+				2D71F82E29D223B000227CA9 /* Orbitron-Bold.ttf in Resources */,
 				2D92AAB029CF2E4D000D570F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,12 +597,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D71F83129D22E7F00227CA9 /* StrokeText.swift in Sources */,
 				2D92AACA29CF7CDF000D570F /* BackgroundView.swift in Sources */,
 				2D92AAAC29CF2E4C000D570F /* GotchaWidgetBundle.swift in Sources */,
 				2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */,
 				2D71F82429CF914E00227CA9 /* PokemonView.swift in Sources */,
 				2D71F82D29D21FC700227CA9 /* PokeImage.swift in Sources */,
-				2D92AACC29CF7DDB000D570F /* Utilities.swift in Sources */,
+				2D92AACC29CF7DDB000D570F /* ImageUrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,7 +693,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -717,7 +722,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1005,11 +1010,6 @@
 			productName = SDWebImage;
 		};
 		2D71F82729CF99B600227CA9 /* URLImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2D71F82629CF99B600227CA9 /* XCRemoteSwiftPackageReference "url-image" */;
-			productName = URLImage;
-		};
-		2D71F82929CF99C700227CA9 /* URLImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2D71F82629CF99B600227CA9 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;

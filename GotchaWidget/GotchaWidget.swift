@@ -44,21 +44,8 @@ struct GotchaWidgetEntryView : View {
     
     var body: some View {
         ZStack {
-           BackgroundView()
-            VStack {
-                Text("WHO'S THAT")
-                    .font(.system(size: 12))
-                    .fontWeight(.black)
-                    .scaledToFit()
-                
-                // image
-                PokeImage(url: entry.url)
-                            
-                Text("POKEMON?")
-                    .font(.system(size: 12))
-                    .fontWeight(.black)
-            } // vstack
-            .padding(8)
+            BackgroundView()
+            PokemonView(url: entry.url)
         } // zstack
     }
     
