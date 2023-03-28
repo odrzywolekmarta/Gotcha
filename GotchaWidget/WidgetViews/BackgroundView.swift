@@ -11,6 +11,9 @@ import WidgetKit
 struct BackgroundView: View {
     var body: some View {
         ZStack {
+            Image("light2")
+                .resizable()
+                .scaledToFit()
             Image("pokeball")
                 .renderingMode(.template)
                 .resizable()
