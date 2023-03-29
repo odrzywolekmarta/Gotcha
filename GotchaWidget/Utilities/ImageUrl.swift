@@ -13,8 +13,8 @@ func getRandomId() -> Int {
     Int.random(in: 1...905)
 }
 
-public func getImageUrl() -> URL {
-    let idString = String(getRandomId())
+public func getImageUrl(forId id: Int) -> URL {
+    let idString = String(id)
     let urlString  = "\(baseUrl)\(idString).png"
     if let url = URL(string: urlString) {
         return url

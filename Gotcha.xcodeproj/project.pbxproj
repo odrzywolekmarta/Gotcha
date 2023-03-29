@@ -52,6 +52,8 @@
 		2D71F82E29D223B000227CA9 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6141542923C51600D2F68A /* Orbitron-Bold.ttf */; };
 		2D71F82F29D223B300227CA9 /* Orbitron-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D61414B2922771200D2F68A /* Orbitron-Regular.ttf */; };
 		2D71F83129D22E7F00227CA9 /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F83029D22E7F00227CA9 /* StrokeText.swift */; };
+		2D71F83E29D4B06E00227CA9 /* PokeImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F83D29D4B06E00227CA9 /* PokeImageModel.swift */; };
+		2D71F84229D4B13C00227CA9 /* PokeImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F84129D4B13C00227CA9 /* PokeImageService.swift */; };
 		2D92AAA929CF2E4C000D570F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D92AAA829CF2E4C000D570F /* SwiftUI.framework */; };
 		2D92AAAC29CF2E4C000D570F /* GotchaWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */; };
 		2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */; };
@@ -142,6 +144,8 @@
 		2D71F82329CF914E00227CA9 /* PokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonView.swift; sourceTree = "<group>"; };
 		2D71F82C29D21FC700227CA9 /* PokeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImage.swift; sourceTree = "<group>"; };
 		2D71F83029D22E7F00227CA9 /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
+		2D71F83D29D4B06E00227CA9 /* PokeImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImageModel.swift; sourceTree = "<group>"; };
+		2D71F84129D4B13C00227CA9 /* PokeImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImageService.swift; sourceTree = "<group>"; };
 		2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GotchaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D92AAA629CF2E4C000D570F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		2D92AAA829CF2E4C000D570F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -344,9 +348,27 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		2D71F83F29D4B07600227CA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D71F83D29D4B06E00227CA9 /* PokeImageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D71F84029D4B10A00227CA9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2D71F84129D4B13C00227CA9 /* PokeImageService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		2D92AAAA29CF2E4C000D570F /* GotchaWidget */ = {
 			isa = PBXGroup;
 			children = (
+				2D71F83F29D4B07600227CA9 /* Model */,
+				2D71F84029D4B10A00227CA9 /* Networking */,
 				2D71F82B29D21FB400227CA9 /* Utilities */,
 				2D71F82529CF91CD00227CA9 /* WidgetViews */,
 				2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */,
@@ -599,9 +621,11 @@
 			files = (
 				2D71F83129D22E7F00227CA9 /* StrokeText.swift in Sources */,
 				2D92AACA29CF7CDF000D570F /* BackgroundView.swift in Sources */,
+				2D71F83E29D4B06E00227CA9 /* PokeImageModel.swift in Sources */,
 				2D92AAAC29CF2E4C000D570F /* GotchaWidgetBundle.swift in Sources */,
 				2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */,
 				2D71F82429CF914E00227CA9 /* PokemonView.swift in Sources */,
+				2D71F84229D4B13C00227CA9 /* PokeImageService.swift in Sources */,
 				2D71F82D29D21FC700227CA9 /* PokeImage.swift in Sources */,
 				2D92AACC29CF7DDB000D570F /* ImageUrl.swift in Sources */,
 			);
