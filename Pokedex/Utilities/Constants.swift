@@ -20,6 +20,7 @@ struct Constants {
     static let pokemonGifUrl = "https://78.media.tumblr.com/c15b061360fa577cfa6fa1868bc45962/tumblr_o2d65b8VYl1so9b4uo1_500.gif"
     static let pokemonDetailsImageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
     static let baseImageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+    static let typesUrl = "https://pokeapi.co/api/v2/type/"
     
     // SIZES
     static let cellRadius: CGFloat = 25
@@ -34,11 +35,16 @@ struct Constants {
     static let unknownPokemonImage = UIImage(named: "unknown")
     static let listBulletImage = UIImage(systemName: "list.bullet")
     static let magnifyingGlassImage = UIImage(systemName: "magnifyingglass")
+    static let pawImage = UIImage(systemName: "pawprint")
+    static let pawFillImage = UIImage(systemName: "pawprint.fill")
+    static let bookImage = UIImage(systemName: "book")
+    static let bookFillImage  = UIImage(systemName: "book.fill")
     
     // TITLES/NAMES
     static let tabNameAll = "all"
     static let tabNameFavourites = "favourites"
     static let tabNameSearch = "search"
+    static let tabNameTypes = "types"
     static let gotcha = "gotcha"
     static let pokemonCell = "PokemonTableViewCell"
     static let launchVideo = "LaunchVideo"

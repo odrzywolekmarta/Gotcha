@@ -36,23 +36,33 @@ extension SceneDelegate: LaunchScreenViewControllerDelegate {
         let tabBarController = UITabBarController()
         let allNavigationController = UINavigationController()
         let searchNavigationController = UINavigationController()
+        let typesNavigationController = UINavigationController()
         let favouritesNavigationController = UINavigationController()
         
-        allNavigationController.tabBarItem = UITabBarItem(title: Constants.tabNameAll.uppercased(), image: Constants.listBulletImage, selectedImage: Constants.listBulletImage)
+         // pokemon list
+        let controller = PokemonViewController(viewModel: PokemonListViewModel(service: PokemonAPIService()), router: AppRouter(navigationController: allNavigationController))
+        allNavigationController.setViewControllers([controller], animated: false)
+        allNavigationController.tabBarItem = UITabBarItem(title: Constants.tabNameAll.uppercased(), image: Constants.pawImage, selectedImage: Constants.pawFillImage)
         
+        // favourites
         let favouritesViewController = FavouritesViewController(router: AppRouter(navigationController: favouritesNavigationController))
         favouritesNavigationController.viewControllers = [favouritesViewController]
         favouritesViewController.tabBarItem = UITabBarItem(title: Constants.tabNameFavourites.uppercased(), image: Constants.heartImage, selectedImage: Constants.heartFillImage)
         
+        // search
         let searchViewController = SearchViewController(router: AppRouter(navigationController: searchNavigationController))
         searchNavigationController.viewControllers = [searchViewController]
         searchViewController.tabBarItem = UITabBarItem(title: Constants.tabNameSearch.uppercased(), image: Constants.magnifyingGlassImage, selectedImage: Constants.magnifyingGlassImage)
         
-        tabBarController.viewControllers = [allNavigationController, searchNavigationController, favouritesNavigationController]
+        // types
+        let typesViewController = TypesViewController(viewModel: TypesViewModel(service: PokemonAPIService()), router: AppRouter(navigationController: typesNavigationController))
+        typesNavigationController.viewControllers = [typesViewController]
+        typesViewController.tabBarItem = UITabBarItem(title: Constants.tabNameTypes.uppercased(), image: Constants.bookImage, selectedImage: Constants.bookFillImage)
+        
+        tabBarController.viewControllers = [allNavigationController, searchNavigationController, typesViewController,  favouritesNavigationController]
         tabBarController.tabBar.tintColor = UIColor(named: Constants.Colors.customRed)
         
-        let controller = PokemonViewController(viewModel: PokemonListViewModel(service: PokemonAPIService()), router: AppRouter(navigationController: allNavigationController))
-        allNavigationController.setViewControllers([controller], animated: false)
+     
         window?.rootViewController = tabBarController
         
         window?.makeKeyAndVisible()

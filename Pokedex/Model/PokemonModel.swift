@@ -132,7 +132,12 @@ struct LanguageName: Decodable {
     let name: String
 }
 
+// model persisted in user defaults
 struct PersistedModel: Codable, Hashable {
     var id: Int
     var name: String
 }
+
+// types
+
+
