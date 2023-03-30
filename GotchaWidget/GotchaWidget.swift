@@ -10,11 +10,11 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), url: getImageUrl())
+        SimpleEntry(date: Date(), url: getImageUrl(forId: 1))
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), url: getImageUrl())
+        let entry = SimpleEntry(date: Date(), url: getImageUrl(forId: 1))
         completion(entry)
     }
     
@@ -26,7 +26,7 @@ struct Provider: TimelineProvider {
                     guard let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate) else {
                         continue
                     }
-                    let entry = SimpleEntry(date: entryDate, url: getImageUrl())
+                    let entry = SimpleEntry(date: entryDate, url: getImageUrl(forId: 1))
                     entries.append(entry)
                 }
 
@@ -77,7 +77,7 @@ struct GotchaWidget: Widget {
 
 struct GotchaWidget_Previews: PreviewProvider {
     static var previews: some View {
-        GotchaWidgetEntryView(entry: SimpleEntry(date: Date(), url: getImageUrl()))
+        GotchaWidgetEntryView(entry: SimpleEntry(date: Date(), url: getImageUrl(forId: 1)))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
