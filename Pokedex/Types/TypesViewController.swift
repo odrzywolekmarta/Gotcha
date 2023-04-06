@@ -31,7 +31,7 @@ class TypesViewController: UIViewController {
         collectionView?.dataSource = self
         viewModel.getPokemonTypes()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed))
@@ -39,28 +39,21 @@ class TypesViewController: UIViewController {
     }
     
     func configureCollectionView() {
-
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 4
-       
+        let nibCell = UINib(nibName: "TypeCollectionViewCell", bundle: nil)
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
-        
-         collectionView?.register(TypeCollectionViewCell.self, forCellWithReuseIdentifier: Constants.typeCell)
-         
+        collectionView?.register(nibCell, forCellWithReuseIdentifier: Constants.typeCell)
+        collectionView?.layoutIfNeeded()
         collectionView?.translatesAutoresizingMaskIntoConstraints = false
-        
-//        collectionView?.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        collectionView?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-//        collectionView?.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        collectionView?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         collectionView?.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         
         view.addSubview(collectionView ?? UICollectionView())
     }
-
+    
 }
 
 extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -85,10 +78,10 @@ extension TypesViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView,
-                    layout collectionViewLayout: UICollectionViewLayout,
-                    sizeForItemAt indexPath: IndexPath) -> CGSize {
-         return CGSize(width: 100, height: 100)
-     }
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 117, height: 117)
+    }
 }
 
 extension TypesViewController: TypesViewModelDelegate {
