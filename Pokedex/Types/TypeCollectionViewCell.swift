@@ -8,10 +8,20 @@
 import UIKit
 
 class TypeCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var typeImage: UIImageView!
+    @IBOutlet weak var typeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func configure(name: String) {
+        typeLabel.text = name
+        if name == "unknown" {
+            typeImage.image = UIImage(systemName: "questionmark")
+        } else {
+            typeImage.image = UIImage(named: name)
+        }
+    }
 }
