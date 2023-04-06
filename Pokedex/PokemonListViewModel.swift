@@ -37,7 +37,7 @@ class PokemonListViewModel: PokemonListViewModelProtocol {
             case .failure(let error):
                 self?.delegate?.onGetPageFailure(error: error.localizedDescription)
             case .success(let data):
-                self?.urlString = data.next
+                self?.urlString = data.next ?? ""
                 self?.dataSource.append(contentsOf: data.results)
                 self?.delegate?.onGetPageSuccess()
             }

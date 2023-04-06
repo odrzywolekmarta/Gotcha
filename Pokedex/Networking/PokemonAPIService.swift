@@ -21,7 +21,7 @@ protocol PokemonAPIServiceProtocol {
 }
 
 struct SinglePageModel: Decodable {
-    let next: String
+    let next: String?
     let results: [Results]
 }
 
@@ -51,6 +51,7 @@ class PokemonAPIService: PokemonAPIServiceProtocol {
                     completion(.success(singlePage))
                 } catch {
                     completion(.failure(error))
+                    debugPrint(error)
                 }
             } else {
                 completion(.failure(PokemonAPIServiceError.unknown))
