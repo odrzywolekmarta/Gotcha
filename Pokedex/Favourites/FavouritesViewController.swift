@@ -113,7 +113,7 @@ extension FavouritesViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if self.previousController == viewController || self.previousController == nil {
             let nav = viewController as! UINavigationController
-            if nav.viewControllers.count < 2, tableView.numberOfRows(inSection: 0) > 0 {
+            if nav.viewControllers.count < 3, tableView.numberOfRows(inSection: 0) > 0 {
                 let indexPath = IndexPath(row: 0, section: 0)
                 tableView.scrollToRow(at: indexPath, at: .top, animated: true)
             }

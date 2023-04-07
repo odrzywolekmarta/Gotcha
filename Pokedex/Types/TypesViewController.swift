@@ -13,6 +13,7 @@ class TypesViewController: UIViewController {
     var collectionView: UICollectionView?
     let router: AppRouterProtocol
     var types: [Results] = []
+    private var previousController: UIViewController?
     
     init(viewModel: TypesViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -36,7 +37,6 @@ class TypesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed))
-        tabBarController?.delegate = self
     }
     
     func configureCollectionView() {
@@ -75,7 +75,7 @@ extension TypesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 1.0, left: 8.0, bottom: 1.0, right: 8.0)
+        return UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -96,9 +96,5 @@ extension TypesViewController: TypesViewModelDelegate {
     func onTypesFetchFailure(error: String) {
         print(error)
     }
-    
-}
-
-extension TypesViewController: UITabBarControllerDelegate {
     
 }

@@ -107,7 +107,7 @@ extension PokemonViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if self.previousController == viewController || self.previousController == nil {
             if let nav = viewController as? UINavigationController {
-                if nav.viewControllers.count < 2 {
+                if nav.viewControllers.count < 3 {
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                 }

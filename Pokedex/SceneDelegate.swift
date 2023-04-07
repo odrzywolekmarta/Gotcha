@@ -59,7 +59,7 @@ extension SceneDelegate: LaunchScreenViewControllerDelegate {
         typesNavigationController.viewControllers = [typesViewController]
         typesViewController.tabBarItem = UITabBarItem(title: Constants.tabNameTypes.uppercased(), image: Constants.bookImage, selectedImage: Constants.bookFillImage)
         
-        tabBarController.viewControllers = [allNavigationController, searchNavigationController, typesViewController,  favouritesNavigationController]
+        tabBarController.viewControllers = [allNavigationController, searchNavigationController, typesNavigationController, favouritesNavigationController]
         tabBarController.tabBar.tintColor = UIColor(named: Constants.Colors.customRed)
         
      
@@ -70,6 +70,7 @@ extension SceneDelegate: LaunchScreenViewControllerDelegate {
         allNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
         searchNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customBeige), titleColor: .black)
         favouritesNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
+        typesNavigationController.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed), titleColor: .black)
         
         // TODO: make bar title configuration reusable
         let allNavigationBar
@@ -82,16 +83,25 @@ extension SceneDelegate: LaunchScreenViewControllerDelegate {
         titleLabel.textColor = .white
         titleLabel.font = UIFont(name: Constants.customFontBold, size: 23)
         allNavigationBar.addSubview(titleLabel)
-
         
         let favNavigationBar = favouritesNavigationController.navigationBar
         let titleFramee = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
         let titleLabell = UILabel(frame: titleFramee)
-        titleLabell.text = Constants.gotcha.uppercased()
+        titleLabell.text = "FAVOURITES"
         titleLabell.applyShadow()
         titleLabell.textAlignment = .center
         titleLabell.textColor = .white
         titleLabell.font = UIFont(name: Constants.customFontBold, size: 23)
         favNavigationBar.addSubview(titleLabell)
+        
+        let typesNavigationBar = typesNavigationController.navigationBar
+        let titleFrameee = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
+        let titleLabelll = UILabel(frame: titleFrameee)
+        titleLabelll.text = "TYPES"
+        titleLabelll.applyShadow()
+        titleLabelll.textAlignment = .center
+        titleLabelll.textColor = .white
+        titleLabelll.font = UIFont(name: Constants.customFontBold, size: 23)
+        typesNavigationBar.addSubview(titleLabelll)
     }
 }

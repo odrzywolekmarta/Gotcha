@@ -22,5 +22,6 @@ class TypeCollectionViewCell: UICollectionViewCell {
     func configure(name: String) {
         typeLabel.text = name
         typeImage.image = UIImage(named: name)
+        typeImage.applyShadow()
     }
 }
