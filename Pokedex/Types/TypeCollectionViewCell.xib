@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Orbitron-Bold.ttf">
+            <string>Orbitron-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,43 +24,41 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxX-8O-cGJ" userLabel="ContainerView">
-                        <rect key="frame" x="0.0" y="0.0" width="117" height="117"/>
+                        <rect key="frame" x="5" y="5" width="107" height="107"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WNM-Ur-kfB">
-                                <rect key="frame" x="33.666666666666664" y="33.666666666666664" width="49.999999999999993" height="49.999999999999993"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="WNM-Ur-kfB" secondAttribute="height" multiplier="1:1" id="Amg-Ww-Ztg"/>
-                                    <constraint firstAttribute="height" constant="50" id="euP-jm-dy8"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AS-O4-MmT">
-                                <rect key="frame" x="38" y="83.666666666666671" width="41.333333333333343" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="zLA-nX-rm7">
+                                <rect key="frame" x="21" y="12.333333333333336" width="65" height="82.666666666666657"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WNM-Ur-kfB">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="3xS-j2-m8g"/>
+                                            <constraint firstAttribute="width" secondItem="WNM-Ur-kfB" secondAttribute="height" multiplier="1:1" id="FS6-ug-VrG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AS-O4-MmT">
+                                        <rect key="frame" x="0.0" y="65" width="65" height="17.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WNM-Ur-kfB" firstAttribute="centerY" secondItem="sxX-8O-cGJ" secondAttribute="centerY" id="OG2-pP-0LH"/>
-                            <constraint firstItem="WNM-Ur-kfB" firstAttribute="centerX" secondItem="sxX-8O-cGJ" secondAttribute="centerX" id="jP4-eR-0kn"/>
-                            <constraint firstItem="0AS-O4-MmT" firstAttribute="centerX" secondItem="sxX-8O-cGJ" secondAttribute="centerX" id="r8j-WT-kAy"/>
-                            <constraint firstAttribute="width" secondItem="sxX-8O-cGJ" secondAttribute="height" multiplier="1:1" id="rrG-9I-ygp"/>
-                            <constraint firstItem="0AS-O4-MmT" firstAttribute="top" secondItem="WNM-Ur-kfB" secondAttribute="bottom" id="xDb-b3-LAR"/>
+                            <constraint firstItem="zLA-nX-rm7" firstAttribute="centerX" secondItem="sxX-8O-cGJ" secondAttribute="centerX" id="4BH-ys-Svf"/>
+                            <constraint firstItem="zLA-nX-rm7" firstAttribute="centerY" secondItem="sxX-8O-cGJ" secondAttribute="centerY" id="9R4-RA-fnm"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="sxX-8O-cGJ" secondAttribute="bottom" id="2zM-xM-wAG"/>
-                <constraint firstItem="sxX-8O-cGJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5L7-XR-o0S"/>
-                <constraint firstItem="sxX-8O-cGJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="DNV-Gj-aN4"/>
-                <constraint firstAttribute="bottom" secondItem="sxX-8O-cGJ" secondAttribute="bottom" constant="10" id="MLC-Zq-x0R"/>
-                <constraint firstAttribute="trailing" secondItem="sxX-8O-cGJ" secondAttribute="trailing" id="QPI-Ep-LEd"/>
-                <constraint firstItem="sxX-8O-cGJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="X9C-TN-LBA"/>
-                <constraint firstItem="sxX-8O-cGJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bIA-Ca-TYb"/>
-                <constraint firstAttribute="trailing" secondItem="sxX-8O-cGJ" secondAttribute="trailing" constant="10" id="xko-F2-dSJ"/>
+                <constraint firstAttribute="bottom" secondItem="sxX-8O-cGJ" secondAttribute="bottom" constant="5" id="LhP-JY-Udf"/>
+                <constraint firstAttribute="trailing" secondItem="sxX-8O-cGJ" secondAttribute="trailing" constant="5" id="NhO-pH-Jf2"/>
+                <constraint firstItem="sxX-8O-cGJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="hPz-8g-6hD"/>
+                <constraint firstItem="sxX-8O-cGJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="xzD-l6-XYg"/>
             </constraints>
             <size key="customSize" width="117" height="117"/>
             <connections>

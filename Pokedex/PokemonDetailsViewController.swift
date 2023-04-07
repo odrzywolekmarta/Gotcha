@@ -105,7 +105,6 @@ class PokemonDetailsViewController: UIViewController {
         navigationController?.navigationBar.update(backroundColor: baseColor)
         favourites.fetch()
         setFavouritesButton()
-        
     }
     
     @IBAction func aboutButtonPressed(_ sender: UIButton) {

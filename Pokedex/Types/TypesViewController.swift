@@ -12,6 +12,7 @@ class TypesViewController: UIViewController {
     let viewModel: TypesViewModelProtocol
     var collectionView: UICollectionView?
     let router: AppRouterProtocol
+    var types: [Results] = []
     
     init(viewModel: TypesViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -58,12 +59,12 @@ class TypesViewController: UIViewController {
 
 extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.dataSource.count
+        types.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.typeCell, for: indexPath) as? TypeCollectionViewCell {
-            cell.configure(name: viewModel.dataSource[indexPath.row].name)
+            cell.configure(name: types[indexPath.row].name)
             return cell
         }
         return UICollectionViewCell()
@@ -87,6 +88,7 @@ extension TypesViewController: UICollectionViewDelegateFlowLayout {
 extension TypesViewController: TypesViewModelDelegate {
     func onTypesFetchSuccess() {
         DispatchQueue.main.async {
+            self.types = self.viewModel.dataSource.filter { $0.name != "shadow" && $0.name != "unknown" }
             self.collectionView?.reloadData()
         }
     }

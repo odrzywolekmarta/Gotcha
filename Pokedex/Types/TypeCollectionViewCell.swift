@@ -14,15 +14,13 @@ class TypeCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        containerView.layer.cornerRadius = Constants.cellRadius
+        containerView.applyShadow()
         // Initialization code
     }
 
     func configure(name: String) {
         typeLabel.text = name
-        if name == "unknown" {
-            typeImage.image = UIImage(systemName: "questionmark")
-        } else {
-            typeImage.image = UIImage(named: name)
-        }
+        typeImage.image = UIImage(named: name)
     }
 }
