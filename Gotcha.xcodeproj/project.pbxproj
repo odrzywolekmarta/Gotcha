@@ -54,6 +54,7 @@
 		2D71F83129D22E7F00227CA9 /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F83029D22E7F00227CA9 /* StrokeText.swift */; };
 		2D71F83E29D4B06E00227CA9 /* PokeImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F83D29D4B06E00227CA9 /* PokeImageModel.swift */; };
 		2D71F84229D4B13C00227CA9 /* PokeImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F84129D4B13C00227CA9 /* PokeImageService.swift */; };
+		2D72885B29E0AA5700D5A5E3 /* TypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D72885A29E0AA5700D5A5E3 /* TypeModel.swift */; };
 		2D92AAA929CF2E4C000D570F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D92AAA829CF2E4C000D570F /* SwiftUI.framework */; };
 		2D92AAAC29CF2E4C000D570F /* GotchaWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */; };
 		2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */; };
@@ -150,6 +151,7 @@
 		2D71F83029D22E7F00227CA9 /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
 		2D71F83D29D4B06E00227CA9 /* PokeImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImageModel.swift; sourceTree = "<group>"; };
 		2D71F84129D4B13C00227CA9 /* PokeImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImageService.swift; sourceTree = "<group>"; };
+		2D72885A29E0AA5700D5A5E3 /* TypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeModel.swift; sourceTree = "<group>"; };
 		2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GotchaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D92AAA629CF2E4C000D570F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		2D92AAA829CF2E4C000D570F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -372,6 +374,13 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		2D72885929E091CC00D5A5E3 /* TypeDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TypeDetails;
+			sourceTree = "<group>";
+		};
 		2D92AAAA29CF2E4C000D570F /* GotchaWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +430,7 @@
 				2D6140FD2918408200D2F68A /* PokemonDetails */,
 				2D4E205E2942095100273DD7 /* Search */,
 				2DD21A9329D61353008B6EE6 /* Types */,
+				2D72885929E091CC00D5A5E3 /* TypeDetails */,
 				2D4E2056294131EA00273DD7 /* Favourites */,
 				2D6946752961DEA50059E5F0 /* LaunchScreen */,
 				2D6141442922764A00D2F68A /* Fonts */,
@@ -434,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				2DD0B65C290954DC008B9BB5 /* PokemonModel.swift */,
+				2D72885A29E0AA5700D5A5E3 /* TypeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -676,6 +687,7 @@
 				2D3AA4A0295B72C9000EC287 /* Favourites.swift in Sources */,
 				2DD0B662290967D2008B9BB5 /* PokemonAPIService.swift in Sources */,
 				2D61413929216CA300D2F68A /* EvolutionViewController.swift in Sources */,
+				2D72885B29E0AA5700D5A5E3 /* TypeModel.swift in Sources */,
 				2D6946782961DECD0059E5F0 /* LaunchScreenViewController.swift in Sources */,
 				2D6141022919A59300D2F68A /* PokemonDetailsViewModel.swift in Sources */,
 				2D4E20622943A36E00273DD7 /* SearchViewModel.swift in Sources */,
