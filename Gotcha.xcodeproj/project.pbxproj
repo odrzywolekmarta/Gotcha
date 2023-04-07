@@ -55,6 +55,7 @@
 		2D71F83E29D4B06E00227CA9 /* PokeImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F83D29D4B06E00227CA9 /* PokeImageModel.swift */; };
 		2D71F84229D4B13C00227CA9 /* PokeImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F84129D4B13C00227CA9 /* PokeImageService.swift */; };
 		2D72885B29E0AA5700D5A5E3 /* TypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D72885A29E0AA5700D5A5E3 /* TypeModel.swift */; };
+		2D72885D29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D72885C29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift */; };
 		2D92AAA929CF2E4C000D570F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D92AAA829CF2E4C000D570F /* SwiftUI.framework */; };
 		2D92AAAC29CF2E4C000D570F /* GotchaWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */; };
 		2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */; };
@@ -152,6 +153,7 @@
 		2D71F83D29D4B06E00227CA9 /* PokeImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImageModel.swift; sourceTree = "<group>"; };
 		2D71F84129D4B13C00227CA9 /* PokeImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImageService.swift; sourceTree = "<group>"; };
 		2D72885A29E0AA5700D5A5E3 /* TypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeModel.swift; sourceTree = "<group>"; };
+		2D72885C29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailsViewModel.swift; sourceTree = "<group>"; };
 		2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GotchaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D92AAA629CF2E4C000D570F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		2D92AAA829CF2E4C000D570F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -377,6 +379,7 @@
 		2D72885929E091CC00D5A5E3 /* TypeDetails */ = {
 			isa = PBXGroup;
 			children = (
+				2D72885C29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift */,
 			);
 			path = TypeDetails;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				2D61411A291C399C00D2F68A /* Constants.swift in Sources */,
 				2DD0B647290949B6008B9BB5 /* SceneDelegate.swift in Sources */,
 				2D614118291AE4FC00D2F68A /* AppRouter.swift in Sources */,
+				2D72885D29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift in Sources */,
 				2D614125292162B500D2F68A /* DetailsPageViewController.swift in Sources */,
 				2DD0B65D290954DC008B9BB5 /* PokemonModel.swift in Sources */,
 				2D614116291ACEB800D2F68A /* UIKit+extensions.swift in Sources */,
