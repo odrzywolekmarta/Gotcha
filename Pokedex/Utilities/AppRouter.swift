@@ -12,10 +12,10 @@ protocol AppRouterProtocol {
     func navigateToDetails(urlString: String, imageUrl: String)
     func navigateToDetails(withModel model: PokemonModel)
     func navigateToDetails(urlString: String)
+    func navigateToType(url: URL)
 }
 
 class AppRouter: AppRouterProtocol {
-    
     private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -42,4 +42,9 @@ class AppRouter: AppRouterProtocol {
                                                       router: self)
         navigationController.pushViewController(controller, animated: true)
     }
+    
+    func navigateToType(url: URL) {
+        
+    }
+    
 }
