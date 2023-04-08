@@ -56,6 +56,8 @@
 		2D71F84229D4B13C00227CA9 /* PokeImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F84129D4B13C00227CA9 /* PokeImageService.swift */; };
 		2D72885B29E0AA5700D5A5E3 /* TypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D72885A29E0AA5700D5A5E3 /* TypeModel.swift */; };
 		2D72885D29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D72885C29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift */; };
+		2D72886029E0B41C00D5A5E3 /* TypeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D72885E29E0B41C00D5A5E3 /* TypeDetailsViewController.swift */; };
+		2D72886129E0B41C00D5A5E3 /* TypeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D72885F29E0B41C00D5A5E3 /* TypeDetailsViewController.xib */; };
 		2D92AAA929CF2E4C000D570F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D92AAA829CF2E4C000D570F /* SwiftUI.framework */; };
 		2D92AAAC29CF2E4C000D570F /* GotchaWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */; };
 		2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */; };
@@ -154,6 +156,8 @@
 		2D71F84129D4B13C00227CA9 /* PokeImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImageService.swift; sourceTree = "<group>"; };
 		2D72885A29E0AA5700D5A5E3 /* TypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeModel.swift; sourceTree = "<group>"; };
 		2D72885C29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailsViewModel.swift; sourceTree = "<group>"; };
+		2D72885E29E0B41C00D5A5E3 /* TypeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailsViewController.swift; sourceTree = "<group>"; };
+		2D72885F29E0B41C00D5A5E3 /* TypeDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeDetailsViewController.xib; sourceTree = "<group>"; };
 		2D92AAA529CF2E4C000D570F /* GotchaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GotchaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D92AAA629CF2E4C000D570F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		2D92AAA829CF2E4C000D570F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -380,6 +384,8 @@
 			isa = PBXGroup;
 			children = (
 				2D72885C29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift */,
+				2D72885E29E0B41C00D5A5E3 /* TypeDetailsViewController.swift */,
+				2D72885F29E0B41C00D5A5E3 /* TypeDetailsViewController.xib */,
 			);
 			path = TypeDetails;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D61413A29216CA300D2F68A /* EvolutionViewController.xib in Resources */,
+				2D72886129E0B41C00D5A5E3 /* TypeDetailsViewController.xib in Resources */,
 				2D6140F829183C1700D2F68A /* PokemonTableViewCell.xib in Resources */,
 				2D69467D2961EF2C0059E5F0 /* LaunchVideo.mp4 in Resources */,
 				2D61411E291C415E00D2F68A /* PokemonDetailsViewController.xib in Resources */,
@@ -696,6 +703,7 @@
 				2D6141022919A59300D2F68A /* PokemonDetailsViewModel.swift in Sources */,
 				2D4E20622943A36E00273DD7 /* SearchViewModel.swift in Sources */,
 				2D61413529216C8A00D2F68A /* StatsViewController.swift in Sources */,
+				2D72886029E0B41C00D5A5E3 /* TypeDetailsViewController.swift in Sources */,
 				2DD21A9C29D753A4008B6EE6 /* TypeCollectionViewCell.swift in Sources */,
 				2D4E20642945F7AA00273DD7 /* UIViewController+AlertPresentable.swift in Sources */,
 				2D61411D291C415E00D2F68A /* PokemonDetailsViewController.swift in Sources */,
