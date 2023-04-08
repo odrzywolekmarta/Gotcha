@@ -8,6 +8,9 @@
 import UIKit
 
 class TypeDetailsViewController: UIViewController {
+    @IBOutlet weak var roundedView: UIView!
+    
+    @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var typeNameLabel: UILabel!
     @IBOutlet weak var typeImageView: UIImageView!
@@ -24,18 +27,6 @@ class TypeDetailsViewController: UIViewController {
     let viewModel: TypeDetailsViewModelProtocol
     let router: AppRouterProtocol
     var collections: [UICollectionView] = []
-    lazy var blurredView: UIView = {
-            let containerView = UIView()
-            let blurEffect = UIBlurEffect(style: .light)
-            let customBlurEffectView = CustomVisualEffectView(effect: blurEffect, intensity: 0.2)
-            customBlurEffectView.frame = self.view.bounds
-            let dimmedView = UIView()
-            dimmedView.backgroundColor = .black.withAlphaComponent(0.6)
-            dimmedView.frame = self.view.bounds
-            containerView.addSubview(customBlurEffectView)
-            containerView.addSubview(dimmedView)
-            return containerView
-        }()
     
     init(viewModel: TypeDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -51,9 +42,6 @@ class TypeDetailsViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         
-        view.addSubview(blurredView)
-        view.sendSubviewToBack(blurredView)
-        
         doubleToCollectionView.delegate = self
         doubleToCollectionView.dataSource = self
         halfToCollectionView.delegate = self
@@ -68,7 +56,7 @@ class TypeDetailsViewController: UIViewController {
         zeroFromCollectionView.dataSource = self
         
         viewModel.getTypeDetails()
-        
+        configureView()
         configureCollectionViews()
     }
     
@@ -76,13 +64,36 @@ class TypeDetailsViewController: UIViewController {
         collections = [doubleToCollectionView, halfToCollectionView, zeroToCollectionView, halfFromCollectionView, doubleFromCollectionView, zeroFromCollectionView]
         
         for collection in collections {
-            let layout = UICollectionViewLayout()
-            collection.setCollectionViewLayout(layout, animated: true)
-            let nibCell = UINib(nibName: "TypeCollectionViewCell", bundle: nil)
+            var config = UICollectionLayoutListConfiguration(appearance: .plain)
+            config.backgroundColor = .clear
+            config.showsSeparators = false
+            collection.collectionViewLayout = UICollectionViewCompositionalLayout.list(using: config)
+            let nibCell = UINib(nibName: Constants.capsuleCell, bundle: nil)
             collection.register(nibCell, forCellWithReuseIdentifier: Constants.capsuleCell)
-            collection.backgroundColor = .systemGray
-            collection.backgroundView?.makeRound()
         }
+        
+    }
+    
+    func configureView() {
+        roundedView.makeRound(radius: 30)
+        
+        typeNameLabel.textDropShadow()
+        typeImageView.applyShadow()
+        
+        backButton.applyShadow()
+        backButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
+        backButton.startAnimatingPressActions()
+        
+        pokemonListButton.applyShadow()
+        pokemonListButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
+        pokemonListButton.startAnimatingPressActions()
+    }
+    
+    @IBAction func backTapped(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func showPokemonTapped(_ sender: UIButton) {
         
     }
 }
@@ -111,16 +122,51 @@ extension TypeDetailsViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: <#T##String#>, for: <#T##IndexPath#>)
+        guard let relations = viewModel.detailsModel?.damageRelations else {
+            return UICollectionViewCell()
+        }
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.capsuleCell, for: indexPath) as? TypeCapsuleCollectionViewCell {
+            switch collectionView {
+            case doubleToCollectionView:
+                cell.configure(name: relations.noDamageFrom[indexPath.row].name)
+                return cell
+            case halfToCollectionView:
+                cell.configure(name: relations.halfDamageFrom[indexPath.row].name)
+                return cell
+            case zeroToCollectionView:
+                cell.configure(name: relations.noDamageTo[indexPath.row].name)
+                return cell
+            case doubleFromCollectionView:
+                cell.configure(name: relations.doubleDamageFrom[indexPath.row].name)
+                return cell
+            case halfFromCollectionView:
+                cell.configure(name: relations.halfDamageFrom[indexPath.row].name)
+                return cell
+            case zeroFromCollectionView:
+                cell.configure(name: relations.noDamageFrom[indexPath.row].name)
+            default:
+                return UICollectionViewCell()
+            }
+        }
         return UICollectionViewCell()
     }
-    
-    
 }
 
 extension TypeDetailsViewController: TypeDetailsViewModelDelegate {
     func onDetailsModelFetchSuccess() {
-        
+        DispatchQueue.main.async {
+            if let type = self.viewModel.detailsModel?.name {
+                self.typeNameLabel.text = type.uppercased()
+                self.typeImageView.image = UIImage(named: type)
+                self.pokemonListButton.setTitle("Show \(type) type Pokémon", for: .normal)
+            }
+            self.doubleFromCollectionView.reloadData()
+            self.halfFromCollectionView.reloadData()
+            self.zeroFromCollectionView.reloadData()
+            self.doubleToCollectionView.reloadData()
+            self.halfToCollectionView.reloadData()
+            self.zeroToCollectionView.reloadData()
+        }
     }
     
     func onDetailsModelFetchFailure(error: Error) {

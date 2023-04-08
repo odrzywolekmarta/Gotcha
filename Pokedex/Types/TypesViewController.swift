@@ -34,11 +34,6 @@ class TypesViewController: UIViewController {
         viewModel.getPokemonTypes()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed))
-    }
-    
     func configureCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -54,7 +49,6 @@ class TypesViewController: UIViewController {
         
         view.addSubview(collectionView ?? UICollectionView())
     }
-    
 }
 
 extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
