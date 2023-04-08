@@ -8,6 +8,20 @@
 import UIKit
 
 class TypeDetailsViewController: UIViewController {
+    
+    @IBOutlet weak var typeNameLabel: UILabel!
+    @IBOutlet weak var typeImageView: UIImageView!
+    
+    @IBOutlet weak var doubleToCollectionView: UICollectionView!
+    @IBOutlet weak var halfToCollectionView: UICollectionView!
+    @IBOutlet weak var zeroToCollectionView: UICollectionView!
+    
+    @IBOutlet weak var halfFromCollectionView: UICollectionView!
+    @IBOutlet weak var doubleFromCollectionView: UICollectionView!
+    @IBOutlet weak var zeroFromCollectionView: UICollectionView!
+    
+    @IBOutlet weak var pokemonListButton: UIButton!
+    
     let viewModel: TypeDetailsViewModelProtocol
     let router: AppRouterProtocol
     

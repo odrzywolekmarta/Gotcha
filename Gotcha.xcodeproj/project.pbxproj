@@ -66,6 +66,8 @@
 		2D92AACA29CF7CDF000D570F /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAC929CF7CDF000D570F /* BackgroundView.swift */; };
 		2D92AACC29CF7DDB000D570F /* ImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D92AAB929CF6BCE000D570F /* ImageUrl.swift */; };
 		2D92AACE29CF850E000D570F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D92AACD29CF850E000D570F /* SDWebImage */; };
+		2DC2069B29E144A000374365 /* TypeCapsuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2069929E144A000374365 /* TypeCapsuleCollectionViewCell.swift */; };
+		2DC2069C29E144A000374365 /* TypeCapsuleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2069A29E144A000374365 /* TypeCapsuleCollectionViewCell.xib */; };
 		2DD0B645290949B6008B9BB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B644290949B6008B9BB5 /* AppDelegate.swift */; };
 		2DD0B647290949B6008B9BB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */; };
 		2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0B64D290949B8008B9BB5 /* Assets.xcassets */; };
@@ -167,6 +169,8 @@
 		2D92AAB129CF2E4D000D570F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D92AAB929CF6BCE000D570F /* ImageUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUrl.swift; sourceTree = "<group>"; };
 		2D92AAC929CF7CDF000D570F /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		2DC2069929E144A000374365 /* TypeCapsuleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCapsuleCollectionViewCell.swift; sourceTree = "<group>"; };
+		2DC2069A29E144A000374365 /* TypeCapsuleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCapsuleCollectionViewCell.xib; sourceTree = "<group>"; };
 		2DD0B641290949B6008B9BB5 /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD0B644290949B6008B9BB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -386,6 +390,8 @@
 				2D72885C29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift */,
 				2D72885E29E0B41C00D5A5E3 /* TypeDetailsViewController.swift */,
 				2D72885F29E0B41C00D5A5E3 /* TypeDetailsViewController.xib */,
+				2DC2069929E144A000374365 /* TypeCapsuleCollectionViewCell.swift */,
+				2DC2069A29E144A000374365 /* TypeCapsuleCollectionViewCell.xib */,
 			);
 			path = TypeDetails;
 			sourceTree = "<group>";
@@ -632,6 +638,7 @@
 				2D72886129E0B41C00D5A5E3 /* TypeDetailsViewController.xib in Resources */,
 				2D6140F829183C1700D2F68A /* PokemonTableViewCell.xib in Resources */,
 				2D69467D2961EF2C0059E5F0 /* LaunchVideo.mp4 in Resources */,
+				2DC2069C29E144A000374365 /* TypeCapsuleCollectionViewCell.xib in Resources */,
 				2D61411E291C415E00D2F68A /* PokemonDetailsViewController.xib in Resources */,
 				2D6141512922771200D2F68A /* Orbitron-Regular.ttf in Resources */,
 				2D6141552923C51600D2F68A /* Orbitron-Bold.ttf in Resources */,
@@ -697,6 +704,7 @@
 				2D6141402921777700D2F68A /* EvolutionViewModel.swift in Sources */,
 				2D3AA4A0295B72C9000EC287 /* Favourites.swift in Sources */,
 				2DD0B662290967D2008B9BB5 /* PokemonAPIService.swift in Sources */,
+				2DC2069B29E144A000374365 /* TypeCapsuleCollectionViewCell.swift in Sources */,
 				2D61413929216CA300D2F68A /* EvolutionViewController.swift in Sources */,
 				2D72885B29E0AA5700D5A5E3 /* TypeModel.swift in Sources */,
 				2D6946782961DECD0059E5F0 /* LaunchScreenViewController.swift in Sources */,

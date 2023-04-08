@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+//MARK: - UIView
+
 extension UIView {
     func applyShadow() {
         layer.masksToBounds = false
@@ -30,28 +32,30 @@ extension UIView {
     }
 }
 
+//MARK: - UIImage
+
 extension UIImage {
     static func withColor(_ color: UIColor) -> UIImage {
-            let onePx = pixelsToPoints(1)
-            let rect = CGRect(x: 0, y: 0, width: onePx, height: onePx)
-
-            UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
-            let context = UIGraphicsGetCurrentContext()
-
-            context!.setShouldAntialias(false)
-            context!.setFillColor(color.cgColor)
-            context!.fill(rect)
-
+        let onePx = pixelsToPoints(1)
+        let rect = CGRect(x: 0, y: 0, width: onePx, height: onePx)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        
+        if let context = UIGraphicsGetCurrentContext() {
+            context.setShouldAntialias(false)
+            context.setFillColor(color.cgColor)
+            context.fill(rect)
+        }
+        
         if let image = UIGraphicsGetImageFromCurrentImageContext() {
             UIGraphicsEndImageContext()
             return image
         }
         return UIImage()
-        }
-
-        static func pixelsToPoints(_ pixels: CGFloat) -> CGFloat {
-            return pixels / UIScreen.main.scale
-        }
+    }
+    
+    static func pixelsToPoints(_ pixels: CGFloat) -> CGFloat {
+        return pixels / UIScreen.main.scale
+    }
     
     func addShadow(blurSize: CGFloat = 6.0) -> UIImage {
         
@@ -62,11 +66,11 @@ extension UIImage {
         }
         
         guard let context = CGContext(data: nil,
-                                width: Int(self.size.width + blurSize),
-                                height: Int(self.size.height + blurSize),
-                                bitsPerComponent: image.bitsPerComponent,
-                                bytesPerRow: 0,
-                                space: CGColorSpaceCreateDeviceRGB(),
+                                      width: Int(self.size.width + blurSize),
+                                      height: Int(self.size.height + blurSize),
+                                      bitsPerComponent: image.bitsPerComponent,
+                                      bytesPerRow: 0,
+                                      space: CGColorSpaceCreateDeviceRGB(),
                                       bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else {
             return UIImage()
         }
@@ -86,29 +90,34 @@ extension UIImage {
     }
 }
 
+//MARK: - UIColor
+
 extension UIColor {
-  func lighter(by percentage: CGFloat = 30.0) -> UIColor {
-    return self.adjustBrightness(by: abs(percentage))
-  }
-  
-  func darker(by percentage: CGFloat = 30.0) -> UIColor {
-    return self.adjustBrightness(by: -abs(percentage))
-  }
-  
-  func adjustBrightness(by percentage: CGFloat = 30.0) -> UIColor {
-    var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
-    if self.getHue(&h, saturation: &s, brightness: &b, alpha: &a) {
-      if b < 1.0 {
-        let newB: CGFloat = max(min(b + (percentage/100.0)*b, 1.0), 0.0)
-        return UIColor(hue: h, saturation: s, brightness: newB, alpha: a)
-      } else {
-        let newS: CGFloat = min(max(s - (percentage/100.0)*s, 0.0), 1.0)
-        return UIColor(hue: h, saturation: newS, brightness: b, alpha: a)
-      }
+    func lighter(by percentage: CGFloat = 30.0) -> UIColor {
+        return self.adjustBrightness(by: abs(percentage))
     }
-    return self
-  }
+    
+    func darker(by percentage: CGFloat = 30.0) -> UIColor {
+        return self.adjustBrightness(by: -abs(percentage))
+    }
+    
+    func adjustBrightness(by percentage: CGFloat = 30.0) -> UIColor {
+        var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        if self.getHue(&h, saturation: &s, brightness: &b, alpha: &a) {
+            if b < 1.0 {
+                let newB: CGFloat = max(min(b + (percentage/100.0)*b, 1.0), 0.0)
+                return UIColor(hue: h, saturation: s, brightness: newB, alpha: a)
+            } else {
+                let newS: CGFloat = min(max(s - (percentage/100.0)*s, 0.0), 1.0)
+                return UIColor(hue: h, saturation: newS, brightness: b, alpha: a)
+            }
+        }
+        return self
+    }
+    
 }
+
+//MARK: - UINavigationBar
 
 extension UINavigationBar {
     func update(backroundColor: UIColor? = nil, titleColor: UIColor? = nil) {
@@ -143,7 +152,7 @@ extension UINavigationBar {
             
             let blankImage = UIImage.withColor(UIColor.white.withAlphaComponent(0))
             appearance.setBackIndicatorImage(blankImage, transitionMaskImage: blankImage)
-    
+            
             
             appearance.shadowColor = .clear
             standardAppearance = appearance
@@ -176,6 +185,8 @@ extension UINavigationBar {
     }
 }
 
+//MARK: - UILabel
+
 extension UILabel {
     func textDropShadow() {
         self.layer.masksToBounds = false
@@ -184,6 +195,8 @@ extension UILabel {
         self.layer.shadowOffset = CGSize(width: 1, height: 2)
     }
 }
+
+//MARK: - UIButton
 
 extension UIButton {
     func startAnimatingPressActions() {
@@ -206,8 +219,9 @@ extension UIButton {
                        initialSpringVelocity: 3,
                        options: [.curveEaseInOut],
                        animations: {
-                        button.transform = transform
-            }, completion: nil)
+            button.transform = transform
+        }, completion: nil)
     }
     
 }
+

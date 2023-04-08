@@ -45,11 +45,11 @@ class AboutViewController: UIViewController {
         abilityButton3.startAnimatingPressActions()
     }
     
-    func getColor(for type: String) -> UIColor {
+    func getTypeColor(for type: String) -> UIColor {
         guard let enumCase = PokemonAPIType(rawValue: type) else {
             return .cyan
         }
-        return UIColor(named: enumCase.colorName)!
+        return UIColor(named: enumCase.colorName) ?? UIColor.cyan
     }
     
     @IBAction func abilityButtonTapped(_ sender: UIButton) {
@@ -112,7 +112,7 @@ extension AboutViewController: AboutViewModelDelegate {
                     self.typeLabel2.backgroundColor = .clear
                     self.typeLabel2.textColor = .clear
                     self.typeLabel1.text = model.types[0].type.name
-                    let typeColor1 = self.getColor(for: model.types[0].type.name)
+                    let typeColor1 = self.getTypeColor(for: model.types[0].type.name)
                     self.typeLabel1.backgroundColor = typeColor1
 
                 case 2:
@@ -120,8 +120,8 @@ extension AboutViewController: AboutViewModelDelegate {
                     self.typeLabel2.isHidden = false
                     self.typeLabel1.text = model.types[0].type.name
                     self.typeLabel2.text = model.types[1].type.name
-                    let typeColor1 = self.getColor(for: model.types[0].type.name)
-                    let typeColor2 = self.getColor(for: model.types[1].type.name)
+                    let typeColor1 = self.getTypeColor(for: model.types[0].type.name)
+                    let typeColor2 = self.getTypeColor(for: model.types[1].type.name)
                     self.typeLabel1.backgroundColor = typeColor1
                     self.typeLabel2.backgroundColor = typeColor2
                 default:
