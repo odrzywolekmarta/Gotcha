@@ -69,6 +69,12 @@ extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let url = URL(string: viewModel.dataSource[indexPath.row].url) {
+            router.navigateToType(url: url)
+        }
+    }
 }
 
 extension TypesViewController: UICollectionViewDelegateFlowLayout {

@@ -44,7 +44,12 @@ class AppRouter: AppRouterProtocol {
     }
     
     func navigateToType(url: URL) {
+        let controller = TypeDetailsViewController(viewModel: TypeDetailsViewModel(service: PokemonAPIService(), url: url), router: self)
+        controller.modalPresentationStyle = .overCurrentContext
+        controller.modalTransitionStyle = .crossDissolve
+        controller.view.applyShadow()
         
+        navigationController.present(controller, animated: true)
     }
     
 }

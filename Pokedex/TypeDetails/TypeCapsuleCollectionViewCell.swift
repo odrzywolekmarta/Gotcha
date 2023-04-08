@@ -27,5 +27,6 @@ class TypeCapsuleCollectionViewCell: UICollectionViewCell {
     func configure(name: String) {
         typeLabel.text = name
         let backgroundColor = getTypeColor(for: name)
+        containerView.backgroundColor = backgroundColor
     }
 }

@@ -24,6 +24,18 @@ class TypeDetailsViewController: UIViewController {
     let viewModel: TypeDetailsViewModelProtocol
     let router: AppRouterProtocol
     var collections: [UICollectionView] = []
+    lazy var blurredView: UIView = {
+            let containerView = UIView()
+            let blurEffect = UIBlurEffect(style: .light)
+            let customBlurEffectView = CustomVisualEffectView(effect: blurEffect, intensity: 0.2)
+            customBlurEffectView.frame = self.view.bounds
+            let dimmedView = UIView()
+            dimmedView.backgroundColor = .black.withAlphaComponent(0.6)
+            dimmedView.frame = self.view.bounds
+            containerView.addSubview(customBlurEffectView)
+            containerView.addSubview(dimmedView)
+            return containerView
+        }()
     
     init(viewModel: TypeDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -38,6 +50,9 @@ class TypeDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
+        
+        view.addSubview(blurredView)
+        view.sendSubviewToBack(blurredView)
         
         doubleToCollectionView.delegate = self
         doubleToCollectionView.dataSource = self
