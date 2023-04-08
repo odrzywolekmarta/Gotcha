@@ -32,8 +32,8 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="381"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="401"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GBe-ww-HMC">
@@ -172,7 +172,7 @@
                 <constraint firstItem="GBe-ww-HMC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yCh-Xo-N6W"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="621.73913043478262" y="-117.52232142857142"/>
+            <point key="canvasLocation" x="621.73913043478262" y="-124.21875"/>
         </view>
     </objects>
     <resources>

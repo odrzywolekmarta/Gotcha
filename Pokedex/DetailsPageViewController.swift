@@ -104,6 +104,7 @@ extension DetailsPageViewController: UIPageViewControllerDataSource {
                 
                 return orderedViewControllers[nextIndex]
     }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {
                     return nil
