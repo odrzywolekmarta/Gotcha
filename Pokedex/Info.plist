@@ -11,7 +11,7 @@
 			<string>odrzywolekmarta.gotcha</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>gotcha</string>
+				<string>com.gotcha</string>
 			</array>
 		</dict>
 	</array>

@@ -18,7 +18,7 @@ class TypeDetailsViewController: UIViewController {
     let viewModel: TypeDetailsViewModelProtocol
     let router: AppRouterProtocol
     var tables: [UITableView] = []
-    var pageViewController: UIPageViewController
+    var pageViewController: TypePageViewController?
     
     init(viewModel: TypeDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -53,15 +53,17 @@ class TypeDetailsViewController: UIViewController {
         pokemonListButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
         pokemonListButton.startAnimatingPressActions()
         
-        addChild(pageViewController)
-        view.addSubview(pageViewController.view)
-        pageViewController.didMove(toParent: self)
-        
-        pageViewController.view.topAnchor.constraint(equalTo: pageContainerView.topAnchor).isActive = true
-        pageViewController.view.bottomAnchor.constraint(equalTo: pageContainerView.bottomAnchor).isActive = true
-        pageViewController.view.leadingAnchor.constraint(equalTo: pageContainerView.leadingAnchor).isActive = true
-        pageViewController.view.trailingAnchor.constraint(equalTo: pageContainerView.trailingAnchor).isActive = true
-        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        if let pageViewController = pageViewController {
+            addChild(pageViewController)
+            view.addSubview(pageViewController.view)
+            pageViewController.didMove(toParent: self)
+            
+            pageViewController.view.topAnchor.constraint(equalTo: pageContainerView.topAnchor).isActive = true
+            pageViewController.view.bottomAnchor.constraint(equalTo: pageContainerView.bottomAnchor).isActive = true
+            pageViewController.view.leadingAnchor.constraint(equalTo: pageContainerView.leadingAnchor).isActive = true
+            pageViewController.view.trailingAnchor.constraint(equalTo: pageContainerView.trailingAnchor).isActive = true
+            pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        }
         
         if viewModel.detailsModel != nil {
             onDetailsModelFetchSuccess()
@@ -79,19 +81,20 @@ class TypeDetailsViewController: UIViewController {
 
 extension TypeDetailsViewController: TypeDetailsViewModelDelegate {
     func onDetailsModelFetchSuccess() {
+        guard let details = self.viewModel.detailsModel else {
+            return
+        }
+        
+        pageViewController?.set(model: details)
+        
         DispatchQueue.main.async {
-            guard let details = self.viewModel.detailsModel else {
-                return
-            }
-            
             self.typeNameLabel.text = details.name.uppercased()
             self.typeImageView.image = UIImage(named: details.name)
             self.pokemonListButton.setTitle("Show \(details.name) type Pokémon", for: .normal)
-
         }
     }
     
     func onDetailsModelFetchFailure(error: Error) {
-        
+        print(error)
     }
 }

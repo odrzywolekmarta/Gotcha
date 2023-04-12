@@ -45,7 +45,7 @@ class TypePageViewController: UIPageViewController {
     
     func set(model: TypeModel) {
         offensiveController.viewModel.set(model: model)
-        defensiveController.viewMode.set(model: model)
+        defensiveController.viewModel.set(model: model)
     }
     
     func viewControllerAtIndex(index: Int) -> UIViewController? {

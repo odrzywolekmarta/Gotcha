@@ -181,6 +181,7 @@
 		2DC206B029E1FAF800374365 /* DefensiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefensiveViewModel.swift; sourceTree = "<group>"; };
 		2DC206B229E1FB2A00374365 /* DefensiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefensiveViewController.swift; sourceTree = "<group>"; };
 		2DC206B329E1FB2A00374365 /* DefensiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefensiveViewController.xib; sourceTree = "<group>"; };
+		2DC206BA29E6FCE500374365 /* Gotcha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gotcha.entitlements; sourceTree = "<group>"; };
 		2DD0B641290949B6008B9BB5 /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD0B644290949B6008B9BB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -451,6 +452,7 @@
 		2DD0B638290949B6008B9BB5 = {
 			isa = PBXGroup;
 			children = (
+				2DC206BA29E6FCE500374365 /* Gotcha.entitlements */,
 				2DD0B643290949B6008B9BB5 /* Pokedex */,
 				2DDB8FE92970A44700EB2FA3 /* GotchaTests */,
 				2D92AAAA29CF2E4C000D570F /* GotchaWidget */,
@@ -970,6 +972,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Gotcha.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2H8VP26HBU;
@@ -999,6 +1002,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Gotcha.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2H8VP26HBU;
