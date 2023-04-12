@@ -138,8 +138,5 @@ struct PersistedModel: Codable, Hashable {
     var name: String
 }
 
-// types
-
-
 
 

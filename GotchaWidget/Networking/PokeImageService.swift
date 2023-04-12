@@ -34,6 +34,12 @@ struct PokemonImageService {
     
     static func fetchRandomPokemon() async throws -> UIImage {
         let randomId = getRandomId()
+        
+        // save id to user defaults
+        if let savedId = try? JSONEncoder().encode(randomId) {
+            UserDefaults(suiteName: "group.com.GotchaGroup")?.set(savedId, forKey: "widgetId")
+        }
+        
         let url = getImageUrl(forId: randomId)
         
         let (data, _) = try await URLSession.shared.data(from: url)

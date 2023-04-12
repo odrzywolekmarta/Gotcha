@@ -10,7 +10,7 @@ import Foundation
 class Favourites {
     private var favouritesList: Set<PersistedModel> = []
     var favouritesArray: [PersistedModel] = []
-    private let defaults = UserDefaults.standard
+    private let defaults = UserDefaults(suiteName: "group.com.GotchaGroup")
     private let saveKey = "Favorites"
 
     init() {
@@ -19,7 +19,7 @@ class Favourites {
 
     func fetch() {
         let decoder = PropertyListDecoder()
-        if let data = defaults.data(forKey: saveKey) {
+        if let data = defaults?.data(forKey: saveKey) {
             let favourites = try? decoder.decode(Set<PersistedModel>.self, from: data)
             self.favouritesList = favourites ?? []
             self.favouritesArray = Array(favouritesList)
@@ -59,7 +59,7 @@ class Favourites {
     func save() {
         let encoder = PropertyListEncoder()
         if let encoded = try? encoder.encode(favouritesList) {
-            defaults.setValue(encoded, forKey: saveKey)
+            defaults?.setValue(encoded, forKey: saveKey)
         }
     }
 }
