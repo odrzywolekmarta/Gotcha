@@ -73,6 +73,7 @@
 		2DC206B129E1FAF800374365 /* DefensiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC206B029E1FAF800374365 /* DefensiveViewModel.swift */; };
 		2DC206B429E1FB2A00374365 /* DefensiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC206B229E1FB2A00374365 /* DefensiveViewController.swift */; };
 		2DC206B529E1FB2A00374365 /* DefensiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC206B329E1FB2A00374365 /* DefensiveViewController.xib */; };
+		2DC206BD29E70C7A00374365 /* DeeplinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC206BC29E70C7A00374365 /* DeeplinkHandler.swift */; };
 		2DD0B645290949B6008B9BB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B644290949B6008B9BB5 /* AppDelegate.swift */; };
 		2DD0B647290949B6008B9BB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */; };
 		2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0B64D290949B8008B9BB5 /* Assets.xcassets */; };
@@ -183,6 +184,7 @@
 		2DC206B329E1FB2A00374365 /* DefensiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefensiveViewController.xib; sourceTree = "<group>"; };
 		2DC206BA29E6FCE500374365 /* Gotcha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gotcha.entitlements; sourceTree = "<group>"; };
 		2DC206BB29E7040200374365 /* GotchaWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GotchaWidgetExtension.entitlements; sourceTree = "<group>"; };
+		2DC206BC29E70C7A00374365 /* DeeplinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandler.swift; sourceTree = "<group>"; };
 		2DD0B641290949B6008B9BB5 /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD0B644290949B6008B9BB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 				2D6141442922764A00D2F68A /* Fonts */,
 				2DD0B64D290949B8008B9BB5 /* Assets.xcassets */,
 				2DD0B652290949B8008B9BB5 /* Info.plist */,
+				2DC206BC29E70C7A00374365 /* DeeplinkHandler.swift */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				2D61413C29216E2400D2F68A /* AboutViewModel.swift in Sources */,
 				2DD0B645290949B6008B9BB5 /* AppDelegate.swift in Sources */,
 				2D61413E292176A000D2F68A /* StatsViewModel.swift in Sources */,
+				2DC206BD29E70C7A00374365 /* DeeplinkHandler.swift in Sources */,
 				2DD0B66B290F19D1008B9BB5 /* PokemonViewController.swift in Sources */,
 				2D61411A291C399C00D2F68A /* Constants.swift in Sources */,
 				2DD0B647290949B6008B9BB5 /* SceneDelegate.swift in Sources */,

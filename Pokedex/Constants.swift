@@ -21,6 +21,7 @@ struct Constants {
     static let pokemonDetailsImageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
     static let baseImageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
     static let typesUrl = "https://pokeapi.co/api/v2/type/"
+    static let detailsDeeplink = "com.gotcha://details"
     
     // SIZES
     static let cellRadius: CGFloat = 25
@@ -52,6 +53,7 @@ struct Constants {
     static let launchVideo = "LaunchVideo"
     static let videoType = "mp4"
     static let germanLanguage = "de"
+    static let appGroup = "group.com.GotchaGroup"
     
     // COLORS
     static let abilityButtonFontColor = UIColor(named: Constants.Colors.customRed)?.darker(by: 20)

@@ -10,11 +10,17 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    var appOpenedFromUrl: Bool?
+    lazy var deeplinkCoordinator: DeeplinkHandlerProtocol = DetailsDeeplinkHandler(rootViewController: window?.rootViewController)
+    var widgetPokeUrl: String?
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-//        print(URLContexts.first?.url)
-//
-//        print(URLContexts.first?.url.absoluteString)
+        guard let url = URLContexts.first?.url else {
+            return
+        }
+        appOpenedFromUrl = true
+        widgetPokeUrl = deeplinkCoordinator.getPokemonUrl(url)
+        onAnimationFinished()
     }
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -61,7 +67,6 @@ extension SceneDelegate: LaunchScreenViewControllerDelegate {
         
         tabBarController.viewControllers = [allNavigationController, searchNavigationController, typesNavigationController, favouritesNavigationController]
         tabBarController.tabBar.tintColor = UIColor(named: Constants.Colors.customRed)
-        
      
         window?.rootViewController = tabBarController
         
@@ -103,5 +108,11 @@ extension SceneDelegate: LaunchScreenViewControllerDelegate {
         titleLabelll.textColor = .white
         titleLabelll.font = UIFont(name: Constants.customFontBold, size: 23)
         typesNavigationBar.addSubview(titleLabelll)
+        
+        if appOpenedFromUrl ?? false {
+            if let url = widgetPokeUrl {
+                controller.router.navigateToDetails(urlString: url)
+            }
+        }
     }
 }
