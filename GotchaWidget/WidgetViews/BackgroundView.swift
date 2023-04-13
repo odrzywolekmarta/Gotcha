@@ -11,21 +11,17 @@ import WidgetKit
 struct BackgroundView: View {
     var body: some View {
         ZStack {
-            Image("light2")
+            Image(WidgetConstants.light)
                 .resizable()
                 .scaledToFit()
-            Image("pokeball")
+            Image(WidgetConstants.pokeball)
                 .renderingMode(.template)
                 .resizable()
                 .scaledToFill()
                 .foregroundColor(.white)
-                .opacity(0.2)
-//            Image("light2")
-//                .resizable()
-//                .scaledToFill()
+                .opacity(WidgetConstants.pokeballOpacity)
         }
-        .background(Color("CustomRed"))
-//        .background(RadialGradient(colors:  [Color("CustomBlue"), Color("CustomRed")], center: .center, startRadius: 25, endRadius: 75))
+        .background(Color(WidgetConstants.customRed))
     }
 }
 

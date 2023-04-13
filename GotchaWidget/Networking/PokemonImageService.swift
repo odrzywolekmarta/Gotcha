@@ -14,7 +14,7 @@ struct PokemonImageService {
     }
     
     private static var cachePath: URL {
-        URL.cachesDirectory.appending(path: "pokemon.png")
+        URL.cachesDirectory.appending(path: WidgetConstants.cachePath)
     }
     
     static var cachedPokemon: UIImage? {
@@ -35,26 +35,26 @@ struct PokemonImageService {
     static func fetchRandomPokemon() async throws -> UIImage {
         let randomId = getRandomId()
         
-        // save id to user defaults
-        if let savedId = try? JSONEncoder().encode(randomId) {
-            UserDefaults(suiteName: "group.com.GotchaGroup")?.set(savedId, forKey: "widgetId")
-        }
+        // save id to user defaults to open details view from deeplink
+     
+        UserDefaults(suiteName: WidgetConstants.appGroup)?.set(randomId, forKey: WidgetConstants.idDefaultsKey)
         
-        let url = getImageUrl(forId: randomId)
+        let url = getPokeUrl(forId: randomId)
         
         let (data, _) = try await URLSession.shared.data(from: url)
         
         let pokemon = try JSONDecoder().decode(PokeImageModel.self, from: data)
-        
+      
         let (imageData, _) = try await URLSession.shared.data(from: pokemon.sprites.frontDefault)
         
         guard let image = UIImage(data: imageData) else {
             throw PokemonImageServiceError.imageDataCorrupted
         }
-        
+
         Task {
             try? await cache(imageData)
         }
+
         return image
     }
 }

@@ -53,7 +53,7 @@
 		2D71F82F29D223B300227CA9 /* Orbitron-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D61414B2922771200D2F68A /* Orbitron-Regular.ttf */; };
 		2D71F83129D22E7F00227CA9 /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F83029D22E7F00227CA9 /* StrokeText.swift */; };
 		2D71F83E29D4B06E00227CA9 /* PokeImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F83D29D4B06E00227CA9 /* PokeImageModel.swift */; };
-		2D71F84229D4B13C00227CA9 /* PokeImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F84129D4B13C00227CA9 /* PokeImageService.swift */; };
+		2D71F84229D4B13C00227CA9 /* PokemonImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71F84129D4B13C00227CA9 /* PokemonImageService.swift */; };
 		2D72885B29E0AA5700D5A5E3 /* TypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D72885A29E0AA5700D5A5E3 /* TypeModel.swift */; };
 		2D72885D29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D72885C29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift */; };
 		2D72886029E0B41C00D5A5E3 /* TypeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D72885E29E0B41C00D5A5E3 /* TypeDetailsViewController.swift */; };
@@ -74,6 +74,7 @@
 		2DC206B429E1FB2A00374365 /* DefensiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC206B229E1FB2A00374365 /* DefensiveViewController.swift */; };
 		2DC206B529E1FB2A00374365 /* DefensiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC206B329E1FB2A00374365 /* DefensiveViewController.xib */; };
 		2DC206BD29E70C7A00374365 /* DeeplinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC206BC29E70C7A00374365 /* DeeplinkHandler.swift */; };
+		2DCA929C29E8934100B0FF46 /* WidgetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA929A29E8924400B0FF46 /* WidgetConstants.swift */; };
 		2DD0B645290949B6008B9BB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B644290949B6008B9BB5 /* AppDelegate.swift */; };
 		2DD0B647290949B6008B9BB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */; };
 		2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0B64D290949B8008B9BB5 /* Assets.xcassets */; };
@@ -161,7 +162,7 @@
 		2D71F82C29D21FC700227CA9 /* PokeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImage.swift; sourceTree = "<group>"; };
 		2D71F83029D22E7F00227CA9 /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
 		2D71F83D29D4B06E00227CA9 /* PokeImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImageModel.swift; sourceTree = "<group>"; };
-		2D71F84129D4B13C00227CA9 /* PokeImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeImageService.swift; sourceTree = "<group>"; };
+		2D71F84129D4B13C00227CA9 /* PokemonImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonImageService.swift; sourceTree = "<group>"; };
 		2D72885A29E0AA5700D5A5E3 /* TypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeModel.swift; sourceTree = "<group>"; };
 		2D72885C29E0AEAC00D5A5E3 /* TypeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailsViewModel.swift; sourceTree = "<group>"; };
 		2D72885E29E0B41C00D5A5E3 /* TypeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +186,7 @@
 		2DC206BA29E6FCE500374365 /* Gotcha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gotcha.entitlements; sourceTree = "<group>"; };
 		2DC206BB29E7040200374365 /* GotchaWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GotchaWidgetExtension.entitlements; sourceTree = "<group>"; };
 		2DC206BC29E70C7A00374365 /* DeeplinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandler.swift; sourceTree = "<group>"; };
+		2DCA929A29E8924400B0FF46 /* WidgetConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetConstants.swift; sourceTree = "<group>"; };
 		2DD0B641290949B6008B9BB5 /* Gotcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gotcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD0B644290949B6008B9BB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -391,7 +393,7 @@
 		2D71F84029D4B10A00227CA9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2D71F84129D4B13C00227CA9 /* PokeImageService.swift */,
+				2D71F84129D4B13C00227CA9 /* PokemonImageService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -410,12 +412,13 @@
 		2D92AAAA29CF2E4C000D570F /* GotchaWidget */ = {
 			isa = PBXGroup;
 			children = (
+				2DCA929A29E8924400B0FF46 /* WidgetConstants.swift */,
+				2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */,
+				2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */,
 				2D71F83F29D4B07600227CA9 /* Model */,
 				2D71F84029D4B10A00227CA9 /* Networking */,
 				2D71F82B29D21FB400227CA9 /* Utilities */,
 				2D71F82529CF91CD00227CA9 /* WidgetViews */,
-				2D92AAAB29CF2E4C000D570F /* GotchaWidgetBundle.swift */,
-				2D92AAAD29CF2E4C000D570F /* GotchaWidget.swift */,
 				2D92AAAF29CF2E4D000D570F /* Assets.xcassets */,
 				2D92AAB129CF2E4D000D570F /* Info.plist */,
 			);
@@ -452,6 +455,14 @@
 			path = Defensive;
 			sourceTree = "<group>";
 		};
+		2DCA929929E8800200B0FF46 /* DeeplinkHandler */ = {
+			isa = PBXGroup;
+			children = (
+				2DC206BC29E70C7A00374365 /* DeeplinkHandler.swift */,
+			);
+			path = DeeplinkHandler;
+			sourceTree = "<group>";
+		};
 		2DD0B638290949B6008B9BB5 = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +494,7 @@
 				2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */,
 				2D614119291C399C00D2F68A /* Constants.swift */,
 				2D614117291AE4FC00D2F68A /* AppRouter.swift */,
+				2DCA929929E8800200B0FF46 /* DeeplinkHandler */,
 				2D614114291ACEA900D2F68A /* Utilities */,
 				2DD0B660290965B8008B9BB5 /* Networking */,
 				2DD0B65E2909658D008B9BB5 /* Model */,
@@ -496,7 +508,6 @@
 				2D6141442922764A00D2F68A /* Fonts */,
 				2DD0B64D290949B8008B9BB5 /* Assets.xcassets */,
 				2DD0B652290949B8008B9BB5 /* Info.plist */,
-				2DC206BC29E70C7A00374365 /* DeeplinkHandler.swift */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -721,7 +732,8 @@
 				2D92AAAC29CF2E4C000D570F /* GotchaWidgetBundle.swift in Sources */,
 				2D92AAAE29CF2E4C000D570F /* GotchaWidget.swift in Sources */,
 				2D71F82429CF914E00227CA9 /* PokemonView.swift in Sources */,
-				2D71F84229D4B13C00227CA9 /* PokeImageService.swift in Sources */,
+				2D71F84229D4B13C00227CA9 /* PokemonImageService.swift in Sources */,
+				2DCA929C29E8934100B0FF46 /* WidgetConstants.swift in Sources */,
 				2D71F82D29D21FC700227CA9 /* PokeImage.swift in Sources */,
 				2D92AACC29CF7DDB000D570F /* ImageUrl.swift in Sources */,
 			);
@@ -814,7 +826,7 @@
 				INFOPLIST_FILE = GotchaWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = GotchaWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -844,7 +856,7 @@
 				INFOPLIST_FILE = GotchaWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = GotchaWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

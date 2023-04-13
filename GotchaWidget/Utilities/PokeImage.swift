@@ -9,19 +9,15 @@ import Foundation
 import SwiftUI
 
 struct PokeImage: View {
-    let url: URL?
-    
+    var image: UIImage?
     var body: some View {
-        Group {
-            if let url = url, let imageData = try? Data(contentsOf: url), let uiImage = UIImage(data: imageData) {
-                Image(uiImage: uiImage)
-                    .renderingMode(.template)
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.black)
-            } else {
-                Image("Image")
-            }
+        if let image = image {
+            Image(uiImage: image)
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(.black)
         }
     }
 }
+

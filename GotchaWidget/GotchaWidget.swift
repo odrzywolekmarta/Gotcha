@@ -10,45 +10,40 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), url: getImageUrl(forId: 1))
+        SimpleEntry(date: Date(), image: UIImage(named: "Image") ?? UIImage())
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), url: getImageUrl(forId: 1))
+        let entry = SimpleEntry(date: Date(), image: UIImage(named: "Image") ?? UIImage())
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-        
-        let currentDate = Date()
-                for hourOffset in 0..<20 {
-                    guard let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate) else {
-                        continue
+        Task {
+            guard let image = try? await PokemonImageService.fetchRandomPokemon() else {
+                return
+            }
+            var entries: [SimpleEntry] = []
+            
+            let currentDate = Date()
+                    for hourOffset in 0..<20 {
+                        guard let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate) else {
+                            continue
+                        }
+                        let entry = SimpleEntry(date: entryDate, image: image)
+                        entries.append(entry)
                     }
-                    let entry = SimpleEntry(date: entryDate, url: getImageUrl(forId: 1))
-                    entries.append(entry)
-                }
 
-                let timeline = Timeline(entries: entries, policy: .atEnd)
-                completion(timeline)
-        
-//        let currentDate = Date()
-//        for dayOffset in 0 ..< 7 {
-//            let entryDate = Calendar.current.date(byAdding: .day, value: dayOffset, to: currentDate)!
-//            let startOfDate = Calendar.current.startOfDay(for: entryDate)
-//            let entry = SimpleEntry(date: startOfDate, url: getImageUrl())
-//            entries.append(entry)
-//        }
-//
-//        let timeline = Timeline(entries: entries, policy: .atEnd)
-//        completion(timeline)
+                    let timeline = Timeline(entries: entries, policy: .atEnd)
+                    completion(timeline)
+        }
     }
+    
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let url: URL?
+    let image: UIImage
 }
 
 struct GotchaWidgetEntryView : View {
@@ -57,10 +52,9 @@ struct GotchaWidgetEntryView : View {
     var body: some View {
         ZStack {
             BackgroundView()
-            PokemonView(url: entry.url)
+            PokemonView(image: entry.image)
         } // zstack
     }
-    
 }
 
 struct GotchaWidget: Widget {
@@ -72,12 +66,13 @@ struct GotchaWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
 struct GotchaWidget_Previews: PreviewProvider {
     static var previews: some View {
-        GotchaWidgetEntryView(entry: SimpleEntry(date: Date(), url: getImageUrl(forId: 1)))
+        GotchaWidgetEntryView(entry: SimpleEntry(date: Date(), image: UIImage(named: "Image") ?? UIImage()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

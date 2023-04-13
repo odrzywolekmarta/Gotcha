@@ -9,21 +9,18 @@ import SwiftUI
 import WidgetKit
 
 struct PokemonView: View {
-    @State var url: URL?
+    @State var image = UIImage(named: WidgetConstants.placeholderImage)
     
     var body: some View {
         VStack {
-            StrokeText(text: "WHO'S THAT", width: 1.4, color: Color("CustomOrange"))
-                .font(.custom("Orbitron-Bold", size: 19))
+            StrokeText(text: WidgetConstants.topText, width: WidgetConstants.textWidth, color: Color(WidgetConstants.customOrange))
+                .font(.custom(WidgetConstants.customFont, size: WidgetConstants.fontSize))
                 .foregroundColor(.black)
-//            Text("WHO'S THAT")
-//                .font(.custom("Orbitron-Bold", size: 15))
-//                .foregroundColor(.black)
 
-            PokeImage(url: url)
+            PokeImage(image: image)
 
-            StrokeText(text: "POKÉMON?", width: 1.4, color: Color("CustomOrange"))
-                .font(.custom("Orbitron-Bold", size: 19))
+            StrokeText(text: WidgetConstants.bottomText, width: WidgetConstants.textWidth, color: Color(WidgetConstants.customOrange))
+                .font(.custom(WidgetConstants.customFont, size: WidgetConstants.fontSize))
                 .foregroundColor(.black)
                 
         } // vstack
@@ -33,8 +30,7 @@ struct PokemonView: View {
 
 struct PokemonView_Previews: PreviewProvider {
     static var previews: some View {
-        let url: URL? = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png")
-        PokemonView(url: url)
+        PokemonView()
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
