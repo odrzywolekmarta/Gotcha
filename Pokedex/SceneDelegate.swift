@@ -30,10 +30,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        let launchScreen = LaunchScreenViewController()
-        launchScreen.delegate = self
-        window?.rootViewController = launchScreen
-        window?.makeKeyAndVisible()
+        if let url = connectionOptions.urlContexts.first?.url {
+            appOpenedFromUrl = true
+            widgetPokeUrl = deeplinkCoordinator.getPokemonUrl(url)
+            onAnimationFinished()
+        } else {
+            let launchScreen = LaunchScreenViewController()
+            launchScreen.delegate = self
+            window?.rootViewController = launchScreen
+            window?.makeKeyAndVisible()
+        }
     }
 }
 

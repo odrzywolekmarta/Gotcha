@@ -53,8 +53,8 @@ struct GotchaWidgetEntryView : View {
         ZStack {
             BackgroundView()
             PokemonView(image: entry.image)
+                .widgetURL(URL(string: WidgetConstants.detailsDeeplink))
         } // zstack
-        .widgetURL(URL(string: WidgetConstants.detailsDeeplink))
     }
 }
 
