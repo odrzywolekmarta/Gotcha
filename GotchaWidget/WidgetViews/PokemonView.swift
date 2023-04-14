@@ -14,7 +14,7 @@ struct PokemonView: View {
     var body: some View {
         ZStack {
             PokeImage(image: image)
-                .padding(10)
+                .padding(35)
             VStack() {
                     StrokeText(text: WidgetConstants.topText, width: WidgetConstants.textWidth, color: Color(WidgetConstants.customOrange))
                         .font(.custom(WidgetConstants.customFont, size: WidgetConstants.fontSize))
@@ -28,7 +28,6 @@ struct PokemonView: View {
                         .foregroundColor(.black)
                         .padding(10)
                 } // vstack
-//            .padding()
         }
     }
 }

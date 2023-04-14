@@ -36,7 +36,6 @@ struct PokemonImageService {
         let randomId = getRandomId()
         
         // save id to user defaults to open details view from deeplink
-     
         UserDefaults(suiteName: WidgetConstants.appGroup)?.set(randomId, forKey: WidgetConstants.idDefaultsKey)
         
         let url = getPokeUrl(forId: randomId)
@@ -45,7 +44,7 @@ struct PokemonImageService {
         
         let pokemon = try JSONDecoder().decode(PokeImageModel.self, from: data)
       
-        let (imageData, _) = try await URLSession.shared.data(from: pokemon.sprites.frontDefault)
+        let (imageData, _) = try await URLSession.shared.data(from: pokemon.sprites.other.officialArtwork.frontDefault)
         
         guard let image = UIImage(data: imageData) else {
             throw PokemonImageServiceError.imageDataCorrupted
