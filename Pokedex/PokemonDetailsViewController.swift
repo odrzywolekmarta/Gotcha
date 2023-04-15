@@ -144,6 +144,9 @@ class PokemonDetailsViewController: UIViewController {
     }
     
     @IBAction func faveButtonPressed(_ sender: UIButton) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         if isFavourite {
             isFavourite = false
             favouritesButton.setImage(Constants.heartImage, for: .normal)
@@ -153,6 +156,18 @@ class PokemonDetailsViewController: UIViewController {
             favouritesButton.setImage(Constants.heartFillImage, for: .normal)
             favourites.add(persistedPokemon)
         }
+        
+        sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.20),
+                       initialSpringVelocity: CGFloat(6.0),
+                       options: UIView.AnimationOptions.allowUserInteraction,
+                       animations: {
+            sender.transform = CGAffineTransform.identity
+        }, completion: nil)
+        
     }
 }
 
