@@ -37,14 +37,11 @@ class TypesViewController: UIViewController {
     func configureCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
         let nibCell = UINib(nibName: "TypeCollectionViewCell", bundle: nil)
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         collectionView?.register(nibCell, forCellWithReuseIdentifier: Constants.typeCell)
         collectionView?.layoutIfNeeded()
         collectionView?.translatesAutoresizingMaskIntoConstraints = false
-        
         collectionView?.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         
         view.addSubview(collectionView ?? UICollectionView())
