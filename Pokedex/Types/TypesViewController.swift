@@ -37,8 +37,8 @@ class TypesViewController: UIViewController {
     func configureCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 8
-        layout.minimumInteritemSpacing = 4
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
         let nibCell = UINib(nibName: "TypeCollectionViewCell", bundle: nil)
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         collectionView?.register(nibCell, forCellWithReuseIdentifier: Constants.typeCell)
@@ -72,16 +72,22 @@ extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSou
 }
 
 extension TypesViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
-    }
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+//    }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 117, height: 117)
+        guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else {
+            return CGSize(width: 0, height: 0)
+        }
+        let numberOfCellsInRow = 3
+        let totalSpace = layout.sectionInset.left + layout.sectionInset.right + layout.minimumInteritemSpacing * CGFloat(numberOfCellsInRow - 1)
+        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(numberOfCellsInRow))
+        return CGSize(width: size, height: size)
     }
 }
 
