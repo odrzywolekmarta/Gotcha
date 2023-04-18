@@ -93,6 +93,7 @@ class PokemonDetailsViewController: UIViewController {
         viewModel.delegate = self
         viewModel.getPokemonDetails()
         configureView()
+        toggleSpinner(active: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -183,7 +184,8 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
         
         pageViewController.set(model: detailsModel)
         
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
+            self.toggleSpinner(active: false)
             self.nameLabel.text = detailsModel.name.uppercased()
             self.view.layoutIfNeeded()
             self.pokemonImageView.sd_setImage(with:
@@ -220,6 +222,7 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     
     func onDetailsModelFetchFailure(error: Error) {
         DispatchQueue.main.async {
+//            self.activityIndicator.stopAnimating()
             self.pokemonImageView.image = Constants.unknownPokemonImage
             UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
                 self.pokemonImageView.alpha = 1

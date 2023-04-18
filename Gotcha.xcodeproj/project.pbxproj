@@ -16,6 +16,8 @@
 		2D26909F2990515300B936C9 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D26909E2990515300B936C9 /* SearchViewModelTests.swift */; };
 		2D2690A12990642400B936C9 /* AboutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2690A02990642400B936C9 /* AboutViewModelTests.swift */; };
 		2D2690A329907D8C00B936C9 /* AbilityExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D2690A229907D8C00B936C9 /* AbilityExample.json */; };
+		2D37A60729EC6836008B83E3 /* CustomSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D37A60629EC6833008B83E3 /* CustomSpinner.swift */; };
+		2D37A61129EED8F5008B83E3 /* loading4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D37A61029EED8F5008B83E3 /* loading4.gif */; };
 		2D3AA4A0295B72C9000EC287 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3AA49F295B72C9000EC287 /* Favourites.swift */; };
 		2D4E2055294131D800273DD7 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E2054294131D800273DD7 /* FavouritesViewController.swift */; };
 		2D4E205C2942094200273DD7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E205A2942094200273DD7 /* SearchViewController.swift */; };
@@ -129,6 +131,8 @@
 		2D26909E2990515300B936C9 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		2D2690A02990642400B936C9 /* AboutViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModelTests.swift; sourceTree = "<group>"; };
 		2D2690A229907D8C00B936C9 /* AbilityExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AbilityExample.json; sourceTree = "<group>"; };
+		2D37A60629EC6833008B83E3 /* CustomSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpinner.swift; sourceTree = "<group>"; };
+		2D37A61029EED8F5008B83E3 /* loading4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading4.gif; sourceTree = "<group>"; };
 		2D3AA49F295B72C9000EC287 /* Favourites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
 		2D4E2054294131D800273DD7 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		2D4E205A2942094200273DD7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +264,22 @@
 				2D2690A229907D8C00B936C9 /* AbilityExample.json */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		2D37A60829EC683D008B83E3 /* CustomSpinner */ = {
+			isa = PBXGroup;
+			children = (
+				2D37A60629EC6833008B83E3 /* CustomSpinner.swift */,
+			);
+			path = CustomSpinner;
+			sourceTree = "<group>";
+		};
+		2D37A60929EDC2A9008B83E3 /* LoadingGif */ = {
+			isa = PBXGroup;
+			children = (
+				2D37A61029EED8F5008B83E3 /* loading4.gif */,
+			);
+			path = LoadingGif;
 			sourceTree = "<group>";
 		};
 		2D4E2056294131EA00273DD7 /* Favourites */ = {
@@ -494,6 +514,7 @@
 				2DD0B646290949B6008B9BB5 /* SceneDelegate.swift */,
 				2D614119291C399C00D2F68A /* Constants.swift */,
 				2D614117291AE4FC00D2F68A /* AppRouter.swift */,
+				2D37A60829EC683D008B83E3 /* CustomSpinner */,
 				2DCA929929E8800200B0FF46 /* DeeplinkHandler */,
 				2D614114291ACEA900D2F68A /* Utilities */,
 				2DD0B660290965B8008B9BB5 /* Networking */,
@@ -505,6 +526,7 @@
 				2D72885929E091CC00D5A5E3 /* TypeDetails */,
 				2D4E2056294131EA00273DD7 /* Favourites */,
 				2D6946752961DEA50059E5F0 /* LaunchScreen */,
+				2D37A60929EDC2A9008B83E3 /* LoadingGif */,
 				2D6141442922764A00D2F68A /* Fonts */,
 				2DD0B64D290949B8008B9BB5 /* Assets.xcassets */,
 				2DD0B652290949B8008B9BB5 /* Info.plist */,
@@ -701,6 +723,7 @@
 				2DC206AF29E1FAC200374365 /* OffensiveViewController.xib in Resources */,
 				2D6141552923C51600D2F68A /* Orbitron-Bold.ttf in Resources */,
 				2DDB8FE32970A35600EB2FA3 /* README.md in Resources */,
+				2D37A61129EED8F5008B83E3 /* loading4.gif in Resources */,
 				2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */,
 				2D61413629216C8A00D2F68A /* StatsViewController.xib in Resources */,
 				2D4E205D2942094200273DD7 /* SearchViewController.xib in Resources */,
@@ -765,6 +788,7 @@
 				2DC206AB29E1FAAD00374365 /* OffensiveViewModel.swift in Sources */,
 				2DD21A9629D61393008B6EE6 /* TypesViewController.swift in Sources */,
 				2D6141402921777700D2F68A /* EvolutionViewModel.swift in Sources */,
+				2D37A60729EC6836008B83E3 /* CustomSpinner.swift in Sources */,
 				2D3AA4A0295B72C9000EC287 /* Favourites.swift in Sources */,
 				2DD0B662290967D2008B9BB5 /* PokemonAPIService.swift in Sources */,
 				2D61413929216CA300D2F68A /* EvolutionViewController.swift in Sources */,
