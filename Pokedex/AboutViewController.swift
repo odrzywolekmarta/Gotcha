@@ -16,6 +16,9 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var abilityButton1: UIButton!
     @IBOutlet weak var abilityButton2: UIButton!
     @IBOutlet weak var abilityButton3: UIButton!
+    @IBOutlet weak var typeImage1: UIImageView!
+    @IBOutlet weak var typeImage2: UIImageView!
+    @IBOutlet weak var type2StackView: UIStackView!
     
     let viewModel: AboutViewModelProtocol = AboutViewModel(service: PokemonAPIService())
     
@@ -27,19 +30,22 @@ class AboutViewController: UIViewController {
     
     func configure() {
         view.backgroundColor = UIColor(named: Constants.Colors.customBeige)
-        typeLabel1.makeRound(radius: typeLabel1.frame.height / 2)
-        typeLabel2.makeRound(radius: typeLabel2.frame.height / 2)
         typeLabel1.isHidden = true
         typeLabel2.isHidden = true
+        typeImage1.isHidden = true
+        typeImage2.isHidden = true
+        type2StackView.isHidden = true
         abilityButton1.titleLabel?.font = Constants.abilityButtonFont
         abilityButton2.titleLabel?.font = Constants.abilityButtonFont
         abilityButton3.titleLabel?.font = Constants.abilityButtonFont
-        abilityButton1.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
-        abilityButton2.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
-        abilityButton3.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
+//        abilityButton1.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
+//        abilityButton2.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
+//        abilityButton3.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
         abilityButton1.applyShadow()
         abilityButton2.applyShadow()
         abilityButton3.applyShadow()
+        typeImage1.applyShadow()
+        typeImage2.applyShadow()
         abilityButton1.startAnimatingPressActions()
         abilityButton2.startAnimatingPressActions()
         abilityButton3.startAnimatingPressActions()
@@ -57,7 +63,6 @@ class AboutViewController: UIViewController {
             viewModel.getAbilityDetails(for: ability)
         }
     }
-    
 }
 
 //MARK: - Table View Delegate 
@@ -107,23 +112,26 @@ extension AboutViewController: AboutViewModelDelegate {
                 let numOfTypes = model.types.count
                 switch numOfTypes {
                 case 1:
+                    let type1 = model.types[0].type.name
                     self.typeLabel1.isHidden = false
                     self.typeLabel2.isHidden = false
+                    self.typeImage1.isHidden = false
                     self.typeLabel2.backgroundColor = .clear
                     self.typeLabel2.textColor = .clear
-                    self.typeLabel1.text = model.types[0].type.name
-                    let typeColor1 = self.getTypeColor(for: model.types[0].type.name)
-                    self.typeLabel1.backgroundColor = typeColor1
-
+                    self.typeLabel1.text = type1
+                    self.typeImage1.image = UIImage(named: type1)
                 case 2:
+                    let type1 = model.types[0].type.name
+                    let type2 = model.types[1].type.name
+                    self.typeImage1.isHidden = false
+                    self.typeImage2.isHidden = false
                     self.typeLabel1.isHidden = false
                     self.typeLabel2.isHidden = false
-                    self.typeLabel1.text = model.types[0].type.name
-                    self.typeLabel2.text = model.types[1].type.name
-                    let typeColor1 = self.getTypeColor(for: model.types[0].type.name)
-                    let typeColor2 = self.getTypeColor(for: model.types[1].type.name)
-                    self.typeLabel1.backgroundColor = typeColor1
-                    self.typeLabel2.backgroundColor = typeColor2
+                    self.type2StackView.isHidden = false
+                    self.typeLabel1.text = type1
+                    self.typeLabel2.text = type2
+                    self.typeImage1.image = UIImage(named: type1)
+                    self.typeImage2.image = UIImage(named: type2)
                 default:
                     self.typeLabel1.isHidden = true
                     self.typeLabel2.isHidden = true
