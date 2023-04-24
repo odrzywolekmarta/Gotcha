@@ -38,9 +38,12 @@ class AboutViewController: UIViewController {
         abilityButton1.titleLabel?.font = Constants.abilityButtonFont
         abilityButton2.titleLabel?.font = Constants.abilityButtonFont
         abilityButton3.titleLabel?.font = Constants.abilityButtonFont
-//        abilityButton1.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
-//        abilityButton2.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
-//        abilityButton3.setTitleColor(Constants.abilityButtonFontColor, for: .normal)
+        abilityButton1.setTitleColor(.black, for: .normal)
+        abilityButton2.setTitleColor(.black, for: .normal)
+        abilityButton3.setTitleColor(.black, for: .normal)
+        abilityButton1.makeRound(radius: 10)
+        abilityButton2.makeRound(radius: 10)
+        abilityButton3.makeRound(radius: 10)
         abilityButton1.applyShadow()
         abilityButton2.applyShadow()
         abilityButton3.applyShadow()
@@ -51,12 +54,12 @@ class AboutViewController: UIViewController {
         abilityButton3.startAnimatingPressActions()
     }
     
-    func getTypeColor(for type: String) -> UIColor {
-        guard let enumCase = PokemonAPIType(rawValue: type) else {
-            return .cyan
-        }
-        return UIColor(named: enumCase.colorName) ?? UIColor.cyan
-    }
+//    func getTypeColor(for type: String) -> UIColor {
+//        guard let enumCase = PokemonAPIType(rawValue: type) else {
+//            return .cyan
+//        }
+//        return UIColor(named: enumCase.colorName) ?? UIColor.cyan
+//    }
     
     @IBAction func abilityButtonTapped(_ sender: UIButton) {
         if let ability = sender.titleLabel?.text {
