@@ -274,12 +274,12 @@
 			path = CustomSpinner;
 			sourceTree = "<group>";
 		};
-		2D37A60929EDC2A9008B83E3 /* LoadingGif */ = {
+		2D37A60929EDC2A9008B83E3 /* Gifs */ = {
 			isa = PBXGroup;
 			children = (
 				2D37A61029EED8F5008B83E3 /* loading4.gif */,
 			);
-			path = LoadingGif;
+			path = Gifs;
 			sourceTree = "<group>";
 		};
 		2D4E2056294131EA00273DD7 /* Favourites */ = {
@@ -526,7 +526,7 @@
 				2D72885929E091CC00D5A5E3 /* TypeDetails */,
 				2D4E2056294131EA00273DD7 /* Favourites */,
 				2D6946752961DEA50059E5F0 /* LaunchScreen */,
-				2D37A60929EDC2A9008B83E3 /* LoadingGif */,
+				2D37A60929EDC2A9008B83E3 /* Gifs */,
 				2D6141442922764A00D2F68A /* Fonts */,
 				2DD0B64D290949B8008B9BB5 /* Assets.xcassets */,
 				2DD0B652290949B8008B9BB5 /* Info.plist */,

@@ -12,8 +12,8 @@ import ImageIO
 extension UIViewController {
     func toggleSpinner(active: Bool) {
         if active {
-            let spinner = CustomSpinnerView(frame: view.frame)
-            spinner.imageView.center = view.center
+            let spinner = CustomSpinnerView(frame: view.bounds)
+            spinner.imageView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
             view.addSubview(spinner)
             view.bringSubviewToFront(spinner)
         } else {
@@ -64,3 +64,4 @@ class CustomSpinnerView: UIView {
     }
 
 }
+
