@@ -32,6 +32,7 @@
                 <outlet property="typeNameLabel" destination="29J-8x-QeI" id="bpz-bs-bxb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="zeroHeight" destination="GJb-B8-sJF" id="uqn-kb-bQJ"/>
+                <outlet property="zeroLabel" destination="CqS-1z-zgd" id="nsd-ui-eqv"/>
                 <outlet property="zeroTableView" destination="mEA-fF-J8o" id="om1-Ep-waP"/>
             </connections>
         </placeholder>

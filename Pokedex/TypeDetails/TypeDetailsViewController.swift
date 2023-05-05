@@ -30,6 +30,7 @@ class TypeDetailsViewController: UIViewController {
     
     @IBOutlet weak var doubleLabel: UILabel!
     @IBOutlet weak var halfLabel: UILabel!
+    @IBOutlet weak var zeroLabel: UILabel!
     
     let viewModel: TypeDetailsViewModelProtocol
     let router: AppRouterProtocol
@@ -70,12 +71,16 @@ class TypeDetailsViewController: UIViewController {
         backButton.startAnimatingPressActions()
         
         pokemonListButton.applyShadow()
-        pokemonListButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
+//        pokemonListButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
         pokemonListButton.startAnimatingPressActions()
         
         if let font = UIFont(name: Constants.customFont, size: 20) {
             segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
         }
+        
+        doubleLabel.applyShadow()
+        halfLabel.applyShadow()
+        zeroLabel.applyShadow()
         
         let cellName = String(describing: TypeTableViewCell.self)
                            
@@ -131,7 +136,11 @@ extension TypeDetailsViewController: TypeDetailsViewModelDelegate {
         DispatchQueue.main.async {
             self.typeNameLabel.text = details.name.uppercased()
             self.typeImageView.image = UIImage(named: details.name)
-            self.pokemonListButton.setTitle("Show \(details.name) type Pokémon", for: .normal)
+            if let font = UIFont(name: Constants.customFontBold, size: 19) {
+                let title = NSMutableAttributedString(string: "Show \(details.name) type Pokémon", attributes: [NSAttributedString.Key.font: font])
+                self.pokemonListButton.setAttributedTitle(title, for: .normal)
+            }
+         
             self.reloadTables()
         }
     }
