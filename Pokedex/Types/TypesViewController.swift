@@ -9,6 +9,7 @@ import UIKit
 
 class TypesViewController: UIViewController {
     
+    var segmentedControl: UISegmentedControl
     let viewModel: TypesViewModelProtocol
     var collectionView: UICollectionView?
     let router: AppRouterProtocol
@@ -18,6 +19,7 @@ class TypesViewController: UIViewController {
     init(viewModel: TypesViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
         self.router = router
+        self.segmentedControl = UISegmentedControl()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -34,11 +36,18 @@ class TypesViewController: UIViewController {
         viewModel.getPokemonTypes()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        configureSegmentedControl()
+    }
+    
     func configureCollectionView() {
+        view.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let nibCell = UINib(nibName: "TypeCollectionViewCell", bundle: nil)
-        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        let frame = CGRect(x: 0, y: 50, width: view.frame.width, height: view.frame.height - 50)
+        collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView?.register(nibCell, forCellWithReuseIdentifier: Constants.typeCell)
         collectionView?.layoutIfNeeded()
         collectionView?.translatesAutoresizingMaskIntoConstraints = false
@@ -46,6 +55,21 @@ class TypesViewController: UIViewController {
         
         view.addSubview(collectionView ?? UICollectionView())
     }
+    
+    func configureSegmentedControl() {
+        segmentedControl = UISegmentedControl(items: ["TYPES", "POKEBALLS"])
+        segmentedControl.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.frame.width, height: 50)
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(segmentedValueChanged(_:)), for: .valueChanged)
+        view.addSubview(segmentedControl)
+        // update collection view frame
+        collectionView?.frame = CGRect(x: 0, y: view.safeAreaInsets.top + 50, width: view.frame.width, height: view.frame.height - 50 - view.safeAreaInsets.top)
+    }
+    
+    @objc func segmentedValueChanged(_ sender:UISegmentedControl!)
+      {
+          print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
+      }
 }
 
 extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSource {

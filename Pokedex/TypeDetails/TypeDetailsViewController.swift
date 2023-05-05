@@ -27,7 +27,7 @@ class TypeDetailsViewController: UIViewController {
     @IBOutlet weak var doubleHeight: NSLayoutConstraint!
     @IBOutlet weak var halfHeight: NSLayoutConstraint!
     @IBOutlet weak var zeroHeight: NSLayoutConstraint!
-    
+
     @IBOutlet weak var doubleLabel: UILabel!
     @IBOutlet weak var halfLabel: UILabel!
     @IBOutlet weak var zeroLabel: UILabel!
@@ -71,7 +71,6 @@ class TypeDetailsViewController: UIViewController {
         backButton.startAnimatingPressActions()
         
         pokemonListButton.applyShadow()
-//        pokemonListButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
         pokemonListButton.startAnimatingPressActions()
         
         if let font = UIFont(name: Constants.customFont, size: 20) {
@@ -123,30 +122,7 @@ class TypeDetailsViewController: UIViewController {
     }
     
     @IBAction func showPokemonTapped(_ sender: UIButton) {
-        
-    }
-}
-
-extension TypeDetailsViewController: TypeDetailsViewModelDelegate {
-    func onDetailsModelFetchSuccess() {
-        guard let details = self.viewModel.detailsModel else {
-            return
-        }
-                
-        DispatchQueue.main.async {
-            self.typeNameLabel.text = details.name.uppercased()
-            self.typeImageView.image = UIImage(named: details.name)
-            if let font = UIFont(name: Constants.customFontBold, size: 19) {
-                let title = NSMutableAttributedString(string: "Show \(details.name) type Pokémon", attributes: [NSAttributedString.Key.font: font])
-                self.pokemonListButton.setAttributedTitle(title, for: .normal)
-            }
-         
-            self.reloadTables()
-        }
-    }
-    
-    func onDetailsModelFetchFailure(error: Error) {
-        print(error)
+        // navigate to pokemon list
     }
 }
 
@@ -218,5 +194,28 @@ extension TypeDetailsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         30
+    }
+}
+
+extension TypeDetailsViewController: TypeDetailsViewModelDelegate {
+    func onDetailsModelFetchSuccess() {
+        guard let details = self.viewModel.detailsModel else {
+            return
+        }
+                
+        DispatchQueue.main.async {
+            self.typeNameLabel.text = details.name.uppercased()
+            self.typeImageView.image = UIImage(named: details.name)
+            if let font = UIFont(name: Constants.customFontBold, size: 19) {
+                let title = NSMutableAttributedString(string: "Show \(details.name) type Pokémon", attributes: [NSAttributedString.Key.font: font])
+                self.pokemonListButton.setAttributedTitle(title, for: .normal)
+            }
+         
+            self.reloadTables()
+        }
+    }
+    
+    func onDetailsModelFetchFailure(error: Error) {
+        print(error)
     }
 }
