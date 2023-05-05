@@ -7,14 +7,20 @@
 
 import UIKit
 
+enum InfoDisplayed {
+    case types
+    case pokeballs
+}
+
 class TypesViewController: UIViewController {
     
-    var segmentedControl: UISegmentedControl
-    let viewModel: TypesViewModelProtocol
-    var collectionView: UICollectionView?
-    let router: AppRouterProtocol
-    var types: [Results] = []
+    private var segmentedControl: UISegmentedControl
+    private let viewModel: TypesViewModelProtocol
+    private var collectionView: UICollectionView?
+    private let router: AppRouterProtocol
+    private var types: [Results] = []
     private var previousController: UIViewController?
+    private var info: InfoDisplayed = .types
     
     init(viewModel: TypesViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -34,6 +40,7 @@ class TypesViewController: UIViewController {
         collectionView?.delegate = self
         collectionView?.dataSource = self
         viewModel.getPokemonTypes()
+        viewModel.getPokeballList()
     }
     
     override func viewDidLayoutSubviews() {
@@ -70,10 +77,18 @@ class TypesViewController: UIViewController {
         collectionView?.frame = CGRect(x: 0, y: view.safeAreaInsets.top + 50, width: view.frame.width, height: view.frame.height - 50 - view.safeAreaInsets.top)
     }
     
-    @objc func segmentedValueChanged(_ sender:UISegmentedControl!)
-      {
-          print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
-      }
+    @objc func segmentedValueChanged(_ sender: UISegmentedControl!) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            info = .types
+            collectionView?.reloadData()
+        case 1:
+            info = .pokeballs
+            collectionView?.reloadData()
+        default:
+            ()
+        }
+    }
 }
 
 extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -90,7 +105,7 @@ extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let url = URL(string: viewModel.dataSource[indexPath.row].url) {
+        if let url = URL(string: viewModel.types[indexPath.row].url) {
             router.navigateToType(url: url)
         }
     }
@@ -112,9 +127,17 @@ extension TypesViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension TypesViewController: TypesViewModelDelegate {
+    func onPokeballFetchSuccess() {
+        print("success pokeball fetch")
+    }
+    
+    func onPokeballFetchFailure(error: String) {
+        
+    }
+    
     func onTypesFetchSuccess() {
         DispatchQueue.main.async {
-            self.types = self.viewModel.dataSource.filter { $0.name != "shadow" && $0.name != "unknown" }
+            self.types = self.viewModel.types.filter { $0.name != "shadow" && $0.name != "unknown" }
             self.collectionView?.reloadData()
         }
     }

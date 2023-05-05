@@ -14,6 +14,7 @@ struct Results: Decodable {
 
 protocol PokemonAPIServiceProtocol {
     func getPokemonList(withUrlString urlString: String, completion: @escaping ((Result<SinglePageModel, Error>) -> Void))
+    func getItemsList(withUrlString urlString: String, completion: @escaping((Result<ItemsList, Error>) -> Void))
     func getPokemonDetails(withUrlString urlString: String, completion: @escaping((Result<PokemonModel,Error>) -> Void))
     func getSpecies(withUrl url: URL, completion: @escaping((Result<SpeciesModel, Error>)) -> Void)
     func getEvolution(withUrl url: URL, completion: @escaping((Result<EvolutionModel, Error>) -> Void))
@@ -27,6 +28,7 @@ struct SinglePageModel: Decodable {
 }
 
 class PokemonAPIService: PokemonAPIServiceProtocol {
+    
     var count = 0
     var pokemonArray: [Results] = []
     
@@ -57,6 +59,33 @@ class PokemonAPIService: PokemonAPIServiceProtocol {
             } else {
                 completion(.failure(PokemonAPIServiceError.unknown))
             }
+        }
+        dataTask.resume()
+    }
+    
+    func getItemsList(withUrlString urlString: String, completion: @escaping((Result<ItemsList, Error>) -> Void)) {
+        guard let url = URL(string: urlString) else {
+            completion(.failure(PokemonAPIServiceError.noUrl))
+            return
+        }
+        let urlSession = URLSession(configuration: .default)
+        let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            } else if let data = data {
+                let decoder = JSONDecoder()
+                do {
+                    let items = try decoder.decode(ItemsList.self, from: data)
+                    completion(.success(items))
+                } catch {
+                    completion(.failure(error))
+                    debugPrint(error)
+                }
+            } else {
+                completion(.failure(PokemonAPIServiceError.unknown))
+            }
+            
         }
         dataTask.resume()
     }
