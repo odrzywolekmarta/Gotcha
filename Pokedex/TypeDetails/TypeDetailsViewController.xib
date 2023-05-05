@@ -19,7 +19,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TypeDetailsViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="JAF-QW-MFG" id="7E3-vx-tkV"/>
+                <outlet property="doubleHeight" destination="ZZZ-lp-iCx" id="jog-bU-pLB"/>
                 <outlet property="doubleTableView" destination="r6t-UK-OnM" id="RbY-aU-XS4"/>
+                <outlet property="halfHeight" destination="rrH-7O-6W5" id="WcA-Mq-RjV"/>
                 <outlet property="halfTableView" destination="NuF-ZQ-rph" id="EV2-rC-THW"/>
                 <outlet property="pokemonListButton" destination="a36-qG-Lb0" id="ZZd-FG-dkZ"/>
                 <outlet property="roundedView" destination="AWd-JT-nlv" id="bgC-Qs-nTO"/>
@@ -27,6 +29,7 @@
                 <outlet property="typeImageView" destination="6GS-Nv-5x8" id="4ZZ-03-n6y"/>
                 <outlet property="typeNameLabel" destination="29J-8x-QeI" id="bpz-bs-bxb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="zeroHeight" destination="GJb-B8-sJF" id="uqn-kb-bQJ"/>
                 <outlet property="zeroTableView" destination="mEA-fF-J8o" id="om1-Ep-waP"/>
             </connections>
         </placeholder>
@@ -105,10 +108,11 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="r6t-UK-OnM">
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="r6t-UK-OnM" customClass="ResizableTableView" customModule="Gotcha" customModuleProvider="target">
                                                             <rect key="frame" x="71" y="0.0" width="150" height="100"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="height" constant="100" id="ZZZ-lp-iCx"/>
                                                                 <constraint firstAttribute="width" constant="150" id="dar-zD-F89"/>
                                                             </constraints>
                                                         </tableView>
@@ -130,9 +134,12 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NuF-ZQ-rph">
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NuF-ZQ-rph" customClass="ResizableTableView" customModule="Gotcha" customModuleProvider="target">
                                                             <rect key="frame" x="71" y="0.0" width="150" height="100"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="100" id="rrH-7O-6W5"/>
+                                                            </constraints>
                                                         </tableView>
                                                     </subviews>
                                                     <constraints>
@@ -152,9 +159,12 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mEA-fF-J8o">
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mEA-fF-J8o" customClass="ResizableTableView" customModule="Gotcha" customModuleProvider="target">
                                                             <rect key="frame" x="71" y="0.0" width="150" height="100"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="100" id="GJb-B8-sJF"/>
+                                                            </constraints>
                                                         </tableView>
                                                     </subviews>
                                                     <constraints>

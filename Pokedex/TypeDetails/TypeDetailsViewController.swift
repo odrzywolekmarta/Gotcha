@@ -12,15 +12,6 @@ enum SelectedSegment {
     case defensive
 }
 
-enum TableType {
-    case doubleFrom
-    case halfFrom
-    case zeroFrom
-    case doubleTo
-    case halfTo
-    case zeroTo
-}
-
 class TypeDetailsViewController: UIViewController {
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var backButton: UIButton!
@@ -33,16 +24,18 @@ class TypeDetailsViewController: UIViewController {
     @IBOutlet weak var zeroTableView: UITableView!
     @IBOutlet weak var halfTableView: UITableView!
     
+    @IBOutlet weak var doubleHeight: NSLayoutConstraint!
+    @IBOutlet weak var halfHeight: NSLayoutConstraint!
+    @IBOutlet weak var zeroHeight: NSLayoutConstraint!
+    
     let viewModel: TypeDetailsViewModelProtocol
     let router: AppRouterProtocol
     var selectedSegment: SelectedSegment = .offensive
     var tables: [UITableView] = []
-//    var pageViewController: TypePageViewController?
     
     init(viewModel: TypeDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
         self.router = router
-//        self.pageViewController = TypePageViewController(appRouter: router)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -56,7 +49,12 @@ class TypeDetailsViewController: UIViewController {
         viewModel.getTypeDetails()
         configureView()
     }
-
+    override func viewWillLayoutSubviews() {
+            super.updateViewConstraints()
+            self.doubleHeight?.constant = self.doubleTableView.intrinsicContentSize.height
+        self.halfHeight?.constant = self.halfTableView.intrinsicContentSize.height
+        self.zeroHeight?.constant = self.zeroTableView.intrinsicContentSize.height
+        }
     
     func configureView() {
         roundedView.makeRound(radius: 30)
@@ -88,13 +86,18 @@ class TypeDetailsViewController: UIViewController {
         }
     }
     
-    
     @IBAction func segmentedControlTapped(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             selectedSegment = .offensive
+            for table in tables {
+                table.reloadData()
+            }
         case 1:
             selectedSegment = .defensive
+            for table in tables {
+                table.reloadData()
+            }
         default:
             ()
         }
@@ -199,5 +202,8 @@ extension TypeDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        30
+    }
     
 }
