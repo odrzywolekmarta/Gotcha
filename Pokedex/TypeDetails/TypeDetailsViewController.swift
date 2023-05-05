@@ -28,6 +28,9 @@ class TypeDetailsViewController: UIViewController {
     @IBOutlet weak var halfHeight: NSLayoutConstraint!
     @IBOutlet weak var zeroHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var doubleLabel: UILabel!
+    @IBOutlet weak var halfLabel: UILabel!
+    
     let viewModel: TypeDetailsViewModelProtocol
     let router: AppRouterProtocol
     var selectedSegment: SelectedSegment = .offensive
@@ -83,6 +86,13 @@ class TypeDetailsViewController: UIViewController {
             table.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
             table.separatorStyle = .none
             table.allowsSelection = false
+            table.isScrollEnabled = false
+        }
+    }
+    
+    func reloadTables() {
+        for table in tables {
+            table.reloadData()
         }
     }
     
@@ -90,14 +100,14 @@ class TypeDetailsViewController: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             selectedSegment = .offensive
-            for table in tables {
-                table.reloadData()
-            }
+            doubleLabel.backgroundColor = UIColor(named: "BugType")
+            halfLabel.backgroundColor = UIColor(named: Constants.Colors.customRed)
+            reloadTables()
         case 1:
             selectedSegment = .defensive
-            for table in tables {
-                table.reloadData()
-            }
+            doubleLabel.backgroundColor = UIColor(named: Constants.Colors.customRed)
+            halfLabel.backgroundColor = UIColor(named: "BugType")
+            reloadTables()
         default:
             ()
         }
@@ -122,9 +132,7 @@ extension TypeDetailsViewController: TypeDetailsViewModelDelegate {
             self.typeNameLabel.text = details.name.uppercased()
             self.typeImageView.image = UIImage(named: details.name)
             self.pokemonListButton.setTitle("Show \(details.name) type Pokémon", for: .normal)
-            for table in self.tables {
-                table.reloadData()
-            }
+            self.reloadTables()
         }
     }
     
@@ -139,7 +147,6 @@ extension TypeDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         case .offensive:
             switch tableView {
             case doubleTableView:
-                let count = viewModel.detailsModel?.damageRelations.doubleDamageTo.count ?? 0
                 return viewModel.detailsModel?.damageRelations.doubleDamageTo.count ?? 0
             case halfTableView:
                 return viewModel.detailsModel?.damageRelations.halfDamageTo.count ?? 0
@@ -195,8 +202,6 @@ extension TypeDetailsViewController: UITableViewDelegate, UITableViewDataSource 
                 default:
                     return UITableViewCell()
                 }
-            default:
-                ()
             }
         }
         return UITableViewCell()
@@ -205,5 +210,4 @@ extension TypeDetailsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         30
     }
-    
 }

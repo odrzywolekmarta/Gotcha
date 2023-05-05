@@ -69,11 +69,6 @@ extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSou
 }
 
 extension TypesViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//    }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
