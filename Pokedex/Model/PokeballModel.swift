@@ -15,3 +15,11 @@ struct Items: Decodable {
     let name: String
     let url: String
 }
+
+struct PokeballModel: Decodable {
+    let cost: Int
+    let effectEntries: [EffectEntries]
+    let name: String
+}
+
+

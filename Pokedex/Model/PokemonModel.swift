@@ -119,10 +119,12 @@ struct AbilityModel: Decodable {
 }
 
 struct EffectEntries: Decodable {
+    let effect: String
     let language: LanguageName
     let shortEffect: String
     
     enum CodingKeys: String, CodingKey {
+        case effect = "effect"
         case shortEffect = "short_effect"
         case language = "language"
     }
