@@ -98,7 +98,7 @@ extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.typeCell, for: indexPath) as? TypeCollectionViewCell {
-            cell.configure(name: types[indexPath.row].name)
+            cell.configureWithType(name: types[indexPath.row].name)
             return cell
         }
         return UICollectionViewCell()

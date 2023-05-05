@@ -19,7 +19,14 @@ class TypeCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func configure(name: String) {
+    func configureWithType(name: String) {
+        typeLabel.text = name
+        typeImage.image = UIImage(named: name)
+        typeImage.applyShadow()
+    }
+    
+    func configureWithPokeball(name: String) {
+        let pokeballName = name.replacingOccurrences(of: "-", with: " ", options: .literal)
         typeLabel.text = name
         typeImage.image = UIImage(named: name)
         typeImage.applyShadow()
