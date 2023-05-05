@@ -36,13 +36,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbq-cW-AQP">
-                    <rect key="frame" x="0.0" y="59" width="271" height="759"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWd-JT-nlv">
-                            <rect key="frame" x="15" y="60" width="241" height="649"/>
+                            <rect key="frame" x="15" y="60" width="363" height="649"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAF-QW-MFG">
-                                    <rect key="frame" x="146" y="10" width="75" height="35"/>
+                                    <rect key="frame" x="268" y="10" width="75" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="HCX-jL-c8s"/>
                                         <constraint firstAttribute="width" constant="75" id="ZAW-vE-ZXk"/>
@@ -54,11 +54,11 @@
                                         <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="AFo-Ac-pe7"/>
                                     </connections>
                                 </button>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="bJd-ug-rIX">
-                                    <rect key="frame" x="10" y="49.999999999999972" width="221" height="453.33333333333326"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="bJd-ug-rIX">
+                                    <rect key="frame" x="10" y="49.999999999999972" width="343" height="453.33333333333326"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bPJ-Hs-h1t" userLabel="title stack view">
-                                            <rect key="frame" x="24.666666666666657" y="0.0" width="172" height="55"/>
+                                            <rect key="frame" x="85.666666666666686" y="0.0" width="172" height="55"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29J-8x-QeI">
                                                     <rect key="frame" x="0.0" y="5.6666666666666572" width="109" height="44"/>
@@ -79,7 +79,7 @@
                                             </constraints>
                                         </stackView>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lzI-7Y-9bw">
-                                            <rect key="frame" x="0.0" y="62" width="221" height="32"/>
+                                            <rect key="frame" x="0.0" y="62" width="343" height="32"/>
                                             <segments>
                                                 <segment title="OFFENSIVE"/>
                                                 <segment title="DEFENSIVE"/>
@@ -90,7 +90,7 @@
                                             </connections>
                                         </segmentedControl>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="qrS-5f-g4K">
-                                            <rect key="frame" x="0.0" y="100" width="221" height="312"/>
+                                            <rect key="frame" x="61" y="100" width="221" height="312"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-zZ-Fi3">
                                                     <rect key="frame" x="0.0" y="0.0" width="221" height="100"/>
@@ -99,7 +99,6 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
                                                             <color key="backgroundColor" name="BugType"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="100" id="Oqg-Cw-tGd"/>
                                                                 <constraint firstAttribute="width" constant="65" id="PrE-ui-4VS"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="25"/>
@@ -126,7 +125,6 @@
                                                             <color key="backgroundColor" name="CustomRed"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="65" id="GMy-ew-1xo"/>
-                                                                <constraint firstAttribute="height" constant="100" id="Wdh-Pt-P8R"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="25"/>
                                                             <nil key="textColor"/>
@@ -149,7 +147,6 @@
                                                             <color key="backgroundColor" name="GroundType"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="65" id="o6b-Go-xwf"/>
-                                                                <constraint firstAttribute="height" constant="100" id="r4J-fi-A57"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="25"/>
                                                             <nil key="textColor"/>
@@ -167,7 +164,7 @@
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a36-qG-Lb0">
-                                            <rect key="frame" x="81.333333333333329" y="419" width="58.666666666666671" height="34.333333333333314"/>
+                                            <rect key="frame" x="142.33333333333334" y="419" width="58.666666666666657" height="34.333333333333314"/>
                                             <color key="tintColor" name="CustomBlue"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="tinted" title="jajko" cornerStyle="capsule"/>
@@ -177,8 +174,6 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="qrS-5f-g4K" firstAttribute="leading" secondItem="bJd-ug-rIX" secondAttribute="leading" id="0Od-Pq-RiH"/>
-                                        <constraint firstItem="bPJ-Hs-h1t" firstAttribute="centerX" secondItem="bJd-ug-rIX" secondAttribute="centerX" id="Vyb-52-O4G"/>
                                         <constraint firstAttribute="trailing" secondItem="lzI-7Y-9bw" secondAttribute="trailing" id="gan-vK-gG3"/>
                                         <constraint firstItem="lzI-7Y-9bw" firstAttribute="leading" secondItem="bJd-ug-rIX" secondAttribute="leading" id="wxr-KD-YpO"/>
                                     </constraints>

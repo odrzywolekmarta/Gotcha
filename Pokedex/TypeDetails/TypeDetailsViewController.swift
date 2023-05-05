@@ -83,6 +83,8 @@ class TypeDetailsViewController: UIViewController {
             table.delegate = self
             table.dataSource = self
             table.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
+            table.separatorStyle = .none
+            table.allowsSelection = false
         }
     }
     
