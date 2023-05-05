@@ -49,7 +49,7 @@ struct Constants {
     static let tabNameAll = "all"
     static let tabNameFavourites = "favourites"
     static let tabNameSearch = "search"
-    static let tabNameTypes = "types"
+    static let tabNameTypes = "info"
     static let gotcha = "gotcha"
     static let pokemonCell = "PokemonTableViewCell"
     static let typeCell = "TypeCollectionViewCell"

@@ -108,7 +108,7 @@ extension SceneDelegate: LaunchScreenViewControllerDelegate {
         let typesNavigationBar = typesNavigationController.navigationBar
         let titleFrameee = CGRect(x: 0, y: 0, width: allNavigationBar.frame.width, height: allNavigationBar.frame.height)
         let titleLabelll = UILabel(frame: titleFrameee)
-        titleLabelll.text = "TYPES"
+        titleLabelll.text = "INFO"
         titleLabelll.applyShadow()
         titleLabelll.textAlignment = .center
         titleLabelll.textColor = .white
