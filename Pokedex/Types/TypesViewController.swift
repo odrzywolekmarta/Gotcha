@@ -61,7 +61,11 @@ class TypesViewController: UIViewController {
         segmentedControl.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.frame.width, height: 50)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(segmentedValueChanged(_:)), for: .valueChanged)
+        if let font = UIFont(name: Constants.customFontBold, size: 17) {
+            segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        }
         view.addSubview(segmentedControl)
+        
         // update collection view frame
         collectionView?.frame = CGRect(x: 0, y: view.safeAreaInsets.top + 50, width: view.frame.width, height: view.frame.height - 50 - view.safeAreaInsets.top)
     }

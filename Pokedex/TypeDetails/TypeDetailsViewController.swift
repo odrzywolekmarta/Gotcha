@@ -53,6 +53,7 @@ class TypeDetailsViewController: UIViewController {
         viewModel.getTypeDetails()
         configureView()
     }
+    
     override func viewWillLayoutSubviews() {
             super.updateViewConstraints()
             self.doubleHeight?.constant = self.doubleTableView.intrinsicContentSize.height
@@ -122,7 +123,7 @@ class TypeDetailsViewController: UIViewController {
     }
     
     @IBAction func showPokemonTapped(_ sender: UIButton) {
-        // navigate to pokemon list
+        // TODO: navigate to pokemon list
     }
 }
 
