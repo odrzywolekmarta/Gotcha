@@ -29,10 +29,10 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="zLA-nX-rm7">
                                 <rect key="frame" x="21" y="12.333333333333336" width="65" height="82.666666666666657"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WNM-Ur-kfB">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WNM-Ur-kfB">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="65" id="3xS-j2-m8g"/>
+                                            <constraint firstAttribute="height" constant="65" id="3xS-j2-m8g"/>
                                             <constraint firstAttribute="width" secondItem="WNM-Ur-kfB" secondAttribute="height" multiplier="1:1" id="FS6-ug-VrG"/>
                                         </constraints>
                                     </imageView>

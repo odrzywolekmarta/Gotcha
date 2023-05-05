@@ -10,6 +10,7 @@ import Foundation
 protocol TypesViewModelProtocol: AnyObject {
     var delegate: TypesViewModelDelegate? { get set }
     var types: [Results] { get }
+    var pokeballs: [Items] { get }
     func getPokemonTypes()
     func getPokeballList()
 }

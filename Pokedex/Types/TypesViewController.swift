@@ -93,13 +93,24 @@ class TypesViewController: UIViewController {
 
 extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        types.count
+        switch info {
+        case .types:
+            return types.count
+        case .pokeballs:
+            return viewModel.pokeballs.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.typeCell, for: indexPath) as? TypeCollectionViewCell {
-            cell.configureWithType(name: types[indexPath.row].name)
-            return cell
+            switch info {
+            case .types:
+                cell.configureWithType(name: types[indexPath.row].name)
+                return cell
+            case .pokeballs:
+                cell.configureWithPokeball(name: viewModel.pokeballs[indexPath.row].name)
+                return cell
+            }
         }
         return UICollectionViewCell()
     }
@@ -128,22 +139,29 @@ extension TypesViewController: UICollectionViewDelegateFlowLayout {
 
 extension TypesViewController: TypesViewModelDelegate {
     func onPokeballFetchSuccess() {
-        print("success pokeball fetch")
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
     }
     
     func onPokeballFetchFailure(error: String) {
-        
+        DispatchQueue.main.async {
+            debugPrint(error)
+        }
     }
     
     func onTypesFetchSuccess() {
         DispatchQueue.main.async {
+            // TODO: view model should filter types, not vc
             self.types = self.viewModel.types.filter { $0.name != "shadow" && $0.name != "unknown" }
             self.collectionView?.reloadData()
         }
     }
     
     func onTypesFetchFailure(error: String) {
-        print(error)
+        DispatchQueue.main.async {
+            debugPrint(error)
+        }
     }
     
 }

@@ -27,7 +27,7 @@ class TypeCollectionViewCell: UICollectionViewCell {
     
     func configureWithPokeball(name: String) {
         let pokeballName = name.replacingOccurrences(of: "-", with: " ", options: .literal)
-        typeLabel.text = name
+        typeLabel.text = pokeballName
         typeImage.image = UIImage(named: name)
         typeImage.applyShadow()
     }
