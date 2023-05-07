@@ -55,11 +55,11 @@ class TypeDetailsViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-            super.updateViewConstraints()
-            self.doubleHeight?.constant = self.doubleTableView.intrinsicContentSize.height
-        self.halfHeight?.constant = self.halfTableView.intrinsicContentSize.height
-        self.zeroHeight?.constant = self.zeroTableView.intrinsicContentSize.height
-        }
+        super.updateViewConstraints()
+        doubleHeight?.constant = doubleTableView.intrinsicContentSize.height
+        halfHeight?.constant = halfTableView.intrinsicContentSize.height
+        zeroHeight?.constant = zeroTableView.intrinsicContentSize.height
+    }
     
     func configureView() {
         roundedView.makeRound(radius: 30)
