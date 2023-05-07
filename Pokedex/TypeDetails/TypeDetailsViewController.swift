@@ -67,10 +67,6 @@ class TypeDetailsViewController: UIViewController {
         typeNameLabel.textDropShadow()
         typeImageView.applyShadow()
         
-        backButton.applyShadow()
-        backButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 19)
-        backButton.startAnimatingPressActions()
-        
         pokemonListButton.applyShadow()
         pokemonListButton.startAnimatingPressActions()
         

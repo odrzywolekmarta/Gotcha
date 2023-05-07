@@ -45,47 +45,43 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWd-JT-nlv">
-                            <rect key="frame" x="15" y="117" width="363" height="525.33333333333337"/>
+                            <rect key="frame" x="15" y="146.33333333333334" width="363" height="466.33333333333326"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="bJd-ug-rIX">
-                                    <rect key="frame" x="10" y="19.999999999999972" width="343" height="485.33333333333326"/>
+                                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAF-QW-MFG">
+                                    <rect key="frame" x="317.33333333333331" y="15" width="25.666666666666686" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="HCX-jL-c8s"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="xmark.circle" catalog="system"/>
+                                    <connections>
+                                        <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="AFo-Ac-pe7"/>
+                                    </connections>
+                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bPJ-Hs-h1t" userLabel="title stack view">
+                                    <rect key="frame" x="100.66666666666669" y="10" width="162" height="45"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAF-QW-MFG">
-                                            <rect key="frame" x="134" y="0.0" width="75" height="35"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29J-8x-QeI">
+                                            <rect key="frame" x="0.0" y="0.66666666666665719" width="109" height="44"/>
+                                            <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="35"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6GS-Nv-5x8">
+                                            <rect key="frame" x="117" y="0.0" width="45" height="45"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="35" id="HCX-jL-c8s"/>
-                                                <constraint firstAttribute="width" constant="75" id="ZAW-vE-ZXk"/>
+                                                <constraint firstAttribute="height" constant="45" id="Tvd-qC-LfQ"/>
+                                                <constraint firstAttribute="width" secondItem="6GS-Nv-5x8" secondAttribute="height" multiplier="1:1" id="zx2-8y-OmT"/>
                                             </constraints>
-                                            <color key="tintColor" name="CustomBlue"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="tinted" title="back" cornerStyle="capsule"/>
-                                            <connections>
-                                                <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="AFo-Ac-pe7"/>
-                                            </connections>
-                                        </button>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bPJ-Hs-h1t" userLabel="title stack view">
-                                            <rect key="frame" x="90.666666666666686" y="42" width="162" height="45"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29J-8x-QeI">
-                                                    <rect key="frame" x="0.0" y="0.33333333333334281" width="109" height="44"/>
-                                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="35"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6GS-Nv-5x8">
-                                                    <rect key="frame" x="117" y="0.0" width="45" height="45"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="Tvd-qC-LfQ"/>
-                                                        <constraint firstAttribute="width" secondItem="6GS-Nv-5x8" secondAttribute="height" multiplier="1:1" id="zx2-8y-OmT"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="6GS-Nv-5x8" firstAttribute="leading" secondItem="29J-8x-QeI" secondAttribute="trailing" constant="8" symbolic="YES" id="gSQ-vt-bmM"/>
-                                            </constraints>
-                                        </stackView>
+                                        </imageView>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="bJd-ug-rIX">
+                                    <rect key="frame" x="10" y="64.999999999999972" width="343" height="391.33333333333326"/>
+                                    <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lzI-7Y-9bw">
-                                            <rect key="frame" x="0.0" y="94" width="343" height="32"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="32"/>
                                             <segments>
                                                 <segment title="OFFENSIVE"/>
                                                 <segment title="DEFENSIVE"/>
@@ -96,7 +92,7 @@
                                             </connections>
                                         </segmentedControl>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="qrS-5f-g4K">
-                                            <rect key="frame" x="60" y="132" width="223" height="312"/>
+                                            <rect key="frame" x="60" y="38" width="223" height="312"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-zZ-Fi3">
                                                     <rect key="frame" x="0.0" y="0.0" width="223" height="100"/>
@@ -150,7 +146,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MyO-Nj-WPx">
-                                                    <rect key="frame" x="0.0" y="212" width="223" height="100"/>
+                                                    <rect key="frame" x="0.0" y="212.00000000000006" width="223" height="100"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqS-1z-zgd">
                                                             <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
@@ -177,7 +173,7 @@
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a36-qG-Lb0">
-                                            <rect key="frame" x="142.33333333333334" y="451" width="58.666666666666657" height="34.333333333333314"/>
+                                            <rect key="frame" x="142.33333333333334" y="357.00000000000006" width="58.666666666666657" height="34.333333333333314"/>
                                             <color key="tintColor" name="CustomBlue"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="tinted" title="jajko" cornerStyle="capsule"/>
@@ -194,8 +190,12 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="bJd-ug-rIX" secondAttribute="bottom" constant="20" id="b1m-Um-ygV"/>
-                                <constraint firstItem="bJd-ug-rIX" firstAttribute="top" secondItem="AWd-JT-nlv" secondAttribute="top" constant="20" id="bwW-e3-Vm4"/>
+                                <constraint firstAttribute="trailing" secondItem="JAF-QW-MFG" secondAttribute="trailing" constant="20" id="4ar-9w-qGS"/>
+                                <constraint firstItem="bJd-ug-rIX" firstAttribute="top" secondItem="bPJ-Hs-h1t" secondAttribute="bottom" constant="10" id="CQI-Oi-3hm"/>
+                                <constraint firstItem="bPJ-Hs-h1t" firstAttribute="centerX" secondItem="AWd-JT-nlv" secondAttribute="centerX" id="J5l-Ef-iX8"/>
+                                <constraint firstItem="bPJ-Hs-h1t" firstAttribute="top" secondItem="AWd-JT-nlv" secondAttribute="top" constant="10" id="Y2n-y1-cBw"/>
+                                <constraint firstAttribute="bottom" secondItem="bJd-ug-rIX" secondAttribute="bottom" constant="10" id="b1m-Um-ygV"/>
+                                <constraint firstItem="JAF-QW-MFG" firstAttribute="centerY" secondItem="bPJ-Hs-h1t" secondAttribute="centerY" id="gLh-Rq-CZS"/>
                                 <constraint firstAttribute="trailing" secondItem="bJd-ug-rIX" secondAttribute="trailing" constant="10" id="zLI-7B-gyg"/>
                                 <constraint firstItem="bJd-ug-rIX" firstAttribute="leading" secondItem="AWd-JT-nlv" secondAttribute="leading" constant="10" id="zne-bS-vtI"/>
                             </constraints>
@@ -221,6 +221,7 @@
         </view>
     </objects>
     <resources>
+        <image name="xmark.circle" catalog="system" width="128" height="123"/>
         <namedColor name="BugType">
             <color red="0.70300000905990601" green="0.76599997282028198" blue="0.62199997901916504" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
