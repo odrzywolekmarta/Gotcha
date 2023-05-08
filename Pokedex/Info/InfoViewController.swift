@@ -89,6 +89,7 @@ class InfoViewController: UIViewController {
             ()
         }
     }
+    
 }
 
 extension InfoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -146,7 +147,7 @@ extension InfoViewController: InfoViewModelDelegate {
     }
     
     func onTypeDetailsModelFetchFailure(error: Error) {
-        
+        // handle error
     }
     
     func onPokeballFetchSuccess() {
