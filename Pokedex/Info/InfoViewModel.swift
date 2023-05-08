@@ -12,18 +12,22 @@ protocol InfoViewModelProtocol: AnyObject {
     var types: [Results] { get }
     var pokeballs: [Items] { get }
     var typeDetails: TypeModel? { get }
+    var pokeballDetails: PokeballModel? { get }
     func getPokemonTypes()
     func getPokeballList()
     func getTypeDetails(forId: Int)
+    func getPokeballDetails(forName name: String)
 }
 
 protocol InfoViewModelDelegate: AnyObject {
     func onTypeDetailsModelFetchSuccess()
     func onTypeDetailsModelFetchFailure(error: Error)
     func onTypesFetchSuccess()
-    func onTypesFetchFailure(error: String)
+    func onTypesFetchFailure(error: Error)
     func onPokeballFetchSuccess()
-    func onPokeballFetchFailure(error: String)
+    func onPokeballFetchFailure(error: Error)
+    func onPokeballDetailsFetchSuccess()
+    func onPokeballDetailsFetchFailure(error: Error)
 }
 
 class InfoViewModel: InfoViewModelProtocol {
@@ -35,6 +39,7 @@ class InfoViewModel: InfoViewModelProtocol {
     private let service: PokemonAPIServiceProtocol
     var url: URL?
     var typeDetails: TypeModel?
+    var pokeballDetails: PokeballModel?
     var types: [Results] = []
     var pokeballs: [Items] = []
     var typeBaseUrl = "https://pokeapi.co/api/v2/type/"
@@ -48,7 +53,7 @@ class InfoViewModel: InfoViewModelProtocol {
         service.getPokemonList(withUrlString: urlString) { [weak self] result in
             switch result {
             case .failure(let error):
-                self?.delegate?.onTypesFetchFailure(error: error.localizedDescription)
+                self?.delegate?.onTypesFetchFailure(error: error)
             case .success(let data):
                 self?.types.append(contentsOf: data.results)
                 self?.delegate?.onTypesFetchSuccess()
@@ -70,6 +75,18 @@ class InfoViewModel: InfoViewModelProtocol {
         }
     }
     
+    func getPokeballDetails(forName name: String) {
+        service.getPokeballDetails(withName: name) { result in
+            switch result {
+            case .success(let model):
+                self.pokeballDetails = model
+                self.delegate?.onPokeballDetailsFetchSuccess()
+            case .failure(let error):
+                self.delegate?.onPokeballDetailsFetchFailure(error: error)
+            }
+        }
+    }
+    
     func getPokeballList() {
         let group = DispatchGroup()
         var firstSuccess = false
@@ -80,7 +97,7 @@ class InfoViewModel: InfoViewModelProtocol {
         service.getItemsList(withUrlString: firstPokeballUrl) { [weak self] result in
             switch result {
             case .failure(let error):
-                self?.delegate?.onPokeballFetchFailure(error: error.localizedDescription)
+                self?.delegate?.onPokeballFetchFailure(error: error)
                 firstSuccess = false
             case .success(let data):
                 self?.pokeballs.append(contentsOf: data.items)
@@ -93,7 +110,7 @@ class InfoViewModel: InfoViewModelProtocol {
         service.getItemsList(withUrlString: secondPokeballUrl) { [weak self] result in
             switch result {
             case .failure(let error):
-                self?.delegate?.onPokeballFetchFailure(error: error.localizedDescription)
+                self?.delegate?.onPokeballFetchFailure(error: error)
                 secondSuccess = false
             case .success(let data):
                 self?.pokeballs.append(contentsOf: data.items)
@@ -106,7 +123,7 @@ class InfoViewModel: InfoViewModelProtocol {
         service.getItemsList(withUrlString: thirdPokeballUrl) { [weak self] result in
             switch result {
             case .failure(let error):
-                self?.delegate?.onPokeballFetchFailure(error: error.localizedDescription)
+                self?.delegate?.onPokeballFetchFailure(error: error)
                 thirdSuccess = false
             case .success(let data):
                 thirdSuccess = true

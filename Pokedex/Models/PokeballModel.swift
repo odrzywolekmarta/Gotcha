@@ -18,7 +18,7 @@ struct Items: Decodable {
 
 struct PokeballModel: Decodable {
     let cost: Int
-    let effectEntries: [EffectEntries]
+//    let effectEntries: [EffectEntries]
     let name: String
 }
 

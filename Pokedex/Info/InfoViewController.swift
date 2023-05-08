@@ -117,7 +117,12 @@ extension InfoViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.getTypeDetails(forId: indexPath.item + 1)
+        switch info {
+        case .types:
+            viewModel.getTypeDetails(forId: indexPath.item + 1)
+        case .pokeballs:
+            viewModel.getPokeballDetails(forName: viewModel.pokeballs[indexPath.item].name)
+        }
     }
 }
 
@@ -137,7 +142,7 @@ extension InfoViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension InfoViewController: InfoViewModelDelegate {
-    
+
     func onTypeDetailsModelFetchSuccess() {
         DispatchQueue.main.async {
             if let model = self.viewModel.typeDetails {
@@ -156,7 +161,7 @@ extension InfoViewController: InfoViewModelDelegate {
         }
     }
     
-    func onPokeballFetchFailure(error: String) {
+    func onPokeballFetchFailure(error: Error) {
         DispatchQueue.main.async {
             debugPrint(error)
         }
@@ -170,10 +175,24 @@ extension InfoViewController: InfoViewModelDelegate {
         }
     }
     
-    func onTypesFetchFailure(error: String) {
+    func onTypesFetchFailure(error: Error) {
         DispatchQueue.main.async {
             debugPrint(error)
         }
     }
+    
+    func onPokeballDetailsFetchSuccess() {
+        DispatchQueue.main.async {
+            if let model = self.viewModel.pokeballDetails {
+                self.router.navigateToPokeball(withModel: model)
+            }
+        }
+    }
+    
+    func onPokeballDetailsFetchFailure(error: Error) {
+        
+    }
+    
+    
     
 }

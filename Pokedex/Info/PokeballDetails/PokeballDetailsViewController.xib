@@ -20,7 +20,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PokeballDetailsViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
                 <outlet property="ballImage" destination="5al-N7-uu2" id="DQl-2i-1X4"/>
-                <outlet property="costLabel" destination="CUQ-22-Kk5" id="sJP-0U-ipw"/>
+                <outlet property="costLabel" destination="1IB-fz-TcO" id="QiC-N7-eIF"/>
                 <outlet property="descriptionLabel" destination="zjz-iV-tXh" id="qwM-0R-nvh"/>
                 <outlet property="nameLabel" destination="uWa-YF-onS" id="aEt-62-95L"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

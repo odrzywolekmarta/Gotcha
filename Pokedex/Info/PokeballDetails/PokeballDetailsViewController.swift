@@ -11,8 +11,8 @@ class PokeballDetailsViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ballImage: UIImageView!
-    @IBOutlet weak var costLabel: UIStackView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
     
     let viewModel: PokeballDetailsViewModelProtocol
     let router: AppRouterProtocol
@@ -34,7 +34,9 @@ class PokeballDetailsViewController: UIViewController {
     }
     
     func configure() {
-        
+        nameLabel.text = viewModel.detailsModel.name
+        costLabel.text = "cost: \(String(viewModel.detailsModel.cost))"
+//        descriptionLabel.text = viewModel.detailsModel.effectEntries[0].shortEffect
     }
 
     /*

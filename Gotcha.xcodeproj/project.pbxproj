@@ -508,7 +508,7 @@
 				2DCA929929E8800200B0FF46 /* DeeplinkHandler */,
 				2D614114291ACEA900D2F68A /* Utilities */,
 				2DD0B660290965B8008B9BB5 /* Networking */,
-				2DD0B65E2909658D008B9BB5 /* Model */,
+				2DD0B65E2909658D008B9BB5 /* Models */,
 				2DD0B66329096BB5008B9BB5 /* PokemonList */,
 				2D6140FD2918408200D2F68A /* PokemonDetails */,
 				2D4E205E2942095100273DD7 /* Search */,
@@ -523,14 +523,14 @@
 			path = Pokedex;
 			sourceTree = "<group>";
 		};
-		2DD0B65E2909658D008B9BB5 /* Model */ = {
+		2DD0B65E2909658D008B9BB5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				2DD0B65C290954DC008B9BB5 /* PokemonModel.swift */,
 				2D72885A29E0AA5700D5A5E3 /* TypeModel.swift */,
 				2DD7F7F32A0570E30047747C /* PokeballModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2DD0B660290965B8008B9BB5 /* Networking */ = {

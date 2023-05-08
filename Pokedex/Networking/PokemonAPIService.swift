@@ -20,6 +20,7 @@ protocol PokemonAPIServiceProtocol {
     func getEvolution(withUrl url: URL, completion: @escaping((Result<EvolutionModel, Error>) -> Void))
     func getAbilityDetails(for ability: String, completion: @escaping((Result<AbilityModel, Error>) -> Void))
     func getTypeDetails(withUrl url: URL, completion: @escaping((Result<TypeModel, Error>) -> Void))
+    func getPokeballDetails(withName name: String, completion: @escaping((Result<PokeballModel, Error>) -> Void))
 }
 
 struct SinglePageModel: Decodable {
