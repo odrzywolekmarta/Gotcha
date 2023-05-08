@@ -13,6 +13,7 @@ protocol AppRouterProtocol {
     func navigateToDetails(withModel model: PokemonModel)
     func navigateToDetails(urlString: String)
     func navigateToType(withModel model: TypeModel)
+    func navigateToPokeball(withModel model: PokeballModel)
 }
 
 class AppRouter: AppRouterProtocol {
@@ -52,4 +53,12 @@ class AppRouter: AppRouterProtocol {
         navigationController.present(controller, animated: true)
     }
     
+    func navigateToPokeball(withModel model: PokeballModel) {
+        let controller = PokeballDetailsViewController(router: self, viewModel: PokeballDetailsViewModel(detailsModel: model))
+        controller.modalPresentationStyle = .overCurrentContext
+        controller.modalTransitionStyle = .crossDissolve
+        controller.view.applyShadow()
+        
+        navigationController.present(controller, animated: true)
+    }
 }

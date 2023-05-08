@@ -11,7 +11,6 @@ protocol AboutViewModelProtocol: AnyObject {
     var delegate: AboutViewModelDelegate? { get set }
     var detailsModel: PokemonModel? { get }
     var abilityModel: AbilityModel? { get }
-
     func set(model: PokemonModel)
     func getAbilityDetails(for ability: String)
 }
