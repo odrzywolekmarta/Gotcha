@@ -12,17 +12,17 @@ enum InfoDisplayed {
     case pokeballs
 }
 
-class TypesViewController: UIViewController {
+class InfoViewController: UIViewController {
     
     private var segmentedControl: UISegmentedControl
-    private let viewModel: TypesViewModelProtocol
+    private let viewModel: InfoViewModelProtocol
     private var collectionView: UICollectionView?
     private let router: AppRouterProtocol
     private var types: [Results] = []
     private var previousController: UIViewController?
     private var info: InfoDisplayed = .types
     
-    init(viewModel: TypesViewModelProtocol, router: AppRouterProtocol) {
+    init(viewModel: InfoViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
         self.router = router
         self.segmentedControl = UISegmentedControl()
@@ -52,10 +52,10 @@ class TypesViewController: UIViewController {
         view.backgroundColor = UIColor(named: Constants.Colors.customBeige)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let nibCell = UINib(nibName: "TypeCollectionViewCell", bundle: nil)
+        let nibCell = UINib(nibName: Constants.infoCell, bundle: nil)
         let frame = CGRect(x: 0, y: 50, width: view.frame.width, height: view.frame.height - 50)
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
-        collectionView?.register(nibCell, forCellWithReuseIdentifier: Constants.typeCell)
+        collectionView?.register(nibCell, forCellWithReuseIdentifier: Constants.infoCell)
         collectionView?.layoutIfNeeded()
         collectionView?.translatesAutoresizingMaskIntoConstraints = false
         collectionView?.backgroundColor = UIColor(named: Constants.Colors.customBeige)
@@ -91,7 +91,7 @@ class TypesViewController: UIViewController {
     }
 }
 
-extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension InfoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch info {
         case .types:
@@ -102,7 +102,7 @@ extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.typeCell, for: indexPath) as? TypeCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.infoCell, for: indexPath) as? InfoCollectionViewCell {
             switch info {
             case .types:
                 cell.configureWithType(name: types[indexPath.row].name)
@@ -120,7 +120,7 @@ extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
-extension TypesViewController: UICollectionViewDelegateFlowLayout {
+extension InfoViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -135,7 +135,7 @@ extension TypesViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension TypesViewController: TypesViewModelDelegate {
+extension InfoViewController: InfoViewModelDelegate {
     
     func onTypeDetailsModelFetchSuccess() {
         DispatchQueue.main.async {

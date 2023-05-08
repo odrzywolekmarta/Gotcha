@@ -52,7 +52,7 @@ struct Constants {
     static let tabNameTypes = "info"
     static let gotcha = "gotcha"
     static let pokemonCell = "PokemonTableViewCell"
-    static let typeCell = "TypeCollectionViewCell"
+    static let infoCell = "InfoCollectionViewCell"
     static let capsuleCell = "TypeCapsuleCollectionViewCell"
     static let launchVideo = "LaunchVideo"
     static let videoType = "mp4"

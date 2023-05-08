@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TypeCollectionViewCell: UICollectionViewCell {
+class InfoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var typeImage: UIImageView!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var containerView: UIView!

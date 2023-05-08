@@ -7,8 +7,8 @@
 
 import Foundation
 
-protocol TypesViewModelProtocol: AnyObject {
-    var delegate: TypesViewModelDelegate? { get set }
+protocol InfoViewModelProtocol: AnyObject {
+    var delegate: InfoViewModelDelegate? { get set }
     var types: [Results] { get }
     var pokeballs: [Items] { get }
     var typeDetails: TypeModel? { get }
@@ -17,7 +17,7 @@ protocol TypesViewModelProtocol: AnyObject {
     func getTypeDetails(forId: Int)
 }
 
-protocol TypesViewModelDelegate: AnyObject {
+protocol InfoViewModelDelegate: AnyObject {
     func onTypeDetailsModelFetchSuccess()
     func onTypeDetailsModelFetchFailure(error: Error)
     func onTypesFetchSuccess()
@@ -26,8 +26,8 @@ protocol TypesViewModelDelegate: AnyObject {
     func onPokeballFetchFailure(error: String)
 }
 
-class TypesViewModel: TypesViewModelProtocol {
-    var delegate: TypesViewModelDelegate?
+class InfoViewModel: InfoViewModelProtocol {
+    var delegate: InfoViewModelDelegate?
     private let urlString = Constants.typesUrl
     private let firstPokeballUrl = Constants.standardBallsUrl
     private let secondPokeballUrl = Constants.specialBallsUrl

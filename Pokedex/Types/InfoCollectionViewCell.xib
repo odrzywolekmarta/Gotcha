@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TypeCollectionViewCell" customModule="Gotcha" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="InfoCollectionViewCell" customModule="Gotcha" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="117" height="117"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -27,7 +27,7 @@
                         <rect key="frame" x="5" y="5" width="107" height="107"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="zLA-nX-rm7">
-                                <rect key="frame" x="21" y="12.333333333333336" width="65" height="82.666666666666657"/>
+                                <rect key="frame" x="21" y="13" width="65" height="81.333333333333343"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WNM-Ur-kfB">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
@@ -37,7 +37,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AS-O4-MmT">
-                                        <rect key="frame" x="0.0" y="65" width="65" height="17.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="65" width="65" height="16.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

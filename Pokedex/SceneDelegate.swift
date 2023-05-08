@@ -67,7 +67,7 @@ extension SceneDelegate: LaunchScreenViewControllerDelegate {
         searchViewController.tabBarItem = UITabBarItem(title: Constants.tabNameSearch.uppercased(), image: Constants.magnifyingGlassImage, selectedImage: Constants.magnifyingGlassImage)
         
         // types
-        let typesViewController = TypesViewController(viewModel: TypesViewModel(service: PokemonAPIService()), router: AppRouter(navigationController: typesNavigationController))
+        let typesViewController = InfoViewController(viewModel: InfoViewModel(service: PokemonAPIService()), router: AppRouter(navigationController: typesNavigationController))
         typesNavigationController.viewControllers = [typesViewController]
         typesViewController.tabBarItem = UITabBarItem(title: Constants.tabNameTypes.uppercased(), image: Constants.bookImage, selectedImage: Constants.bookFillImage)
         

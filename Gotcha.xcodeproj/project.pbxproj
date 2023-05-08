@@ -77,10 +77,10 @@
 		2DD0B662290967D2008B9BB5 /* PokemonAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B661290967D2008B9BB5 /* PokemonAPIService.swift */; };
 		2DD0B66529096C0B008B9BB5 /* PokemonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B66429096C0A008B9BB5 /* PokemonListViewModel.swift */; };
 		2DD0B66B290F19D1008B9BB5 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B66A290F19D1008B9BB5 /* PokemonViewController.swift */; };
-		2DD21A9629D61393008B6EE6 /* TypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD21A9429D61393008B6EE6 /* TypesViewController.swift */; };
-		2DD21A9929D613A1008B6EE6 /* TypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD21A9829D613A1008B6EE6 /* TypesViewModel.swift */; };
-		2DD21A9C29D753A4008B6EE6 /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD21A9A29D753A4008B6EE6 /* TypeCollectionViewCell.swift */; };
-		2DD21A9D29D753A4008B6EE6 /* TypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD21A9B29D753A4008B6EE6 /* TypeCollectionViewCell.xib */; };
+		2DD21A9629D61393008B6EE6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD21A9429D61393008B6EE6 /* InfoViewController.swift */; };
+		2DD21A9929D613A1008B6EE6 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD21A9829D613A1008B6EE6 /* InfoViewModel.swift */; };
+		2DD21A9C29D753A4008B6EE6 /* InfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD21A9A29D753A4008B6EE6 /* InfoCollectionViewCell.swift */; };
+		2DD21A9D29D753A4008B6EE6 /* InfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD21A9B29D753A4008B6EE6 /* InfoCollectionViewCell.xib */; };
 		2DD7F7EA2A0437060047747C /* TypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7F7E82A0437060047747C /* TypeTableViewCell.swift */; };
 		2DD7F7EB2A0437060047747C /* TypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7F7E92A0437060047747C /* TypeTableViewCell.xib */; };
 		2DD7F7F22A0503AB0047747C /* ResizableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7F7F12A0503AB0047747C /* ResizableTableView.swift */; };
@@ -190,10 +190,10 @@
 		2DD0B661290967D2008B9BB5 /* PokemonAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPIService.swift; sourceTree = "<group>"; };
 		2DD0B66429096C0A008B9BB5 /* PokemonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModel.swift; sourceTree = "<group>"; };
 		2DD0B66A290F19D1008B9BB5 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
-		2DD21A9429D61393008B6EE6 /* TypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesViewController.swift; sourceTree = "<group>"; };
-		2DD21A9829D613A1008B6EE6 /* TypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesViewModel.swift; sourceTree = "<group>"; };
-		2DD21A9A29D753A4008B6EE6 /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
-		2DD21A9B29D753A4008B6EE6 /* TypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCollectionViewCell.xib; sourceTree = "<group>"; };
+		2DD21A9429D61393008B6EE6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		2DD21A9829D613A1008B6EE6 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		2DD21A9A29D753A4008B6EE6 /* InfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		2DD21A9B29D753A4008B6EE6 /* InfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCollectionViewCell.xib; sourceTree = "<group>"; };
 		2DD7F7E82A0437060047747C /* TypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableViewCell.swift; sourceTree = "<group>"; };
 		2DD7F7E92A0437060047747C /* TypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeTableViewCell.xib; sourceTree = "<group>"; };
 		2DD7F7F12A0503AB0047747C /* ResizableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableTableView.swift; sourceTree = "<group>"; };
@@ -531,10 +531,10 @@
 		2DD21A9329D61353008B6EE6 /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				2DD21A9829D613A1008B6EE6 /* TypesViewModel.swift */,
-				2DD21A9429D61393008B6EE6 /* TypesViewController.swift */,
-				2DD21A9A29D753A4008B6EE6 /* TypeCollectionViewCell.swift */,
-				2DD21A9B29D753A4008B6EE6 /* TypeCollectionViewCell.xib */,
+				2DD21A9829D613A1008B6EE6 /* InfoViewModel.swift */,
+				2DD21A9429D61393008B6EE6 /* InfoViewController.swift */,
+				2DD21A9A29D753A4008B6EE6 /* InfoCollectionViewCell.swift */,
+				2DD21A9B29D753A4008B6EE6 /* InfoCollectionViewCell.xib */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -703,7 +703,7 @@
 				2D4E205D2942094200273DD7 /* SearchViewController.xib in Resources */,
 				2D61413229216C7B00D2F68A /* AboutViewController.xib in Resources */,
 				2D6946792961DECD0059E5F0 /* LaunchScreenViewController.xib in Resources */,
-				2DD21A9D29D753A4008B6EE6 /* TypeCollectionViewCell.xib in Resources */,
+				2DD21A9D29D753A4008B6EE6 /* InfoCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,8 +759,8 @@
 				2D614116291ACEB800D2F68A /* UIKit+extensions.swift in Sources */,
 				2D4E2055294131D800273DD7 /* FavouritesViewController.swift in Sources */,
 				2D61413129216C7B00D2F68A /* AboutViewController.swift in Sources */,
-				2DD21A9929D613A1008B6EE6 /* TypesViewModel.swift in Sources */,
-				2DD21A9629D61393008B6EE6 /* TypesViewController.swift in Sources */,
+				2DD21A9929D613A1008B6EE6 /* InfoViewModel.swift in Sources */,
+				2DD21A9629D61393008B6EE6 /* InfoViewController.swift in Sources */,
 				2D6141402921777700D2F68A /* EvolutionViewModel.swift in Sources */,
 				2D37A60729EC6836008B83E3 /* CustomSpinner.swift in Sources */,
 				2D3AA4A0295B72C9000EC287 /* Favourites.swift in Sources */,
@@ -772,7 +772,7 @@
 				2D4E20622943A36E00273DD7 /* SearchViewModel.swift in Sources */,
 				2D61413529216C8A00D2F68A /* StatsViewController.swift in Sources */,
 				2D72886029E0B41C00D5A5E3 /* TypeDetailsViewController.swift in Sources */,
-				2DD21A9C29D753A4008B6EE6 /* TypeCollectionViewCell.swift in Sources */,
+				2DD21A9C29D753A4008B6EE6 /* InfoCollectionViewCell.swift in Sources */,
 				2D4E20642945F7AA00273DD7 /* UIViewController+AlertPresentable.swift in Sources */,
 				2D61411D291C415E00D2F68A /* PokemonDetailsViewController.swift in Sources */,
 				2D4E205C2942094200273DD7 /* SearchViewController.swift in Sources */,
