@@ -39,8 +39,9 @@ class PokeballDetailsViewController: UIViewController {
         nameLabel.text = pokeballName.uppercased()
         costLabel.text = "cost: \(String(viewModel.detailsModel.cost))"
         containerView.makeRound(radius: 30)
-        ballImage.image = UIImage(named: viewModel.detailsModel.name)
-
+        if let imageUrl = URL(string: "\(Constants.basePokeballImageUrl)\(viewModel.detailsModel.name).png") {
+            ballImage.sd_setImage(with: imageUrl)
+        }
 //        descriptionLabel.text = viewModel.detailsModel.effectEntries[0].shortEffect
     }
 

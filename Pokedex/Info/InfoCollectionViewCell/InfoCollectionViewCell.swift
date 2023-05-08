@@ -28,7 +28,9 @@ class InfoCollectionViewCell: UICollectionViewCell {
     func configureWithPokeball(name: String) {
         let pokeballName = name.replacingOccurrences(of: "-", with: " ", options: .literal)
         typeLabel.text = pokeballName
-        typeImage.image = UIImage(named: name)
+        if let imageUrl = URL(string: "\(Constants.basePokeballImageUrl)\(name).png") {
+            typeImage.sd_setImage(with: imageUrl)
+        }
         typeImage.applyShadow()
     }
 }

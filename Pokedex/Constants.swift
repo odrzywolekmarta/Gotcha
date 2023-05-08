@@ -20,6 +20,8 @@ struct Constants {
     static let pokemonGifUrl = "https://78.media.tumblr.com/c15b061360fa577cfa6fa1868bc45962/tumblr_o2d65b8VYl1so9b4uo1_500.gif"
     static let pokemonDetailsImageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
     static let baseImageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+    static let basePokeballImageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/"
+
     static let typesUrl = "https://pokeapi.co/api/v2/type/"
     static let itemUrl = "https://pokeapi.co/api/v2/item/"
     static let specialBallsUrl = "https://pokeapi.co/api/v2/item-category/33/"
