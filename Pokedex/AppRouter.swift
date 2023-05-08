@@ -12,7 +12,7 @@ protocol AppRouterProtocol {
     func navigateToDetails(urlString: String, imageUrl: String)
     func navigateToDetails(withModel model: PokemonModel)
     func navigateToDetails(urlString: String)
-    func navigateToType(url: URL)
+    func navigateToType(withModel model: TypeModel)
 }
 
 class AppRouter: AppRouterProtocol {
@@ -43,8 +43,8 @@ class AppRouter: AppRouterProtocol {
         navigationController.pushViewController(controller, animated: true)
     }
     
-    func navigateToType(url: URL) {
-        let controller = TypeDetailsViewController(viewModel: TypeDetailsViewModel(service: PokemonAPIService(), url: url), router: self)
+    func navigateToType(withModel model: TypeModel) {
+        let controller = TypeDetailsViewController(viewModel: TypeDetailsViewModel(service: PokemonAPIService(), detailsModel: model), router: self)
         controller.modalPresentationStyle = .overCurrentContext
         controller.modalTransitionStyle = .crossDissolve
         controller.view.applyShadow()

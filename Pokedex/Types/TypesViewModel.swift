@@ -11,11 +11,15 @@ protocol TypesViewModelProtocol: AnyObject {
     var delegate: TypesViewModelDelegate? { get set }
     var types: [Results] { get }
     var pokeballs: [Items] { get }
+    var typeDetails: TypeModel? { get }
     func getPokemonTypes()
     func getPokeballList()
+    func getTypeDetails(forId: Int)
 }
 
 protocol TypesViewModelDelegate: AnyObject {
+    func onTypeDetailsModelFetchSuccess()
+    func onTypeDetailsModelFetchFailure(error: Error)
     func onTypesFetchSuccess()
     func onTypesFetchFailure(error: String)
     func onPokeballFetchSuccess()
@@ -29,8 +33,11 @@ class TypesViewModel: TypesViewModelProtocol {
     private let secondPokeballUrl = Constants.specialBallsUrl
     private let thirdPokeballUrl = Constants.apricornBallsUrl
     private let service: PokemonAPIServiceProtocol
+    var url: URL?
+    var typeDetails: TypeModel?
     var types: [Results] = []
     var pokeballs: [Items] = []
+    var typeBaseUrl = "https://pokeapi.co/api/v2/type/"
     
     
     init(service: PokemonAPIServiceProtocol) {
@@ -45,6 +52,20 @@ class TypesViewModel: TypesViewModelProtocol {
             case .success(let data):
                 self?.types.append(contentsOf: data.results)
                 self?.delegate?.onTypesFetchSuccess()
+            }
+        }
+    }
+    
+    func getTypeDetails(forId id: Int) {
+        if let url = URL(string: "https://pokeapi.co/api/v2/type/\(id)") {
+            service.getTypeDetails(withUrl: url) { [weak self] result in
+                switch result {
+                case .success(let model):
+                    self?.typeDetails = model
+                    self?.delegate?.onTypeDetailsModelFetchSuccess()
+                case .failure(let error):
+                    self?.delegate?.onTypeDetailsModelFetchFailure(error: error)
+                }
             }
         }
     }

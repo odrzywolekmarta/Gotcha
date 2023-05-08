@@ -116,9 +116,7 @@ extension TypesViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let url = URL(string: viewModel.types[indexPath.row].url) {
-            router.navigateToType(url: url)
-        }
+        viewModel.getTypeDetails(forId: indexPath.item + 1)
     }
 }
 
@@ -138,6 +136,19 @@ extension TypesViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension TypesViewController: TypesViewModelDelegate {
+    
+    func onTypeDetailsModelFetchSuccess() {
+        DispatchQueue.main.async {
+            if let model = self.viewModel.typeDetails {
+                self.router.navigateToType(withModel: model)
+            }
+        }
+    }
+    
+    func onTypeDetailsModelFetchFailure(error: Error) {
+        
+    }
+    
     func onPokeballFetchSuccess() {
         DispatchQueue.main.async {
             self.collectionView?.reloadData()

@@ -50,8 +50,8 @@ class TypeDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.getTypeDetails()
         configureView()
+        configureWithData()
     }
     
     override func viewWillLayoutSubviews() {
@@ -63,20 +63,17 @@ class TypeDetailsViewController: UIViewController {
     
     func configureView() {
         roundedView.makeRound(radius: 30)
-        
         typeNameLabel.textDropShadow()
         typeImageView.applyShadow()
-        
         pokemonListButton.applyShadow()
         pokemonListButton.startAnimatingPressActions()
+        doubleLabel.applyShadow()
+        halfLabel.applyShadow()
+        zeroLabel.applyShadow()
         
         if let font = UIFont(name: Constants.customFont, size: 20) {
             segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
         }
-        
-        doubleLabel.applyShadow()
-        halfLabel.applyShadow()
-        zeroLabel.applyShadow()
         
         let cellName = String(describing: TypeTableViewCell.self)
                            
@@ -88,6 +85,16 @@ class TypeDetailsViewController: UIViewController {
             table.separatorStyle = .none
             table.allowsSelection = false
             table.isScrollEnabled = false
+        }
+    }
+    
+    func configureWithData() {
+        let model = viewModel.detailsModel
+        self.typeNameLabel.text = model.name.uppercased()
+        self.typeImageView.image = UIImage(named: model.name)
+        if let font = UIFont(name: Constants.customFontBold, size: 19) {
+            let title = NSMutableAttributedString(string: "Show \(model.name) type Pokémon", attributes: [NSAttributedString.Key.font: font])
+            self.pokemonListButton.setAttributedTitle(title, for: .normal)
         }
     }
     
@@ -129,22 +136,22 @@ extension TypeDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         case .offensive:
             switch tableView {
             case doubleTableView:
-                return viewModel.detailsModel?.damageRelations.doubleDamageTo.count ?? 0
+                return viewModel.detailsModel.damageRelations.doubleDamageTo.count ?? 0
             case halfTableView:
-                return viewModel.detailsModel?.damageRelations.halfDamageTo.count ?? 0
+                return viewModel.detailsModel.damageRelations.halfDamageTo.count ?? 0
             case zeroTableView:
-                return viewModel.detailsModel?.damageRelations.noDamageTo.count ?? 0
+                return viewModel.detailsModel.damageRelations.noDamageTo.count ?? 0
             default:
                 ()
             }
         case .defensive:
             switch tableView {
             case doubleTableView:
-                return viewModel.detailsModel?.damageRelations.doubleDamageFrom.count ?? 0
+                return viewModel.detailsModel.damageRelations.doubleDamageFrom.count ?? 0
             case halfTableView:
-                return viewModel.detailsModel?.damageRelations.halfDamageFrom.count ?? 0
+                return viewModel.detailsModel.damageRelations.halfDamageFrom.count ?? 0
             case zeroTableView:
-                return viewModel.detailsModel?.damageRelations.noDamageFrom.count ?? 0
+                return viewModel.detailsModel.damageRelations.noDamageFrom.count ?? 0
             default:
                 ()
             }
@@ -153,8 +160,8 @@ extension TypeDetailsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "TypeTableViewCell") as? TypeTableViewCell,
-           let data = viewModel.detailsModel?.damageRelations {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "TypeTableViewCell") as? TypeTableViewCell {
+            let data = viewModel.detailsModel.damageRelations
             switch selectedSegment {
             case .offensive:
                 switch tableView {
@@ -196,18 +203,7 @@ extension TypeDetailsViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension TypeDetailsViewController: TypeDetailsViewModelDelegate {
     func onDetailsModelFetchSuccess() {
-        guard let details = self.viewModel.detailsModel else {
-            return
-        }
-                
         DispatchQueue.main.async {
-            self.typeNameLabel.text = details.name.uppercased()
-            self.typeImageView.image = UIImage(named: details.name)
-            if let font = UIFont(name: Constants.customFontBold, size: 19) {
-                let title = NSMutableAttributedString(string: "Show \(details.name) type Pokémon", attributes: [NSAttributedString.Key.font: font])
-                self.pokemonListButton.setAttributedTitle(title, for: .normal)
-            }
-         
             self.reloadTables()
         }
     }
