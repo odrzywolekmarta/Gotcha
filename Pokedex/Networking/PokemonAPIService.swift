@@ -136,6 +136,31 @@ class PokemonAPIService: PokemonAPIServiceProtocol {
         dataTask.resume()
     }
     
+    func getPokeballDetails(withName name: String, completion: @escaping((Result<PokeballModel, Error>) -> Void)) {
+        guard let url = URL(string: "\(Constants.itemUrl)\(name)") else {
+            return
+        }
+        
+        let urlSession = URLSession(configuration: .default)
+        let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            } else if let data = data {
+                let decoder = JSONDecoder()
+                do {
+                    let species = try decoder.decode(PokeballModel.self, from: data)
+                    completion(.success(species))
+                } catch {
+                    completion(.failure(error))
+                }
+            } else {
+                completion(.failure(PokemonAPIServiceError.unknown))
+            }
+        }
+        dataTask.resume()
+    }
+    
     func getSpecies(withUrl url: URL, completion: @escaping((Result<SpeciesModel, Error>)) -> Void) {
         let urlSession = URLSession(configuration: .default)
         let dataTask = urlSession.dataTask(with: url) { (data, response, error) in

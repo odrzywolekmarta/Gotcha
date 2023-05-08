@@ -34,6 +34,7 @@ class PokeballDetailsViewController: UIViewController {
     }
     
     func configure() {
+        
     }
 
     /*
