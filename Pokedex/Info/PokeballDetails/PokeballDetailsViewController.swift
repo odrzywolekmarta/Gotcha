@@ -14,8 +14,8 @@ class PokeballDetailsViewController: UIViewController {
     @IBOutlet weak var ballImage: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
-    
     @IBOutlet weak var descriptionContainerView: UIView!
+    
     let viewModel: PokeballDetailsViewModelProtocol
     let router: AppRouterProtocol
     
@@ -32,16 +32,9 @@ class PokeballDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        // Do any additional setup after loading the view.
     }
     
     func configure() {
-//        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight)
-//        let blurView = UIVisualEffectView(effect: blurEffect)
-//        blurView.frame = view.bounds
-//        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        view.addSubview(blurView)
-//        view.sendSubviewToBack(blurView)
         view.addBluredBackground()
         let pokeballName = viewModel.detailsModel.name.replacingOccurrences(of: "-", with: " ", options: .literal)
         nameLabel.text = pokeballName.uppercased()
