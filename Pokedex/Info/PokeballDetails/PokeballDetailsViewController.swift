@@ -15,6 +15,7 @@ class PokeballDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     
+    @IBOutlet weak var descriptionContainerView: UIView!
     let viewModel: PokeballDetailsViewModelProtocol
     let router: AppRouterProtocol
     
@@ -37,25 +38,23 @@ class PokeballDetailsViewController: UIViewController {
     func configure() {
         let pokeballName = viewModel.detailsModel.name.replacingOccurrences(of: "-", with: " ", options: .literal)
         nameLabel.text = pokeballName.uppercased()
+        nameLabel.textDropShadow()
+        
         costLabel.text = "cost: \(String(viewModel.detailsModel.cost))"
+        
         containerView.makeRound(radius: 30)
+        
         if let imageUrl = URL(string: "\(Constants.basePokeballImageUrl)\(viewModel.detailsModel.name).png") {
             ballImage.sd_setImage(with: imageUrl)
         }
-//        descriptionLabel.text = viewModel.detailsModel.effectEntries[0].shortEffect
+        ballImage.applyShadow()
+        
+        descriptionLabel.text = viewModel.detailsModel.effectEntries[0].shortEffect
+        descriptionContainerView.makeRound(radius: 30)
+        descriptionContainerView.applyShadow()
     }
-
+    
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
