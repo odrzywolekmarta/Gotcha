@@ -136,7 +136,7 @@ extension TypeDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         case .offensive:
             switch tableView {
             case doubleTableView:
-                return viewModel.detailsModel.damageRelations.doubleDamageTo.count ?? 0
+                return viewModel.detailsModel.damageRelations.doubleDamageTo.count
             case halfTableView:
                 return viewModel.detailsModel.damageRelations.halfDamageTo.count
             case zeroTableView:
@@ -151,7 +151,7 @@ extension TypeDetailsViewController: UITableViewDelegate, UITableViewDataSource 
             case halfTableView:
                 return viewModel.detailsModel.damageRelations.halfDamageFrom.count
             case zeroTableView:
-                return viewModel.detailsModel.damageRelations.noDamageFrom.count 
+                return viewModel.detailsModel.damageRelations.noDamageFrom.count
             default:
                 ()
             }
