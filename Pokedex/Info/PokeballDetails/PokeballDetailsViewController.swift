@@ -9,6 +9,7 @@ import UIKit
 
 class PokeballDetailsViewController: UIViewController {
 
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ballImage: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -34,11 +35,18 @@ class PokeballDetailsViewController: UIViewController {
     }
     
     func configure() {
-        nameLabel.text = viewModel.detailsModel.name
+        let pokeballName = viewModel.detailsModel.name.replacingOccurrences(of: "-", with: " ", options: .literal)
+        nameLabel.text = pokeballName.uppercased()
         costLabel.text = "cost: \(String(viewModel.detailsModel.cost))"
+        containerView.makeRound(radius: 30)
+        ballImage.image = UIImage(named: viewModel.detailsModel.name)
+
 //        descriptionLabel.text = viewModel.detailsModel.effectEntries[0].shortEffect
     }
 
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
     /*
     // MARK: - Navigation
 
