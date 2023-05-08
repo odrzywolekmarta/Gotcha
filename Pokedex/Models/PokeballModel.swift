@@ -18,8 +18,14 @@ struct Items: Decodable {
 
 struct PokeballModel: Decodable {
     let cost: Int
-//    let effectEntries: [EffectEntries]
+    let effectEntries: [EffectEntries]
     let name: String
+    
+    enum CodingKeys: String, CodingKey {
+        case cost = "cost"
+        case effectEntries = "effect_entries"
+        case name = "name"
+    }
 }
 
 
