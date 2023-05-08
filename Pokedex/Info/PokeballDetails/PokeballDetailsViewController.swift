@@ -14,12 +14,27 @@ class PokeballDetailsViewController: UIViewController {
     @IBOutlet weak var costLabel: UIStackView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    let viewModel: PokeballDetailsViewModelProtocol
+    let router: AppRouterProtocol
+    
+    init(router: AppRouterProtocol, viewModel: PokeballDetailsViewModelProtocol) {
+        self.viewModel = viewModel
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configure()
         // Do any additional setup after loading the view.
     }
     
+    func configure() {
+    }
 
     /*
     // MARK: - Navigation
