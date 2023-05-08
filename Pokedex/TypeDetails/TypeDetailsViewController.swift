@@ -138,20 +138,20 @@ extension TypeDetailsViewController: UITableViewDelegate, UITableViewDataSource 
             case doubleTableView:
                 return viewModel.detailsModel.damageRelations.doubleDamageTo.count ?? 0
             case halfTableView:
-                return viewModel.detailsModel.damageRelations.halfDamageTo.count ?? 0
+                return viewModel.detailsModel.damageRelations.halfDamageTo.count
             case zeroTableView:
-                return viewModel.detailsModel.damageRelations.noDamageTo.count ?? 0
+                return viewModel.detailsModel.damageRelations.noDamageTo.count
             default:
                 ()
             }
         case .defensive:
             switch tableView {
             case doubleTableView:
-                return viewModel.detailsModel.damageRelations.doubleDamageFrom.count ?? 0
+                return viewModel.detailsModel.damageRelations.doubleDamageFrom.count
             case halfTableView:
-                return viewModel.detailsModel.damageRelations.halfDamageFrom.count ?? 0
+                return viewModel.detailsModel.damageRelations.halfDamageFrom.count
             case zeroTableView:
-                return viewModel.detailsModel.damageRelations.noDamageFrom.count ?? 0
+                return viewModel.detailsModel.damageRelations.noDamageFrom.count 
             default:
                 ()
             }
