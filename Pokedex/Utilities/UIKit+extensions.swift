@@ -30,6 +30,15 @@ extension UIView {
         layer.masksToBounds = true
         clipsToBounds = true
     }
+    
+    func addBluredBackground() {
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = self.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(blurView)
+        self.sendSubviewToBack(blurView)
+    }
 }
 
 //MARK: - UIImage

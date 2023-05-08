@@ -62,6 +62,7 @@ class TypeDetailsViewController: UIViewController {
     }
     
     func configureView() {
+        view.addBluredBackground()
         roundedView.makeRound(radius: 30)
         typeNameLabel.textDropShadow()
         typeImageView.applyShadow()

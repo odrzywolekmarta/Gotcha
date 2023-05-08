@@ -36,6 +36,13 @@ class PokeballDetailsViewController: UIViewController {
     }
     
     func configure() {
+//        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight)
+//        let blurView = UIVisualEffectView(effect: blurEffect)
+//        blurView.frame = view.bounds
+//        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        view.addSubview(blurView)
+//        view.sendSubviewToBack(blurView)
+        view.addBluredBackground()
         let pokeballName = viewModel.detailsModel.name.replacingOccurrences(of: "-", with: " ", options: .literal)
         nameLabel.text = pokeballName.uppercased()
         nameLabel.textDropShadow()
