@@ -42,7 +42,7 @@
                                     <rect key="frame" x="96.666666666666657" y="0.0" width="130" height="151.33333333333334"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cost: 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IB-fz-TcO">
-                                            <rect key="frame" x="22.333333333333336" y="0.0" width="85.333333333333314" height="21.333333333333329"/>
+                                            <rect key="frame" x="22.333333333333336" y="0.0" width="85.333333333333314" height="21.333333333333332"/>
                                             <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -67,8 +67,8 @@
                                 <constraint firstItem="zjz-iV-tXh" firstAttribute="centerX" secondItem="KpZ-Q6-ELq" secondAttribute="centerX" id="Ibd-PC-2Yl"/>
                             </constraints>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="SOME BALL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWa-YF-onS">
-                            <rect key="frame" x="71.333333333333329" y="10" width="220.33333333333337" height="40.333333333333336"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="SOME BALL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWa-YF-onS">
+                            <rect key="frame" x="65" y="10" width="233" height="40.333333333333336"/>
                             <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="32"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -92,10 +92,11 @@
                         <constraint firstItem="KpZ-Q6-ELq" firstAttribute="top" secondItem="uWa-YF-onS" secondAttribute="bottom" constant="10" id="9TC-KJ-qs7"/>
                         <constraint firstAttribute="bottom" secondItem="KpZ-Q6-ELq" secondAttribute="bottom" constant="20" symbolic="YES" id="GrJ-qO-8k7"/>
                         <constraint firstItem="uWa-YF-onS" firstAttribute="top" secondItem="YL5-bV-ILK" secondAttribute="top" constant="10" id="H5Q-YH-q0a"/>
-                        <constraint firstItem="HKX-LL-GDJ" firstAttribute="centerY" secondItem="uWa-YF-onS" secondAttribute="centerY" id="UPq-Hi-XAf"/>
+                        <constraint firstItem="HKX-LL-GDJ" firstAttribute="leading" secondItem="uWa-YF-onS" secondAttribute="trailing" constant="15" id="WKT-nB-gFG"/>
                         <constraint firstAttribute="trailing" secondItem="KpZ-Q6-ELq" secondAttribute="trailing" constant="20" id="X4I-8c-B6q"/>
                         <constraint firstAttribute="trailing" secondItem="HKX-LL-GDJ" secondAttribute="trailing" constant="15" id="fca-Xi-DAp"/>
                         <constraint firstItem="KpZ-Q6-ELq" firstAttribute="leading" secondItem="YL5-bV-ILK" secondAttribute="leading" constant="20" id="ijQ-cu-nk2"/>
+                        <constraint firstItem="HKX-LL-GDJ" firstAttribute="top" secondItem="YL5-bV-ILK" secondAttribute="top" constant="13" id="uhW-WX-DOd"/>
                     </constraints>
                 </view>
             </subviews>
