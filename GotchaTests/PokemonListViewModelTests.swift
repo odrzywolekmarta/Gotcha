@@ -61,7 +61,7 @@ final class PokemonListViewModelTests: XCTestCase {
         // given
         
         // when
-        let imageUrl = sut.getPokemonImageUrl(forRow: 904)
+        let imageUrl = sut.getPokemonImageUrl(forRow: 904, openedFrom: .type)
         
         // then
         XCTAssertEqual(imageUrl, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/905.png")
@@ -71,7 +71,7 @@ final class PokemonListViewModelTests: XCTestCase {
         // given
         
         // when
-        let imageUrl = sut.getPokemonImageUrl(forRow: 905)
+        let imageUrl = sut.getPokemonImageUrl(forRow: 905, openedFrom: .type)
         
         // then
         XCTAssertEqual(imageUrl, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10001.png")

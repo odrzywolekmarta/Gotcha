@@ -52,16 +52,15 @@ class AppRouter: AppRouterProtocol {
     
     func navigateToType(withModel model: TypeModel) {
         let controller = TypeDetailsViewController(viewModel: TypeDetailsViewModel(service: PokemonAPIService(), detailsModel: model), router: self)
-        controller.modalPresentationStyle = .overCurrentContext
+        controller.modalPresentationStyle = .overFullScreen
         controller.modalTransitionStyle = .crossDissolve
         controller.view.applyShadow()
-        
         navigationController.present(controller, animated: true)
     }
     
     func navigateToPokeball(withModel model: PokeballModel) {
         let controller = PokeballDetailsViewController(router: self, viewModel: PokeballDetailsViewModel(detailsModel: model))
-        controller.modalPresentationStyle = .overCurrentContext
+        controller.modalPresentationStyle = .overFullScreen
         controller.modalTransitionStyle = .crossDissolve
         controller.view.applyShadow()
         
