@@ -39,6 +39,16 @@ extension UIView {
         self.addSubview(blurView)
         self.sendSubviewToBack(blurView)
     }
+    
+    func configureSpinner(spinner: UIActivityIndicatorView) {
+        spinner.frame = self.bounds
+        spinner.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        spinner.color = UIColor(named: Constants.Colors.customBeige)
+        spinner.backgroundColor = UIColor(named: Constants.Colors.customOrange)
+        self.addSubview(spinner)
+        self.bringSubviewToFront(spinner)
+    }
+    
 }
 
 //MARK: - UIImage

@@ -33,6 +33,7 @@ class PokemonDetailsViewController: UIViewController {
     private var isFavourite: Bool = false
     var favourites = Favourites()
     private var persistedPokemon = PersistedModel(id: 1, name: "")
+    private var spinner: UIActivityIndicatorView?
     
     init(viewModel: PokemonDetailsViewModelProtocol, router: AppRouterProtocol) {
         self.viewModel = viewModel
@@ -83,6 +84,9 @@ class PokemonDetailsViewController: UIViewController {
         pageViewController.view.trailingAnchor.constraint(equalTo: pageContainerView.trailingAnchor).isActive = true
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
                 
+        spinner = UIActivityIndicatorView(style: .large)
+        view.configureSpinner(spinner: spinner ?? UIActivityIndicatorView())
+        
         if viewModel.detailsModel != nil {
             onDetailsModelFetchSuccess()
         }
@@ -93,7 +97,8 @@ class PokemonDetailsViewController: UIViewController {
         viewModel.delegate = self
         viewModel.getPokemonDetails()
         configureView()
-        toggleSpinner(active: true)
+        spinner?.startAnimating()
+//        toggleSpinner(active: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -185,7 +190,8 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
         pageViewController.set(model: detailsModel)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
-            self.toggleSpinner(active: false)
+//            self.toggleSpinner(active: false)
+            spinner?.stopAnimating()
             self.nameLabel.text = detailsModel.name.uppercased()
             self.view.layoutIfNeeded()
             self.pokemonImageView.sd_setImage(with:
