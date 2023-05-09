@@ -10,6 +10,7 @@ import Foundation
 protocol PokemonListViewModelProtocol: AnyObject {
     var delegate: PokemonListViewModelDelegate? { get set }
     var dataSource: [Results] { get }
+    var typePokemon: [Pokemon] { get }
     func getNextPage()
     func getPokemonImageUrl(forRow row: Int) -> String
 }
@@ -25,9 +26,15 @@ class PokemonListViewModel: PokemonListViewModelProtocol {
     var urlString = Constants.basePokemonUrl
     private let service: PokemonAPIServiceProtocol
     var dataSource: [Results] = []
+    var typePokemon: [Pokemon] = []
     private let baseImageUrlString = Constants.baseImageUrl
     
     init(service: PokemonAPIServiceProtocol) {
+        self.service = service
+    }
+    
+    init(typePokemon: [Pokemon], service: PokemonAPIServiceProtocol) {
+        self.typePokemon = typePokemon
         self.service = service
     }
     

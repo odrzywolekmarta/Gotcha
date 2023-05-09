@@ -52,7 +52,7 @@ extension SceneDelegate: LaunchScreenViewControllerDelegate {
         let favouritesNavigationController = UINavigationController()
         
          // pokemon list
-        let controller = PokemonViewController(viewModel: PokemonListViewModel(service: PokemonAPIService()), router: AppRouter(navigationController: allNavigationController))
+        let controller = PokemonViewController(viewModel: PokemonListViewModel(service: PokemonAPIService()), router: AppRouter(navigationController: allNavigationController), openedFrom: .listTab)
         allNavigationController.setViewControllers([controller], animated: false)
         allNavigationController.tabBarItem = UITabBarItem(title: Constants.tabNameAll.uppercased(), image: Constants.pawImage, selectedImage: Constants.pawFillImage)
         

@@ -127,7 +127,8 @@ class TypeDetailsViewController: UIViewController {
     }
     
     @IBAction func showPokemonTapped(_ sender: UIButton) {
-        // TODO: navigate to pokemon list
+        self.dismiss(animated: true)
+        router.navigateToList(withData: viewModel.detailsModel.pokemon)
     }
 }
 

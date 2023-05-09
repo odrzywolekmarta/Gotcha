@@ -14,6 +14,7 @@ protocol AppRouterProtocol {
     func navigateToDetails(urlString: String)
     func navigateToType(withModel model: TypeModel)
     func navigateToPokeball(withModel model: PokeballModel)
+    func navigateToList(withData: [Pokemon])
 }
 
 class AppRouter: AppRouterProtocol {
@@ -23,6 +24,11 @@ class AppRouter: AppRouterProtocol {
         self.navigationController = navigationController
     }
     
+    func navigateToList(withData data: [Pokemon]) {
+        let controller = PokemonViewController(viewModel: PokemonListViewModel(typePokemon: data, service: PokemonAPIService()), router: self, openedFrom: .type)
+        navigationController.pushViewController(controller, animated: true)
+    }
+
     func navigateToDetails(urlString: String) {
         let controller = PokemonDetailsViewController(viewModel: PokemonDetailsViewModel(urlString: urlString,
                                                                                          service: PokemonAPIService()),

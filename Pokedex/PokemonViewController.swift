@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum OpenedFrom {
+    case listTab
+    case type
+}
+
 class PokemonViewController: UIViewController {
     
     let viewModel: PokemonListViewModelProtocol
@@ -14,10 +19,12 @@ class PokemonViewController: UIViewController {
     let paginationOffset = 4
     let router: AppRouterProtocol
     var previousController: UIViewController?
+    var openedFrom: OpenedFrom
     
-    init(viewModel: PokemonListViewModelProtocol, router: AppRouterProtocol) {
+    init(viewModel: PokemonListViewModelProtocol, router: AppRouterProtocol, openedFrom: OpenedFrom) {
         self.viewModel = viewModel
         self.router = router
+        self.openedFrom = openedFrom
         self.tableView = UITableView(frame: .zero)
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,7 +52,9 @@ class PokemonViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         configureTableView()
-        viewModel.getNextPage()
+        if openedFrom == .listTab {
+            viewModel.getNextPage()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,14 +70,26 @@ class PokemonViewController: UIViewController {
 extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.dataSource.count
+        switch openedFrom {
+        case .listTab:
+            return viewModel.dataSource.count
+        case .type:
+            return viewModel.typePokemon.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.pokemonCell) as? PokemonTableViewCell {
-            cell.configure(name: viewModel.dataSource[indexPath.row].name,
-                           imageUrlString: viewModel.getPokemonImageUrl(forRow: indexPath.row))
-            return cell
+            switch openedFrom {
+            case .listTab:
+                cell.configure(name: viewModel.dataSource[indexPath.row].name,
+                               imageUrlString: viewModel.getPokemonImageUrl(forRow: indexPath.row))
+                return cell
+            case .type:
+                cell.configure(name: viewModel.typePokemon[indexPath.row].pokemon.name, imageUrlString: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png")
+                return cell
+            }
+            
         }
         return UITableViewCell()
     }
