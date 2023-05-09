@@ -12,7 +12,7 @@ protocol PokemonListViewModelProtocol: AnyObject {
     var dataSource: [Results] { get }
     var typePokemon: [Pokemon] { get }
     func getNextPage()
-    func getPokemonImageUrl(forRow row: Int) -> String
+    func getPokemonImageUrl(forRow row: Int, openedFrom: OpenedFrom) -> String
 }
 
 protocol PokemonListViewModelDelegate: AnyObject {
@@ -51,13 +51,22 @@ class PokemonListViewModel: PokemonListViewModelProtocol {
         }
     }
     
-    func getPokemonImageUrl(forRow row: Int) -> String {
+    func getPokemonImageUrl(forRow row: Int, openedFrom: OpenedFrom) -> String {
         let imageUrl: String
-        if row <= Constants.firstBatchOfPokemon {
-            imageUrl = "\(baseImageUrlString)\(row + 1).png"
-        } else {
-            imageUrl = "\(baseImageUrlString)\(row + Constants.numberOfEmptyIds).png"
+        switch openedFrom {
+        case .listTab:
+            let pokeUrl = dataSource[row].url
+            var startImageUrl = pokeUrl.replacingOccurrences(of: "https://pokeapi.co/api/v2/pokemon/", with: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/")
+            startImageUrl = String(startImageUrl.dropLast(1))
+            imageUrl = startImageUrl + ".png"
+            return imageUrl
+        case .type:
+            let pokeUrl = typePokemon[row].pokemon.url
+            var startImageUrl = pokeUrl.replacingOccurrences(of: "https://pokeapi.co/api/v2/pokemon/", with: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/")
+            startImageUrl = String(startImageUrl.dropLast(1))
+            imageUrl = startImageUrl + ".png"
+            return imageUrl
         }
-        return imageUrl
     }
+    
 }

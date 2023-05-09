@@ -83,10 +83,10 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
             switch openedFrom {
             case .listTab:
                 cell.configure(name: viewModel.dataSource[indexPath.row].name,
-                               imageUrlString: viewModel.getPokemonImageUrl(forRow: indexPath.row))
+                               imageUrlString: viewModel.getPokemonImageUrl(forRow: indexPath.row, openedFrom: openedFrom))
                 return cell
             case .type:
-                cell.configure(name: viewModel.typePokemon[indexPath.row].pokemon.name, imageUrlString: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png")
+                cell.configure(name: viewModel.typePokemon[indexPath.row].pokemon.name, imageUrlString: viewModel.getPokemonImageUrl(forRow: indexPath.row, openedFrom: openedFrom))
                 return cell
             }
             
@@ -102,7 +102,13 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        router.navigateToDetails(urlString: viewModel.dataSource[indexPath.row].url, imageUrl: viewModel.getPokemonImageUrl(forRow: indexPath.row))
+        switch openedFrom {
+        case .listTab:
+            router.navigateToDetails(urlString: viewModel.dataSource[indexPath.row].url, imageUrl: viewModel.getPokemonImageUrl(forRow: indexPath.row, openedFrom: openedFrom))
+        case .type:
+            router.navigateToDetails(urlString: viewModel.typePokemon[indexPath.row].pokemon.url, imageUrl: viewModel.getPokemonImageUrl(forRow: indexPath.row, openedFrom: openedFrom))
+        }
+       
     }
     
 }

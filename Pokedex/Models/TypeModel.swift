@@ -43,5 +43,5 @@ struct Pokemon: Decodable {
 
 struct PokemonName: Decodable {
     let name: String
-    let url: URL
+    let url: String
 }
