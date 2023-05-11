@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -19,18 +19,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatsViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
-                <outlet property="attackBar" destination="zLv-4x-H4g" id="GPy-yF-9rM"/>
-                <outlet property="attackValueLabel" destination="DLS-1O-hKg" id="ReM-P9-mbw"/>
-                <outlet property="defenseBar" destination="Jhz-nb-Thn" id="Uh4-eo-Xjx"/>
-                <outlet property="defenseValueLabel" destination="teC-sF-KRq" id="bTj-Hf-kew"/>
+                <outlet property="attackBar" destination="fte-JO-3tx" id="15t-Xk-rht"/>
+                <outlet property="attackValueLabel" destination="GtC-XY-X0Z" id="KJ0-8q-XG7"/>
+                <outlet property="defenseBar" destination="LBU-vq-SET" id="o2Z-LA-Y36"/>
+                <outlet property="defenseValueLabel" destination="PIn-0O-R1S" id="cOR-w0-3Pm"/>
                 <outlet property="hpBar" destination="4wv-89-dAN" id="gzm-P0-18k"/>
                 <outlet property="hpValueLabel" destination="Nn3-0j-Jdk" id="qM0-Wu-xoe"/>
-                <outlet property="specialAttackBar" destination="yA5-W2-h2c" id="B7n-25-m3s"/>
-                <outlet property="specialAttackValueLabel" destination="mio-al-SNp" id="aFV-Ru-uXS"/>
-                <outlet property="specialDefenseBar" destination="Yei-Yp-GzF" id="VWy-EV-kqi"/>
-                <outlet property="specialfDefenseValueLabel" destination="jzh-fY-BIr" id="QO3-W3-tzl"/>
-                <outlet property="speedBar" destination="8SV-bV-hxF" id="jv2-Zx-yPb"/>
-                <outlet property="speedValueLabel" destination="hdE-wm-J73" id="wVb-nB-vVC"/>
+                <outlet property="specialAttackBar" destination="3mf-mv-90Z" id="U44-MO-P9Z"/>
+                <outlet property="specialAttackValueLabel" destination="h6X-uQ-uNo" id="Qzn-lF-OLA"/>
+                <outlet property="specialDefenseBar" destination="vgF-Fs-ACm" id="Kzi-PY-p5p"/>
+                <outlet property="specialfDefenseValueLabel" destination="Xl2-Yi-yIQ" id="rFB-kh-3w9"/>
+                <outlet property="speedBar" destination="spE-QW-OPO" id="DYU-qY-HRk"/>
+                <outlet property="speedValueLabel" destination="DUt-Ux-usB" id="zEO-Wl-G30"/>
                 <outlet property="totalValueLabel" destination="MY7-iK-Vmc" id="76u-X4-zed"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -40,196 +40,362 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="385"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eMb-aH-JLx">
-                    <rect key="frame" x="20" y="0.0" width="374" height="365"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4N-W4-ISl">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="385"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f95-Uj-2r7">
-                            <rect key="frame" x="74" y="0.0" width="300" height="20"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8f-Ph-fCa">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="715"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hp" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83A-ZQ-CJa">
-                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="mrk-fT-sNy"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4wv-89-dAN">
-                                    <rect key="frame" x="40" y="7.5" width="200" height="5"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="200" id="O3X-3N-P9T"/>
-                                        <constraint firstAttribute="height" constant="5" id="yhC-5Q-UMU"/>
-                                    </constraints>
-                                    <color key="progressTintColor" name="CustomBlue"/>
-                                </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-0j-Jdk">
-                                    <rect key="frame" x="260" y="2" width="40" height="16.5"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="40" id="gmZ-Mt-Dlz"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Diz-fP-qM6">
-                            <rect key="frame" x="41" y="58" width="333" height="19"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="attack" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH7-rM-tyM">
-                                    <rect key="frame" x="0.0" y="0.0" width="53" height="19"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zLv-4x-H4g">
-                                    <rect key="frame" x="73" y="7" width="200" height="5"/>
-                                    <color key="progressTintColor" name="CustomBlue"/>
-                                </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLS-1O-hKg">
-                                    <rect key="frame" x="293" y="1" width="40" height="16.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zjQ-mu-seM">
-                            <rect key="frame" x="26.5" y="115.5" width="347.5" height="19"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="defense" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgX-tt-5oc">
-                                    <rect key="frame" x="0.0" y="0.0" width="67.5" height="19"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jhz-nb-Thn">
-                                    <rect key="frame" x="87.5" y="7" width="200" height="5"/>
-                                    <color key="progressTintColor" name="CustomBlue"/>
-                                </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teC-sF-KRq">
-                                    <rect key="frame" x="307.5" y="1" width="40" height="16.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Pr-Xc-TuS">
-                            <rect key="frame" x="31.5" y="163" width="342.5" height="38"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-eW-cwZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="62.5" height="38"/>
-                                    <string key="text">special 
-attack</string>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yA5-W2-h2c">
-                                    <rect key="frame" x="82.5" y="16.5" width="200" height="5"/>
-                                    <color key="progressTintColor" name="CustomBlue"/>
-                                </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mio-al-SNp">
-                                    <rect key="frame" x="302.5" y="11" width="40" height="16.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kNm-Tn-gpa">
-                            <rect key="frame" x="26.5" y="220.5" width="347.5" height="38"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYF-gV-It3">
-                                    <rect key="frame" x="0.0" y="0.0" width="67.5" height="38"/>
-                                    <string key="text">special 
-defense</string>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yei-Yp-GzF">
-                                    <rect key="frame" x="87.5" y="16.5" width="200" height="5"/>
-                                    <color key="progressTintColor" name="CustomBlue"/>
-                                </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzh-fY-BIr">
-                                    <rect key="frame" x="307.5" y="11" width="40" height="16.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="n6Q-dd-UXI">
-                            <rect key="frame" x="43" y="287.5" width="331" height="19"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="speed" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQq-zc-DGe">
-                                    <rect key="frame" x="0.0" y="0.0" width="51" height="19"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="15"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8SV-bV-hxF">
-                                    <rect key="frame" x="71" y="7" width="200" height="5"/>
-                                    <color key="progressTintColor" name="CustomBlue"/>
-                                </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-wm-J73">
-                                    <rect key="frame" x="291" y="1" width="40" height="16.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="13"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jVd-uV-Q8t">
-                            <rect key="frame" x="274" y="343.5" width="100" height="21.5"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daF-RY-3Rc">
-                                    <rect key="frame" x="0.0" y="0.0" width="42.5" height="21.5"/>
-                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1xp-UM-dqY">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTz-CA-8bF">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83A-ZQ-CJa">
+                                                    <rect key="frame" x="193" y="20" width="28" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="mrk-fT-sNy"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4wv-89-dAN">
+                                                    <rect key="frame" x="82" y="54" width="250" height="5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="O3X-3N-P9T"/>
+                                                        <constraint firstAttribute="height" constant="5" id="yhC-5Q-UMU"/>
+                                                    </constraints>
+                                                    <color key="progressTintColor" name="CustomBlue"/>
+                                                </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The HP stat determines how much damage a Pokémon can receive before fainting" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH7-rM-tyM">
+                                                    <rect key="frame" x="10" y="67" width="394" height="33"/>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-0j-Jdk">
+                                                    <rect key="frame" x="340" y="44" width="40" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="gmZ-Mt-Dlz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pH7-rM-tyM" firstAttribute="leading" secondItem="oTz-CA-8bF" secondAttribute="leading" constant="10" id="GAd-8U-8Ia"/>
+                                                <constraint firstItem="4wv-89-dAN" firstAttribute="centerX" secondItem="oTz-CA-8bF" secondAttribute="centerX" id="H5d-wE-2tt"/>
+                                                <constraint firstItem="Nn3-0j-Jdk" firstAttribute="leading" secondItem="4wv-89-dAN" secondAttribute="trailing" constant="8" symbolic="YES" id="InU-iO-wgC"/>
+                                                <constraint firstItem="pH7-rM-tyM" firstAttribute="top" secondItem="4wv-89-dAN" secondAttribute="bottom" constant="8" symbolic="YES" id="KzP-zb-MHG"/>
+                                                <constraint firstAttribute="height" constant="100" id="O2r-q0-Iod"/>
+                                                <constraint firstItem="83A-ZQ-CJa" firstAttribute="top" secondItem="oTz-CA-8bF" secondAttribute="top" constant="20" symbolic="YES" id="V1M-4i-bPd"/>
+                                                <constraint firstItem="4wv-89-dAN" firstAttribute="top" secondItem="83A-ZQ-CJa" secondAttribute="bottom" constant="14" id="ZZj-sb-nAp"/>
+                                                <constraint firstItem="pH7-rM-tyM" firstAttribute="centerX" secondItem="oTz-CA-8bF" secondAttribute="centerX" id="Zg3-6E-ebx"/>
+                                                <constraint firstAttribute="trailing" secondItem="pH7-rM-tyM" secondAttribute="trailing" constant="10" id="a6c-va-ARS"/>
+                                                <constraint firstItem="83A-ZQ-CJa" firstAttribute="centerX" secondItem="oTz-CA-8bF" secondAttribute="centerX" id="mgd-QO-4yb"/>
+                                                <constraint firstItem="Nn3-0j-Jdk" firstAttribute="top" secondItem="oTz-CA-8bF" secondAttribute="top" constant="44" id="uek-Ye-uOj"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNr-vZ-s8m">
+                                            <rect key="frame" x="0.0" y="100" width="414" height="115"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATTACK" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sj-UA-1Bd">
+                                                    <rect key="frame" x="166" y="20" width="82" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="cO2-yA-KfJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fte-JO-3tx">
+                                                    <rect key="frame" x="82" y="54" width="250" height="5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="nV5-UO-CM2"/>
+                                                        <constraint firstAttribute="height" constant="5" id="vnD-o7-UG7"/>
+                                                    </constraints>
+                                                    <color key="progressTintColor" name="CustomBlue"/>
+                                                </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Attack stat partly determines how much damage a Pokémon deals when using a physical move" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7h6-st-aOS">
+                                                    <rect key="frame" x="10" y="67" width="394" height="33"/>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtC-XY-X0Z">
+                                                    <rect key="frame" x="340" y="44" width="40" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="MBB-Lt-dJA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GtC-XY-X0Z" firstAttribute="top" secondItem="pNr-vZ-s8m" secondAttribute="top" constant="44" id="31r-Vu-sDU"/>
+                                                <constraint firstItem="7h6-st-aOS" firstAttribute="centerX" secondItem="pNr-vZ-s8m" secondAttribute="centerX" id="7Rj-eL-k1F"/>
+                                                <constraint firstItem="fte-JO-3tx" firstAttribute="top" secondItem="0Sj-UA-1Bd" secondAttribute="bottom" constant="14" id="8QX-g1-QtY"/>
+                                                <constraint firstItem="7h6-st-aOS" firstAttribute="top" secondItem="fte-JO-3tx" secondAttribute="bottom" constant="8" symbolic="YES" id="IIb-uP-Uhk"/>
+                                                <constraint firstItem="fte-JO-3tx" firstAttribute="centerX" secondItem="pNr-vZ-s8m" secondAttribute="centerX" id="IKr-QR-rEy"/>
+                                                <constraint firstItem="0Sj-UA-1Bd" firstAttribute="top" secondItem="pNr-vZ-s8m" secondAttribute="top" constant="20" symbolic="YES" id="QV1-0z-TGH"/>
+                                                <constraint firstItem="GtC-XY-X0Z" firstAttribute="leading" secondItem="fte-JO-3tx" secondAttribute="trailing" constant="8" symbolic="YES" id="VDf-W1-P19"/>
+                                                <constraint firstItem="0Sj-UA-1Bd" firstAttribute="centerX" secondItem="pNr-vZ-s8m" secondAttribute="centerX" id="jsT-Vs-XCn"/>
+                                                <constraint firstAttribute="height" constant="115" id="vxk-HA-Pyx"/>
+                                                <constraint firstAttribute="trailing" secondItem="7h6-st-aOS" secondAttribute="trailing" constant="10" id="y5d-qJ-AVH"/>
+                                                <constraint firstItem="7h6-st-aOS" firstAttribute="leading" secondItem="pNr-vZ-s8m" secondAttribute="leading" constant="10" id="yUq-bz-6IY"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5m-lM-1Qj">
+                                            <rect key="frame" x="0.0" y="215" width="414" height="115"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEFENSE" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSL-iJ-66d">
+                                                    <rect key="frame" x="160" y="20" width="94" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Xvc-jl-DdS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LBU-vq-SET">
+                                                    <rect key="frame" x="82" y="54" width="250" height="5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="ZgJ-uO-O4f"/>
+                                                        <constraint firstAttribute="height" constant="5" id="bC3-eH-6gC"/>
+                                                    </constraints>
+                                                    <color key="progressTintColor" name="CustomBlue"/>
+                                                </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Defense stat partly determines how much damage a Pokémon receives when it is hit with a physical move" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqg-3y-1Dh">
+                                                    <rect key="frame" x="10" y="67" width="394" height="33"/>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIn-0O-R1S">
+                                                    <rect key="frame" x="340" y="44" width="40" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="cfy-jY-u7v"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PIn-0O-R1S" firstAttribute="leading" secondItem="LBU-vq-SET" secondAttribute="trailing" constant="8" symbolic="YES" id="8b5-4Q-ZLD"/>
+                                                <constraint firstItem="LBU-vq-SET" firstAttribute="centerX" secondItem="b5m-lM-1Qj" secondAttribute="centerX" id="ER0-0T-xCh"/>
+                                                <constraint firstItem="nSL-iJ-66d" firstAttribute="top" secondItem="b5m-lM-1Qj" secondAttribute="top" constant="20" symbolic="YES" id="IwJ-9Z-HX0"/>
+                                                <constraint firstItem="eqg-3y-1Dh" firstAttribute="centerX" secondItem="b5m-lM-1Qj" secondAttribute="centerX" id="Srk-T3-Ffn"/>
+                                                <constraint firstItem="LBU-vq-SET" firstAttribute="top" secondItem="nSL-iJ-66d" secondAttribute="bottom" constant="14" id="TQz-xv-8Qp"/>
+                                                <constraint firstItem="eqg-3y-1Dh" firstAttribute="top" secondItem="LBU-vq-SET" secondAttribute="bottom" constant="8" symbolic="YES" id="fvm-u6-O3P"/>
+                                                <constraint firstItem="eqg-3y-1Dh" firstAttribute="leading" secondItem="b5m-lM-1Qj" secondAttribute="leading" constant="10" id="jxx-Vc-8Xf"/>
+                                                <constraint firstItem="PIn-0O-R1S" firstAttribute="top" secondItem="b5m-lM-1Qj" secondAttribute="top" constant="44" id="m1h-4m-WGN"/>
+                                                <constraint firstAttribute="height" constant="115" id="nEt-QQ-lEI"/>
+                                                <constraint firstAttribute="trailing" secondItem="eqg-3y-1Dh" secondAttribute="trailing" constant="10" id="ryy-JZ-YKz"/>
+                                                <constraint firstItem="nSL-iJ-66d" firstAttribute="centerX" secondItem="b5m-lM-1Qj" secondAttribute="centerX" id="soC-WH-iJs"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIz-bR-spF">
+                                            <rect key="frame" x="0.0" y="330" width="414" height="115"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPECIAL ATTACK" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ot1-CF-HDq">
+                                                    <rect key="frame" x="121" y="20" width="172" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="fvw-xg-6J0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3mf-mv-90Z">
+                                                    <rect key="frame" x="82" y="54" width="250" height="5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="5" id="Ycx-89-ibP"/>
+                                                        <constraint firstAttribute="width" constant="250" id="xxO-ZC-EgD"/>
+                                                    </constraints>
+                                                    <color key="progressTintColor" name="CustomBlue"/>
+                                                </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Special Attack stat partly determines how much damage a Pokémon deals when using a special move" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZX-Lq-UEr">
+                                                    <rect key="frame" x="10" y="67" width="394" height="33"/>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6X-uQ-uNo">
+                                                    <rect key="frame" x="340" y="44" width="40" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="cxw-k4-2c6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="h6X-uQ-uNo" firstAttribute="leading" secondItem="3mf-mv-90Z" secondAttribute="trailing" constant="8" symbolic="YES" id="1hw-6p-0Ve"/>
+                                                <constraint firstItem="3mf-mv-90Z" firstAttribute="centerX" secondItem="jIz-bR-spF" secondAttribute="centerX" id="5im-W3-XgI"/>
+                                                <constraint firstItem="SZX-Lq-UEr" firstAttribute="top" secondItem="3mf-mv-90Z" secondAttribute="bottom" constant="8" symbolic="YES" id="AVV-NE-JJe"/>
+                                                <constraint firstItem="SZX-Lq-UEr" firstAttribute="centerX" secondItem="jIz-bR-spF" secondAttribute="centerX" id="aEl-GF-lbm"/>
+                                                <constraint firstAttribute="trailing" secondItem="SZX-Lq-UEr" secondAttribute="trailing" constant="10" id="b44-BE-v7Q"/>
+                                                <constraint firstAttribute="height" constant="115" id="bF2-VV-8Mw"/>
+                                                <constraint firstItem="Ot1-CF-HDq" firstAttribute="centerX" secondItem="jIz-bR-spF" secondAttribute="centerX" id="btZ-9j-uFc"/>
+                                                <constraint firstItem="3mf-mv-90Z" firstAttribute="top" secondItem="Ot1-CF-HDq" secondAttribute="bottom" constant="14" id="ecw-sX-OcY"/>
+                                                <constraint firstItem="Ot1-CF-HDq" firstAttribute="top" secondItem="jIz-bR-spF" secondAttribute="top" constant="20" symbolic="YES" id="hqf-sQ-Lx5"/>
+                                                <constraint firstItem="SZX-Lq-UEr" firstAttribute="leading" secondItem="jIz-bR-spF" secondAttribute="leading" constant="10" id="kTz-Db-oyw"/>
+                                                <constraint firstItem="h6X-uQ-uNo" firstAttribute="top" secondItem="jIz-bR-spF" secondAttribute="top" constant="44" id="v9l-um-062"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isa-Yb-1aL">
+                                            <rect key="frame" x="0.0" y="445" width="414" height="115"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPECIAL DEFENSE" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQJ-Qd-549">
+                                                    <rect key="frame" x="115" y="20" width="184" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="yjy-uh-0RA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vgF-Fs-ACm">
+                                                    <rect key="frame" x="82" y="54" width="250" height="5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="5" id="WrS-RZ-d2B"/>
+                                                        <constraint firstAttribute="width" constant="250" id="wY0-5g-KKq"/>
+                                                    </constraints>
+                                                    <color key="progressTintColor" name="CustomBlue"/>
+                                                </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Special Defense stat partly determines how much damage a Pokémon receives when it is hit with a special move" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeM-mS-QWV">
+                                                    <rect key="frame" x="10" y="67" width="394" height="49"/>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl2-Yi-yIQ">
+                                                    <rect key="frame" x="340" y="44" width="40" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="X8L-rg-vJA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oeM-mS-QWV" firstAttribute="leading" secondItem="isa-Yb-1aL" secondAttribute="leading" constant="10" id="053-xS-eZV"/>
+                                                <constraint firstItem="vgF-Fs-ACm" firstAttribute="centerX" secondItem="isa-Yb-1aL" secondAttribute="centerX" id="8a9-xi-eod"/>
+                                                <constraint firstItem="oeM-mS-QWV" firstAttribute="centerX" secondItem="isa-Yb-1aL" secondAttribute="centerX" id="DkF-5e-Gxc"/>
+                                                <constraint firstItem="Xl2-Yi-yIQ" firstAttribute="top" secondItem="isa-Yb-1aL" secondAttribute="top" constant="44" id="I8r-et-ZAW"/>
+                                                <constraint firstItem="uQJ-Qd-549" firstAttribute="centerX" secondItem="isa-Yb-1aL" secondAttribute="centerX" id="MlZ-ce-7Me"/>
+                                                <constraint firstItem="vgF-Fs-ACm" firstAttribute="top" secondItem="uQJ-Qd-549" secondAttribute="bottom" constant="14" id="fSI-BO-905"/>
+                                                <constraint firstItem="uQJ-Qd-549" firstAttribute="top" secondItem="isa-Yb-1aL" secondAttribute="top" constant="20" symbolic="YES" id="ho5-46-dKH"/>
+                                                <constraint firstAttribute="trailing" secondItem="oeM-mS-QWV" secondAttribute="trailing" constant="10" id="kHa-vX-Zrd"/>
+                                                <constraint firstAttribute="height" constant="115" id="s2L-ef-7su"/>
+                                                <constraint firstItem="oeM-mS-QWV" firstAttribute="top" secondItem="vgF-Fs-ACm" secondAttribute="bottom" constant="8" symbolic="YES" id="sgh-M6-fmC"/>
+                                                <constraint firstItem="Xl2-Yi-yIQ" firstAttribute="leading" secondItem="vgF-Fs-ACm" secondAttribute="trailing" constant="8" symbolic="YES" id="zh9-mm-QHT"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfg-xx-GFe">
+                                            <rect key="frame" x="0.0" y="560" width="414" height="100"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPEED" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exD-LW-OMP">
+                                                    <rect key="frame" x="173" y="20" width="68" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="2KO-Zn-gg4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="spE-QW-OPO">
+                                                    <rect key="frame" x="82" y="54" width="250" height="5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="53Y-5u-1UF"/>
+                                                        <constraint firstAttribute="height" constant="5" id="78K-Fd-udc"/>
+                                                    </constraints>
+                                                    <color key="progressTintColor" name="CustomBlue"/>
+                                                </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Speed stat determines the order of Pokémon that can act in battle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CD5-PK-CNN">
+                                                    <rect key="frame" x="10" y="67" width="394" height="33"/>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUt-Ux-usB">
+                                                    <rect key="frame" x="340" y="44" width="40" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="hXd-fS-Wqa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="spE-QW-OPO" firstAttribute="top" secondItem="exD-LW-OMP" secondAttribute="bottom" constant="14" id="1VY-3W-qJe"/>
+                                                <constraint firstItem="exD-LW-OMP" firstAttribute="top" secondItem="Tfg-xx-GFe" secondAttribute="top" constant="20" symbolic="YES" id="Rno-kk-wog"/>
+                                                <constraint firstItem="CD5-PK-CNN" firstAttribute="top" secondItem="spE-QW-OPO" secondAttribute="bottom" constant="8" symbolic="YES" id="Vf0-Jb-rNb"/>
+                                                <constraint firstAttribute="trailing" secondItem="CD5-PK-CNN" secondAttribute="trailing" constant="10" id="bCJ-ka-L8C"/>
+                                                <constraint firstItem="DUt-Ux-usB" firstAttribute="leading" secondItem="spE-QW-OPO" secondAttribute="trailing" constant="8" symbolic="YES" id="c9p-Ee-wWy"/>
+                                                <constraint firstItem="CD5-PK-CNN" firstAttribute="centerX" secondItem="Tfg-xx-GFe" secondAttribute="centerX" id="cCE-lC-Akk"/>
+                                                <constraint firstItem="spE-QW-OPO" firstAttribute="centerX" secondItem="Tfg-xx-GFe" secondAttribute="centerX" id="hZB-hK-eaS"/>
+                                                <constraint firstAttribute="height" constant="100" id="hzh-Rs-1ZW"/>
+                                                <constraint firstItem="DUt-Ux-usB" firstAttribute="top" secondItem="Tfg-xx-GFe" secondAttribute="top" constant="44" id="rQa-Qd-ddD"/>
+                                                <constraint firstItem="CD5-PK-CNN" firstAttribute="leading" secondItem="Tfg-xx-GFe" secondAttribute="leading" constant="10" id="wvi-To-H4E"/>
+                                                <constraint firstItem="exD-LW-OMP" firstAttribute="centerX" secondItem="Tfg-xx-GFe" secondAttribute="centerX" id="yl0-Gs-SHu"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY7-iK-Vmc">
-                                    <rect key="frame" x="58.5" y="0.5" width="41.5" height="20.5"/>
+                                    <rect key="frame" x="340" y="668" width="41.5" height="20.5"/>
                                     <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daF-RY-3Rc">
+                                    <rect key="frame" x="273" y="667" width="42.5" height="21.5"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
-                        </stackView>
+                            <color key="backgroundColor" name="CustomBeige"/>
+                            <constraints>
+                                <constraint firstItem="MY7-iK-Vmc" firstAttribute="top" secondItem="1xp-UM-dqY" secondAttribute="bottom" constant="8" symbolic="YES" id="Coo-N4-aoT"/>
+                                <constraint firstAttribute="height" constant="715" id="Fwz-c0-Juh"/>
+                                <constraint firstItem="MY7-iK-Vmc" firstAttribute="leading" secondItem="DUt-Ux-usB" secondAttribute="leading" id="GTG-dL-YRj"/>
+                                <constraint firstItem="1xp-UM-dqY" firstAttribute="leading" secondItem="g8f-Ph-fCa" secondAttribute="leading" id="Ndb-B9-DLY"/>
+                                <constraint firstItem="1xp-UM-dqY" firstAttribute="top" secondItem="g8f-Ph-fCa" secondAttribute="top" id="c5Q-fi-ikS"/>
+                                <constraint firstAttribute="trailing" secondItem="1xp-UM-dqY" secondAttribute="trailing" id="qdz-YV-YWZ"/>
+                                <constraint firstItem="MY7-iK-Vmc" firstAttribute="leading" secondItem="daF-RY-3Rc" secondAttribute="trailing" constant="24.5" id="v3s-aJ-hJX"/>
+                                <constraint firstItem="daF-RY-3Rc" firstAttribute="top" secondItem="1xp-UM-dqY" secondAttribute="bottom" constant="7" id="ytu-it-kRf"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="Yei-Yp-GzF" firstAttribute="height" secondItem="4wv-89-dAN" secondAttribute="height" id="3DT-QE-KlJ"/>
-                        <constraint firstItem="DLS-1O-hKg" firstAttribute="width" secondItem="Nn3-0j-Jdk" secondAttribute="width" id="GyU-0d-IZP"/>
-                        <constraint firstItem="hdE-wm-J73" firstAttribute="width" secondItem="Nn3-0j-Jdk" secondAttribute="width" id="MRX-jM-NoB"/>
-                        <constraint firstItem="yA5-W2-h2c" firstAttribute="width" secondItem="4wv-89-dAN" secondAttribute="width" id="ONI-cg-J6E"/>
-                        <constraint firstItem="Jhz-nb-Thn" firstAttribute="height" secondItem="4wv-89-dAN" secondAttribute="height" id="PkK-nC-yeC"/>
-                        <constraint firstItem="yA5-W2-h2c" firstAttribute="height" secondItem="4wv-89-dAN" secondAttribute="height" id="S6r-RG-GQI"/>
-                        <constraint firstItem="Jhz-nb-Thn" firstAttribute="width" secondItem="4wv-89-dAN" secondAttribute="width" id="Z1e-4n-qLX"/>
-                        <constraint firstItem="teC-sF-KRq" firstAttribute="width" secondItem="Nn3-0j-Jdk" secondAttribute="width" id="ajO-10-R6f"/>
-                        <constraint firstItem="zLv-4x-H4g" firstAttribute="height" secondItem="4wv-89-dAN" secondAttribute="height" id="cz1-xk-cda"/>
-                        <constraint firstItem="zLv-4x-H4g" firstAttribute="width" secondItem="4wv-89-dAN" secondAttribute="width" id="dbJ-gr-hb4"/>
-                        <constraint firstItem="mio-al-SNp" firstAttribute="width" secondItem="Nn3-0j-Jdk" secondAttribute="width" id="e8A-om-H7b"/>
-                        <constraint firstItem="jzh-fY-BIr" firstAttribute="width" secondItem="Nn3-0j-Jdk" secondAttribute="width" id="joj-Dw-IAy"/>
-                        <constraint firstItem="Yei-Yp-GzF" firstAttribute="width" secondItem="4wv-89-dAN" secondAttribute="width" id="mNr-Cl-UXV"/>
-                        <constraint firstItem="8SV-bV-hxF" firstAttribute="height" secondItem="4wv-89-dAN" secondAttribute="height" id="w9y-2w-3QT"/>
-                        <constraint firstItem="8SV-bV-hxF" firstAttribute="width" secondItem="4wv-89-dAN" secondAttribute="width" id="zIL-6U-ZYO"/>
+                        <constraint firstAttribute="bottom" secondItem="g8f-Ph-fCa" secondAttribute="bottom" id="Ir4-uB-j3z"/>
+                        <constraint firstItem="g8f-Ph-fCa" firstAttribute="top" secondItem="y4N-W4-ISl" secondAttribute="top" id="bcs-QG-GYr"/>
+                        <constraint firstItem="g8f-Ph-fCa" firstAttribute="leading" secondItem="y4N-W4-ISl" secondAttribute="leading" id="nU3-Il-aVw"/>
+                        <constraint firstAttribute="trailing" secondItem="g8f-Ph-fCa" secondAttribute="trailing" id="ynW-F3-dt0"/>
                     </constraints>
-                </stackView>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="CustomBeige"/>
             <constraints>
-                <constraint firstItem="eMb-aH-JLx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4oN-0a-Fge"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eMb-aH-JLx" secondAttribute="bottom" constant="20" id="R8h-j4-beU"/>
-                <constraint firstItem="eMb-aH-JLx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="a7a-Jc-cZi"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eMb-aH-JLx" secondAttribute="trailing" constant="20" id="h00-h2-ASU"/>
+                <constraint firstItem="y4N-W4-ISl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0KG-FT-sof"/>
+                <constraint firstItem="y4N-W4-ISl" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="2wQ-Wd-jBf"/>
+                <constraint firstItem="g8f-Ph-fCa" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="3HU-fO-gCy"/>
+                <constraint firstItem="y4N-W4-ISl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bT8-wb-fep"/>
+                <constraint firstItem="y4N-W4-ISl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hTJ-FH-gxD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="74" y="-91"/>
+            <point key="canvasLocation" x="73.913043478260875" y="-91.40625"/>
         </view>
     </objects>
     <resources>

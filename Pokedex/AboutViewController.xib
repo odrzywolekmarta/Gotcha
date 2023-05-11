@@ -213,7 +213,6 @@
                         <constraint firstAttribute="trailing" secondItem="wk1-0l-hhA" secondAttribute="trailing" id="Voq-P4-TP2"/>
                         <constraint firstItem="wk1-0l-hhA" firstAttribute="top" secondItem="gWi-3C-hgY" secondAttribute="top" id="hXT-KN-46h"/>
                         <constraint firstItem="wk1-0l-hhA" firstAttribute="leading" secondItem="gWi-3C-hgY" secondAttribute="leading" id="vEh-IG-Jcf"/>
-                        <constraint firstItem="wk1-0l-hhA" firstAttribute="top" secondItem="gWi-3C-hgY" secondAttribute="top" id="zS9-tS-5EU"/>
                     </constraints>
                 </scrollView>
             </subviews>
