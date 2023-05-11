@@ -85,7 +85,7 @@ class PokemonDetailsViewController: UIViewController {
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
                 
         spinner = UIActivityIndicatorView(style: .large)
-        view.configureSpinner(spinner: spinner ?? UIActivityIndicatorView())
+        view.configureSpinner(spinner: spinner ?? UIActivityIndicatorView(), backgroundColor: UIColor(named: Constants.Colors.customOrange) ?? .gray, indicatorColor: UIColor(named: Constants.Colors.customBeige) ?? .white)
         
         if viewModel.detailsModel != nil {
             onDetailsModelFetchSuccess()
@@ -98,7 +98,6 @@ class PokemonDetailsViewController: UIViewController {
         viewModel.getPokemonDetails()
         configureView()
         spinner?.startAnimating()
-//        toggleSpinner(active: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -190,7 +189,6 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
         pageViewController.set(model: detailsModel)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
-//            self.toggleSpinner(active: false)
             spinner?.stopAnimating()
             self.nameLabel.text = detailsModel.name.uppercased()
             self.view.layoutIfNeeded()
@@ -228,7 +226,7 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
     
     func onDetailsModelFetchFailure(error: Error) {
         DispatchQueue.main.async {
-//            self.activityIndicator.stopAnimating()
+            self.spinner?.stopAnimating()
             self.pokemonImageView.image = Constants.unknownPokemonImage
             UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
                 self.pokemonImageView.alpha = 1

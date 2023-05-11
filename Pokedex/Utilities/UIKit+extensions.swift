@@ -40,13 +40,19 @@ extension UIView {
         self.sendSubviewToBack(blurView)
     }
     
-    func configureSpinner(spinner: UIActivityIndicatorView) {
+    func configureSpinner(spinner: UIActivityIndicatorView, backgroundColor: UIColor, indicatorColor: UIColor) {
         spinner.frame = self.bounds
         spinner.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        spinner.color = UIColor(named: Constants.Colors.customBeige)
-        spinner.backgroundColor = UIColor(named: Constants.Colors.customOrange)
+        spinner.color = indicatorColor
+        spinner.backgroundColor = backgroundColor
         self.addSubview(spinner)
         self.bringSubviewToFront(spinner)
+    }
+    
+    func configureFailView() {
+        let failView = UIView()
+        failView.frame = self.bounds
+        failView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
 }

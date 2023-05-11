@@ -16,7 +16,6 @@ class InfoCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         containerView.layer.cornerRadius = Constants.cellRadius
         containerView.applyShadow()
-        // Initialization code
     }
 
     func configureWithType(name: String) {
