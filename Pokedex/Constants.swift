@@ -32,7 +32,7 @@ struct Constants {
     
     // SIZES
     static let cellRadius: CGFloat = 25
-    static let cardViewRadius: CGFloat = 50
+    static let cardViewRadius: CGFloat = 40
     static let barTitleFontSize: CGFloat  = 23
     static let firstBatchOfPokemon: Int = 904
     static let numberOfEmptyIds: Int = 9096

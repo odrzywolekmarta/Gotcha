@@ -99,27 +99,27 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIj-Sv-bBR" userLabel="rounded">
-                    <rect key="frame" x="0.0" y="313" width="414" height="100"/>
+                    <rect key="frame" x="0.0" y="313" width="414" height="80"/>
                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="CLF-KI-ab0"/>
+                        <constraint firstAttribute="height" constant="80" id="CLF-KI-ab0"/>
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderPokeImage" translatesAutoresizingMaskIntoConstraints="NO" id="M8q-ra-HWf">
-                    <rect key="frame" x="207" y="363" width="0.0" height="0.0"/>
+                    <rect key="frame" x="207" y="353" width="0.0" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="M8q-ra-HWf" secondAttribute="height" id="Lsw-f9-xcA"/>
                         <constraint firstAttribute="height" id="QK6-GL-aVC"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65L-T6-NR0" userLabel="buttons">
-                    <rect key="frame" x="0.0" y="363" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="353" width="414" height="40"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kw2-TI-T16">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="34.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQm-8j-NvH" userLabel="about">
-                                    <rect key="frame" x="0.0" y="0.0" width="123" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="123" height="34.5"/>
                                     <color key="tintColor" name="CustomRed"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="ABOUT"/>
@@ -128,7 +128,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="cMS-ER-eCO" userLabel="stats">
-                                    <rect key="frame" x="123" y="0.0" width="112.5" height="50"/>
+                                    <rect key="frame" x="123" y="0.0" width="112.5" height="34.5"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" name="CustomRed"/>
                                     <state key="normal" title="Button"/>
@@ -138,7 +138,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="f80-bG-7dP" userLabel="evolution">
-                                    <rect key="frame" x="235.5" y="0.0" width="178.5" height="50"/>
+                                    <rect key="frame" x="235.5" y="0.0" width="178.5" height="34.5"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" name="CustomRed"/>
                                     <state key="normal" title="Button"/>
@@ -156,7 +156,7 @@
                         <constraint firstItem="kw2-TI-T16" firstAttribute="top" secondItem="65L-T6-NR0" secondAttribute="top" id="ax8-bO-kmN"/>
                         <constraint firstAttribute="trailing" secondItem="kw2-TI-T16" secondAttribute="trailing" id="fIc-m5-2Nq"/>
                         <constraint firstItem="kw2-TI-T16" firstAttribute="leading" secondItem="65L-T6-NR0" secondAttribute="leading" id="jUa-hh-eEB"/>
-                        <constraint firstAttribute="height" constant="50" id="vez-Lh-cK3"/>
+                        <constraint firstAttribute="height" constant="40" id="vez-Lh-cK3"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RlO-h7-e1Y">
@@ -164,7 +164,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1a-L3-RqQ" userLabel="pageView">
-                    <rect key="frame" x="0.0" y="413" width="414" height="449"/>
+                    <rect key="frame" x="0.0" y="393" width="414" height="469"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>
