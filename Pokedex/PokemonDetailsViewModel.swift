@@ -11,6 +11,7 @@ protocol PokemonDetailsViewModelProtocol: AnyObject {
     var delegate: PokemonDetailsViewModelDelegate? { get set }
     var detailsModel: PokemonModel? { get }
     var persistedModel: PersistedModel? { get set }
+    var speciesModel: SpeciesModel? { get set }
     var imageUrl: String? { get }
     func getPokemonDetails()
 }
@@ -18,15 +19,13 @@ protocol PokemonDetailsViewModelProtocol: AnyObject {
 protocol PokemonDetailsViewModelDelegate: AnyObject {
     func onDetailsModelFetchSuccess()
     func onDetailsModelFetchFailure(error: Error)
-    func onEvolutionModelFetchSuccess()
-    func onEvolutionModelFetchFailure(error: Error)
 }
 
 class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
     
     weak var delegate: PokemonDetailsViewModelDelegate?
     var detailsModel: PokemonModel?
-    var speciesModel: EvolutionModel?
+    var speciesModel: SpeciesModel?
     var persistedModel: PersistedModel?
     private let service: PokemonAPIServiceProtocol
     private var urlString: String?
@@ -54,16 +53,15 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
                 switch result {
                 case .success(let model):
                     self?.detailsModel = model
-                    self?.service.getEvolution(withUrl: model.species.url, completion: { result in
+                    self?.service.getSpecies(withUrl: model.species.url, completion: { result in
                         switch result {
-                        case .success(let speciesModel):
-                            self?.speciesModel = speciesModel
-                            self?.delegate?.onEvolutionModelFetchSuccess()
+                        case .success(let species):
+                            self?.speciesModel = species
+                            self?.delegate?.onDetailsModelFetchSuccess()
                         case .failure(let error):
-                            self?.delegate?.onEvolutionModelFetchFailure(error: error)
+                            self?.delegate?.onDetailsModelFetchFailure(error: error)
                         }
                     })
-                    self?.delegate?.onDetailsModelFetchSuccess()
                 case .failure(let error):
                     self?.delegate?.onDetailsModelFetchFailure(error: error)
                 } 

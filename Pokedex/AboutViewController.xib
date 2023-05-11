@@ -24,6 +24,7 @@
                 <outlet property="abilityButton1" destination="kbp-YJ-6Ad" id="dS0-46-Oqf"/>
                 <outlet property="abilityButton2" destination="Gd0-1K-iZZ" id="jT4-el-GjV"/>
                 <outlet property="abilityButton3" destination="Gyt-Ru-8ai" id="kZ5-jd-Yal"/>
+                <outlet property="descriptionLabel" destination="xiz-Tb-EdA" id="zUc-A2-q0b"/>
                 <outlet property="heightLabel" destination="WJL-aU-iCT" id="5mf-y4-Zg3"/>
                 <outlet property="type2StackView" destination="Kfq-pt-uZ0" id="5b2-gI-VSD"/>
                 <outlet property="typeImage1" destination="fvl-AR-7mV" id="fom-kN-wPq"/>
@@ -43,13 +44,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="441"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wk1-0l-hhA">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uiZ-5Y-jJu">
-                                    <rect key="frame" x="73.5" y="20" width="267" height="410"/>
+                                    <rect key="frame" x="10" y="20" width="394" height="560"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiz-Tb-EdA">
+                                            <rect key="frame" x="142.5" y="0.0" width="109.5" height="23"/>
+                                            <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="hP9-gh-9Lv">
-                                            <rect key="frame" x="0.0" y="0.0" width="267" height="79"/>
+                                            <rect key="frame" x="63.5" y="87.5" width="267" height="79"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vDx-AK-7QO">
                                                     <rect key="frame" x="0.0" y="0.0" width="107" height="79"/>
@@ -92,7 +99,7 @@
                                             </constraints>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="r9F-UE-9wf">
-                                            <rect key="frame" x="53.5" y="112.5" width="160" height="107.5"/>
+                                            <rect key="frame" x="117" y="231.5" width="160" height="107.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQI-LN-mNy">
                                                     <rect key="frame" x="19" y="0.0" width="122.5" height="35.5"/>
@@ -144,7 +151,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gIx-At-6YM">
-                                            <rect key="frame" x="43.5" y="253.5" width="180" height="156.5"/>
+                                            <rect key="frame" x="107" y="403.5" width="180" height="156.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Types" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKV-qc-vMe">
                                                     <rect key="frame" x="42" y="0.0" width="96.5" height="35.5"/>
@@ -202,8 +209,10 @@
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="uiZ-5Y-jJu" secondAttribute="bottom" constant="20" symbolic="YES" id="3bp-nl-ogl"/>
                                 <constraint firstItem="uiZ-5Y-jJu" firstAttribute="centerX" secondItem="wk1-0l-hhA" secondAttribute="centerX" id="N7X-hu-8n3"/>
+                                <constraint firstItem="uiZ-5Y-jJu" firstAttribute="leading" secondItem="wk1-0l-hhA" secondAttribute="leading" constant="10" id="Y4P-aR-oLf"/>
                                 <constraint firstItem="uiZ-5Y-jJu" firstAttribute="top" secondItem="wk1-0l-hhA" secondAttribute="top" constant="20" symbolic="YES" id="dy2-ee-GGn"/>
-                                <constraint firstAttribute="height" constant="450" id="vVs-3e-bk5"/>
+                                <constraint firstAttribute="trailing" secondItem="uiZ-5Y-jJu" secondAttribute="trailing" constant="10" id="nQZ-sU-Ib7"/>
+                                <constraint firstAttribute="height" constant="600" id="vVs-3e-bk5"/>
                             </constraints>
                         </view>
                     </subviews>

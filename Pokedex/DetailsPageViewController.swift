@@ -33,12 +33,15 @@ class DetailsPageViewController: UIPageViewController {
         return [aboutController, statsController, evolutionController]
     }
     
-    func set(model: PokemonModel) {
-        aboutController.viewModel.set(model: model)
-        statsController.viewModel.set(model: model)
-        evolutionController.viewModel.getEvolution(withSpeciesUrl: model.species.url)
+    func set(pokemonModel: PokemonModel?, speciesModel: SpeciesModel? = nil) {
+        if let model = pokemonModel {
+            if let species = speciesModel {
+                aboutController.viewModel.set(pokemonModel: model, speciesModel: species)
+            }
+            statsController.viewModel.set(model: model)
+            evolutionController.viewModel.getEvolution(withSpeciesUrl: model.species.url)
+        }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

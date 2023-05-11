@@ -19,6 +19,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var typeImage1: UIImageView!
     @IBOutlet weak var typeImage2: UIImageView!
     @IBOutlet weak var type2StackView: UIStackView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     let viewModel: AboutViewModelProtocol = AboutViewModel(service: PokemonAPIService())
     
@@ -54,13 +55,6 @@ class AboutViewController: UIViewController {
         abilityButton3.startAnimatingPressActions()
     }
     
-//    func getTypeColor(for type: String) -> UIColor {
-//        guard let enumCase = PokemonAPIType(rawValue: type) else {
-//            return .cyan
-//        }
-//        return UIColor(named: enumCase.colorName) ?? UIColor.cyan
-//    }
-    
     @IBAction func abilityButtonTapped(_ sender: UIButton) {
         if let ability = sender.titleLabel?.text {
             viewModel.getAbilityDetails(for: ability)
@@ -74,6 +68,9 @@ extension AboutViewController: AboutViewModelDelegate {
     
     func onDetailsModelSet() {
         DispatchQueue.main.async {
+            if let species = self.viewModel.speciesModel {
+                self.descriptionLabel.text = species.flavorTextEntries[7].flavorText
+            }
             if let model = self.viewModel.detailsModel {
                 let doubleWeight = Double(model.weight)
                 let labelWeight = String(doubleWeight / 10)

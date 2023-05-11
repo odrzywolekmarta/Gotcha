@@ -180,21 +180,13 @@ class PokemonDetailsViewController: UIViewController {
 //MARK: - View Model Delegate
 
 extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
-    func onEvolutionModelFetchSuccess() {
-        
-    }
-    
-    func onEvolutionModelFetchFailure(error: Error) {
-        
-    }
-    
     func onDetailsModelFetchSuccess() {
         guard let detailsModel = viewModel.detailsModel else {
             //shouldn't happen
             return
         }
         
-        pageViewController.set(model: detailsModel)
+        pageViewController.set(pokemonModel: detailsModel, speciesModel: viewModel.speciesModel)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
             spinner?.stopAnimating()

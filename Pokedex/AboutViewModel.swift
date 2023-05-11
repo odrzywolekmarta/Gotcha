@@ -11,7 +11,8 @@ protocol AboutViewModelProtocol: AnyObject {
     var delegate: AboutViewModelDelegate? { get set }
     var detailsModel: PokemonModel? { get }
     var abilityModel: AbilityModel? { get }
-    func set(model: PokemonModel)
+    var speciesModel: SpeciesModel? { get }
+    func set(pokemonModel: PokemonModel, speciesModel: SpeciesModel)
     func getAbilityDetails(for ability: String)
 }
 
@@ -22,21 +23,22 @@ protocol AboutViewModelDelegate: AnyObject {
 }
 
 class AboutViewModel: AboutViewModelProtocol {
-    
     weak var delegate: AboutViewModelDelegate?
     var detailsModel: PokemonModel?
     var abilityModel: AbilityModel?
+    var speciesModel: SpeciesModel?
     private let service: PokemonAPIServiceProtocol
     
     init(service: PokemonAPIServiceProtocol) {
         self.service = service
     }
   
-    func set(model: PokemonModel) {
-        detailsModel = model
+    func set(pokemonModel: PokemonModel, speciesModel: SpeciesModel) {
+        detailsModel = pokemonModel
+        self.speciesModel = speciesModel
         delegate?.onDetailsModelSet()
     }
-    
+
     func getAbilityDetails(for ability: String) {
         service.getAbilityDetails(for: ability) { [weak self] abilityResult in
             switch abilityResult {
