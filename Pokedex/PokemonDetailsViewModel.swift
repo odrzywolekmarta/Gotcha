@@ -24,6 +24,7 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
     
     weak var delegate: PokemonDetailsViewModelDelegate?
     var detailsModel: PokemonModel?
+    var speciesModel: Species?
     var persistedModel: PersistedModel?
     private let service: PokemonAPIServiceProtocol
     private var urlString: String?

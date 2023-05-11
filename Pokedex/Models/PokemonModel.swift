@@ -98,9 +98,19 @@ struct Species: Decodable {
 
 struct SpeciesModel: Decodable {
     let evolutionChain: Chain
+    let flavorTextEntries: [FlavorText]
     
     enum CodingKeys: String, CodingKey {
         case evolutionChain = "evolution_chain"
+        case flavorTextEntries = "flavor_text_entries"
+    }
+}
+
+struct FlavorText: Decodable {
+    let flavorText: String
+    
+    enum CodingKeys: String, CodingKey {
+        case flavorText = "flavor_text"
     }
 }
 
