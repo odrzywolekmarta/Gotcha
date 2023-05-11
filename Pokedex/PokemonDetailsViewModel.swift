@@ -18,13 +18,15 @@ protocol PokemonDetailsViewModelProtocol: AnyObject {
 protocol PokemonDetailsViewModelDelegate: AnyObject {
     func onDetailsModelFetchSuccess()
     func onDetailsModelFetchFailure(error: Error)
+    func onEvolutionModelFetchSuccess()
+    func onEvolutionModelFetchFailure(error: Error)
 }
 
 class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
     
     weak var delegate: PokemonDetailsViewModelDelegate?
     var detailsModel: PokemonModel?
-    var speciesModel: Species?
+    var speciesModel: EvolutionModel?
     var persistedModel: PersistedModel?
     private let service: PokemonAPIServiceProtocol
     private var urlString: String?
@@ -52,6 +54,15 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
                 switch result {
                 case .success(let model):
                     self?.detailsModel = model
+                    self?.service.getEvolution(withUrl: model.species.url, completion: { result in
+                        switch result {
+                        case .success(let speciesModel):
+                            self?.speciesModel = speciesModel
+                            self?.delegate?.onEvolutionModelFetchSuccess()
+                        case .failure(let error):
+                            self?.delegate?.onEvolutionModelFetchFailure(error: error)
+                        }
+                    })
                     self?.delegate?.onDetailsModelFetchSuccess()
                 case .failure(let error):
                     self?.delegate?.onDetailsModelFetchFailure(error: error)

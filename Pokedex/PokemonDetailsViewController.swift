@@ -180,6 +180,14 @@ class PokemonDetailsViewController: UIViewController {
 //MARK: - View Model Delegate
 
 extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
+    func onEvolutionModelFetchSuccess() {
+        
+    }
+    
+    func onEvolutionModelFetchFailure(error: Error) {
+        
+    }
+    
     func onDetailsModelFetchSuccess() {
         guard let detailsModel = viewModel.detailsModel else {
             //shouldn't happen
