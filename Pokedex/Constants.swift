@@ -12,7 +12,7 @@ struct Constants {
     // FONTS
     static let customFont = "Orbitron-Regular"
     static let customFontBold = "Orbitron-Bold"
-    static let abilityButtonFont = UIFont(name: Constants.customFont, size: 22)
+    static let abilityButtonFont = UIFont(name: Constants.customFontBold, size: 18)
     
     // URL STRINGS
     static let basePokemonUrl = "https://pokeapi.co/api/v2/pokemon/"

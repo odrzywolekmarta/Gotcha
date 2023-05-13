@@ -36,23 +36,18 @@ class AboutViewController: UIViewController {
         typeImage1.isHidden = true
         typeImage2.isHidden = true
         type2StackView.isHidden = true
-        abilityButton1.titleLabel?.font = Constants.abilityButtonFont
-        abilityButton2.titleLabel?.font = Constants.abilityButtonFont
-        abilityButton3.titleLabel?.font = Constants.abilityButtonFont
-        abilityButton1.setTitleColor(.black, for: .normal)
-        abilityButton2.setTitleColor(.black, for: .normal)
-        abilityButton3.setTitleColor(.black, for: .normal)
-        abilityButton1.makeRound(radius: 15)
-        abilityButton2.makeRound(radius: 15)
-        abilityButton3.makeRound(radius: 15)
-        abilityButton1.applyShadow()
-        abilityButton2.applyShadow()
-        abilityButton3.applyShadow()
+        
+        let buttons = [abilityButton1, abilityButton2, abilityButton3]
+        for button in buttons {
+            button?.titleLabel?.font = Constants.abilityButtonFont
+            button?.backgroundColor = UIColor(named: Constants.Colors.customRed)?.withAlphaComponent(0.2)
+            button?.makeRound(radius: 15)
+            button?.applyShadow()
+            button?.startAnimatingPressActions()
+        }
+        
         typeImage1.applyShadow()
         typeImage2.applyShadow()
-        abilityButton1.startAnimatingPressActions()
-        abilityButton2.startAnimatingPressActions()
-        abilityButton3.startAnimatingPressActions()
     }
     
     @IBAction func abilityButtonTapped(_ sender: UIButton) {
@@ -69,7 +64,7 @@ extension AboutViewController: AboutViewModelDelegate {
     func onDetailsModelSet() {
         DispatchQueue.main.async {
             if let species = self.viewModel.speciesModel {
-                self.descriptionLabel.text = species.flavorTextEntries[7].flavorText
+                self.descriptionLabel.text = species.flavorTextEntries[7].flavorText.components(separatedBy: .newlines).joined(separator: " ")
             }
             if let model = self.viewModel.detailsModel {
                 let doubleWeight = Double(model.weight)
