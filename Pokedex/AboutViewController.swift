@@ -20,7 +20,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var typeImage2: UIImageView!
     @IBOutlet weak var type2StackView: UIStackView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
+
     let viewModel: AboutViewModelProtocol = AboutViewModel(service: PokemonAPIService())
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class AboutViewController: UIViewController {
         let buttons = [abilityButton1, abilityButton2, abilityButton3]
         for button in buttons {
             button?.titleLabel?.font = Constants.abilityButtonFont
-            button?.backgroundColor = UIColor(named: Constants.Colors.customRed)?.withAlphaComponent(0.2)
+            button?.backgroundColor = UIColor(named: Constants.Colors.customRed)?.withAlphaComponent(0.15)
             button?.makeRound(radius: 15)
             button?.applyShadow()
             button?.startAnimatingPressActions()

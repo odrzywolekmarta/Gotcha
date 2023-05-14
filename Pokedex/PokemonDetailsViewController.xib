@@ -127,24 +127,24 @@
                                         <action selector="aboutButtonPressed:" destination="-1" eventType="touchUpInside" id="RXT-qa-mTL"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="cMS-ER-eCO" userLabel="stats">
-                                    <rect key="frame" x="123" y="0.0" width="112.5" height="34.5"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="tintColor" name="CustomRed"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="STATS"/>
-                                    <connections>
-                                        <action selector="statsButtonPressed:" destination="-1" eventType="touchUpInside" id="D61-2r-OG7"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="f80-bG-7dP" userLabel="evolution">
-                                    <rect key="frame" x="235.5" y="0.0" width="178.5" height="34.5"/>
+                                    <rect key="frame" x="123" y="0.0" width="178.5" height="34.5"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" name="CustomRed"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="EVOLUTION"/>
                                     <connections>
                                         <action selector="evolutionButtonPressed:" destination="-1" eventType="touchUpInside" id="DPS-rh-dJF"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="cMS-ER-eCO" userLabel="stats">
+                                    <rect key="frame" x="301.5" y="0.0" width="112.5" height="34.5"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" name="CustomRed"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="STATS"/>
+                                    <connections>
+                                        <action selector="statsButtonPressed:" destination="-1" eventType="touchUpInside" id="D61-2r-OG7"/>
                                     </connections>
                                 </button>
                             </subviews>
