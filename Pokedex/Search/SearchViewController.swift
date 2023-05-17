@@ -13,9 +13,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var randomButton: UIButton!
-    
-   
-    let viewModel: SearchViewModelProtocol = SearchViewModel(service: PokemonAPIService())
+       
     let router: AppRouterProtocol
     
     init(router: AppRouterProtocol) {
@@ -29,7 +27,6 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
         searchTextField.delegate = self
         configureView()
     }
@@ -46,7 +43,7 @@ class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customBeige))
-        randomButton.isUserInteractionEnabled = true
+        toggleUIEnabled(enabled: true)
     }
     
     @IBAction func searchPressed(_ sender: UIButton) {
@@ -56,8 +53,7 @@ class SearchViewController: UIViewController {
     @IBAction func randomPressed(_ sender: UIButton) {
         let randomIdString = String(Int.random(in: 1...905))
         let randomPokemonUrl = Constants.basePokemonUrl + randomIdString
-        viewModel.getPokemonDetails(withUrlString: randomPokemonUrl)
-        randomButton.isUserInteractionEnabled = false
+        self.router.navigateToDetails(urlString: randomPokemonUrl)
     }
     
     
@@ -89,32 +85,11 @@ extension SearchViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let pokemonData = searchTextField.text {
             let pokemonUrl = Constants.basePokemonUrl + pokemonData
-            viewModel.getPokemonDetails(withUrlString: pokemonUrl)
+            self.router.navigateToDetails(urlString: pokemonUrl)
             searchTextField.text = ""
             toggleUIEnabled(enabled: false)
         } else {
             searchTextField.text = ""
-        }
-    }
-    
-}
-
-//MARK: - Search View Model Delegate
-
-extension SearchViewController: SearchViewModelDelegate {
-    func onDetailsModelFetchSuccess() {
-        DispatchQueue.main.async {
-            self.toggleUIEnabled(enabled: true)
-            if let model = self.viewModel.detailsModel {
-                self.router.navigateToDetails(withModel: model)
-            }
-        }
-    }
-    
-    func onDetailsModelFetchFailure(error: Error) {
-        DispatchQueue.main.async {
-            self.toggleUIEnabled(enabled: true)
-            self.presentAlert(with: error)
         }
     }
     

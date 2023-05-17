@@ -57,7 +57,6 @@ class EvolutionViewModel: EvolutionViewModelProtocol {
                         self?.delegate?.onEvolutionModelFetchFailure(error: error.localizedDescription)
                     }
                 }
-                
             case .failure(let error):
                 self?.delegate?.onEvolutionModelFetchFailure(error: error.localizedDescription)
             }

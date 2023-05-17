@@ -22,7 +22,6 @@
 		2D4E2055294131D800273DD7 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E2054294131D800273DD7 /* FavouritesViewController.swift */; };
 		2D4E205C2942094200273DD7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E205A2942094200273DD7 /* SearchViewController.swift */; };
 		2D4E205D2942094200273DD7 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D4E205B2942094200273DD7 /* SearchViewController.xib */; };
-		2D4E20622943A36E00273DD7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E20612943A36E00273DD7 /* SearchViewModel.swift */; };
 		2D4E20642945F7AA00273DD7 /* UIViewController+AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E20632945F7AA00273DD7 /* UIViewController+AlertPresentable.swift */; };
 		2D5B33E52A09017000399C1C /* PokeballDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B33E42A09017000399C1C /* PokeballDetailsViewController.swift */; };
 		2D5B33E72A09028300399C1C /* PokeballDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B33E62A09028300399C1C /* PokeballDetailsViewModel.swift */; };
@@ -138,7 +137,6 @@
 		2D4E2054294131D800273DD7 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		2D4E205A2942094200273DD7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2D4E205B2942094200273DD7 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		2D4E20612943A36E00273DD7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		2D4E20632945F7AA00273DD7 /* UIViewController+AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertPresentable.swift"; sourceTree = "<group>"; };
 		2D5B33E42A09017000399C1C /* PokeballDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeballDetailsViewController.swift; sourceTree = "<group>"; };
 		2D5B33E62A09028300399C1C /* PokeballDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeballDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -297,7 +295,6 @@
 		2D4E205E2942095100273DD7 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				2D4E20612943A36E00273DD7 /* SearchViewModel.swift */,
 				2D4E205A2942094200273DD7 /* SearchViewController.swift */,
 				2D4E205B2942094200273DD7 /* SearchViewController.xib */,
 			);
@@ -801,7 +798,6 @@
 				2D72885B29E0AA5700D5A5E3 /* TypeModel.swift in Sources */,
 				2D6946782961DECD0059E5F0 /* LaunchScreenViewController.swift in Sources */,
 				2D6141022919A59300D2F68A /* PokemonDetailsViewModel.swift in Sources */,
-				2D4E20622943A36E00273DD7 /* SearchViewModel.swift in Sources */,
 				2D61413529216C8A00D2F68A /* StatsViewController.swift in Sources */,
 				2D72886029E0B41C00D5A5E3 /* TypeDetailsViewController.swift in Sources */,
 				2DD21A9C29D753A4008B6EE6 /* InfoCollectionViewCell.swift in Sources */,

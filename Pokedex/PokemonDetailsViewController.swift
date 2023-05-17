@@ -234,8 +234,8 @@ extension PokemonDetailsViewController: PokemonDetailsViewModelDelegate {
                 self.view.layoutIfNeeded()
                 self.pokemonImageView.applyShadow()
             }
+            self.presentAlert(with: error)
         }
-        presentAlert(with: error)
     }
     
 }
