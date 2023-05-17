@@ -64,7 +64,24 @@ extension AboutViewController: AboutViewModelDelegate {
     func onDetailsModelSet() {
         DispatchQueue.main.async {
             if let species = self.viewModel.speciesModel {
-                self.descriptionLabel.text = species.flavorTextEntries[7].flavorText.components(separatedBy: .newlines).joined(separator: " ")
+                let englishDescriptions = species.flavorTextEntries.filter { text in
+                    text?.language?.name == "en"
+                }
+                
+                if englishDescriptions.count > 0 {
+                    let blackDescription = englishDescriptions.filter { text in
+                        text?.version?.name == "black"
+                    }
+                    
+                    if blackDescription.count != 0 {
+                        self.descriptionLabel.text = blackDescription[0]?.flavorText?.removeNewLines()
+                    } else {
+                        self.descriptionLabel.text = englishDescriptions[0]?.flavorText?.removeNewLines()
+                    }
+                } else {
+                    self.descriptionLabel.text = Constants.noPokemonDescription
+                }
+
             }
             if let model = self.viewModel.detailsModel {
                 let doubleWeight = Double(model.weight)
@@ -140,10 +157,14 @@ extension AboutViewController: AboutViewModelDelegate {
     func onAbilityDetailsSuccess() {
         DispatchQueue.main.async {
             if let model = self.viewModel.abilityModel {
-                if model.effectEntries[0].language.name == Constants.germanLanguage {
-                    self.presentAlert(title: model.name, description: model.effectEntries[1].shortEffect)
+                let englishDescription = model.effectEntries.filter { description in
+                    description.language.name == "en"
+                }
+                
+                if englishDescription.count == 0 {
+                    self.presentAlert(title: model.name, description: Constants.noAbilityDescription)
                 } else {
-                    self.presentAlert(title: model.name, description: model.effectEntries[0].shortEffect)
+                    self.presentAlert(title: model.name, description: englishDescription[0].shortEffect)
                 }
             }
         }

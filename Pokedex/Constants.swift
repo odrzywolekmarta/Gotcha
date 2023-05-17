@@ -62,6 +62,8 @@ struct Constants {
     static let germanLanguage = "de"
     static let loadingGif = "loading4"
     static let gifType = "gif"
+    static let noAbilityDescription = "Oops! There is do detail here"
+    static let noPokemonDescription = "Oops! There is no information about this Pokémon"
     
     // COLORS
     static let abilityButtonFontColor = UIColor(named: Constants.Colors.customRed)?.darker(by: 20)

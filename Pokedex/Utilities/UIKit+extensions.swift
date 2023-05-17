@@ -250,3 +250,9 @@ extension UIButton {
     
 }
 
+//MARK: - String
+extension String {
+    func removeNewLines() -> String {
+       self.components(separatedBy: .newlines).joined(separator: " ")
+    }
+}

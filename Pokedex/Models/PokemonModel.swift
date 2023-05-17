@@ -98,7 +98,7 @@ struct Species: Decodable {
 
 struct SpeciesModel: Decodable {
     let evolutionChain: Chain
-    let flavorTextEntries: [FlavorText]
+    let flavorTextEntries: [FlavorText?]
     
     enum CodingKeys: String, CodingKey {
         case evolutionChain = "evolution_chain"
@@ -107,11 +107,19 @@ struct SpeciesModel: Decodable {
 }
 
 struct FlavorText: Decodable {
-    let flavorText: String
+    let flavorText: String?
+    let language: LanguageName?
+    let version: VersionName?
     
     enum CodingKeys: String, CodingKey {
         case flavorText = "flavor_text"
+        case language = "language"
+        case version = "version"
     }
+}
+
+struct VersionName: Decodable {
+    let name: String
 }
 
 struct Chain: Decodable {
