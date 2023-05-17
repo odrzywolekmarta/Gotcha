@@ -20,7 +20,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var typeImage2: UIImageView!
     @IBOutlet weak var type2StackView: UIStackView!
     @IBOutlet weak var descriptionLabel: UILabel!
-
+    
     let viewModel: AboutViewModelProtocol = AboutViewModel(service: PokemonAPIService())
     
     override func viewDidLoad() {
