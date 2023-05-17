@@ -30,7 +30,7 @@ class DetailsPageViewController: UIPageViewController {
     }
     
     private var orderedViewControllers: [UIViewController] {
-        return [aboutController, statsController, evolutionController]
+        return [aboutController, evolutionController, statsController]
     }
     
     func set(pokemonModel: PokemonModel?, speciesModel: SpeciesModel? = nil) {

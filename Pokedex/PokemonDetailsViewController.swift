@@ -118,12 +118,12 @@ class PokemonDetailsViewController: UIViewController {
     }
     
     @IBAction func statsButtonPressed(_ sender: UIButton) {
-        pageViewController.slideToPage(index: 1, completion: nil)
+        pageViewController.slideToPage(index: 2, completion: nil)
         setTintColor(for: statisticsButton)
     }
     
     @IBAction func evolutionButtonPressed(_ sender: UIButton) {
-        pageViewController.slideToPage(index: 2, completion: nil)
+        pageViewController.slideToPage(index: 1, completion: nil)
         setTintColor(for: evolutionButton)
     }
     
