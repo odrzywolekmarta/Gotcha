@@ -61,6 +61,7 @@ struct Constants {
     static let videoType = "mp4"
     static let germanLanguage = "de"
     static let loadingGif = "loading4"
+    static let searchGif = "searchGif"
     static let gifType = "gif"
     static let noAbilityDescription = "Oops! There is do detail here"
     static let noPokemonDescription = "Oops! There is no information about this Pokémon"

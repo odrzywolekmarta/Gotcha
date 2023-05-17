@@ -32,7 +32,11 @@ class SearchViewController: UIViewController {
     }
     
     func configureView() {
-        pokemonImage.sd_setImage(with: URL(string: Constants.pokemonGifUrl))
+        if let path = Bundle.main.path(forResource: Constants.searchGif, ofType: Constants.gifType) {
+            let data = try? Data(contentsOf: URL(fileURLWithPath: path))
+            let image = UIImage.sd_image(withGIFData: data)
+            pokemonImage.image = image
+        }
         pokemonImage.applyShadow()
         randomButton.configuration?.attributedTitle?.font = UIFont(name: Constants.customFontBold, size: 15)
         searchTextField.applyShadow()

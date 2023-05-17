@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1277E52A1556CD005C958C /* searchGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D1277E42A1556CD005C958C /* searchGif.gif */; };
 		2D268FF02970A8C900B936C9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D268FEF2970A8C900B936C9 /* SDWebImage */; };
 		2D268FF22970B88500B936C9 /* PokemonListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D268FF12970B88500B936C9 /* PokemonListViewModelTests.swift */; };
 		2D268FF52970B8B200B936C9 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D268FF42970B8B200B936C9 /* Mocks.swift */; };
@@ -123,6 +124,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D1277E42A1556CD005C958C /* searchGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = searchGif.gif; sourceTree = "<group>"; };
 		2D268FF12970B88500B936C9 /* PokemonListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModelTests.swift; sourceTree = "<group>"; };
 		2D268FF42970B8B200B936C9 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		2D269097299011F500B936C9 /* PokemonDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewModelTests.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 		2D37A60929EDC2A9008B83E3 /* Gifs */ = {
 			isa = PBXGroup;
 			children = (
+				2D1277E42A1556CD005C958C /* searchGif.gif */,
 				2D5B33ED2A0BC74000399C1C /* fail.gif */,
 				2D37A61029EED8F5008B83E3 /* loading4.gif */,
 			);
@@ -724,6 +727,7 @@
 				2D6141552923C51600D2F68A /* Orbitron-Bold.ttf in Resources */,
 				2DDB8FE32970A35600EB2FA3 /* README.md in Resources */,
 				2D37A61129EED8F5008B83E3 /* loading4.gif in Resources */,
+				2D1277E52A1556CD005C958C /* searchGif.gif in Resources */,
 				2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */,
 				2DA47AC32A08F474008BC4AF /* PokeballDetailsViewController.xib in Resources */,
 				2D61413629216C8A00D2F68A /* StatsViewController.xib in Resources */,
