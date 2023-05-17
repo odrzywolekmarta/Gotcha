@@ -11,8 +11,8 @@ class AboutViewController: UIViewController {
     
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
-    @IBOutlet weak var typeLabel1: UILabel!
-    @IBOutlet weak var typeLabel2: UILabel!
+    @IBOutlet weak var typeButton1: UIButton!
+    @IBOutlet weak var typeButton2: UIButton!
     @IBOutlet weak var abilityButton1: UIButton!
     @IBOutlet weak var abilityButton2: UIButton!
     @IBOutlet weak var abilityButton3: UIButton!
@@ -22,6 +22,16 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     let viewModel: AboutViewModelProtocol = AboutViewModel(service: PokemonAPIService())
+    private let router: AppRouterProtocol
+
+    init(router: AppRouterProtocol) {
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +41,24 @@ class AboutViewController: UIViewController {
     
     func configure() {
         view.backgroundColor = UIColor(named: Constants.Colors.customBeige)
-        typeLabel1.isHidden = true
-        typeLabel2.isHidden = true
         typeImage1.isHidden = true
         typeImage2.isHidden = true
         type2StackView.isHidden = true
         
-        let buttons = [abilityButton1, abilityButton2, abilityButton3]
-        for button in buttons {
+        let abilityButtons = [abilityButton1, abilityButton2, abilityButton3]
+        for button in abilityButtons {
             button?.titleLabel?.font = Constants.abilityButtonFont
             button?.backgroundColor = UIColor(named: Constants.Colors.customRed)?.withAlphaComponent(0.15)
+            button?.makeRound(radius: 15)
+            button?.applyShadow()
+            button?.startAnimatingPressActions()
+        }
+        
+        let typeButtons = [typeButton1, typeButton2]
+        for button in typeButtons {
+            button?.isHidden = true
+            button?.titleLabel?.font = Constants.abilityButtonFont
+            button?.backgroundColor = UIColor.black.withAlphaComponent(0.1)
             button?.makeRound(radius: 15)
             button?.applyShadow()
             button?.startAnimatingPressActions()
@@ -55,11 +73,33 @@ class AboutViewController: UIViewController {
             viewModel.getAbilityDetails(for: ability)
         }
     }
+    
+    @IBAction func typeButtonTapped(_ sender: UIButton) {
+        if let type = sender.titleLabel?.text {
+            viewModel.getTypeDetails(forType: type)
+        }
+    }
+    
+    
 }
 
 //MARK: - Table View Delegate 
 
 extension AboutViewController: AboutViewModelDelegate {
+    func onTypeDetailsModelFetchSuccess() {
+        DispatchQueue.main.async {
+            if let model = self.viewModel.typeModel {
+                self.router.navigateToType(withModel: model)
+            }
+        }
+    }
+    
+    func onTypeDetailsModelFetchFailure(error: Error) {
+        DispatchQueue.main.async {
+            self.presentAlert(with: error)
+            debugPrint(error)
+        }
+    }
     
     func onDetailsModelSet() {
         DispatchQueue.main.async {
@@ -125,28 +165,26 @@ extension AboutViewController: AboutViewModelDelegate {
                 switch numOfTypes {
                 case 1:
                     let type1 = model.types[0].type.name
-                    self.typeLabel1.isHidden = false
-                    self.typeLabel2.isHidden = false
+                    self.typeButton1.isHidden = false
+                    self.typeButton2.isHidden = false
                     self.typeImage1.isHidden = false
-                    self.typeLabel2.backgroundColor = .clear
-                    self.typeLabel2.textColor = .clear
-                    self.typeLabel1.text = type1
+                    self.typeButton1.setTitle(type1, for: .normal)
                     self.typeImage1.image = UIImage(named: type1)
                 case 2:
                     let type1 = model.types[0].type.name
                     let type2 = model.types[1].type.name
                     self.typeImage1.isHidden = false
                     self.typeImage2.isHidden = false
-                    self.typeLabel1.isHidden = false
-                    self.typeLabel2.isHidden = false
+                    self.typeButton1.isHidden = false
+                    self.typeButton2.isHidden = false
                     self.type2StackView.isHidden = false
-                    self.typeLabel1.text = type1
-                    self.typeLabel2.text = type2
+                    self.typeButton1.setTitle(type1, for: .normal)
+                    self.typeButton2.setTitle(type2, for: .normal)
                     self.typeImage1.image = UIImage(named: type1)
                     self.typeImage2.image = UIImage(named: type2)
                 default:
-                    self.typeLabel1.isHidden = true
-                    self.typeLabel2.isHidden = true
+                    self.typeButton1.isHidden = true
+                    self.typeButton2.isHidden = true
                 }
                 
                
@@ -173,6 +211,7 @@ extension AboutViewController: AboutViewModelDelegate {
     func onAbilityDetailsFailure(error: Error) {
         DispatchQueue.main.async {
             self.presentAlert(with: error)
+            debugPrint(error)
         }
     }
     

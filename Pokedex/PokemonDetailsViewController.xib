@@ -116,10 +116,10 @@
                     <rect key="frame" x="0.0" y="353" width="414" height="40"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kw2-TI-T16">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="34.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQm-8j-NvH" userLabel="about">
-                                    <rect key="frame" x="0.0" y="0.0" width="123" height="34.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="123" height="40"/>
                                     <color key="tintColor" name="CustomRed"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="ABOUT"/>
@@ -128,7 +128,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="f80-bG-7dP" userLabel="evolution">
-                                    <rect key="frame" x="123" y="0.0" width="178.5" height="34.5"/>
+                                    <rect key="frame" x="123" y="0.0" width="178.5" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" name="CustomRed"/>
                                     <state key="normal" title="Button"/>
@@ -138,7 +138,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="cMS-ER-eCO" userLabel="stats">
-                                    <rect key="frame" x="301.5" y="0.0" width="112.5" height="34.5"/>
+                                    <rect key="frame" x="301.5" y="0.0" width="112.5" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" name="CustomRed"/>
                                     <state key="normal" title="Button"/>
@@ -148,6 +148,9 @@
                                     </connections>
                                 </button>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="cMS-ER-eCO" firstAttribute="width" secondItem="WQm-8j-NvH" secondAttribute="width" id="qAD-ql-Kt4"/>
+                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>

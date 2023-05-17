@@ -12,14 +12,18 @@ protocol AboutViewModelProtocol: AnyObject {
     var detailsModel: PokemonModel? { get }
     var abilityModel: AbilityModel? { get }
     var speciesModel: SpeciesModel? { get }
+    var typeModel: TypeModel? { get }
     func set(pokemonModel: PokemonModel, speciesModel: SpeciesModel?)
     func getAbilityDetails(for ability: String)
+    func getTypeDetails(forType type: String)
 }
 
 protocol AboutViewModelDelegate: AnyObject {
     func onDetailsModelSet()
     func onAbilityDetailsSuccess()
     func onAbilityDetailsFailure(error: Error)
+    func onTypeDetailsModelFetchSuccess()
+    func onTypeDetailsModelFetchFailure(error: Error)
 }
 
 class AboutViewModel: AboutViewModelProtocol {
@@ -27,6 +31,7 @@ class AboutViewModel: AboutViewModelProtocol {
     var detailsModel: PokemonModel?
     var abilityModel: AbilityModel?
     var speciesModel: SpeciesModel?
+    var typeModel: TypeModel?
     private let service: PokemonAPIServiceProtocol
     
     init(service: PokemonAPIServiceProtocol) {
@@ -47,6 +52,20 @@ class AboutViewModel: AboutViewModelProtocol {
                 self?.delegate?.onAbilityDetailsSuccess()
             case .failure(let error):
                 self?.delegate?.onAbilityDetailsFailure(error: error)
+            }
+        }
+    }
+    
+    func getTypeDetails(forType type: String) {
+        if let url = URL(string: "https://pokeapi.co/api/v2/type/\(type)") {
+            service.getTypeDetails(withUrl: url) { [weak self] result in
+                switch result {
+                case .success(let model):
+                    self?.typeModel = model
+                    self?.delegate?.onTypeDetailsModelFetchSuccess()
+                case .failure(let error):
+                    self?.delegate?.onTypeDetailsModelFetchFailure(error: error)
+                }
             }
         }
     }

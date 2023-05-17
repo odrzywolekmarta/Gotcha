@@ -169,7 +169,6 @@ extension InfoViewController: InfoViewModelDelegate {
     
     func onTypesFetchSuccess() {
         DispatchQueue.main.async {
-            // TODO: view model should filter types, not vc
             self.types = self.viewModel.types.filter { $0.name != "shadow" && $0.name != "unknown" }
             self.collectionView?.reloadData()
         }

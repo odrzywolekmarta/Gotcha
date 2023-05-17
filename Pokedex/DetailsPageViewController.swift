@@ -16,7 +16,7 @@ class DetailsPageViewController: UIPageViewController {
     
 
     init(appRouter: AppRouterProtocol) {
-        aboutController = AboutViewController()
+        aboutController = AboutViewController(router: appRouter)
         statsController = StatsViewController()
         _ = statsController.view
         evolutionController = EvolutionViewController(router: appRouter)
