@@ -12,7 +12,7 @@ protocol AboutViewModelProtocol: AnyObject {
     var detailsModel: PokemonModel? { get }
     var abilityModel: AbilityModel? { get }
     var speciesModel: SpeciesModel? { get }
-    func set(pokemonModel: PokemonModel, speciesModel: SpeciesModel)
+    func set(pokemonModel: PokemonModel, speciesModel: SpeciesModel?)
     func getAbilityDetails(for ability: String)
 }
 
@@ -33,7 +33,7 @@ class AboutViewModel: AboutViewModelProtocol {
         self.service = service
     }
   
-    func set(pokemonModel: PokemonModel, speciesModel: SpeciesModel) {
+    func set(pokemonModel: PokemonModel, speciesModel: SpeciesModel? = nil) {
         detailsModel = pokemonModel
         self.speciesModel = speciesModel
         delegate?.onDetailsModelSet()

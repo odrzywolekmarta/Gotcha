@@ -44,16 +44,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="441"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wk1-0l-hhA">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="306.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uiZ-5Y-jJu">
-                                    <rect key="frame" x="10" y="0.0" width="394" height="284"/>
+                                    <rect key="frame" x="10" y="0.0" width="394" height="306.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OH8-2m-K72">
-                                            <rect key="frame" x="108.5" y="0.0" width="177" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="77.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wlc-AK-l6f" userLabel="header">
-                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="24"/>
+                                                    <rect key="frame" x="108.5" y="0.0" width="177" height="24"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESCRIPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-JR-J8h">
                                                             <rect key="frame" x="0.0" y="0.0" width="147" height="24"/>
@@ -66,8 +66,8 @@
                                                         </imageView>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiz-Tb-EdA">
-                                                    <rect key="frame" x="34" y="32" width="109.5" height="23"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops! There is no information about this Pokémon" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiz-Tb-EdA">
+                                                    <rect key="frame" x="0.0" y="32" width="394" height="45.5"/>
                                                     <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ben-4A-CE5">
-                                            <rect key="frame" x="42" y="70" width="310" height="99"/>
+                                            <rect key="frame" x="42" y="92.5" width="310" height="99"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="S0F-Bc-ZHj" userLabel="header">
                                                     <rect key="frame" x="86.5" y="0.0" width="137.5" height="24"/>
@@ -178,7 +178,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qgr-6t-5zA">
-                                            <rect key="frame" x="130" y="184" width="134" height="100"/>
+                                            <rect key="frame" x="130" y="206.5" width="134" height="100"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fpI-SD-9Z2" userLabel="header">
                                                     <rect key="frame" x="0.0" y="0.0" width="134" height="24"/>

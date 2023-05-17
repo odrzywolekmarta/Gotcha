@@ -37,6 +37,8 @@ class DetailsPageViewController: UIPageViewController {
         if let model = pokemonModel {
             if let species = speciesModel {
                 aboutController.viewModel.set(pokemonModel: model, speciesModel: species)
+            } else {
+                aboutController.viewModel.set(pokemonModel: model, speciesModel: nil)
             }
             statsController.viewModel.set(model: model)
             evolutionController.viewModel.getEvolution(withSpeciesUrl: model.species.url)

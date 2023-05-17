@@ -59,6 +59,7 @@ class PokemonDetailsViewModel: PokemonDetailsViewModelProtocol {
                             self?.speciesModel = species
                             self?.delegate?.onDetailsModelFetchSuccess()
                         case .failure(let error):
+                            self?.delegate?.onDetailsModelFetchSuccess()
                             self?.delegate?.onDetailsModelFetchFailure(error: error)
                         }
                     })
