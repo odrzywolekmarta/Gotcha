@@ -15,11 +15,14 @@ enum OpenedFrom {
 class PokemonViewController: UIViewController {
     
     let viewModel: PokemonListViewModelProtocol
-    var tableView: UITableView
-    let paginationOffset = 4
+    private var tableView: UITableView
+    private let paginationOffset = 4
     let router: AppRouterProtocol
-    var previousController: UIViewController?
-    var openedFrom: OpenedFrom
+    private var previousController: UIViewController?
+    private var openedFrom: OpenedFrom
+    private var spinner: UIActivityIndicatorView?
+    private var failView: FailViewController?
+
     
     init(viewModel: PokemonListViewModelProtocol, router: AppRouterProtocol, openedFrom: OpenedFrom) {
         self.viewModel = viewModel
@@ -31,6 +34,27 @@ class PokemonViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        configureTableView()
+        addSpinner()
+
+        if openedFrom == .listTab {
+            spinner?.startAnimating()
+            viewModel.getNextPage()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed))
+        tabBarController?.delegate = self
     }
     
     func configureTableView() {
@@ -46,23 +70,28 @@ class PokemonViewController: UIViewController {
         tableView.backgroundColor = UIColor(named: Constants.Colors.customBeige)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        viewModel.delegate = self
-        tableView.delegate = self
-        tableView.dataSource = self
-        configureTableView()
-        if openedFrom == .listTab {
-            viewModel.getNextPage()
+    func addSpinner() {
+        spinner = UIActivityIndicatorView(style: .large)
+        view.configureSpinner(spinner: spinner ?? UIActivityIndicatorView(), backgroundColor: UIColor(named: Constants.Colors.customBeige) ?? .gray, indicatorColor: UIColor(named: Constants.Colors.customRed) ?? .white)
+    }
+    
+    func addFailView() {
+        failView = FailViewController()
+        failView?.delegate = self
+        if let fail = failView {
+            addChild(fail)
+            self.view.addSubview(fail.view)
+        }
+        failView?.didMove(toParent: self)
+        failView?.view.frame = view.bounds
+        failView?.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    func removeFailView() {
+        if let fail = failView {
+            fail.removeFromParent()
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.update(backroundColor: UIColor(named: Constants.Colors.customRed))
-        tabBarController?.delegate = self
-    }
-    
 }
 
 //MARK: - Table View Data Source
@@ -118,13 +147,19 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
 extension PokemonViewController: PokemonListViewModelDelegate {
     func onGetPageSuccess() {
         DispatchQueue.main.async {
+            self.spinner?.stopAnimating()
             self.tableView.reloadData()
         }
     }
     
     func onGetPageFailure(error: String) {
-        print(error)
+        DispatchQueue.main.async {
+            self.spinner?.stopAnimating()
+            self.addFailView()
+            debugPrint(error)
+        }
     }
+    
 }
 
 //MARK: - Tab Bar Controller Delegate
@@ -142,6 +177,16 @@ extension PokemonViewController: UITabBarControllerDelegate {
         }
         self.previousController = viewController;
         return true
+    }
+    
+}
+
+//MARK: - Fail View Delegate
+
+extension PokemonViewController: FailViewControllerDelegate {
+    func handleFail() {
+        spinner?.startAnimating()
+        viewModel.getNextPage()
     }
     
 }

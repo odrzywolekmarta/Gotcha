@@ -36,7 +36,7 @@ class PokeballDetailsViewController: UIViewController {
     
     func configure() {
         view.addBluredBackground()
-        let pokeballName = viewModel.detailsModel.name.replacingOccurrences(of: "-", with: " ", options: .literal)
+        let pokeballName = viewModel.detailsModel.name.removeDash()
         nameLabel.text = pokeballName.uppercased()
         nameLabel.textDropShadow()
         

@@ -255,4 +255,14 @@ extension String {
     func removeNewLines() -> String {
        self.components(separatedBy: .newlines).joined(separator: " ")
     }
+    
+    func removeDash() -> String {
+        self.replacingOccurrences(of: "-", with: " ", options: .literal)
+    }
+    
+    func addDash() -> String {
+        self.replacingOccurrences(of: " ", with: "-", options: .literal)
+
+    }
 }
+

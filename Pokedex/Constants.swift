@@ -62,6 +62,7 @@ struct Constants {
     static let germanLanguage = "de"
     static let loadingGif = "loading4"
     static let searchGif = "searchGif"
+    static let failGif = "fail"
     static let gifType = "gif"
     static let noAbilityDescription = "Oops! There is do detail here"
     static let noPokemonDescription = "Oops! There is no information about this Pokémon"

@@ -46,7 +46,7 @@ class AboutViewController: UIViewController {
         typeImage2.isHidden = true
         type2StackView.isHidden = true
         
-        abilityButtonWidth.constant = view.frame.width / 2 - 30
+        abilityButtonWidth.constant = view.frame.width / 2 - 40
         let abilityButtons = [abilityButton1, abilityButton2, abilityButton3]
         for button in abilityButtons {
             button?.titleLabel?.font = Constants.abilityButtonFont
@@ -71,17 +71,16 @@ class AboutViewController: UIViewController {
     }
     
     @IBAction func abilityButtonTapped(_ sender: UIButton) {
-        if let ability = sender.titleLabel?.text {
+        if let ability = sender.titleLabel?.text?.addDash() {
             viewModel.getAbilityDetails(for: ability)
         }
     }
     
     @IBAction func typeButtonTapped(_ sender: UIButton) {
-        if let type = sender.titleLabel?.text {
+        if let type = sender.titleLabel?.text?.addDash() {
             viewModel.getTypeDetails(forType: type)
         }
     }
-    
     
 }
 
@@ -146,17 +145,17 @@ extension AboutViewController: AboutViewModelDelegate {
                 let numOfAbilities = model.abilities.count
                 switch numOfAbilities {
                 case 1:
-                    self.abilityButton1.setTitle(model.abilities[0].ability.name, for: .normal)
+                    self.abilityButton1.setTitle(model.abilities[0].ability.name.removeDash(), for: .normal)
                     self.abilityButton2.isHidden = true
                     self.abilityButton3.isHidden = true
                 case 2:
-                    self.abilityButton1.setTitle(model.abilities[0].ability.name, for: .normal)
-                    self.abilityButton2.setTitle(model.abilities[1].ability.name, for: .normal)
+                    self.abilityButton1.setTitle(model.abilities[0].ability.name.removeDash(), for: .normal)
+                    self.abilityButton2.setTitle(model.abilities[1].ability.name.removeDash(), for: .normal)
                     self.abilityButton3.isHidden = true
                 case 3:
-                    self.abilityButton1.setTitle(model.abilities[0].ability.name, for: .normal)
-                    self.abilityButton2.setTitle(model.abilities[1].ability.name, for: .normal)
-                    self.abilityButton3.setTitle(model.abilities[2].ability.name, for: .normal)
+                    self.abilityButton1.setTitle(model.abilities[0].ability.name.removeDash(), for: .normal)
+                    self.abilityButton2.setTitle(model.abilities[1].ability.name.removeDash(), for: .normal)
+                    self.abilityButton3.setTitle(model.abilities[2].ability.name.removeDash(), for: .normal)
                 default:
                     self.abilityButton1.isHidden = true
                     self.abilityButton2.isHidden = true

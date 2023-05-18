@@ -11,6 +11,8 @@
 		2D1277E82A1610EB005C958C /* AbilityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1277E62A1610EB005C958C /* AbilityDetailsViewController.swift */; };
 		2D1277E92A1610EB005C958C /* AbilityDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D1277E72A1610EB005C958C /* AbilityDetailsViewController.xib */; };
 		2D1277EC2A161645005C958C /* AbilityDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1277EB2A161645005C958C /* AbilityDetailsViewModel.swift */; };
+		2D1277EF2A163065005C958C /* FailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1277ED2A163065005C958C /* FailViewController.swift */; };
+		2D1277F02A163065005C958C /* FailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D1277EE2A163065005C958C /* FailViewController.xib */; };
 		2D268FF02970A8C900B936C9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D268FEF2970A8C900B936C9 /* SDWebImage */; };
 		2D268FF22970B88500B936C9 /* PokemonListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D268FF12970B88500B936C9 /* PokemonListViewModelTests.swift */; };
 		2D268FF52970B8B200B936C9 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D268FF42970B8B200B936C9 /* Mocks.swift */; };
@@ -131,6 +133,8 @@
 		2D1277E62A1610EB005C958C /* AbilityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityDetailsViewController.swift; sourceTree = "<group>"; };
 		2D1277E72A1610EB005C958C /* AbilityDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbilityDetailsViewController.xib; sourceTree = "<group>"; };
 		2D1277EB2A161645005C958C /* AbilityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityDetailsViewModel.swift; sourceTree = "<group>"; };
+		2D1277ED2A163065005C958C /* FailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailViewController.swift; sourceTree = "<group>"; };
+		2D1277EE2A163065005C958C /* FailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FailViewController.xib; sourceTree = "<group>"; };
 		2D268FF12970B88500B936C9 /* PokemonListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModelTests.swift; sourceTree = "<group>"; };
 		2D268FF42970B8B200B936C9 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		2D269097299011F500B936C9 /* PokemonDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewModelTests.swift; sourceTree = "<group>"; };
@@ -254,6 +258,15 @@
 				2D1277E72A1610EB005C958C /* AbilityDetailsViewController.xib */,
 			);
 			name = AbilityDetails;
+			sourceTree = "<group>";
+		};
+		2D1277F12A163079005C958C /* Fail */ = {
+			isa = PBXGroup;
+			children = (
+				2D1277ED2A163065005C958C /* FailViewController.swift */,
+				2D1277EE2A163065005C958C /* FailViewController.xib */,
+			);
+			path = Fail;
 			sourceTree = "<group>";
 		};
 		2D268FEE2970A8C900B936C9 /* Frameworks */ = {
@@ -535,6 +548,7 @@
 				2DD21A9329D61353008B6EE6 /* Info */,
 				2D4E2056294131EA00273DD7 /* Favourites */,
 				2D6946752961DEA50059E5F0 /* LaunchScreen */,
+				2D1277F12A163079005C958C /* Fail */,
 				2D37A60929EDC2A9008B83E3 /* Gifs */,
 				2D6141442922764A00D2F68A /* Fonts */,
 				2DD0B64D290949B8008B9BB5 /* Assets.xcassets */,
@@ -749,6 +763,7 @@
 				2DD0B64E290949B8008B9BB5 /* Assets.xcassets in Resources */,
 				2DA47AC32A08F474008BC4AF /* PokeballDetailsViewController.xib in Resources */,
 				2D61413629216C8A00D2F68A /* StatsViewController.xib in Resources */,
+				2D1277F02A163065005C958C /* FailViewController.xib in Resources */,
 				2D4E205D2942094200273DD7 /* SearchViewController.xib in Resources */,
 				2D61413229216C7B00D2F68A /* AboutViewController.xib in Resources */,
 				2D6946792961DECD0059E5F0 /* LaunchScreenViewController.xib in Resources */,
@@ -819,6 +834,7 @@
 				2D3AA4A0295B72C9000EC287 /* Favourites.swift in Sources */,
 				2DD0B662290967D2008B9BB5 /* PokemonAPIService.swift in Sources */,
 				2D61413929216CA300D2F68A /* EvolutionViewController.swift in Sources */,
+				2D1277EF2A163065005C958C /* FailViewController.swift in Sources */,
 				2D72885B29E0AA5700D5A5E3 /* TypeModel.swift in Sources */,
 				2D6946782961DECD0059E5F0 /* LaunchScreenViewController.swift in Sources */,
 				2D6141022919A59300D2F68A /* PokemonDetailsViewModel.swift in Sources */,

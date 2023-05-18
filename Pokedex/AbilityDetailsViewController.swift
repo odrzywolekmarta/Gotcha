@@ -34,7 +34,7 @@ class AbilityDetailsViewController: UIViewController {
 
     func configureView() {
         view.addBluredBackground()
-        let abilityName = viewModel.detailsModel.name.replacingOccurrences(of: "-", with: " ", options: .literal)
+        let abilityName = viewModel.detailsModel.name.removeDash()
         nameLabel.text = abilityName.uppercased()
         nameLabel.textDropShadow()
         contentView.makeRound(radius: 30)
