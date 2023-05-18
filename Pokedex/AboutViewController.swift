@@ -21,6 +21,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var type2StackView: UIStackView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    @IBOutlet weak var abilityButtonWidth: NSLayoutConstraint!
     let viewModel: AboutViewModelProtocol = AboutViewModel(service: PokemonAPIService())
     private let router: AppRouterProtocol
 
@@ -45,6 +46,7 @@ class AboutViewController: UIViewController {
         typeImage2.isHidden = true
         type2StackView.isHidden = true
         
+        abilityButtonWidth.constant = view.frame.width / 2 - 30
         let abilityButtons = [abilityButton1, abilityButton2, abilityButton3]
         for button in abilityButtons {
             button?.titleLabel?.font = Constants.abilityButtonFont
