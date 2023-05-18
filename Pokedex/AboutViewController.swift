@@ -187,9 +187,7 @@ extension AboutViewController: AboutViewModelDelegate {
                 default:
                     self.typeButton1.isHidden = true
                     self.typeButton2.isHidden = true
-                }
-                
-               
+                }                
             }
         }
     }
@@ -197,15 +195,7 @@ extension AboutViewController: AboutViewModelDelegate {
     func onAbilityDetailsSuccess() {
         DispatchQueue.main.async {
             if let model = self.viewModel.abilityModel {
-                let englishDescription = model.effectEntries.filter { description in
-                    description.language.name == "en"
-                }
-                
-                if englishDescription.count == 0 {
-                    self.presentAlert(title: model.name, description: Constants.noAbilityDescription)
-                } else {
-                    self.presentAlert(title: model.name, description: englishDescription[0].shortEffect)
-                }
+                self.router.navigateToAbility(withModel: model)
             }
         }
     }

@@ -15,6 +15,7 @@ protocol AppRouterProtocol {
     func navigateToType(withModel model: TypeModel)
     func navigateToPokeball(withModel model: PokeballModel)
     func navigateToList(withData: [Pokemon])
+    func navigateToAbility(withModel model: AbilityModel)
 }
 
 class AppRouter: AppRouterProtocol {
@@ -66,4 +67,14 @@ class AppRouter: AppRouterProtocol {
         
         navigationController.present(controller, animated: true)
     }
+    
+    func navigateToAbility(withModel model: AbilityModel) {
+        let controller = AbilityDetailsViewController(router: self, viewModel: AbilityDetailsViewModel(detailsModel: model))
+        controller.modalPresentationStyle = .overFullScreen
+        controller.modalTransitionStyle = .crossDissolve
+        controller.view.applyShadow()
+        
+        navigationController.present(controller, animated: true)
+    }
+
 }

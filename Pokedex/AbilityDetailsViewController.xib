@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Orbitron-Bold.ttf">
+            <string>Orbitron-Bold</string>
+        </array>
+        <array key="Orbitron-Regular.ttf">
+            <string>Orbitron-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AbilityDetailsViewController" customModule="Gotcha" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="pU3-PA-tmh" id="xh9-f8-UvV"/>
+                <outlet property="descriptionLabel" destination="Uvt-Kp-o9i" id="eLx-NE-n2V"/>
+                <outlet property="nameLabel" destination="sLS-qE-EWA" id="vFV-Jf-kRs"/>
+                <outlet property="roundedView" destination="4R4-Zg-ldQ" id="C1H-5E-bvg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pU3-PA-tmh">
+                    <rect key="frame" x="15" y="237.99999999999997" width="363" height="376.33333333333326"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stench" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLS-qE-EWA">
+                            <rect key="frame" x="128" y="10" width="107.33333333333331" height="40.333333333333336"/>
+                            <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="28"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OLC-ao-Msa">
+                            <rect key="frame" x="20" y="60.333333333333314" width="323" height="296.00000000000006"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4R4-Zg-ldQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="323" height="296"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvt-Kp-o9i">
+                                            <rect key="frame" x="10" y="10" width="303" height="276"/>
+                                            <mutableString key="text">This Pokémon's damaging moves have a 10% chance to make the target flinch with each hit if they do not already cause flinching as a secondary effect. This ability does not stack with a held item. Overworld: The wild encounter rate is halved while this Pokémon is first in the party.</mutableString>
+                                            <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Uvt-Kp-o9i" secondAttribute="trailing" constant="10" id="02g-Jt-gxw"/>
+                                        <constraint firstItem="Uvt-Kp-o9i" firstAttribute="leading" secondItem="4R4-Zg-ldQ" secondAttribute="leading" constant="10" id="1DE-aD-OwC"/>
+                                        <constraint firstItem="Uvt-Kp-o9i" firstAttribute="centerX" secondItem="4R4-Zg-ldQ" secondAttribute="centerX" id="ER4-Gg-YiU"/>
+                                        <constraint firstAttribute="bottom" secondItem="Uvt-Kp-o9i" secondAttribute="bottom" constant="10" id="VFs-35-7Sl"/>
+                                        <constraint firstItem="Uvt-Kp-o9i" firstAttribute="top" secondItem="4R4-Zg-ldQ" secondAttribute="top" constant="10" id="uJv-YA-0eN"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cec-kL-gMA">
+                            <rect key="frame" x="250.33333333333329" y="13" width="104.66666666666666" height="34.333333333333336"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="xmark.circle" catalog="system"/>
+                            <connections>
+                                <action selector="dismissButtonTapped:" destination="-1" eventType="touchUpInside" id="X9L-96-sPu"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="sLS-qE-EWA" firstAttribute="centerX" secondItem="pU3-PA-tmh" secondAttribute="centerX" id="04f-2W-Atb"/>
+                        <constraint firstAttribute="bottom" secondItem="OLC-ao-Msa" secondAttribute="bottom" constant="20" id="27k-iJ-WDl"/>
+                        <constraint firstItem="cec-kL-gMA" firstAttribute="leading" secondItem="sLS-qE-EWA" secondAttribute="trailing" constant="15" id="8Mk-sQ-C8R"/>
+                        <constraint firstItem="cec-kL-gMA" firstAttribute="centerY" secondItem="sLS-qE-EWA" secondAttribute="centerY" id="K4K-Ea-YoI"/>
+                        <constraint firstItem="sLS-qE-EWA" firstAttribute="top" secondItem="pU3-PA-tmh" secondAttribute="top" constant="10" id="LXx-CN-8OB"/>
+                        <constraint firstAttribute="trailing" secondItem="OLC-ao-Msa" secondAttribute="trailing" constant="20" id="Lsr-jI-5jn"/>
+                        <constraint firstAttribute="trailing" secondItem="cec-kL-gMA" secondAttribute="trailing" constant="8" id="Rd2-uP-xKd"/>
+                        <constraint firstItem="cec-kL-gMA" firstAttribute="top" secondItem="pU3-PA-tmh" secondAttribute="top" constant="13" id="a8m-cj-fWZ"/>
+                        <constraint firstItem="OLC-ao-Msa" firstAttribute="leading" secondItem="pU3-PA-tmh" secondAttribute="leading" constant="20" id="fEl-te-PvT"/>
+                        <constraint firstItem="OLC-ao-Msa" firstAttribute="top" secondItem="sLS-qE-EWA" secondAttribute="bottom" constant="10" id="t3p-J2-sbX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="pU3-PA-tmh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="EBm-4r-9dD"/>
+                <constraint firstItem="pU3-PA-tmh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dtN-IQ-BGh"/>
+                <constraint firstAttribute="trailing" secondItem="pU3-PA-tmh" secondAttribute="trailing" constant="15" id="hl5-pG-O6C"/>
+                <constraint firstItem="pU3-PA-tmh" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="qsb-Fx-2x6"/>
+            </constraints>
+            <point key="canvasLocation" x="26.717557251908396" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
