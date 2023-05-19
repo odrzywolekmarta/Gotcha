@@ -49,9 +49,22 @@ class AbilityDetailsViewController: UIViewController {
             if englishDescription.count == 0 {
                 descriptionLabel.text = Constants.noAbilityDescription
             } else {
-                descriptionLabel.text = englishDescription[0].effect
+                if englishDescription[0].effect.count > 700 {
+                    descriptionLabel.text = englishDescription[0].shortEffect
+                } else {
+                    descriptionLabel.text = englishDescription[0].effect
+                }
             }
+        
+        setFontSize()
     }
+    
+    func setFontSize() {
+        if descriptionLabel.text?.count ?? 0 > 500 {
+            descriptionLabel.font = UIFont(name: Constants.customFont, size: 16)
+        }
+    }
+    
     @IBAction func dismissButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
