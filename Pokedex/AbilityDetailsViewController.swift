@@ -13,6 +13,7 @@ class AbilityDetailsViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet var backgroundView: UIView!
     
     let viewModel: AbilityDetailsViewModelProtocol
     let router: AppRouterProtocol
@@ -30,6 +31,8 @@ class AbilityDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissView(_:)))
+        backgroundView.addGestureRecognizer(tap)
     }
 
     func configureView() {
@@ -50,12 +53,12 @@ class AbilityDetailsViewController: UIViewController {
                 descriptionLabel.text = Constants.noAbilityDescription
             } else {
                 if englishDescription[0].effect.count > 700 {
-                    descriptionLabel.text = englishDescription[0].shortEffect
+                    descriptionLabel.text = englishDescription[0].shortEffect.removeNewLines()
                 } else {
                     descriptionLabel.text = englishDescription[0].effect
                 }
             }
-        
+
         setFontSize()
     }
     
@@ -63,6 +66,10 @@ class AbilityDetailsViewController: UIViewController {
         if descriptionLabel.text?.count ?? 0 > 500 {
             descriptionLabel.font = UIFont(name: Constants.customFont, size: 16)
         }
+    }
+    
+    @objc func dismissView(_ sender: UIView) {
+        self.dismiss(animated: true)
     }
     
     @IBAction func dismissButtonTapped(_ sender: UIButton) {

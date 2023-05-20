@@ -19,6 +19,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TypeDetailsViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="JAF-QW-MFG" id="7E3-vx-tkV"/>
+                <outlet property="backgroundView" destination="i5M-Pr-FkT" id="Kjd-uI-2IV"/>
                 <outlet property="doubleHeight" destination="ZZZ-lp-iCx" id="jog-bU-pLB"/>
                 <outlet property="doubleLabel" destination="pTS-I4-ZS9" id="Epd-B2-dh4"/>
                 <outlet property="doubleTableView" destination="r6t-UK-OnM" id="RbY-aU-XS4"/>

@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AbilityDetailsViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="i5M-Pr-FkT" id="dDu-Ox-qls"/>
                 <outlet property="contentView" destination="pU3-PA-tmh" id="xh9-f8-UvV"/>
                 <outlet property="descriptionLabel" destination="Uvt-Kp-o9i" id="eLx-NE-n2V"/>
                 <outlet property="nameLabel" destination="sLS-qE-EWA" id="vFV-Jf-kRs"/>
@@ -46,7 +47,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4R4-Zg-ldQ">
                                     <rect key="frame" x="0.0" y="0.0" width="323" height="296"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvt-Kp-o9i">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvt-Kp-o9i">
                                             <rect key="frame" x="10" y="10" width="303" height="276"/>
                                             <string key="text">This Pokémon's damaging moves have a 10% chance to make the target flinch with each hit if they do not already cause flinching as a secondary effect. This ability does not stack with a held item. Overworld: The wild encounter rate is halved while this Pokémon is first in the party.</string>
                                             <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="20"/>

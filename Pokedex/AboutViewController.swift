@@ -8,7 +8,6 @@
 import UIKit
 
 class AboutViewController: UIViewController {
-    
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var typeButton1: UIButton!
@@ -20,8 +19,8 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var typeImage2: UIImageView!
     @IBOutlet weak var type2StackView: UIStackView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
     @IBOutlet weak var abilityButtonWidth: NSLayoutConstraint!
+    
     let viewModel: AboutViewModelProtocol = AboutViewModel(service: PokemonAPIService())
     private let router: AppRouterProtocol
 

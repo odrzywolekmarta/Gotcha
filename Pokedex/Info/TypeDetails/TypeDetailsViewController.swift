@@ -19,6 +19,7 @@ class TypeDetailsViewController: UIViewController {
     @IBOutlet weak var typeImageView: UIImageView!
     @IBOutlet weak var pokemonListButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet var backgroundView: UIView!
     
     @IBOutlet weak var doubleTableView: UITableView!
     @IBOutlet weak var zeroTableView: UITableView!
@@ -52,6 +53,8 @@ class TypeDetailsViewController: UIViewController {
         viewModel.delegate = self
         configureView()
         configureWithData()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissView(_:)))
+        backgroundView.addGestureRecognizer(tap)
     }
     
     override func viewWillLayoutSubviews() {
@@ -103,6 +106,10 @@ class TypeDetailsViewController: UIViewController {
         for table in tables {
             table.reloadData()
         }
+    }
+    
+    @objc func dismissView(_ sender: UIView) {
+        self.dismiss(animated: true)
     }
     
     @IBAction func segmentedControlTapped(_ sender: UISegmentedControl) {
