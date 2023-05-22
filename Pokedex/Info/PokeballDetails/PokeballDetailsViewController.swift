@@ -56,7 +56,7 @@ class PokeballDetailsViewController: UIViewController {
         descriptionContainerView.makeRound(radius: 30)
         descriptionContainerView.applyShadow()
     }
-    
+     
     @objc func dismissView(_ sender: UIView) {
         self.dismiss(animated: true)
     }

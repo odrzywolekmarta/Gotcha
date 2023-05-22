@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 protocol AppRouterProtocol {
     func navigateToDetails(urlString: String, imageUrl: String)
@@ -16,6 +17,7 @@ protocol AppRouterProtocol {
     func navigateToPokeball(withModel model: PokeballModel)
     func navigateToList(withData: [Pokemon])
     func navigateToAbility(withModel model: AbilityModel)
+    func showWebView(urlString: String)
 }
 
 class AppRouter: AppRouterProtocol {
@@ -76,5 +78,14 @@ class AppRouter: AppRouterProtocol {
         
         navigationController.present(controller, animated: true)
     }
-
+    
+    func showWebView(urlString: String) {
+        if let url = URL(string: urlString) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: url, configuration: config)
+            navigationController.present(vc, animated: true)
+        }
+    }
+    
 }

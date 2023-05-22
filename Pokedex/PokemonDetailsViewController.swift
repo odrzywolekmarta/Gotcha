@@ -23,6 +23,7 @@ class PokemonDetailsViewController: UIViewController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var favouritesButton: UIButton!
+    @IBOutlet weak var bulbaButton: UIButton!
     
     let viewModel: PokemonDetailsViewModelProtocol
     let router: AppRouterProtocol
@@ -125,6 +126,12 @@ class PokemonDetailsViewController: UIViewController {
     @IBAction func evolutionButtonPressed(_ sender: UIButton) {
         pageViewController.slideToPage(index: 1, completion: nil)
         setTintColor(for: evolutionButton)
+    }
+    
+    @IBAction func bulbaButtonPressed(_ sender: Any) {
+        if let pokemonName = viewModel.detailsModel?.name {
+            router.showWebView(urlString: "https://bulbapedia.bulbagarden.net/wiki/\(pokemonName)")
+        }
     }
     
     var pageButtons: [UIButton] {
