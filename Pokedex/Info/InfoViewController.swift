@@ -81,9 +81,11 @@ class InfoViewController: UIViewController, ErrorOverlayPresentable {
         switch sender.selectedSegmentIndex {
         case 0:
             info = .types
+            collectionView?.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
             collectionView?.reloadData()
         case 1:
             info = .pokeballs
+            collectionView?.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
             collectionView?.reloadData()
         default:
             ()
@@ -181,7 +183,7 @@ extension InfoViewController: InfoViewModelDelegate {
             self.presentErrorOverlay {
                 self.viewModel.getPokemonTypes()
             }
-//            self.presentAlert(with: error)
+            self.presentAlert(with: error)
             debugPrint(error)
         }
     }
@@ -199,7 +201,7 @@ extension InfoViewController: InfoViewModelDelegate {
             self.presentErrorOverlay {
                 self.viewModel.getPokemonTypes()
             }
-//            self.presentAlert(with: error)
+            self.presentAlert(with: error)
             debugPrint(error)
         }
     }
