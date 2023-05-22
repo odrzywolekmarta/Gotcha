@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PokeballDetailsViewController" customModule="Gotcha" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="i5M-Pr-FkT" id="G5s-YT-fdF"/>
                 <outlet property="ballImage" destination="5al-N7-uu2" id="DQl-2i-1X4"/>
                 <outlet property="containerView" destination="YL5-bV-ILK" id="3Or-lX-v4m"/>
                 <outlet property="costLabel" destination="1IB-fz-TcO" id="QiC-N7-eIF"/>

@@ -15,6 +15,7 @@ class PokeballDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var descriptionContainerView: UIView!
+    @IBOutlet var backgroundView: UIView!
     
     let viewModel: PokeballDetailsViewModelProtocol
     let router: AppRouterProtocol
@@ -32,6 +33,8 @@ class PokeballDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissView(_:)))
+        backgroundView.addGestureRecognizer(tap)
     }
     
     func configure() {
@@ -52,6 +55,10 @@ class PokeballDetailsViewController: UIViewController {
         descriptionLabel.text = viewModel.detailsModel.effectEntries[0].shortEffect
         descriptionContainerView.makeRound(radius: 30)
         descriptionContainerView.applyShadow()
+    }
+    
+    @objc func dismissView(_ sender: UIView) {
+        self.dismiss(animated: true)
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
