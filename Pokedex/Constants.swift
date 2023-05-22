@@ -21,6 +21,7 @@ struct Constants {
     static let pokemonDetailsImageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
     static let baseImageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
     static let basePokeballImageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/"
+    static let bulbapediaBaseUrl = "https://bulbapedia.bulbagarden.net/wiki/"
 
     static let typesUrl = "https://pokeapi.co/api/v2/type/"
     static let itemUrl = "https://pokeapi.co/api/v2/item/"

@@ -75,6 +75,8 @@ class PokemonDetailsViewController: UIViewController {
         favouritesButton.isHidden = true
         favouritesButton.startAnimatingPressActions()
         favouritesButton.imageView?.applyShadow()
+        bulbaButton.imageView?.applyShadow()
+        bulbaButton.startAnimatingPressActions()
         
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
@@ -130,7 +132,7 @@ class PokemonDetailsViewController: UIViewController {
     
     @IBAction func bulbaButtonPressed(_ sender: Any) {
         if let pokemonName = viewModel.detailsModel?.name {
-            router.showWebView(urlString: "https://bulbapedia.bulbagarden.net/wiki/\(pokemonName)")
+            router.showWebView(urlString: "\(Constants.bulbapediaBaseUrl)\(pokemonName)")
         }
     }
     
