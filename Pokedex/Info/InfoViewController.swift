@@ -152,7 +152,9 @@ extension InfoViewController: InfoViewModelDelegate {
     }
     
     func onTypeDetailsModelFetchFailure(error: Error) {
-        // handle error
+        DispatchQueue.main.async {
+            
+        }
     }
     
     func onPokeballFetchSuccess() {
@@ -176,6 +178,7 @@ extension InfoViewController: InfoViewModelDelegate {
     
     func onTypesFetchFailure(error: Error) {
         DispatchQueue.main.async {
+            self.presentAlert(with: error)
             debugPrint(error)
         }
     }
@@ -189,9 +192,10 @@ extension InfoViewController: InfoViewModelDelegate {
     }
     
     func onPokeballDetailsFetchFailure(error: Error) {
-        
+        DispatchQueue.main.async {
+            self.presentAlert(with: error)
+            debugPrint(error)
+        }
     }
-    
-    
-    
+        
 }

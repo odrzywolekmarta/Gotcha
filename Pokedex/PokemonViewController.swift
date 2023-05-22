@@ -12,7 +12,7 @@ enum OpenedFrom {
     case type
 }
 
-class PokemonViewController: UIViewController {
+class PokemonViewController: UIViewController, ErrorOverlayPresentable {
     
     let viewModel: PokemonListViewModelProtocol
     private var tableView: UITableView
@@ -73,24 +73,6 @@ class PokemonViewController: UIViewController {
     func addSpinner() {
         spinner = UIActivityIndicatorView(style: .large)
         view.configureSpinner(spinner: spinner ?? UIActivityIndicatorView(), backgroundColor: UIColor(named: Constants.Colors.customBeige) ?? .gray, indicatorColor: UIColor(named: Constants.Colors.customRed) ?? .white)
-    }
-    
-    func addFailView() {
-        failView = FailViewController()
-        failView?.delegate = self
-        if let fail = failView {
-            addChild(fail)
-            self.view.addSubview(fail.view)
-        }
-        failView?.didMove(toParent: self)
-        failView?.view.frame = view.bounds
-        failView?.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    }
-    
-    func removeFailView() {
-        if let fail = failView {
-            fail.removeFromParent()
-        }
     }
 }
 
@@ -155,7 +137,9 @@ extension PokemonViewController: PokemonListViewModelDelegate {
     func onGetPageFailure(error: String) {
         DispatchQueue.main.async {
             self.spinner?.stopAnimating()
-            self.addFailView()
+            self.presentErrorOverlay {
+                self.viewModel.getNextPage()
+            }
             debugPrint(error)
         }
     }
