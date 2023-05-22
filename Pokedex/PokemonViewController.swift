@@ -138,6 +138,7 @@ extension PokemonViewController: PokemonListViewModelDelegate {
         DispatchQueue.main.async {
             self.spinner?.stopAnimating()
             self.presentErrorOverlay {
+                self.spinner?.startAnimating()
                 self.viewModel.getNextPage()
             }
             debugPrint(error)
@@ -153,7 +154,7 @@ extension PokemonViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if self.previousController == viewController || self.previousController == nil {
             if let nav = viewController as? UINavigationController {
-                if nav.viewControllers.count < 3 {
+                if tableView.numberOfRows(inSection: 0) > 0 && nav.viewControllers.count < 4  {
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                 }

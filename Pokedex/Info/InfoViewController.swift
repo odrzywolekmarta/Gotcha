@@ -12,7 +12,7 @@ enum InfoDisplayed {
     case pokeballs
 }
 
-class InfoViewController: UIViewController {
+class InfoViewController: UIViewController, ErrorOverlayPresentable {
     
     private var segmentedControl: UISegmentedControl
     private let viewModel: InfoViewModelProtocol
@@ -153,7 +153,7 @@ extension InfoViewController: InfoViewModelDelegate {
     
     func onTypeDetailsModelFetchFailure(error: Error) {
         DispatchQueue.main.async {
-            
+           
         }
     }
     
@@ -178,7 +178,10 @@ extension InfoViewController: InfoViewModelDelegate {
     
     func onTypesFetchFailure(error: Error) {
         DispatchQueue.main.async {
-            self.presentAlert(with: error)
+            self.presentErrorOverlay {
+                self.viewModel.getPokemonTypes()
+            }
+//            self.presentAlert(with: error)
             debugPrint(error)
         }
     }
@@ -193,7 +196,10 @@ extension InfoViewController: InfoViewModelDelegate {
     
     func onPokeballDetailsFetchFailure(error: Error) {
         DispatchQueue.main.async {
-            self.presentAlert(with: error)
+            self.presentErrorOverlay {
+                self.viewModel.getPokemonTypes()
+            }
+//            self.presentAlert(with: error)
             debugPrint(error)
         }
     }
